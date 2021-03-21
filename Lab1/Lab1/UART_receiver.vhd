@@ -55,12 +55,13 @@ architecture UART_arch of UART_receiver is
 	signal let_7 : std_logic := '0';
 	signal let_15 : std_logic := '0';
 	
+	signal sampled_bit : std_logic := '0';
 	constant brg_clk_duration: integer := 88;
 begin
 	-- FSM S3 Counter
-	process(clk) is
+	process(inc_s3) is
 	begin
-		if rising_edge(clk) then
+		if rising_edge(inc_s3) then
 			if to_x01(rst) = '1' then
 				c_s3 <= (others => '0');
 			elsif to_x01(cr_s3) = '1' then
@@ -72,10 +73,27 @@ begin
 	end process;
 	
 	-- FSM Baud Rate Tick Counter
+	process(tick) is
+	begin
+		if rising_edge(tick) then
+			if to_x01(rst) = '1' then
+				c_brg <= (others => '0');
+			elsif to_x01(cr_brg) = '1' then
+				c_brg <= (others => '0');
+			else
+				c_brg <= std_logic_vector(to_unsigned(to_integer(unsigned(c_brg)) + 1, c_brg'length));
+			end if;
+		end if;
+	end process;
 	
+	-- FSM Comparator - S3_CNT vs. N-2=6 -> looks if the FSM has been in S3 for N-1 bit read cycles
+	let_s3 <= '1' when to_integer(unsigned(c_s3)) = 6 else '0';
 	
-	-- FSM Comparator -> looks if the counter has counted up to brg_clk_duration
+	-- FSM Comparator - BRG_CNT vs. 7 -> looks if the baud rate generator has generated 8 ticks
+	let_7 <= '1' when to_integer(unsigned(c_brg)) = 7 else '0';
 	
+	-- FSM Comparator - BRG_CNT vs. 15 -> looks if the baud rate generator has generated 16 ticks
+	let_15 <= '1' when to_integer(unsigned(c_brg)) = 15 else '0';
 	
 	-- FSM Synchronous part -> Register
 	process(clk) is
@@ -91,24 +109,53 @@ begin
 		
 	
 	-- FSM Asynchronous part -> Next State Decoder + Output Decoder
-	process(tick, let_fsm, currentState, rx) is
-		variable d_out_new: std_logic_vector(7 downto 0) := (others => '0');
-		variable tmp: std_logic;
-		variable baud_rate_generator_counter : integer := 0;
+	process(tick, let_s3, let_7, let_15, currentState, rx) is
+		--variable d_out_new: std_logic_vector(7 downto 0) := (others => '0');
+		--variable tmp: std_logic;
+		--variable baud_rate_generator_counter : integer := 0;
 	begin
 		rx_done <= '0';
+		cr_s3 <= '0';
+		cr_brg <= '0';
+		-- Check d_out and the shift register later???
 		
 		case currentState is
 			when Idle =>
 				if falling_edge(rx) then
 					nextState <= State1;
-					baud_rate_generator_counter := 0;
+					cr_brg <= '1';		-- Reset tick counter
 				end if;
 			when State1 =>
-				
-			when State2 =>
+				-- Need to wait until tick counter reaches 7!
+				if to_x01(let_7) = '1' then
+					-- TODO: Maybe - sample here, and check if 0?
+					nextState <= State3;
+					cr_brg <= '1';		-- Reset tick counter once again
+					cr_s3 <= '1';		-- Reset s3 cycles counter
+				end if;
 			when State3 =>
+				if to_x01(let_15) = '1' then
+					-- 15 ticks reached means we're in the middle of the bit - sample and increase the counter!
+					sampled_bit <= rx;
+					cr_brg <= '1';
+					
+					if to_x01(let_s3) = '1' then
+						-- Last bit sampled - go and sample the stop bit!
+						nextState <= State4;
+					else
+						inc_s3 <= '1';
+					end if;
+				end if;
 			when State4 =>
+				if to_x01(let_15) = '1' then
+					-- Check stop bit!
+					assert (to_x01(rx) = '1')
+						report "Stop bit should be high - before going into the idle state!"
+						severity ERROR;
+					
+					nextState <= Idle;
+					rx_done <= '1';
+				end if;
 			when others => null;
 		end case;
 	end process;
