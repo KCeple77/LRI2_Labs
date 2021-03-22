@@ -56,7 +56,8 @@ architecture UART_arch of UART_receiver is
 	signal let_15 : std_logic := '0';
 	
 	signal sampled_bit : std_logic := '0';
-	constant brg_clk_duration: integer := 88;
+	signal shift_enable : std_logic := '0';
+	signal shift_reg : std_logic_vector(7 downto 0) := (others => '0');
 begin
 	-- FSM S3 Counter
 	process(inc_s3) is
@@ -117,7 +118,7 @@ begin
 		rx_done <= '0';
 		cr_s3 <= '0';
 		cr_brg <= '0';
-		-- Check d_out and the shift register later???
+		shift_enable <= '0';
 		
 		case currentState is
 			when Idle =>
@@ -137,6 +138,7 @@ begin
 				if to_x01(let_15) = '1' then
 					-- 15 ticks reached means we're in the middle of the bit - sample and increase the counter!
 					sampled_bit <= rx;
+					shift_enable <= '1';
 					cr_brg <= '1';
 					
 					if to_x01(let_s3) = '1' then
@@ -161,18 +163,24 @@ begin
 	end process;
 	
 	
-	-- Shift register
+	-- Shift register that will be used for storing the data -- Serial in, Parallel out = SIPO
 	process(clk) is
-		variable d_out_new : std_logic_vector(7 downto 0) := (others => '0');
 	begin
 		if rising_edge(clk) then
 			if to_x01(rst) = '1' then
-				
+				shift_reg <= (others => '0');
 			else
-			
+				if to_x01(shift_enable) = '1' then
+					-- Shift and write inside new val
+					shift_reg(6 downto 0) <= shift_reg(7 downto 1);
+					shift_reg(7) <= sampled_bit;
+				end if;
 			end if;
 		end if;
 	end process;
+	
+	-- Shift reg to d_out
+	d_out <= shift_reg;
 
 end UART_arch;
 

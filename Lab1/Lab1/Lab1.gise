@@ -37,6 +37,9 @@
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="UARTtop_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="UARTtop_xst.xrpt"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="baud_rate_generator.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="baud_rate_generator.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="baud_rate_generator.xst"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>

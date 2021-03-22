@@ -37,7 +37,10 @@ entity baud_rate_generator is
 end baud_rate_generator;
 
 architecture brg_arch of baud_rate_generator is
+	signal s_tick : std_logic := '0';
 begin
+	tick <= s_tick;
+
 	process(clk) is
 		variable counter: integer := 0;
 	begin
@@ -50,7 +53,7 @@ begin
 			
 				if (counter = 88) then
 					counter := 0;
-					tick <= not tick;
+					s_tick <= not s_tick;
 				end if;
 			end if;
 		end if;

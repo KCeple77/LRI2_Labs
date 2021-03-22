@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.20 secs
+Total CPU time to Xst completion: 0.21 secs
  
 --> Parameter xsthdpdir set to E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.20 secs
+Total CPU time to Xst completion: 0.21 secs
  
---> Reading design: UART_receiver.prj
+--> Reading design: baud_rate_generator.prj
 
 TABLE OF CONTENTS
   1) Synthesis Options Summary
@@ -39,13 +39,13 @@ TABLE OF CONTENTS
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\UART_receiver.vhd" into library work
-Parsing entity <UART_receiver>.
-Parsing architecture <UART_arch> of entity <uart_receiver>.
+Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\baud_rrate_generator.vhd" into library work
+Parsing entity <baud_rate_generator>.
+Parsing architecture <brg_arch> of entity <baud_rate_generator>.
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.67 secs
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 3.71 secs
  
 --> 
 
