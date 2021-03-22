@@ -50,11 +50,18 @@ ARCHITECTURE behavior OF UART_receiver_tb IS
         );
     END COMPONENT;
     
+	COMPONENT baud_rate_generator
+    PORT(
+         clk : IN  std_logic;
+         rst : IN  std_logic;
+         tick : OUT  std_logic
+        );
+    END COMPONENT;
 
    --Inputs
    signal clk : std_logic := '0';
    signal rst : std_logic := '0';
-   signal rx : std_logic := '0';
+   signal rx : std_logic := '1';
    signal tick : std_logic := '0';
 
  	--Outputs
@@ -62,7 +69,7 @@ ARCHITECTURE behavior OF UART_receiver_tb IS
    signal rx_done : std_logic;
 
    -- Clock period definitions
-   constant clk_period : time := 1/27e6 s;
+   constant clk_period : time := 37.03703703 ns;
  
 BEGIN
  
@@ -75,6 +82,12 @@ BEGIN
           d_out => d_out,
           rx_done => rx_done
         );
+		  
+	brg: baud_rate_generator PORT MAP (
+	       clk => clk,
+          rst => rst,
+          tick => tick
+	);
 
    -- Clock process definitions
    clk_process :process
@@ -95,6 +108,8 @@ BEGIN
       wait for clk_period*10;
 
       -- insert stimulus here 
+
+		
 
       wait;
    end process;
