@@ -47,7 +47,7 @@ begin
 		if rising_edge(clk) then
 			if To_x01(rst) = '1' then
 				counter := 0;
-				tick <= '0';
+				s_tick <= '0';
 			else
 				counter := counter + 1;
 			

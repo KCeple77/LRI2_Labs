@@ -25,6 +25,7 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="UART_receiver.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="UART_receiver.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="UART_receiver.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="UART_receiver_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="UARTtop.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="UARTtop.lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="UARTtop.ngc"/>
@@ -33,18 +34,93 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="UARTtop.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="UARTtop.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="UARTtop.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="UARTtop_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="UARTtop_envsettings.html"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="UARTtop_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="UARTtop_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="UARTtop_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="UARTtop_summary.html"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="UARTtop_xst.xrpt"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="baud_rate_generator.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="baud_rate_generator.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="baud_rate_generator.xst"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="baud_rate_generator_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="baud_rate_generator_stx_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="brg_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="brg_tb_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1616373229" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1616373229">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1616375315" xil_pn:in_ck="1109515613851476113" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1616375315">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="UART_receiver.vhd"/>
+      <outfile xil_pn:name="UART_receiver_tb.vhd"/>
+      <outfile xil_pn:name="UARTtop.vhd"/>
+      <outfile xil_pn:name="baud_rate_generator.vhd"/>
+      <outfile xil_pn:name="brg_tb.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1616375570" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-5764898329739529422" xil_pn:start_ts="1616375570">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+    </transform>
+    <transform xil_pn:end_ts="1616375570" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="7931515913893014448" xil_pn:start_ts="1616375570">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+    </transform>
+    <transform xil_pn:end_ts="1616373229" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-1497144403454878815" xil_pn:start_ts="1616373229">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1616375334" xil_pn:in_ck="1109515613851476113" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1616375334">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <outfile xil_pn:name="UART_receiver.vhd"/>
+      <outfile xil_pn:name="UART_receiver_tb.vhd"/>
+      <outfile xil_pn:name="UARTtop.vhd"/>
+      <outfile xil_pn:name="baud_rate_generator.vhd"/>
+      <outfile xil_pn:name="brg_tb.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1616375573" xil_pn:in_ck="1109515613851476113" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="8425325552619853239" xil_pn:start_ts="1616375570">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="UARTtop_beh.prj"/>
+      <outfile xil_pn:name="UARTtop_isim_beh.exe"/>
+      <outfile xil_pn:name="fuse.log"/>
+      <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="xilinxsim.ini"/>
+    </transform>
+    <transform xil_pn:end_ts="1616375574" xil_pn:in_ck="7512355634698953753" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-9188119178697231130" xil_pn:start_ts="1616375573">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="UARTtop_isim_beh.wdb"/>
+      <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
+    </transform>
     <transform xil_pn:end_ts="1616269737" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1616269737">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>

@@ -39,7 +39,7 @@ TABLE OF CONTENTS
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\baud_rrate_generator.vhd" into library work
+Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\baud_rate_generator.vhd" into library work
 Parsing entity <baud_rate_generator>.
 Parsing architecture <brg_arch> of entity <baud_rate_generator>.
 Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\UARTtop.vhd" into library work
@@ -48,7 +48,7 @@ Parsing architecture <Behavioral> of entity <uarttop>.
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.77 secs
+Total CPU time to Xst completion: 3.68 secs
  
 --> 
 
