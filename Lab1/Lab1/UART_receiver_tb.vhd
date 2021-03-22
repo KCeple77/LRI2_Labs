@@ -69,8 +69,8 @@ ARCHITECTURE behavior OF UART_receiver_tb IS
    signal rx_done : std_logic;
 
    -- Clock period definitions
-   constant clk_period : time := 37.03703703 ns;
- 
+   constant clk_period : time := 37.03703704 ns;
+	constant sample_period : time := 104166.6666667 ns;
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
@@ -108,8 +108,16 @@ BEGIN
       wait for clk_period*10;
 
       -- insert stimulus here 
-
+		-- Send start bit
+		--rx <= '0';
 		
+		-- Let's send the data - 0011
+		rx <= '0', '0' after sample_period, '0' after 2*sample_period, '1' after 3*sample_period, '1' after 4*sample_period,
+			'1' after 5*sample_period, '0' after 6*sample_period, '0' after 7*sample_period, '0' after 8*sample_period,
+			'1' after 9 * sample_period;
+		
+		-- Send stop bit
+		--rx <= '1' after 9*sample_period;
 
       wait;
    end process;

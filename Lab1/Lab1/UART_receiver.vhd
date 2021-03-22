@@ -60,30 +60,26 @@ architecture UART_arch of UART_receiver is
 	signal shift_reg : std_logic_vector(7 downto 0) := (others => '0');
 begin
 	-- FSM S3 Counter
-	process(inc_s3) is
+	process(inc_s3, rst, cr_s3) is
 	begin
-		if rising_edge(inc_s3) then
-			if to_x01(rst) = '1' then
-				c_s3 <= (others => '0');
-			elsif to_x01(cr_s3) = '1' then
-				c_s3 <= (others => '0');
-			else
-				c_s3 <= std_logic_vector(to_unsigned(to_integer(unsigned(c_s3)) + 1, c_s3'length));
-			end if;
+		if to_x01(rst) = '1' then
+			c_s3 <= (others => '0');
+		elsif to_x01(cr_s3) = '1' then
+			c_s3 <= (others => '0');
+		elsif rising_edge(inc_s3) then
+			c_s3 <= std_logic_vector(to_unsigned(to_integer(unsigned(c_s3)) + 1, c_s3'length));
 		end if;
 	end process;
 	
 	-- FSM Baud Rate Tick Counter
-	process(tick) is
+	process(tick, rst, cr_brg) is
 	begin
-		if rising_edge(tick) then
-			if to_x01(rst) = '1' then
-				c_brg <= (others => '0');
-			elsif to_x01(cr_brg) = '1' then
-				c_brg <= (others => '0');
-			else
-				c_brg <= std_logic_vector(to_unsigned(to_integer(unsigned(c_brg)) + 1, c_brg'length));
-			end if;
+		if to_x01(rst) = '1' then
+			c_brg <= (others => '0');
+		elsif to_x01(cr_brg) = '1' then
+			c_brg <= (others => '0');
+		elsif rising_edge(tick) then
+			c_brg <= std_logic_vector(to_unsigned(to_integer(unsigned(c_brg)) + 1, c_brg'length));
 		end if;
 	end process;
 	
@@ -110,15 +106,17 @@ begin
 		
 	
 	-- FSM Asynchronous part -> Next State Decoder + Output Decoder
-	process(tick, let_s3, let_7, let_15, currentState, rx) is
+	process(let_s3, let_7, let_15, currentState, rx) is
 		--variable d_out_new: std_logic_vector(7 downto 0) := (others => '0');
 		--variable tmp: std_logic;
 		--variable baud_rate_generator_counter : integer := 0;
 	begin
 		rx_done <= '0';
+		shift_enable <= '0';
+		inc_s3 <= '0';
+		
 		cr_s3 <= '0';
 		cr_brg <= '0';
-		shift_enable <= '0';
 		
 		case currentState is
 			when Idle =>
@@ -164,18 +162,14 @@ begin
 	
 	
 	-- Shift register that will be used for storing the data -- Serial in, Parallel out = SIPO
-	process(clk) is
+	process(shift_enable, rst) is
 	begin
-		if rising_edge(clk) then
-			if to_x01(rst) = '1' then
-				shift_reg <= (others => '0');
-			else
-				if to_x01(shift_enable) = '1' then
-					-- Shift and write inside new val
-					shift_reg(6 downto 0) <= shift_reg(7 downto 1);
-					shift_reg(7) <= sampled_bit;
-				end if;
-			end if;
+		if to_x01(rst) = '1' then
+			shift_reg <= (others => '0');
+		elsif rising_edge(shift_enable) then
+			-- Shift and write inside new val
+			shift_reg(6 downto 0) <= shift_reg(7 downto 1);
+			shift_reg(7) <= sampled_bit;
 		end if;
 	end process;
 	
