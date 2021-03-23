@@ -327,7 +327,7 @@ LAB0:    xsi_set_current_line(106, ng0);
     t1 = (t0 + 2472U);
     t2 = *((char **)t1);
     t3 = *((int *)t2);
-    t4 = (t3 == 7);
+    t4 = (t3 == 8);
     if (t4 != 0)
         goto LAB3;
 
@@ -378,7 +378,7 @@ LAB0:    xsi_set_current_line(109, ng0);
     t1 = (t0 + 2472U);
     t2 = *((char **)t1);
     t3 = *((int *)t2);
-    t4 = (t3 == 15);
+    t4 = (t3 == 16);
     if (t4 != 0)
         goto LAB3;
 

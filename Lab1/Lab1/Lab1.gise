@@ -37,7 +37,7 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1616503378" xil_pn:in_ck="826527922946203558" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1616503378">
+    <transform xil_pn:end_ts="1616503456" xil_pn:in_ck="826527922946203558" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1616503456">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="UART_controller.vhd"/>
@@ -52,25 +52,18 @@
     <transform xil_pn:end_ts="1616503304" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="8770215757690713595" xil_pn:start_ts="1616503304">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
     <transform xil_pn:end_ts="1616503304" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="4863239434488258681" xil_pn:start_ts="1616503304">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
     <transform xil_pn:end_ts="1616502674" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-4714353608797188208" xil_pn:start_ts="1616502674">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1616503293" xil_pn:in_ck="826527922946203558" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1616503293">
+    <transform xil_pn:end_ts="1616503507" xil_pn:in_ck="826527922946203558" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1616503507">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="UART_controller.vhd"/>
       <outfile xil_pn:name="UART_receiver.vhd"/>
       <outfile xil_pn:name="UART_receiver_tb.vhd"/>
@@ -80,15 +73,9 @@
       <outfile xil_pn:name="brg_tb.vhd"/>
       <outfile xil_pn:name="echo_device.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1616503309" xil_pn:in_ck="826527922946203558" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="9015678935410604374" xil_pn:start_ts="1616503304">
+    <transform xil_pn:end_ts="1616503513" xil_pn:in_ck="826527922946203558" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="9015678935410604374" xil_pn:start_ts="1616503507">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="UART_receiver_tb_beh.prj"/>
       <outfile xil_pn:name="UART_receiver_tb_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
@@ -96,13 +83,9 @@
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1616503309" xil_pn:in_ck="8807673170509607539" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="8506408125910078742" xil_pn:start_ts="1616503309">
+    <transform xil_pn:end_ts="1616503515" xil_pn:in_ck="8807673170509607539" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="8506408125910078742" xil_pn:start_ts="1616503513">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForProperties"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="UART_receiver_tb_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
