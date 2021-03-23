@@ -1,3 +1,0 @@
-vhdl isim_temp "UART_receiver.vhd"
-vhdl isim_temp "baud_rate_generator.vhd"
-vhdl isim_temp "UART_receiver_tb.vhd"

@@ -29,6 +29,9 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
+library work;
+use work.transmitter_debug_pkg.all;
+
 entity UART_transmitter is port (
 		clk, rst:  in std_logic;
 		
@@ -37,13 +40,13 @@ entity UART_transmitter is port (
 		
 		tx_start : in std_logic;
 		tx : out std_logic := '1';
-		tx_done : out std_logic
+		tx_done : out std_logic := '0'
 	);	
 end UART_transmitter;
 
 architecture UART_transmitter_arch of UART_transmitter is
-type State is (
-		Idle, Conveyance, EndState
+	type State is (
+		Idle, DataPrepping, Conveyance, EndState
 	);
 	signal currentState : State := Idle;
 	signal nextState : State;
@@ -60,13 +63,35 @@ type State is (
 	signal let_conv : std_logic := '0';
 	
 	signal shift_enable : std_logic := '0';
-	signal shift_reg : std_logic_vector(7 downto 0) := (others => '0');
+	signal shift_reg : std_logic_vector(0 to 8) := ('1', others => '0');
 	
-	signal r_inc_conv : std_logic := '0';
+	signal r_d_in : std_logic_vector(0 to 8) := ('1', others => '0');
+	signal r_tx_start : std_logic := '0';
+	
+	signal write_enable : std_logic := '0';
+	signal shift_reg_out : std_logic := '1';
+	
+	--signal r_inc_conv : std_logic := '0';
 begin
+	
+	-- Debugging
+	global_shift_reg <= shift_reg;
 	
 	-- FSM BRG Comparator - BRG_CNT vs. 16 - must count 16 impulses
 	let_brg <= '1' when c_brg = 16 else '0';
+	
+	-- d_in and tx_start Register
+	process(clk) is
+	begin
+		if rising_edge(clk) then
+			if to_x01(rst) = '1' then
+				r_d_in <= (others => '0');
+			else
+				r_d_in <= '1' & d_in(7 downto 0);
+				r_tx_start <= tx_start;
+			end if;
+		end if;
+	end process;
 	
 	-- FSM Baud Rate Tick Counter
 	process(tick, rst, cr_brg) is
@@ -81,21 +106,7 @@ begin
 	end process;
 	
 	-- FSM Conveyance Comparator - CONV_CNT vs. N-1 - 
-	let_conv <= '1' when c_conv = 8 else '0';
-	
-	-- FSM Conveyance Register
-	process(clk) is
-	begin
-		if rising_edge(clk) then
-			if to_x01(rst) = '1' then
-				r_inc_conv <= '0';
-			elsif to_x01(cr_conv) = '1' then
-				r_inc_conv <= '0';
-			else
-				r_inc_conv <= inc_conv;
-			end if;
-		end if;
-	end process;
+	let_conv <= '1' when c_conv = 9 else '0';
 	
 	-- FSM Conveyance Counter - Need to count N-1 bits to have been conveyed
 	process(inc_conv, rst, cr_conv) is
@@ -123,7 +134,7 @@ begin
 		
 	
 	-- FSM Asynchronous part -> Next State Decoder + Output Decoder
-	process(tx_start, let_brg, let_conv) is
+	process(r_tx_start, let_brg, let_conv, currentState, shift_reg_out) is
 	begin
 		cr_brg <= '0';
 		shift_enable <= '0';
@@ -131,24 +142,23 @@ begin
 		cr_conv <= '0';
 		inc_conv <= '0';
 		
+		tx_done <= '0';
+		
 		case currentState is
 			when Idle =>
-				if rising_edge(tx_start) then
-					-- Okay, put the data into the shift register
-					-- Send the start bit
-					-- Restart the tick counter
-					shift_reg <= d_in;
-					tx <= '0';
-					
-					cr_brg <= '1';
+				if rising_edge(r_tx_start) then
+					write_enable <= '1';
+					shift_enable <= '1';
+				elsif falling_edge(shift_reg_out) then
+					write_enable <= '0';
 					nextState <= Conveyance;
+					cr_brg <= '1';
 					cr_conv <= '1';
 				end if;
 			when Conveyance =>
 				if rising_edge(let_conv) then
 					-- Add clock here because of asynchronism ???
 					nextState <= EndState;
-					cr_brg <= '1';
 				elsif rising_edge(let_brg) then
 					-- Send bit, reset brg tick counter, and increment the amount of bits sent!
 					shift_enable <= '1';
@@ -158,25 +168,30 @@ begin
 			when EndState =>
 				if rising_edge(let_brg) then
 					-- Send stop bit, and go back into idle state!
-					tx <= '1';
 					nextState <= Idle;
+					tx_done <= '1';
 				end if;
 			when others => null;
 		end case;
 	end process;
 	
-	
 	-- Shift register that will be used for storing the data -- Serial in, Parallel out = SIPO
-	process(shift_enable, rst) is
+	process(shift_enable, rst, write_enable) is
 	begin
 		if rising_edge(rst) then
 			shift_reg <= (others => '0');
 		elsif rising_edge(shift_enable) then
-			-- Shift LSB out, and the rest of the register to the right
-			tx <= shift_reg(0);
-			shift_reg(6 downto 0) <= shift_reg(7 downto 1);
-			shift_reg(7) <= '0';
+			if to_x01(write_enable) = '1' then
+				shift_reg <= r_d_in;
+				shift_reg_out <= '0';		-- Automatically send start bit!
+			else
+				-- Shift LSB out, and the rest of the register to the right
+				shift_reg_out <= shift_reg(8);
+				shift_reg(1 to 8) <= shift_reg(0 to 7);
+			end if;
 		end if;
 	end process;
+	
+	tx <= shift_reg_out;
 end UART_transmitter_arch;
 

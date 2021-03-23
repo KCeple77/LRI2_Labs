@@ -22,22 +22,19 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="Lab1.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="UART_receiver_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="UART_receiver_stx_beh.prj"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="UART_receiver_tb_beh.prj"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="UART_receiver_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="UART_receiver_tb_isim_beh.wdb"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="UART_receiver_tb_stx_beh.prj"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="UART_transmitter_stx_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="UART_transmitter_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="uart_transmitter_tb_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="uart_transmitter_tb_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="uart_transmitter_tb_isim_beh.wdb"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1616503456" xil_pn:in_ck="826527922946203558" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1616503456">
+    <transform xil_pn:end_ts="1616528426" xil_pn:in_ck="-560314298931532105" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1616528426">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="UART_controller.vhd"/>
@@ -48,20 +45,22 @@
       <outfile xil_pn:name="baud_rate_generator.vhd"/>
       <outfile xil_pn:name="brg_tb.vhd"/>
       <outfile xil_pn:name="echo_device.vhd"/>
+      <outfile xil_pn:name="transmitter_debug_pkg.vhd"/>
+      <outfile xil_pn:name="uart_transmitter_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1616503304" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="8770215757690713595" xil_pn:start_ts="1616503304">
+    <transform xil_pn:end_ts="1616528448" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-2596707759411408957" xil_pn:start_ts="1616528448">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1616503304" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="4863239434488258681" xil_pn:start_ts="1616503304">
+    <transform xil_pn:end_ts="1616528448" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-7171303818435835327" xil_pn:start_ts="1616528448">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1616502674" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-4714353608797188208" xil_pn:start_ts="1616502674">
+    <transform xil_pn:end_ts="1616528024" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-4714353608797188208" xil_pn:start_ts="1616528024">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1616503507" xil_pn:in_ck="826527922946203558" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1616503507">
+    <transform xil_pn:end_ts="1616528426" xil_pn:in_ck="-560314298931532105" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1616528426">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="UART_controller.vhd"/>
@@ -72,23 +71,25 @@
       <outfile xil_pn:name="baud_rate_generator.vhd"/>
       <outfile xil_pn:name="brg_tb.vhd"/>
       <outfile xil_pn:name="echo_device.vhd"/>
+      <outfile xil_pn:name="transmitter_debug_pkg.vhd"/>
+      <outfile xil_pn:name="uart_transmitter_tb.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1616503513" xil_pn:in_ck="826527922946203558" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="9015678935410604374" xil_pn:start_ts="1616503507">
+    <transform xil_pn:end_ts="1616528457" xil_pn:in_ck="-560314298931532105" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-1702741095423881658" xil_pn:start_ts="1616528448">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="UART_receiver_tb_beh.prj"/>
-      <outfile xil_pn:name="UART_receiver_tb_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="uart_transmitter_tb_beh.prj"/>
+      <outfile xil_pn:name="uart_transmitter_tb_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1616503515" xil_pn:in_ck="8807673170509607539" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="8506408125910078742" xil_pn:start_ts="1616503513">
+    <transform xil_pn:end_ts="1616528458" xil_pn:in_ck="-251131354266282781" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="5562789483234461862" xil_pn:start_ts="1616528457">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="UART_receiver_tb_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
+      <outfile xil_pn:name="uart_transmitter_tb_isim_beh.wdb"/>
     </transform>
   </transforms>
 

@@ -60,7 +60,7 @@ begin
 	end process;
 	
 	-- FSM Asynchronous part - next state decoder and output decoder
-	process(r_done, w_done) is
+	process(r_done, w_done, currState) is
 	begin
 		w_start <= '0';
 		
