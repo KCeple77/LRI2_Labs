@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    21:47:53 03/20/2021 
+-- Create Date:    07:54:16 03/23/2021 
 -- Design Name: 
--- Module Name:    UART_receiver - Behavioral 
+-- Module Name:    UART_transmitter - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -22,25 +22,28 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
-use IEEE.NUMERIC_STD.ALL;
+--use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx primitives in this code.
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity UART_receiver is
-	port (
+entity UART_transmitter is port (
 		clk, rst:  in std_logic;
-		rx, tick: in std_logic;
-		d_out: out std_logic_vector(7 downto 0);
-		rx_done : out std_logic
-	);
-end UART_receiver;
+		
+		tick: in std_logic;
+		d_in: in std_logic_vector(7 downto 0);
+		
+		tx_start : in std_logic;
+		tx : out std_logic;
+		tx_done : out std_logic
+	);	
+end UART_transmitter;
 
-architecture UART_receiver_arch of UART_receiver is
-	type State is (
-		Idle, State1, State2, State3, State4
+architecture UART_transmitter_arch of UART_transmitter is
+type State is (
+		Idle, Sending
 	);
 	signal currentState : State := Idle;
 	signal nextState : State;
@@ -58,6 +61,8 @@ architecture UART_receiver_arch of UART_receiver is
 	signal sampled_bit : std_logic := '0';
 	signal shift_enable : std_logic := '0';
 	signal shift_reg : std_logic_vector(7 downto 0) := (others => '0');
+	
+	constant sample_period : time := 104166.6666667 ns;		-- Sample time for 9600 bitrate
 begin
 	-- FSM S3 Counter
 	process(inc_s3, rst, cr_s3) is
@@ -111,50 +116,12 @@ begin
 		--variable tmp: std_logic;
 		--variable baud_rate_generator_counter : integer := 0;
 	begin
-		rx_done <= '0';
-		shift_enable <= '0';
-		inc_s3 <= '0';
 		
-		cr_s3 <= '0';
-		cr_brg <= '0';
 		
 		case currentState is
 			when Idle =>
-				if falling_edge(rx) then
-					nextState <= State1;
-					cr_brg <= '1';		-- Reset tick counter
-				end if;
-			when State1 =>
-				-- Need to wait until tick counter reaches 7!
-				if to_x01(let_7) = '1' then
-					-- TODO: Maybe - sample here, and check if 0?
-					nextState <= State3;
-					cr_brg <= '1';		-- Reset tick counter once again
-					cr_s3 <= '1';		-- Reset s3 cycles counter
-				end if;
-			when State3 =>
-				if to_x01(let_15) = '1' then
-					-- 15 ticks reached means we're in the middle of the bit - sample and increase the counter!
-					sampled_bit <= rx;
-					shift_enable <= '1';
-					inc_s3 <= '1';
-					cr_brg <= '1';
-				end if;
 				
-				if to_x01(let_s3) = '1' then
-						-- Last bit sampled - go and sample the stop bit!
-						nextState <= State4;
-				end if;
-			when State4 =>
-				if to_x01(let_15) = '1' then
-					-- Check stop bit!
-					assert (to_x01(rx) = '1')
-						report "Stop bit should be high - before going into the idle state!"
-						severity ERROR;
-					
-					nextState <= Idle;
-					rx_done <= '1';
-				end if;
+			
 			when others => null;
 		end case;
 	end process;
@@ -174,5 +141,5 @@ begin
 	
 	-- Shift reg to d_out
 	d_out <= shift_reg;
+end UART_transmitter_arch;
 
-end UART_receiver_arch;

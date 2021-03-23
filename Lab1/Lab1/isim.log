@@ -9593,3 +9593,4 @@ at 999648731274 ps(3), Instance /uart_receiver_tb/uut/ : Warning: NUMERIC_STD.TO
 at 999753024650 ps(3), Instance /uart_receiver_tb/uut/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
 at 999857318026 ps(3), Instance /uart_receiver_tb/uut/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
 at 999961611402 ps(3), Instance /uart_receiver_tb/uut/ : Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+The simulator has terminated in an unexpected manner.  Please review the ISim log (isim.log) for details.

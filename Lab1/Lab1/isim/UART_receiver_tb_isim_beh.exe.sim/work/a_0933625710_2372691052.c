@@ -309,7 +309,7 @@ LAB8:    xsi_set_current_line(115, ng0);
     t77 = *((char **)t76);
     *((unsigned char *)t77) = (unsigned char)3;
     xsi_driver_subsequent_trans_delta(t70, 0U, 1, t73);
-    xsi_set_current_line(122, ng0);
+    xsi_set_current_line(123, ng0);
 
 LAB14:    *((char **)t1) = &&LAB15;
     goto LAB1;
