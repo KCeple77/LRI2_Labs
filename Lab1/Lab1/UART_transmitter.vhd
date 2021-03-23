@@ -98,13 +98,13 @@ begin
 	end process;
 	
 	-- FSM Conveyance Counter - Need to count N-1 bits to have been conveyed
-	process(r_inc_conv, rst, cr_conv) is
+	process(inc_conv, rst, cr_conv) is
 	begin
 		if rising_edge(rst) then
 			c_conv <= 0;
 		elsif rising_edge(cr_conv) then
 			c_conv <= 0;
-		elsif rising_edge(r_inc_conv) then
+		elsif rising_edge(inc_conv) then
 			c_conv <= c_conv + 1;
 		end if;
 	end process;

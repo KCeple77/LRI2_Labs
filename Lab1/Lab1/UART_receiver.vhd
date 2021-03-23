@@ -61,14 +61,14 @@ architecture UART_receiver_arch of UART_receiver is
 	
 	signal r_inc_s3 : std_logic := '0';
 begin
-	-- inc3 register
+	-- FSM inc_s3 Register
 	process(clk) is
 	begin
 		if rising_edge(clk) then
 			if to_x01(rst) = '1' then
-				c_s3 <= 0;
+				r_inc_s3 <= '0';
 			elsif to_x01(cr_s3) = '1' then
-				c_s3 <= 0;
+				r_inc_s3 <= '0';
 			else
 				r_inc_s3 <= inc_s3;
 			end if;
@@ -76,13 +76,13 @@ begin
 	end process;
 
 	-- FSM S3 Counter
-	process(r_inc_s3, rst, cr_s3) is
+	process(inc_s3, rst, cr_s3) is
 	begin
 		if to_x01(rst) = '1' then
 			c_s3 <= 0;
 		elsif to_x01(cr_s3) = '1' then
 			c_s3 <= 0;
-		elsif rising_edge(r_inc_s3) then
+		elsif rising_edge(inc_s3) then
 			c_s3 <= c_s3 + 1;
 		end if;
 	end process;
@@ -103,10 +103,10 @@ begin
 	let_s3 <= '1' when c_s3 = 8 else '0';
 	
 	-- FSM Comparator - BRG_CNT vs. 7 -> looks if the baud rate generator has generated 8 ticks
-	let_7 <= '1' when c_brg = 8 else '0';
+	let_7 <= '1' when c_brg = 7 else '0';
 	
 	-- FSM Comparator - BRG_CNT vs. 15 -> looks if the baud rate generator has generated 16 ticks
-	let_15 <= '1' when c_brg = 16 else '0';
+	let_15 <= '1' when c_brg = 15 else '0';
 	
 	-- FSM Synchronous part -> Register
 	process(clk) is
