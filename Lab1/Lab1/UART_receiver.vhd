@@ -45,8 +45,8 @@ architecture UART_receiver_arch of UART_receiver is
 	signal currentState : State := Idle;
 	signal nextState : State;
 	
-	signal c_s3 : std_logic_vector(2 downto 0) := (others => '0');
-	signal c_brg : std_logic_vector(3 downto 0) := (others => '0');
+	signal c_s3 : integer := 0;
+	signal c_brg : integer := 0;
 	signal inc_s3 : std_logic := '0';
 	signal cr_s3 : std_logic := '0';
 	signal cr_brg : std_logic := '0';
@@ -63,34 +63,34 @@ begin
 	process(inc_s3, rst, cr_s3) is
 	begin
 		if to_x01(rst) = '1' then
-			c_s3 <= (others => '0');
+			c_s3 <= 0;
 		elsif to_x01(cr_s3) = '1' then
-			c_s3 <= (others => '0');
+			c_s3 <= 0;
 		elsif rising_edge(inc_s3) then
-			c_s3 <= std_logic_vector(to_unsigned(to_integer(unsigned(c_s3)) + 1, c_s3'length));
+			c_s3 <= c_s3 + 1;
 		end if;
 	end process;
 	
 	-- FSM Baud Rate Tick Counter
 	process(tick, rst, cr_brg) is
 	begin
-		if to_x01(rst) = '1' then
-			c_brg <= (others => '0');
-		elsif to_x01(cr_brg) = '1' then
-			c_brg <= (others => '0');
+		if rising_edge(rst) then
+			c_brg <= 0;
+		elsif rising_edge(cr_brg) then
+			c_brg <= 0;
 		elsif rising_edge(tick) then
-			c_brg <= std_logic_vector(to_unsigned(to_integer(unsigned(c_brg)) + 1, c_brg'length));
+			c_brg <= c_brg + 1;
 		end if;
 	end process;
 	
 	-- FSM Comparator - S3_CNT vs. N-2=6 -> looks if the FSM has been in S3 for N-1 bit read cycles
-	let_s3 <= '1' when to_integer(unsigned(c_s3)) = 7 else '0';
+	let_s3 <= '1' when c_s3 = 8 else '0';
 	
 	-- FSM Comparator - BRG_CNT vs. 7 -> looks if the baud rate generator has generated 8 ticks
-	let_7 <= '1' when to_integer(unsigned(c_brg)) = 7 else '0';
+	let_7 <= '1' when c_brg = 8 else '0';
 	
 	-- FSM Comparator - BRG_CNT vs. 15 -> looks if the baud rate generator has generated 16 ticks
-	let_15 <= '1' when to_integer(unsigned(c_brg)) = 15 else '0';
+	let_15 <= '1' when c_brg = 16 else '0';
 	
 	-- FSM Synchronous part -> Register
 	process(clk) is
@@ -126,31 +126,33 @@ begin
 				end if;
 			when State1 =>
 				-- Need to wait until tick counter reaches 7!
-				if to_x01(let_7) = '1' then
-					-- TODO: Maybe - sample here, and check if 0?
+				if rising_edge(let_7) then
+--					assert (rx = '0')
+--						report "RX Start bit not low?!"
+--						severity ERROR;
+					
 					nextState <= State3;
 					cr_brg <= '1';		-- Reset tick counter once again
 					cr_s3 <= '1';		-- Reset s3 cycles counter
 				end if;
 			when State3 =>
-				if to_x01(let_15) = '1' then
+				if rising_edge(let_s3) then
+					-- Last bit sampled - go and sample the stop bit!
+						nextState <= State4;
+						cr_brg <= '0';
+				elsif rising_edge(let_15) then
 					-- 15 ticks reached means we're in the middle of the bit - sample and increase the counter!
 					sampled_bit <= rx;
 					shift_enable <= '1';
 					inc_s3 <= '1';
 					cr_brg <= '1';
 				end if;
-				
-				if to_x01(let_s3) = '1' then
-						-- Last bit sampled - go and sample the stop bit!
-						nextState <= State4;
-				end if;
 			when State4 =>
-				if to_x01(let_15) = '1' then
-					-- Check stop bit!
-					assert (to_x01(rx) = '1')
-						report "Stop bit should be high - before going into the idle state!"
-						severity ERROR;
+				if rising_edge(let_15) then
+					-- (Maybe assert?) Check stop bit!
+--					assert (to_x01(rx) = '1')
+--						report "Stop bit should be high - before going into the idle state!"
+--						severity ERROR;
 					
 					nextState <= Idle;
 					rx_done <= '1';
@@ -163,7 +165,7 @@ begin
 	-- Shift register that will be used for storing the data -- Serial in, Parallel out = SIPO
 	process(shift_enable, rst) is
 	begin
-		if to_x01(rst) = '1' then
+		if rising_edge(rst) then
 			shift_reg <= (others => '0');
 		elsif rising_edge(shift_enable) then
 			-- Shift and write inside new val
