@@ -1,6 +1,0 @@
-vhdl work "UART_transmitter.vhd"
-vhdl work "UART_receiver.vhd"
-vhdl work "baud_rate_generator.vhd"
-vhdl work "UART_controller.vhd"
-vhdl work "echo_device.vhd"
-vhdl work "UARTtop.vhd"

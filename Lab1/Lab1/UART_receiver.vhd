@@ -58,15 +58,31 @@ architecture UART_receiver_arch of UART_receiver is
 	signal sampled_bit : std_logic := '0';
 	signal shift_enable : std_logic := '0';
 	signal shift_reg : std_logic_vector(7 downto 0) := (others => '0');
+	
+	signal r_inc_s3 : std_logic := '0';
 begin
+	-- inc3 register
+	process(clk) is
+	begin
+		if rising_edge(clk) then
+			if to_x01(rst) = '1' then
+				c_s3 <= 0;
+			elsif to_x01(cr_s3) = '1' then
+				c_s3 <= 0;
+			else
+				r_inc_s3 <= inc_s3;
+			end if;
+		end if;
+	end process;
+
 	-- FSM S3 Counter
-	process(inc_s3, rst, cr_s3) is
+	process(r_inc_s3, rst, cr_s3) is
 	begin
 		if to_x01(rst) = '1' then
 			c_s3 <= 0;
 		elsif to_x01(cr_s3) = '1' then
 			c_s3 <= 0;
-		elsif rising_edge(inc_s3) then
+		elsif rising_edge(r_inc_s3) then
 			c_s3 <= c_s3 + 1;
 		end if;
 	end process;

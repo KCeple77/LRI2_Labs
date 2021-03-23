@@ -61,6 +61,8 @@ type State is (
 	
 	signal shift_enable : std_logic := '0';
 	signal shift_reg : std_logic_vector(7 downto 0) := (others => '0');
+	
+	signal r_inc_conv : std_logic := '0';
 begin
 	
 	-- FSM BRG Comparator - BRG_CNT vs. 16 - must count 16 impulses
@@ -81,14 +83,28 @@ begin
 	-- FSM Conveyance Comparator - CONV_CNT vs. N-1 - 
 	let_conv <= '1' when c_conv = 8 else '0';
 	
+	-- FSM Conveyance Register
+	process(clk) is
+	begin
+		if rising_edge(clk) then
+			if to_x01(rst) = '1' then
+				r_inc_conv <= '0';
+			elsif to_x01(cr_conv) = '1' then
+				r_inc_conv <= '0';
+			else
+				r_inc_conv <= inc_conv;
+			end if;
+		end if;
+	end process;
+	
 	-- FSM Conveyance Counter - Need to count N-1 bits to have been conveyed
-	process(inc_conv, rst, cr_conv) is
+	process(r_inc_conv, rst, cr_conv) is
 	begin
 		if rising_edge(rst) then
 			c_conv <= 0;
 		elsif rising_edge(cr_conv) then
 			c_conv <= 0;
-		elsif rising_edge(inc_conv) then
+		elsif rising_edge(r_inc_conv) then
 			c_conv <= c_conv + 1;
 		end if;
 	end process;
