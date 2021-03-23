@@ -1,0 +1,66 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.21 secs
+ 
+--> Parameter xsthdpdir set to E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.21 secs
+ 
+--> Reading design: UARTtop.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\UART_transmitter.vhd" into library work
+Parsing entity <UART_transmitter>.
+Parsing architecture <UART_transmitter_arch> of entity <uart_transmitter>.
+Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\UART_receiver.vhd" into library work
+Parsing entity <UART_receiver>.
+Parsing architecture <UART_receiver_arch> of entity <uart_receiver>.
+Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\baud_rate_generator.vhd" into library work
+Parsing entity <baud_rate_generator>.
+Parsing architecture <brg_arch> of entity <baud_rate_generator>.
+Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\UARTtop.vhd" into library work
+Parsing entity <UARTtop>.
+Parsing architecture <UARTtop_arch> of entity <uarttop>.
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.87 secs
+ 
+--> 
+
+Total memory usage is 4419808 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

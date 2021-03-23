@@ -43,21 +43,62 @@ entity UARTtop is
 	);
 end UARTtop;
 
-architecture Behavioral of UARTtop is
+architecture UARTtop_arch of UARTtop is
+	signal tick : std_logic := '0';
+
 	component baud_rate_generator
 		port (
 			clk, rst: in std_logic;
 			tick: out std_logic
 		);
 	end component;
+	
+	component UART_receiver
+		port (
+			clk, rst:  in std_logic;
+			rx, tick: in std_logic;
+			d_out: out std_logic_vector(7 downto 0);
+			rx_done : out std_logic
+		);
+	end component;
 
+	component UART_transmitter
+		port (
+			clk, rst:  in std_logic;
+		
+			tick: in std_logic;
+			d_in: in std_logic_vector(7 downto 0);
+			
+			tx_start : in std_logic;
+			tx : out std_logic := '1';
+			tx_done : out std_logic
+		);
+	end component;
 begin
 
 brg: component baud_rate_generator port map(
 	clk => clk,
 	rst => rst,
-	tick => open
+	tick => tick
 );
 
-end Behavioral;
+uart_receiver_comp: component UART_receiver port map(
+	clk => clk,
+	rst => rst,
+	rx => rx,
+	tick => tick,
+	d_out => r_data,
+	rx_done => r_done
+);
 
+uart_transmitter_comp: component UART_transmitter port map(
+	clk => clk,
+	rst => rst,
+	tick => tick,
+	d_in => w_data,
+	tx_start => w_start,
+	tx_done => w_done,
+	tx => tx
+);
+
+end UARTtop_arch;
