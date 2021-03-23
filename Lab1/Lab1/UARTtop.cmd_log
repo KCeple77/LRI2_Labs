@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.xst" -ofn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.syr" 

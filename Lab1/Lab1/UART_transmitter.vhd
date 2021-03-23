@@ -75,7 +75,7 @@ architecture UART_transmitter_arch of UART_transmitter is
 begin
 	
 	-- Debugging
-	global_shift_reg <= shift_reg;
+--	global_shift_reg <= shift_reg;
 	
 	-- FSM BRG Comparator - BRG_CNT vs. 16 - must count 16 impulses
 	let_brg <= '1' when c_brg = 16 else '0';
@@ -146,27 +146,27 @@ begin
 		
 		case currentState is
 			when Idle =>
-				if rising_edge(r_tx_start) then
+				if to_x01(r_tx_start) = '1' then
 					write_enable <= '1';
 					shift_enable <= '1';
-				elsif falling_edge(shift_reg_out) then
+				elsif to_x01(shift_reg_out) = '0' then
 					write_enable <= '0';
 					nextState <= Conveyance;
 					cr_brg <= '1';
 					cr_conv <= '1';
 				end if;
 			when Conveyance =>
-				if rising_edge(let_conv) then
+				if to_x01(let_conv) = '1' then
 					-- Add clock here because of asynchronism ???
 					nextState <= EndState;
-				elsif rising_edge(let_brg) then
+				elsif to_x01(let_brg) = '1' then
 					-- Send bit, reset brg tick counter, and increment the amount of bits sent!
 					shift_enable <= '1';
 					inc_conv <= '1';
 					cr_brg <= '1';
 				end if;
 			when EndState =>
-				if rising_edge(let_brg) then
+				if to_x01(let_brg) = '1' then
 					-- Send stop bit, and go back into idle state!
 					nextState <= Idle;
 					tx_done <= '1';

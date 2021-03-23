@@ -58,22 +58,20 @@ architecture UART_receiver_arch of UART_receiver is
 	signal sampled_bit : std_logic := '0';
 	signal shift_enable : std_logic := '0';
 	signal shift_reg : std_logic_vector(7 downto 0) := (others => '0');
-	
-	signal r_inc_s3 : std_logic := '0';
 begin
 	-- FSM inc_s3 Register
-	process(clk) is
-	begin
-		if rising_edge(clk) then
-			if to_x01(rst) = '1' then
-				r_inc_s3 <= '0';
-			elsif to_x01(cr_s3) = '1' then
-				r_inc_s3 <= '0';
-			else
-				r_inc_s3 <= inc_s3;
-			end if;
-		end if;
-	end process;
+--	process(clk) is
+--	begin
+--		if rising_edge(clk) then
+--			if to_x01(rst) = '1' then
+--				r_inc_s3 <= '0';
+--			elsif to_x01(cr_s3) = '1' then
+--				r_inc_s3 <= '0';
+--			else
+--				r_inc_s3 <= inc_s3;
+--			end if;
+--		end if;
+--	end process;
 
 	-- FSM S3 Counter
 	process(inc_s3, rst, cr_s3) is
@@ -136,13 +134,13 @@ begin
 		
 		case currentState is
 			when Idle =>
-				if falling_edge(rx) then
+				if to_x01(rx) = '0' then
 					nextState <= State1;
 					cr_brg <= '1';		-- Reset tick counter
 				end if;
 			when State1 =>
 				-- Need to wait until tick counter reaches 7!
-				if rising_edge(let_7) then
+				if to_x01(let_7) = '1' then
 --					assert (rx = '0')
 --						report "RX Start bit not low?!"
 --						severity ERROR;
@@ -152,11 +150,11 @@ begin
 					cr_s3 <= '1';		-- Reset s3 cycles counter
 				end if;
 			when State3 =>
-				if rising_edge(let_s3) then
+				if to_x01(let_s3) = '1' then
 					-- Last bit sampled - go and sample the stop bit!
 						nextState <= State4;
 						cr_brg <= '0';
-				elsif rising_edge(let_15) then
+				elsif to_x01(let_15) = '1' then
 					-- 15 ticks reached means we're in the middle of the bit - sample and increase the counter!
 					sampled_bit <= rx;
 					shift_enable <= '1';
@@ -164,7 +162,7 @@ begin
 					cr_brg <= '1';
 				end if;
 			when State4 =>
-				if rising_edge(let_15) then
+				if to_x01(let_15) = '1' then
 					-- (Maybe assert?) Check stop bit!
 --					assert (to_x01(rx) = '1')
 --						report "Stop bit should be high - before going into the idle state!"

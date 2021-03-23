@@ -66,12 +66,12 @@ begin
 		
 		case currState is
 			when Waiting =>
-				if rising_edge(r_done) then
+				if to_x01(r_done) = '1' then
 					w_start <= '1';
 					nextState <= Echoing;
 				end if;
 			when Echoing =>
-				if rising_edge(w_done) then
+				if to_x01(w_done) = '1' then
 					nextState <= Waiting;
 				end if;
 			when others => null;
