@@ -130,6 +130,7 @@ begin
 				end if;
 			when Conveyance =>
 				if rising_edge(let_conv) then
+					-- Add clock here because of asynchronism ???
 					nextState <= EndState;
 					cr_brg <= '1';
 				elsif rising_edge(let_brg) then

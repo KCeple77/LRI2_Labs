@@ -31,6 +31,9 @@
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="UARTtop.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="UARTtop.xst"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="echo_device.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="echo_device.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="echo_device.xst"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
@@ -45,6 +48,7 @@
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="UART_receiver.vhd"/>

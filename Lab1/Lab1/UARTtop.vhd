@@ -33,72 +33,65 @@ entity UARTtop is
 	port (
 		clk, rst: in std_logic;
 		rx: in std_logic;
-		tx: out std_logic;
-		
-		r_done, w_done: out std_logic;
-		w_start: in std_logic;
-		
-		w_data: in std_logic_vector(7 downto 0);
-		r_data: out std_logic_vector(7 downto 0)
+		tx: out std_logic
 	);
 end UARTtop;
 
 architecture UARTtop_arch of UARTtop is
-	signal tick : std_logic := '0';
-
-	component baud_rate_generator
+	
+	component UART_controller
 		port (
 			clk, rst: in std_logic;
-			tick: out std_logic
+			rx: in std_logic;
+			tx: out std_logic;
+			
+			r_done, w_done: out std_logic;
+			w_start: in std_logic;
+			
+			w_data: in std_logic_vector(7 downto 0);
+			r_data: out std_logic_vector(7 downto 0)
 		);
 	end component;
 	
-	component UART_receiver
-		port (
-			clk, rst:  in std_logic;
-			rx, tick: in std_logic;
-			d_out: out std_logic_vector(7 downto 0);
-			rx_done : out std_logic
+	
+	component echo_device
+		Port ( 
+			clk, rst: in STD_LOGIC;
+			r_done : in  STD_LOGIC;
+			w_start : out  STD_LOGIC;
+			w_done : in  STD_LOGIC
 		);
 	end component;
-
-	component UART_transmitter
-		port (
-			clk, rst:  in std_logic;
-		
-			tick: in std_logic;
-			d_in: in std_logic_vector(7 downto 0);
-			
-			tx_start : in std_logic;
-			tx : out std_logic := '1';
-			tx_done : out std_logic
-		);
-	end component;
+	
+	signal s_dr_in, s_dr_out : std_logic_vector(7 downto 0);
+	signal s_r_done, s_w_start, s_w_done : std_logic;
 begin
 
-brg: component baud_rate_generator port map(
-	clk => clk,
-	rst => rst,
-	tick => tick
+data_reg:
+	process(clk) is
+	begin
+		if rising_edge(clk) then
+			if to_x01(rst) = '1' then
+				s_dr_out <= (others => '0');
+			else
+				s_dr_out <= s_dr_in;
+			end if;
+		end if;
+	end process;
+	
+uart_controller_instance: component UART_controller port map(
+	clk => clk, rst => rst,
+	rx => rx, tx => tx,
+	r_done => s_r_done, w_done => s_w_done, w_start => s_w_start, 
+	w_data => s_dr_out,
+	r_data => s_dr_in
 );
 
-uart_receiver_comp: component UART_receiver port map(
-	clk => clk,
-	rst => rst,
-	rx => rx,
-	tick => tick,
-	d_out => r_data,
-	rx_done => r_done
-);
-
-uart_transmitter_comp: component UART_transmitter port map(
-	clk => clk,
-	rst => rst,
-	tick => tick,
-	d_in => w_data,
-	tx_start => w_start,
-	tx_done => w_done,
-	tx => tx
+echo_device_instance: component echo_device port map(
+	clk => clk, rst => rst,
+	r_done => s_r_done,
+	w_start => s_w_start,
+	w_done => s_w_done
 );
 
 end UARTtop_arch;
