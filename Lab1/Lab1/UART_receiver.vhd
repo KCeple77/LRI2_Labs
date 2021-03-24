@@ -40,7 +40,7 @@ end UART_receiver;
 
 architecture UART_receiver_arch of UART_receiver is
 	type State is (
-		Idle, State1, State2, State3, State4
+		Idle, State1, State3, State4
 	);
 	signal currentState : State := Idle;
 	signal nextState : State;

@@ -1,0 +1,12 @@
+Command line:
+   brg_tb_isim_par.exe
+     -simmode  gui
+     -sdfmax  /uut/=.sdf
+     -sdfroot  /uut
+     -simrunnum  0
+     -socket  56767
+
+Wed Mar 24 10:37:59 2021
+
+
+ Elaboration Time: 0.03125 sec
