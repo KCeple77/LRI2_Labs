@@ -67,6 +67,7 @@ architecture UART_transmitter_arch of UART_transmitter is
 	
 	signal r_d_in : std_logic_vector(0 to 8) := ('1', others => '0');
 	signal r_tx_start : std_logic := '0';
+	signal r_tx_start_rst : std_logic := '0';
 	
 	signal write_enable : std_logic := '0';
 	signal shift_reg_out : std_logic := '1';
@@ -80,14 +81,28 @@ begin
 	-- FSM BRG Comparator - BRG_CNT vs. 16 - must count 16 impulses
 	let_brg <= '1' when c_brg = 16 else '0';
 	
-	-- d_in and tx_start Register
+	-- d_in Register
 	process(clk) is
 	begin
 		if rising_edge(clk) then
 			if to_x01(rst) = '1' then
-				r_d_in <= (others => '0');
+				r_d_in <= ('1', others => '0');
 			else
 				r_d_in <= '1' & d_in(7 downto 0);
+				
+			end if;
+		end if;
+	end process;
+	
+	-- tx_start Register
+	process(clk, r_tx_start_rst) is
+	begin
+		if rising_edge(clk) then
+			if to_x01(rst) = '1' then
+				r_tx_start <= '0';
+			elsif to_x01(r_tx_start_rst) = '1' then
+				r_tx_start <= '0';
+			else
 				r_tx_start <= tx_start;
 			end if;
 		end if;
@@ -149,11 +164,13 @@ begin
 				if to_x01(r_tx_start) = '1' then
 					write_enable <= '1';
 					shift_enable <= '1';
+					r_tx_start_rst <= '1';
 				elsif to_x01(shift_reg_out) = '0' then
 					write_enable <= '0';
 					nextState <= Conveyance;
 					cr_brg <= '1';
 					cr_conv <= '1';
+					r_tx_start_rst <= '0';
 				end if;
 			when Conveyance =>
 				if to_x01(let_conv) = '1' then

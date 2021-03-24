@@ -71,27 +71,23 @@ data_reg:
 	process(clk) is
 	begin
 		if rising_edge(clk) then
-			if to_x01(rst) = '1' then
-				s_dr_out <= (others => '0');
-			else
-				s_dr_out <= s_dr_in;
-			end if;
+			s_dr_out <= s_dr_in;
 		end if;
 	end process;
 	
 uart_controller_instance: component UART_controller port map(
-	clk => clk, rst => rst,
-	rx => rx, tx => tx,
-	r_done => s_r_done, w_done => s_w_done, w_start => s_w_start, 
-	w_data => s_dr_out,
-	r_data => s_dr_in
-);
+		clk => clk, rst => '0',
+		rx => rx, tx => tx,
+		r_done => s_r_done, w_done => s_w_done, w_start => s_w_start, 
+		w_data => s_dr_out,
+		r_data => s_dr_in
+	);
 
 echo_device_instance: component echo_device port map(
-	clk => clk, rst => rst,
-	r_done => s_r_done,
-	w_start => s_w_start,
-	w_done => s_w_done
-);
+		clk => clk, rst => '0',
+		r_done => s_r_done,
+		w_start => s_w_start,
+		w_done => s_w_done
+	);
 
 end UARTtop_arch;

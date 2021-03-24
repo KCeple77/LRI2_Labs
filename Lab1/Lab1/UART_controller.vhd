@@ -44,14 +44,8 @@ entity UART_controller is
 end UART_controller;
 
 architecture UART_controller_arch of UART_controller is
-	signal s_tick : std_logic := '0';
-
-	component baud_rate_generator
-		port (
-			clk, rst: in std_logic;
-			tick: out std_logic
-		);
-	end component;
+	signal s_tick_out : std_logic := '0';
+	signal s_tick_in : std_logic := '0';
 	
 	component UART_receiver
 		port (
@@ -74,31 +68,40 @@ architecture UART_controller_arch of UART_controller is
 			tx_done : out std_logic
 		);
 	end component;
+	
+	component baud_rate_generator
+		port (
+			clk, rst: in std_logic;
+			tick: out std_logic
+		);
+	end component;
 begin
 
-brg: component baud_rate_generator port map(
-	clk => clk,
-	rst => rst,
-	tick => s_tick
-);
+	uart_receiver_instance: component UART_receiver port map(
+		clk => clk,
+		rst => rst,
+		rx => rx,
+		tick => s_tick_in,
+		d_out => r_data,
+		rx_done => r_done
+	);
 
-uart_receiver_comp: component UART_receiver port map(
-	clk => clk,
-	rst => rst,
-	rx => rx,
-	tick => s_tick,
-	d_out => r_data,
-	rx_done => r_done
-);
+	uart_transmitter_instance: component UART_transmitter port map(
+		clk => clk,
+		rst => rst,
+		tick => s_tick_in,
+		d_in => w_data,
+		tx_start => w_start,
+		tx_done => w_done,
+		tx => tx
+	);
+	
+	brg_instance: component baud_rate_generator port map(
+		clk => clk,
+		rst => rst,
+		tick => s_tick_out
+	);
 
-uart_transmitter_comp: component UART_transmitter port map(
-	clk => clk,
-	rst => rst,
-	tick => s_tick,
-	d_in => w_data,
-	tx_start => w_start,
-	tx_done => w_done,
-	tx => tx
-);
+	s_tick_in <= s_tick_out;
 
 end UART_controller_arch;

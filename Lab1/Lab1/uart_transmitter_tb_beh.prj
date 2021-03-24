@@ -1,0 +1,4 @@
+vhdl work "transmitter_debug_pkg.vhd"
+vhdl work "UART_transmitter.vhd"
+vhdl work "baud_rate_generator.vhd"
+vhdl work "uart_transmitter_tb.vhd"

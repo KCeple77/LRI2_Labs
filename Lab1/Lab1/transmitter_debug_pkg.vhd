@@ -28,12 +28,12 @@ package transmitter_debug_pkg is
 -- function <function_name>  (signal <signal_name> : in <type_declaration>) return <type_declaration>;
 -- procedure <procedure_name> (<type_declaration> <constant_name>	: in <type_declaration>);
 --
-	type State is (
-		Idle, DataPrepping, Conveyance, EndState
-	);
-	signal global_shift_reg : std_logic_vector(8 downto 0);
-	signal global_transm_current_state : State;
-	signal global_transm_next_state : State;
+--	type State is (
+--		Idle, DataPrepping, Conveyance, EndState
+--	);
+	--signal global_shift_reg : std_logic_vector(8 downto 0);
+	--signal global_transm_current_state : State;
+	--signal global_transm_next_state : State;
 
 end transmitter_debug_pkg;
 

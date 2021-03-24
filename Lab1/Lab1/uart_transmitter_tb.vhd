@@ -77,7 +77,7 @@ ARCHITECTURE behavior OF uart_transmitter_tb IS
    constant clk_period : time := 37.03703704 ns;
 	
 	-- Spy signals
-	signal shift_reg : std_logic_vector(8 downto 0);
+	--signal shift_reg : std_logic_vector(8 downto 0);
  
 BEGIN 
 	-- Instantiate the Unit Under Test (UUT)
@@ -97,7 +97,7 @@ BEGIN
 	 tick => tick
 	);
 
-	shift_reg <= global_shift_reg;
+--	shift_reg <= global_shift_reg;
 
    -- Clock process definitions
    clk_process :process
