@@ -43,7 +43,7 @@ begin
 		variable counter : integer := 0;
 	begin
 		if rising_edge(clk) then
-			if to_x01(rst) = '1' then
+			if to_x01(rst) = '0' then
 				counter := 0;
 			else
 				counter := counter + 1;

@@ -76,7 +76,7 @@ begin
 	-- FSM S3 Counter
 	process(inc_s3, rst, cr_s3) is
 	begin
-		if to_x01(rst) = '1' then
+		if to_x01(rst) = '0' then
 			c_s3 <= 0;
 		elsif to_x01(cr_s3) = '1' then
 			c_s3 <= 0;
@@ -88,7 +88,7 @@ begin
 	-- FSM Baud Rate Tick Counter
 	process(tick, rst, cr_brg) is
 	begin
-		if rising_edge(rst) then
+		if falling_edge(rst) then
 			c_brg <= 0;
 		elsif rising_edge(cr_brg) then
 			c_brg <= 0;
@@ -110,7 +110,7 @@ begin
 	process(clk) is
 	begin
 		if rising_edge(clk) then
-			if to_x01(rst) = '1' then
+			if to_x01(rst) = '0' then
 				currentState <= Idle;
 			else
 				currentState <= nextState;
@@ -179,7 +179,7 @@ begin
 	-- Shift register that will be used for storing the data -- Serial in, Parallel out = SIPO
 	process(shift_enable, rst) is
 	begin
-		if rising_edge(rst) then
+		if falling_edge(rst) then
 			shift_reg <= (others => '0');
 		elsif rising_edge(shift_enable) then
 			-- Shift and write inside new val
