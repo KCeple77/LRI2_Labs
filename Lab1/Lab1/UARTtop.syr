@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 2.00 secs
-Total CPU time to Xst completion: 1.70 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.21 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 2.00 secs
-Total CPU time to Xst completion: 1.70 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> Reading design: UARTtop.prj
 
@@ -165,7 +165,7 @@ Synthesizing Unit <baud_rate_generator>.
     Related source file is "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\baud_rate_generator.vhd".
     Found 1-bit register for signal <s_tick>.
     Found 32-bit register for signal <counter>.
-    Found 32-bit adder for signal <counter[31]_GND_5_o_add_0_OUT> created at line 52.
+    Found 32-bit adder for signal <counter[31]_GND_5_o_add_0_OUT> created at line 50.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  33 D-type flip-flop(s).
@@ -428,8 +428,8 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 7.32 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.82 secs
  
 --> 
 
