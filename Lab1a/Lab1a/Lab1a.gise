@@ -270,6 +270,7 @@
     <transform xil_pn:end_ts="1616624649" xil_pn:in_ck="1974616950060490897" xil_pn:name="TRAN_ISimulatePostPlace&amp;RouteModelRunFuse" xil_pn:prop_ck="752171177566912530" xil_pn:start_ts="1616624641">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
