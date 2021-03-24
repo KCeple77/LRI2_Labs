@@ -4,18 +4,18 @@
      changes made to this file may result in unpredictable
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
-<DeviceUsageSummary rev="6">
-<DesignStatistics TimeStamp="Wed Mar 24 11:53:48 2021"><group name="MiscellaneousStatistics">
-<item name="AGG_BONDED_IO" rev="6">
-<attrib name="value" value="3"/></item>
-<item name="AGG_IO" rev="6">
-<attrib name="value" value="3"/></item>
-<item name="AGG_LOCED_IO" rev="6">
-<attrib name="value" value="3"/></item>
-<item name="NUM_BONDED_IOB" rev="6">
-<attrib name="value" value="3"/></item>
-<item name="NUM_LOCED_IOB" rev="6">
-<attrib name="value" value="3"/></item>
+<DeviceUsageSummary rev="1">
+<DesignStatistics TimeStamp="Wed Mar 24 09:32:06 2021"><group name="MiscellaneousStatistics">
+<item name="AGG_BONDED_IO" rev="1">
+<attrib name="value" value="4"/></item>
+<item name="AGG_IO" rev="1">
+<attrib name="value" value="4"/></item>
+<item name="AGG_LOCED_IO" rev="1">
+<attrib name="value" value="4"/></item>
+<item name="NUM_BONDED_IOB" rev="1">
+<attrib name="value" value="4"/></item>
+<item name="NUM_LOCED_IOB" rev="1">
+<attrib name="value" value="4"/></item>
 </group>
 </DesignStatistics>
 <CmdHistory>

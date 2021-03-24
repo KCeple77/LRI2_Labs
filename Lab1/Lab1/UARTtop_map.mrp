@@ -10,7 +10,7 @@ Target Device  : xc6slx45
 Target Package : fgg676
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Wed Mar 24 11:53:39 2021
+Mapped Date    : Wed Mar 24 09:31:57 2021
 
 Design Summary
 --------------
@@ -26,8 +26,8 @@ Slice Logic Distribution:
   Number of LUT Flip Flop pairs used:            0
 
 IO Utilization:
-  Number of bonded IOBs:                         3 out of     358    1%
-    Number of LOCed IOBs:                        3 out of       3  100%
+  Number of bonded IOBs:                         4 out of     358    1%
+    Number of LOCed IOBs:                        4 out of       4  100%
 
 Specific Feature Utilization:
   Number of RAMB16BWERs:                         0 out of     116    0%
@@ -54,7 +54,7 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                0.00
 
-Peak Memory Usage:  4560 MB
+Peak Memory Usage:  4558 MB
 Total REAL time to MAP completion:  8 secs 
 Total CPU time to MAP completion:   8 secs 
 
@@ -83,8 +83,9 @@ Section 2 - Warnings
 Section 3 - Informational
 -------------------------
 INFO:LIT:243 - Logical network clk_IBUF has no load.
-INFO:LIT:395 - The above info message is repeated 1 more times for the following
+INFO:LIT:395 - The above info message is repeated 2 more times for the following
    (max. 5 shown):
+   rst_IBUF,
    rx_IBUF
    To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
@@ -118,6 +119,7 @@ Section 6 - IOB Properties
 |                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | clk                                | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| rst                                | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
 | rx                                 | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
 | tx                                 | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+

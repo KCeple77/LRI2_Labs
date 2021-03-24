@@ -65,8 +65,8 @@ ARCHITECTURE behavior OF UART_receiver_tb IS
    signal tick : std_logic := '0';
 
  	--Outputs
-   signal d_out : std_logic_vector(7 downto 0) := (others => '0');
-   signal rx_done : std_logic := '0';
+   signal d_out : std_logic_vector(7 downto 0);
+   signal rx_done : std_logic;
 
    -- Clock period definitions
    constant clk_period : time := 37.03703704 ns;

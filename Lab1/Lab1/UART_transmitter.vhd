@@ -33,7 +33,7 @@ library work;
 use work.transmitter_debug_pkg.all;
 
 entity UART_transmitter is port (
-		clk:  in std_logic;
+		clk, rst:  in std_logic;
 		
 		tick: in std_logic;
 		d_in: in std_logic_vector(7 downto 0);
@@ -85,7 +85,12 @@ begin
 	process(clk) is
 	begin
 		if rising_edge(clk) then
-			r_d_in <= '1' & d_in(7 downto 0);
+			if to_x01(rst) = '1' then
+				r_d_in <= ('1', others => '0');
+			else
+				r_d_in <= '1' & d_in(7 downto 0);
+				
+			end if;
 		end if;
 	end process;
 	
@@ -93,7 +98,9 @@ begin
 	process(clk, r_tx_start_rst) is
 	begin
 		if rising_edge(clk) then
-			if to_x01(r_tx_start_rst) = '1' then
+			if to_x01(rst) = '1' then
+				r_tx_start <= '0';
+			elsif to_x01(r_tx_start_rst) = '1' then
 				r_tx_start <= '0';
 			else
 				r_tx_start <= tx_start;
@@ -102,9 +109,11 @@ begin
 	end process;
 	
 	-- FSM Baud Rate Tick Counter
-	process(tick, cr_brg) is
+	process(tick, rst, cr_brg) is
 	begin
-		if rising_edge(cr_brg) then
+		if rising_edge(rst) then
+			c_brg <= 0;
+		elsif rising_edge(cr_brg) then
 			c_brg <= 0;
 		elsif rising_edge(tick) then
 			c_brg <= c_brg + 1;
@@ -115,9 +124,11 @@ begin
 	let_conv <= '1' when c_conv = 9 else '0';
 	
 	-- FSM Conveyance Counter - Need to count N-1 bits to have been conveyed
-	process(inc_conv, cr_conv) is
+	process(inc_conv, rst, cr_conv) is
 	begin
-		if rising_edge(cr_conv) then
+		if rising_edge(rst) then
+			c_conv <= 0;
+		elsif rising_edge(cr_conv) then
 			c_conv <= 0;
 		elsif rising_edge(inc_conv) then
 			c_conv <= c_conv + 1;
@@ -128,7 +139,11 @@ begin
 	process(clk) is
 	begin
 		if rising_edge(clk) then
-			currentState <= nextState;
+			if to_x01(rst) = '1' then
+				currentState <= Idle;
+			else
+				currentState <= nextState;
+			end if;
 		end if;
 	end process;
 		
@@ -178,9 +193,11 @@ begin
 	end process;
 	
 	-- Shift register that will be used for storing the data -- Serial in, Parallel out = SIPO
-	process(shift_enable, write_enable) is
+	process(shift_enable, rst, write_enable) is
 	begin
-		if rising_edge(shift_enable) then
+		if rising_edge(rst) then
+			shift_reg <= (others => '0');
+		elsif rising_edge(shift_enable) then
 			if to_x01(write_enable) = '1' then
 				shift_reg <= r_d_in;
 				shift_reg_out <= '0';		-- Automatically send start bit!

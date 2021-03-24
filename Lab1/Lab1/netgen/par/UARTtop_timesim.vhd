@@ -7,7 +7,7 @@
 -- \   \   \/     Version: P.20131013
 --  \   \         Application: netgen
 --  /   /         Filename: UARTtop_timesim.vhd
--- /___/   /\     Timestamp: Wed Mar 24 11:54:20 2021
+-- /___/   /\     Timestamp: Wed Mar 24 09:32:36 2021
 -- \   \  /  \ 
 --  \___\/\___\
 --             
@@ -41,6 +41,7 @@ use SIMPRIM.VPACKAGE.ALL;
 entity UARTtop is
   port (
     clk : in STD_LOGIC := 'X'; 
+    rst : in STD_LOGIC := 'X'; 
     rx : in STD_LOGIC := 'X'; 
     tx : out STD_LOGIC 
   );
@@ -49,7 +50,9 @@ end UARTtop;
 architecture Structure of UARTtop is
   signal clk_IBUF_0 : STD_LOGIC; 
   signal rx_IBUF_0 : STD_LOGIC; 
+  signal rst_IBUF_0 : STD_LOGIC; 
   signal clk_IBUF_1 : STD_LOGIC; 
+  signal rst_IBUF_8 : STD_LOGIC; 
   signal rx_IBUF_3 : STD_LOGIC; 
 begin
   clk_IBUF : X_BUF
@@ -70,13 +73,23 @@ begin
       I => clk_IBUF_1,
       O => clk_IBUF_0
     );
-  tx_OBUF : X_OBUF
+  rst_IBUF : X_BUF
     generic map(
-      LOC => "PAD42"
+      LOC => "PAD117",
+      PATHPULSE => 115 ps
     )
     port map (
-      I => '1',
-      O => tx
+      O => rst_IBUF_8,
+      I => rst
+    );
+  ProtoComp0_IMUX_2 : X_BUF
+    generic map(
+      LOC => "PAD117",
+      PATHPULSE => 115 ps
+    )
+    port map (
+      I => rst_IBUF_8,
+      O => rst_IBUF_0
     );
   rx_IBUF : X_BUF
     generic map(
@@ -95,6 +108,14 @@ begin
     port map (
       I => rx_IBUF_3,
       O => rx_IBUF_0
+    );
+  tx_OBUF : X_OBUF
+    generic map(
+      LOC => "PAD42"
+    )
+    port map (
+      I => '1',
+      O => tx
     );
   NlwBlockROC : X_ROC
     generic map (ROC_WIDTH => 100 ns)

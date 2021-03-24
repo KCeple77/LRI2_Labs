@@ -1,0 +1,31 @@
+Command line:
+   uart_top_tb_isim_par.exe
+     -simmode  gui
+     -sdfmax  /uut/=netgen/par/uart_top_timesim.sdf
+     -sdfroot  /uut
+     -simrunnum  0
+     -socket  60499
+
+Wed Mar 24 19:35:13 2021
+
+
+ Elaboration Time: 0.078125 sec
+
+ Current Memory Usage: 4700.07 Meg
+
+ Total Signals          : 106
+ Total Nets             : 76
+ Total Signal Drivers   : 43
+ Total Blocks           : 40
+ Total Primitive Blocks : 23
+ Total Processes        : 43
+ Total Traceable Variables  : 212
+ Total Scalar Nets and Variables : 4883
+Total Line Count : 244
+
+ Total Simulation Time: 0.265625 sec
+
+ Current Memory Usage: 5014.65 Meg
+
+Wed Mar 24 19:35:54 2021
+

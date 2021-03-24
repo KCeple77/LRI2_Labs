@@ -53,7 +53,7 @@ ARCHITECTURE behavior OF brg_tb IS
    signal rst : std_logic := '0';
 
  	--Outputs
-   signal tick : std_logic := '0';
+   signal tick : std_logic;
 
    -- Clock period definitions
 	-- constant clk_freq : integer := 27e6;

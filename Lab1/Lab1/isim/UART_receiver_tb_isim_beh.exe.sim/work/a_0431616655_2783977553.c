@@ -403,7 +403,7 @@ static void work_a_0431616655_2783977553_p_6(char *t0)
     char *t10;
     char *t11;
     char *t12;
-    static char *nl0[] = {&&LAB3, &&LAB4, &&LAB5, &&LAB6};
+    static char *nl0[] = {&&LAB3, &&LAB4, &&LAB7, &&LAB5, &&LAB6};
 
 LAB0:    xsi_set_current_line(128, ng0);
     t1 = (t0 + 7968);
@@ -539,7 +539,7 @@ LAB11:    xsi_set_current_line(148, ng0);
     t4 = *((char **)t3);
     t5 = (t4 + 56U);
     t10 = *((char **)t5);
-    *((unsigned char *)t10) = (unsigned char)2;
+    *((unsigned char *)t10) = (unsigned char)3;
     xsi_driver_first_trans_fast(t1);
     xsi_set_current_line(149, ng0);
     t1 = (t0 + 8224);
@@ -565,7 +565,7 @@ LAB14:    xsi_set_current_line(155, ng0);
     t4 = *((char **)t3);
     t5 = (t4 + 56U);
     t10 = *((char **)t5);
-    *((unsigned char *)t10) = (unsigned char)3;
+    *((unsigned char *)t10) = (unsigned char)4;
     xsi_driver_first_trans_fast(t1);
     xsi_set_current_line(156, ng0);
     t1 = (t0 + 8224);

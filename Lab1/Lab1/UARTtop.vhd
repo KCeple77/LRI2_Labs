@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity UARTtop is
 	port (
-		clk: in std_logic;
+		clk, rst: in std_logic;
 		rx: in std_logic;
 		tx: out std_logic
 	);
@@ -41,7 +41,7 @@ architecture UARTtop_arch of UARTtop is
 	
 	component UART_controller
 		port (
-			clk: in std_logic;
+			clk, rst: in std_logic;
 			rx: in std_logic;
 			tx: out std_logic;
 			
@@ -56,7 +56,7 @@ architecture UARTtop_arch of UARTtop is
 	
 	component echo_device
 		Port ( 
-			clk: in STD_LOGIC;
+			clk, rst: in STD_LOGIC;
 			r_done : in  STD_LOGIC;
 			w_start : out  STD_LOGIC;
 			w_done : in  STD_LOGIC
@@ -76,7 +76,7 @@ data_reg:
 	end process;
 	
 uart_controller_instance: component UART_controller port map(
-		clk => clk,
+		clk => clk, rst => '0',
 		rx => rx, tx => tx,
 		r_done => s_r_done, w_done => s_w_done, w_start => s_w_start, 
 		w_data => s_dr_out,
@@ -84,7 +84,7 @@ uart_controller_instance: component UART_controller port map(
 	);
 
 echo_device_instance: component echo_device port map(
-		clk => clk,
+		clk => clk, rst => '0',
 		r_done => s_r_done,
 		w_start => s_w_start,
 		w_done => s_w_done

@@ -1,0 +1,404 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.21 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.21 secs
+ 
+--> Reading design: uart_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "uart_top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "uart_top"
+Output Format                      : NGC
+Target Device                      : xc6slx45-2-fgg676
+
+---- Source Options
+Top Module Name                    : uart_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1a\Lab1a\uart_receiver.vhd" into library work
+Parsing entity <UART_receiver>.
+Parsing architecture <UART_receiver_arch> of entity <uart_receiver>.
+Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1a\Lab1a\baud_rate_generator.vhd" into library work
+Parsing entity <baud_rate_generator>.
+Parsing architecture <baud_rate_generator_arch> of entity <baud_rate_generator>.
+Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1a\Lab1a\uart_top.vhd" into library work
+Parsing entity <uart_top>.
+Parsing architecture <uart_top_arch> of entity <uart_top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <uart_top> (architecture <uart_top_arch>) from library <work>.
+
+Elaborating entity <UART_receiver> (architecture <UART_receiver_arch>) from library <work>.
+
+Elaborating entity <baud_rate_generator> (architecture <baud_rate_generator_arch>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <uart_top>.
+    Related source file is "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1a\Lab1a\uart_top.vhd".
+    Summary:
+	no macro.
+Unit <uart_top> synthesized.
+
+Synthesizing Unit <UART_receiver>.
+    Related source file is "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1a\Lab1a\uart_receiver.vhd".
+WARNING:Xst:647 - Input <tick> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 3-bit register for signal <currentState>.
+    Found 32-bit register for signal <c_s3>.
+    Found 32-bit adder for signal <c_s3[31]_GND_5_o_add_0_OUT> created at line 84.
+    Found 8x3-bit Read Only RAM for signal <_n0069>
+    Found 1-bit 7-to-1 multiplexer for signal <currentState[2]_GND_6_o_Mux_25_o> created at line 135.
+WARNING:Xst:737 - Found 1-bit latch for signal <nextState<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <nextState<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <nextState<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 32-bit comparator lessequal for signal <n0004> created at line 101
+    Found 32-bit comparator lessequal for signal <n0006> created at line 104
+    Found 32-bit comparator lessequal for signal <n0008> created at line 107
+    WARNING:Xst:2404 -  FFs/Latches <c_brg<1:32>> (without init value) have a constant value of 0 in block <UART_receiver>.
+    WARNING:Xst:2404 -  FFs/Latches <shift_reg<1:8>> (without init value) have a constant value of 0 in block <UART_receiver>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  35 D-type flip-flop(s).
+	inferred   3 Latch(s).
+	inferred   3 Comparator(s).
+	inferred   5 Multiplexer(s).
+Unit <UART_receiver> synthesized.
+
+Synthesizing Unit <baud_rate_generator>.
+    Related source file is "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1a\Lab1a\baud_rate_generator.vhd".
+    Found 1-bit register for signal <s_tick>.
+    Found 32-bit register for signal <counter>.
+    Found 32-bit adder for signal <counter[31]_GND_10_o_add_0_OUT> created at line 49.
+    Found 32-bit comparator greater for signal <n0001> created at line 51
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <baud_rate_generator> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 8x3-bit single-port Read Only RAM                     : 1
+# Adders/Subtractors                                   : 2
+ 32-bit adder                                          : 2
+# Registers                                            : 4
+ 1-bit register                                        : 1
+ 3-bit register                                        : 1
+ 32-bit register                                       : 2
+# Latches                                              : 3
+ 1-bit latch                                           : 3
+# Comparators                                          : 4
+ 32-bit comparator greater                             : 1
+ 32-bit comparator lessequal                           : 3
+# Multiplexers                                         : 5
+ 1-bit 2-to-1 multiplexer                              : 4
+ 1-bit 7-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1290 - Hierarchical block <baud_rate_generator_instance> is unconnected in block <uart_top>.
+   It will be removed from the design.
+
+Synthesizing (advanced) Unit <UART_receiver>.
+The following registers are absorbed into counter <c_s3>: 1 register on signal <c_s3>.
+INFO:Xst:3231 - The small RAM <Mram__n0069> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 3-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <currentState>  |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <UART_receiver> synthesized (advanced).
+
+Synthesizing (advanced) Unit <baud_rate_generator>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <baud_rate_generator> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 8x3-bit single-port distributed Read Only RAM         : 1
+# Adders/Subtractors                                   : 1
+ 32-bit adder                                          : 1
+# Counters                                             : 2
+ 32-bit up counter                                     : 2
+# Registers                                            : 4
+ Flip-Flops                                            : 4
+# Comparators                                          : 4
+ 32-bit comparator greater                             : 1
+ 32-bit comparator lessequal                           : 3
+# Multiplexers                                         : 5
+ 1-bit 2-to-1 multiplexer                              : 4
+ 1-bit 7-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2677 - Node <nextState_2> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <nextState_1> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <nextState_0> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <currentState_0> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <currentState_1> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <currentState_2> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_0> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_1> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_2> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_3> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_4> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_5> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_6> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_7> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_8> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_9> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_10> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_11> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_12> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_13> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_14> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_15> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_16> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_17> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_18> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_19> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_20> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_21> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_22> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_23> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_24> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_25> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_26> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_27> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_28> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_29> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_30> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2677 - Node <c_s3_31> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:2973 - All outputs of instance <baud_rate_generator_instance> of block <baud_rate_generator> are unconnected in block <uart_top>. Underlying logic will be removed.
+
+Optimizing unit <uart_top> ...
+
+Optimizing unit <baud_rate_generator> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block uart_top, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : uart_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1
+#      GND                         : 1
+# IO Buffers                       : 9
+#      OBUF                        : 9
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45fgg676-2 
+
+
+Slice Logic Utilization: 
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:      0
+   Number with an unused Flip Flop:       0  out of      0         
+   Number with an unused LUT:             0  out of      0         
+   Number of fully used LUT-FF pairs:     0  out of      0         
+   Number of unique control sets:         0
+
+IO Utilization: 
+ Number of IOs:                          12
+ Number of bonded IOBs:                   9  out of    358     2%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.41 secs
+ 
+--> 
+
+Total memory usage is 4458796 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   46 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

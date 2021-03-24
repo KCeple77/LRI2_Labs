@@ -136,14 +136,13 @@ Elaborating entity <UARTtop> (architecture <UARTtop_arch>) from library <work>.
 Elaborating entity <UART_controller> (architecture <UART_controller_arch>) from library <work>.
 
 Elaborating entity <UART_receiver> (architecture <UART_receiver_arch>) from library <work>.
-INFO:HDLCompiler:679 - "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\UART_receiver.vhd" Line 166. Case statement is complete. others clause is never selected
 
 Elaborating entity <UART_transmitter> (architecture <UART_transmitter_arch>) from library <work>.
 
 Elaborating entity <baud_rate_generator> (architecture <brg_arch>) from library <work>.
 
 Elaborating entity <echo_device> (architecture <echo_device_arch>) from library <work>.
-INFO:HDLCompiler:679 - "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\echo_device.vhd" Line 73. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\echo_device.vhd" Line 77. Case statement is complete. others clause is never selected
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -151,6 +150,7 @@ INFO:HDLCompiler:679 - "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1
 
 Synthesizing Unit <UARTtop>.
     Related source file is "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\UARTtop.vhd".
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 8-bit register for signal <s_dr_out>.
     Summary:
 	inferred   8 D-type flip-flop(s).
@@ -165,26 +165,10 @@ Unit <UART_controller> synthesized.
 Synthesizing Unit <UART_receiver>.
     Related source file is "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\UART_receiver.vhd".
 WARNING:Xst:647 - Input <tick> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 2-bit register for signal <currentState>.
-    Found 8-bit register for signal <shift_reg>.
-    Found 32-bit register for signal <c_s3>.
-    Found 32-bit adder for signal <c_s3[31]_GND_6_o_add_0_OUT> created at line 82.
-    Found 4x2-bit Read Only RAM for signal <_n0067>
-    Found 1-bit 4-to-1 multiplexer for signal <currentState[1]_let_15_Mux_22_o> created at line 127.
-WARNING:Xst:737 - Found 1-bit latch for signal <nextState<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <nextState<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <sampled_bit>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 32-bit comparator greater for signal <let_s3_INV_12_o> created at line 97
-    Found 32-bit comparator lessequal for signal <n0005> created at line 100
-    Found 32-bit comparator lessequal for signal <n0007> created at line 103
     WARNING:Xst:2404 -  FFs/Latches <c_brg<1:32>> (without init value) have a constant value of 0 in block <UART_receiver>.
+    WARNING:Xst:2404 -  FFs/Latches <shift_reg<1:8>> (without init value) have a constant value of 0 in block <UART_receiver>.
     Summary:
-	inferred   1 RAM(s).
-	inferred   1 Adder/Subtractor(s).
-	inferred  42 D-type flip-flop(s).
-	inferred   3 Latch(s).
-	inferred   3 Comparator(s).
-	inferred   6 Multiplexer(s).
+	no macro.
 Unit <UART_receiver> synthesized.
 
 Synthesizing Unit <UART_transmitter>.
@@ -192,29 +176,26 @@ Synthesizing Unit <UART_transmitter>.
 WARNING:Xst:647 - Input <tick> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <r_tx_start>.
     Found 2-bit register for signal <currentState>.
-    Found 9-bit register for signal <shift_reg>.
     Found 1-bit register for signal <shift_reg_out>.
-    Found 8-bit register for signal <r_d_in>.
-    Found 4x1-bit Read Only RAM for signal <currentState[1]_nextState[1]_Mux_28_o>
-    Found 4x1-bit Read Only RAM for signal <currentState[1]_nextState[1]_Mux_30_o>
-WARNING:Xst:737 - Found 1-bit latch for signal <write_enable>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 4x2-bit Read Only RAM for signal <_n0066>
+WARNING:Xst:737 - Found 1-bit latch for signal <r_tx_start_rst>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <nextState<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <nextState<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    WARNING:Xst:2404 -  FFs/Latches <r_d_in<8:8>> (without init value) have a constant value of 1 in block <UART_transmitter>.
-    WARNING:Xst:2404 -  FFs/Latches <c_conv<1:32>> (without init value) have a constant value of 0 in block <UART_transmitter>.
-    WARNING:Xst:2404 -  FFs/Latches <c_brg<31:0>> (without init value) have a constant value of 0 in block <UART_transmitter>.
+    WARNING:Xst:2404 -  FFs/Latches <c_brg<1:32>> (without init value) have a constant value of 0 in block <UART_transmitter>.
+    WARNING:Xst:2404 -  FFs/Latches <c_conv<31:0>> (without init value) have a constant value of 0 in block <UART_transmitter>.
+    WARNING:Xst:2404 -  FFs/Latches <shift_reg<1:8>> (without init value) have a constant value of 0 in block <UART_transmitter>.
     Summary:
-	inferred   2 RAM(s).
-	inferred  21 D-type flip-flop(s).
+	inferred   1 RAM(s).
+	inferred   4 D-type flip-flop(s).
 	inferred   3 Latch(s).
-	inferred   4 Multiplexer(s).
+	inferred   3 Multiplexer(s).
 Unit <UART_transmitter> synthesized.
 
 Synthesizing Unit <baud_rate_generator>.
     Related source file is "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\baud_rate_generator.vhd".
     Found 1-bit register for signal <s_tick>.
     Found 32-bit register for signal <counter>.
-    Found 32-bit adder for signal <counter[31]_GND_16_o_add_2_OUT> created at line 55.
+    Found 32-bit adder for signal <counter[31]_GND_17_o_add_0_OUT> created at line 50.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  33 D-type flip-flop(s).
@@ -234,26 +215,19 @@ Unit <echo_device> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 3
- 4x1-bit single-port Read Only RAM                     : 2
+# RAMs                                                 : 1
  4x2-bit single-port Read Only RAM                     : 1
-# Adders/Subtractors                                   : 2
- 32-bit adder                                          : 2
-# Registers                                            : 12
+# Adders/Subtractors                                   : 1
+ 32-bit adder                                          : 1
+# Registers                                            : 7
  1-bit register                                        : 4
- 2-bit register                                        : 2
- 32-bit register                                       : 2
- 8-bit register                                        : 3
- 9-bit register                                        : 1
-# Latches                                              : 7
- 1-bit latch                                           : 7
-# Comparators                                          : 3
- 32-bit comparator greater                             : 1
- 32-bit comparator lessequal                           : 2
-# Multiplexers                                         : 12
- 1-bit 2-to-1 multiplexer                              : 10
- 1-bit 4-to-1 multiplexer                              : 1
- 9-bit 2-to-1 multiplexer                              : 1
+ 2-bit register                                        : 1
+ 32-bit register                                       : 1
+ 8-bit register                                        : 1
+# Latches                                              : 4
+ 1-bit latch                                           : 4
+# Multiplexers                                         : 5
+ 1-bit 2-to-1 multiplexer                              : 5
 
 =========================================================================
 
@@ -263,40 +237,16 @@ Macro Statistics
 
 WARNING:Xst:1290 - Hierarchical block <brg_instance> is unconnected in block <uart_controller_instance>.
    It will be removed from the design.
+WARNING:Xst:1426 - The value init of the FF/Latch shift_reg_out hinder the constant cleaning in the block uart_transmitter_instance.
+   You should achieve better results by setting this init to 0.
 
-Synthesizing (advanced) Unit <UART_receiver>.
-The following registers are absorbed into counter <c_s3>: 1 register on signal <c_s3>.
-INFO:Xst:3231 - The small RAM <Mram__n0067> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+Synthesizing (advanced) Unit <UART_transmitter>.
+INFO:Xst:3231 - The small RAM <Mram__n0066> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
     |     aspect ratio   | 4-word x 2-bit                      |          |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <currentState>  |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to internal node          |          |
-    -----------------------------------------------------------------------
-Unit <UART_receiver> synthesized (advanced).
-
-Synthesizing (advanced) Unit <UART_transmitter>.
-INFO:Xst:3231 - The small RAM <Mram_currentState[1]_nextState[1]_Mux_28_o> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 4-word x 1-bit                      |          |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <currentState>  |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to internal node          |          |
-    -----------------------------------------------------------------------
-INFO:Xst:3231 - The small RAM <Mram_currentState[1]_nextState[1]_Mux_30_o> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 4-word x 1-bit                      |          |
     |     weA            | connected to signal <GND>           | high     |
     |     addrA          | connected to signal <currentState>  |          |
     |     diA            | connected to signal <GND>           |          |
@@ -312,106 +262,34 @@ Unit <baud_rate_generator> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 3
- 4x1-bit single-port distributed Read Only RAM         : 2
+# RAMs                                                 : 1
  4x2-bit single-port distributed Read Only RAM         : 1
-# Counters                                             : 2
- 32-bit up counter                                     : 2
-# Registers                                            : 41
- Flip-Flops                                            : 41
-# Comparators                                          : 3
- 32-bit comparator greater                             : 1
- 32-bit comparator lessequal                           : 2
-# Multiplexers                                         : 12
- 1-bit 2-to-1 multiplexer                              : 10
- 1-bit 4-to-1 multiplexer                              : 1
- 9-bit 2-to-1 multiplexer                              : 1
+# Adders/Subtractors                                   : 1
+ 32-bit adder                                          : 1
+# Counters                                             : 1
+ 32-bit up counter                                     : 1
+# Registers                                            : 14
+ Flip-Flops                                            : 14
+# Multiplexers                                         : 5
+ 1-bit 2-to-1 multiplexer                              : 5
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1293 - FF/Latch <shift_reg_0> has a constant value of 1 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_12> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_13> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_14> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_15> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_16> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_17> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_18> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_19> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_20> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_21> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_22> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_23> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_24> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_25> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_26> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_27> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_28> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_29> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_30> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_31> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_0> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_1> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_2> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_3> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_4> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_5> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_6> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_7> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_8> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_9> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_10> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <c_s3_11> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <sampled_bit> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <shift_reg_7> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <shift_reg_6> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <shift_reg_5> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <shift_reg_4> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <shift_reg_3> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <shift_reg_2> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <shift_reg_1> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <shift_reg_0> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <nextState_1> of sequential type is unconnected in block <UART_receiver>.
-WARNING:Xst:2677 - Node <nextState_0> of sequential type is unconnected in block <UART_receiver>.
-WARNING:Xst:2677 - Node <currentState_0> of sequential type is unconnected in block <UART_receiver>.
-WARNING:Xst:2677 - Node <currentState_1> of sequential type is unconnected in block <UART_receiver>.
+WARNING:Xst:1426 - The value init of the FF/Latch shift_reg_out hinder the constant cleaning in the block UART_transmitter.
+   You should achieve better results by setting this init to 0.
+INFO:Xst:2261 - The FF/Latch <s_dr_out_0> in Unit <UARTtop> is equivalent to the following 7 FFs/Latches, which will be removed : <s_dr_out_1> <s_dr_out_2> <s_dr_out_3> <s_dr_out_4> <s_dr_out_5> <s_dr_out_6> <s_dr_out_7> 
 WARNING:Xst:1710 - FF/Latch <s_dr_out_0> (without init value) has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_dr_out_1> (without init value) has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_dr_out_2> (without init value) has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_dr_out_3> (without init value) has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_dr_out_4> (without init value) has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_dr_out_5> (without init value) has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_dr_out_6> (without init value) has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <s_dr_out_7> (without init value) has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <echo_device_instance/currState> of sequential type is unconnected in block <UARTtop>.
 WARNING:Xst:2677 - Node <echo_device_instance/nextState> of sequential type is unconnected in block <UARTtop>.
 
 Optimizing unit <UARTtop> ...
 
 Optimizing unit <UART_transmitter> ...
-WARNING:Xst:1426 - The value init of the FF/Latch uart_controller_instance/uart_transmitter_instance/shift_reg_out hinder the constant cleaning in the block UARTtop.
-   You should achieve better results by setting this init to 0.
-WARNING:Xst:1293 - FF/Latch <uart_controller_instance/uart_transmitter_instance/shift_reg_1> has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <uart_controller_instance/uart_transmitter_instance/shift_reg_2> has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <uart_controller_instance/uart_transmitter_instance/shift_reg_3> has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <uart_controller_instance/uart_transmitter_instance/shift_reg_4> has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <uart_controller_instance/uart_transmitter_instance/shift_reg_5> has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <uart_controller_instance/uart_transmitter_instance/shift_reg_6> has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <uart_controller_instance/uart_transmitter_instance/shift_reg_7> has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <uart_controller_instance/uart_transmitter_instance/shift_reg_8> has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_controller_instance/uart_transmitter_instance/r_d_in_0> has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_controller_instance/uart_transmitter_instance/r_d_in_1> has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_controller_instance/uart_transmitter_instance/r_d_in_2> has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_controller_instance/uart_transmitter_instance/r_d_in_3> has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_controller_instance/uart_transmitter_instance/r_d_in_4> has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_controller_instance/uart_transmitter_instance/r_d_in_5> has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_controller_instance/uart_transmitter_instance/r_d_in_6> has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_controller_instance/uart_transmitter_instance/r_d_in_7> has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <uart_controller_instance/uart_transmitter_instance/shift_reg_out> has a constant value of 1 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_controller_instance/uart_transmitter_instance/r_tx_start> has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_controller_instance/uart_transmitter_instance/shift_reg_out> has a constant value of 1 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/s_tick> of sequential type is unconnected in block <UARTtop>.
 WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_0> of sequential type is unconnected in block <UARTtop>.
 WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_1> of sequential type is unconnected in block <UARTtop>.
@@ -445,7 +323,7 @@ WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_28> of se
 WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_29> of sequential type is unconnected in block <UARTtop>.
 WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_30> of sequential type is unconnected in block <UARTtop>.
 WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_31> of sequential type is unconnected in block <UARTtop>.
-WARNING:Xst:1898 - Due to constant pushing, FF/Latch <uart_controller_instance/uart_transmitter_instance/write_enable> is unconnected in block <UARTtop>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <uart_controller_instance/uart_transmitter_instance/r_tx_start_rst> is unconnected in block <UARTtop>.
 WARNING:Xst:2677 - Node <uart_controller_instance/uart_transmitter_instance/currentState_1> of sequential type is unconnected in block <UARTtop>.
 WARNING:Xst:2677 - Node <uart_controller_instance/uart_transmitter_instance/currentState_0> of sequential type is unconnected in block <UARTtop>.
 WARNING:Xst:2677 - Node <uart_controller_instance/uart_transmitter_instance/nextState_0> of sequential type is unconnected in block <UARTtop>.
@@ -503,7 +381,7 @@ Slice Logic Distribution:
    Number of unique control sets:         0
 
 IO Utilization: 
- Number of IOs:                           3
+ Number of IOs:                           4
  Number of bonded IOBs:                   1  out of    358     0%  
 
 Specific Feature Utilization:
@@ -554,13 +432,13 @@ Cross Clock Domains Report:
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.62 secs
+Total CPU time to Xst completion: 5.87 secs
  
 --> 
 
-Total memory usage is 4474988 kilobytes
+Total memory usage is 4458796 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  127 (   0 filtered)
-Number of infos    :    3 (   0 filtered)
+Number of warnings :   58 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
 
