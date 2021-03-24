@@ -2,7 +2,7 @@
 Release 14.7 Trace  (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
+E:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
 -n 3 -fastpaths -xml uart_top.twx uart_top.ncd -o uart_top.twr uart_top.pcf
 -ucf uart.ucf
 
@@ -16,6 +16,7 @@ Environment Variable      Effect
 NONE                      No environment variables were set
 --------------------------------------------------------------------------------
 
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
 INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
 INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
    option. All paths that are not constrained will be reported in the 
@@ -25,45 +26,6 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
    and for more information on accounting for different loading conditions, 
    please see the device datasheet.
 
-================================================================================
-Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 27 MHz HIGH 
-50%;
-For more information, see Period Analysis in the Timing Closure User Guide (UG612).
-
- 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
- 0 timing errors detected. (0 component switching limit errors)
- Minimum period is   2.666ns.
---------------------------------------------------------------------------------
-
-Component Switching Limit Checks: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 27 MHz HIGH 50%;
---------------------------------------------------------------------------------
-Slack: 34.371ns (period - min period limit)
-  Period: 37.037ns
-  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
-  Physical resource: clk_BUFGP/BUFG/I0
-  Logical resource: clk_BUFGP/BUFG/I0
-  Location pin: BUFGMUX_X2Y2.I0
-  Clock network: clk_BUFGP/IBUFG
---------------------------------------------------------------------------------
-Slack: 36.567ns (period - min period limit)
-  Period: 37.037ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: uart_receiver_instance/currentState<2>/CLK
-  Logical resource: uart_receiver_instance/currentState_0/CK
-  Location pin: SLICE_X57Y92.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 36.567ns (period - min period limit)
-  Period: 37.037ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: uart_receiver_instance/currentState<2>/CLK
-  Logical resource: uart_receiver_instance/currentState_1/CK
-  Location pin: SLICE_X57Y92.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-
-
-All constraints were met.
 
 
 Data Sheet report:
@@ -72,32 +34,14 @@ No constraints were found to generate data for the Data Sheet Report section.
 Use the Advanced Analysis (-a) option or generate global constraints for each
 clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
 
-<<<<<<< HEAD
-Analysis completed Wed Mar 24 21:59:56 2021 
-=======
-Timing summary:
----------------
-
-Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
-
-Constraints cover 0 paths, 0 nets, and 0 connections
-
-Design statistics:
-   Minimum period:   2.666ns{1}   (Maximum frequency: 375.094MHz)
-
-
-------------------------------------Footnotes-----------------------------------
-1)  The minimum period statistic assumes all single cycle delays.
-
-Analysis completed Wed Mar 24 21:33:36 2021 
->>>>>>> 7e1accaaa59ba39be0ba6bcf7afe0bc142dc4dd3
+Analysis completed Wed Mar 24 22:24:01 2021 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 4626 MB
+Peak Memory Usage: 4634 MB
 
 
 

@@ -3,22 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-<<<<<<< HEAD
-Total CPU time to Xst completion: 0.24 secs
-=======
-Total CPU time to Xst completion: 0.07 secs
->>>>>>> 7e1accaaa59ba39be0ba6bcf7afe0bc142dc4dd3
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-<<<<<<< HEAD
-Total CPU time to Xst completion: 0.24 secs
-=======
-Total CPU time to Xst completion: 0.08 secs
->>>>>>> 7e1accaaa59ba39be0ba6bcf7afe0bc142dc4dd3
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> Reading design: uart_top.prj
 
@@ -113,13 +105,13 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\Stela\Documents\LRI2_Labs-master\Lab1a\Lab1a\uart_receiver.vhd" into library work
+Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1a\Lab1a\uart_receiver.vhd" into library work
 Parsing entity <UART_receiver>.
 Parsing architecture <UART_receiver_arch> of entity <uart_receiver>.
-Parsing VHDL file "C:\Users\Stela\Documents\LRI2_Labs-master\Lab1a\Lab1a\baud_rate_generator.vhd" into library work
+Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1a\Lab1a\baud_rate_generator.vhd" into library work
 Parsing entity <baud_rate_generator>.
 Parsing architecture <baud_rate_generator_arch> of entity <baud_rate_generator>.
-Parsing VHDL file "C:\Users\Stela\Documents\LRI2_Labs-master\Lab1a\Lab1a\uart_top.vhd" into library work
+Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1a\Lab1a\uart_top.vhd" into library work
 Parsing entity <uart_top>.
 Parsing architecture <uart_top_arch> of entity <uart_top>.
 
@@ -138,21 +130,19 @@ Elaborating entity <baud_rate_generator> (architecture <baud_rate_generator_arch
 =========================================================================
 
 Synthesizing Unit <uart_top>.
-    Related source file is "C:\Users\Stela\Documents\LRI2_Labs-master\Lab1a\Lab1a\uart_top.vhd".
-INFO:Xst:3210 - "C:\Users\Stela\Documents\LRI2_Labs-master\Lab1a\Lab1a\uart_top.vhd" line 67: Output port <d_out> of the instance <uart_receiver_instance> is unconnected or connected to loadless signal.
+    Related source file is "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1a\Lab1a\uart_top.vhd".
     Summary:
 	no macro.
 Unit <uart_top> synthesized.
 
 Synthesizing Unit <UART_receiver>.
-    Related source file is "C:\Users\Stela\Documents\LRI2_Labs-master\Lab1a\Lab1a\uart_receiver.vhd".
+    Related source file is "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1a\Lab1a\uart_receiver.vhd".
 WARNING:Xst:647 - Input <tick> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <let_s3>.
     Found 1-bit register for signal <let_7>.
     Found 1-bit register for signal <let_15>.
     Found 3-bit register for signal <currentState>.
     Found 32-bit register for signal <c_s3>.
-<<<<<<< HEAD
     Found 32-bit adder for signal <c_s3[31]_GND_5_o_add_0_OUT> created at line 84.
     Found 8x3-bit Read Only RAM for signal <_n0079>
     Found 1-bit 7-to-1 multiplexer for signal <currentState[2]_GND_6_o_Mux_25_o> created at line 174.
@@ -162,50 +152,22 @@ WARNING:Xst:737 - Found 1-bit latch for signal <nextState<0>>. Latches may be ge
     Found 32-bit comparator lessequal for signal <n0005> created at line 107
     Found 32-bit comparator lessequal for signal <n0009> created at line 123
     Found 32-bit comparator lessequal for signal <n0013> created at line 139
-=======
-    Found 32-bit adder for signal <c_s3[31]_GND_5_o_add_0_OUT> created at line 87.
-    Found 8x6-bit Read Only RAM for signal <_n0103>
-    Found 1-bit 7-to-1 multiplexer for signal <currentState[2]_GND_14_o_Mux_42_o> created at line 138.
-WARNING:Xst:737 - Found 1-bit latch for signal <ledout<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <ledout<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <ledout<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <ledout<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <ledout<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <ledout<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <ledout<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <ledout<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <nextState<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <nextState<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <nextState<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 32-bit comparator lessequal for signal <n0005> created at line 104
-    Found 32-bit comparator lessequal for signal <n0007> created at line 107
-    Found 32-bit comparator lessequal for signal <n0009> created at line 110
->>>>>>> 7e1accaaa59ba39be0ba6bcf7afe0bc142dc4dd3
     WARNING:Xst:2404 -  FFs/Latches <c_brg<1:32>> (without init value) have a constant value of 0 in block <UART_receiver>.
     WARNING:Xst:2404 -  FFs/Latches <shift_reg<1:8>> (without init value) have a constant value of 0 in block <UART_receiver>.
     Summary:
 	inferred   1 RAM(s).
 	inferred   1 Adder/Subtractor(s).
-<<<<<<< HEAD
 	inferred  38 D-type flip-flop(s).
 	inferred   3 Latch(s).
-=======
-	inferred  35 D-type flip-flop(s).
-	inferred  11 Latch(s).
->>>>>>> 7e1accaaa59ba39be0ba6bcf7afe0bc142dc4dd3
 	inferred   3 Comparator(s).
-	inferred   7 Multiplexer(s).
+	inferred   5 Multiplexer(s).
 Unit <UART_receiver> synthesized.
 
 Synthesizing Unit <baud_rate_generator>.
-    Related source file is "C:\Users\Stela\Documents\LRI2_Labs-master\Lab1a\Lab1a\baud_rate_generator.vhd".
+    Related source file is "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1a\Lab1a\baud_rate_generator.vhd".
     Found 1-bit register for signal <s_tick>.
     Found 32-bit register for signal <counter>.
-<<<<<<< HEAD
     Found 32-bit adder for signal <counter[31]_GND_10_o_add_0_OUT> created at line 49.
-=======
-    Found 32-bit adder for signal <counter[31]_GND_18_o_add_0_OUT> created at line 49.
->>>>>>> 7e1accaaa59ba39be0ba6bcf7afe0bc142dc4dd3
     Found 32-bit comparator greater for signal <n0002> created at line 51
     Summary:
 	inferred   1 Adder/Subtractor(s).
@@ -218,20 +180,20 @@ HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 1
- 8x6-bit single-port Read Only RAM                     : 1
+ 8x3-bit single-port Read Only RAM                     : 1
 # Adders/Subtractors                                   : 2
  32-bit adder                                          : 2
 # Registers                                            : 7
  1-bit register                                        : 4
  3-bit register                                        : 1
  32-bit register                                       : 2
-# Latches                                              : 11
- 1-bit latch                                           : 11
+# Latches                                              : 3
+ 1-bit latch                                           : 3
 # Comparators                                          : 4
  32-bit comparator greater                             : 1
  32-bit comparator lessequal                           : 3
-# Multiplexers                                         : 7
- 1-bit 2-to-1 multiplexer                              : 6
+# Multiplexers                                         : 5
+ 1-bit 2-to-1 multiplexer                              : 4
  1-bit 7-to-1 multiplexer                              : 1
 
 =========================================================================
@@ -242,27 +204,15 @@ Macro Statistics
 
 WARNING:Xst:1290 - Hierarchical block <baud_rate_generator_instance> is unconnected in block <uart_top>.
    It will be removed from the design.
-WARNING:Xst:1426 - The value init of the FF/Latch ledout_3 hinder the constant cleaning in the block uart_receiver_instance.
-   You should achieve better results by setting this init to 1.
-WARNING:Xst:1426 - The value init of the FF/Latch ledout_2 hinder the constant cleaning in the block uart_receiver_instance.
-   You should achieve better results by setting this init to 1.
-WARNING:Xst:1426 - The value init of the FF/Latch ledout_1 hinder the constant cleaning in the block uart_receiver_instance.
-   You should achieve better results by setting this init to 1.
-WARNING:Xst:1426 - The value init of the FF/Latch ledout_0 hinder the constant cleaning in the block uart_receiver_instance.
-   You should achieve better results by setting this init to 1.
 
 Synthesizing (advanced) Unit <UART_receiver>.
 The following registers are absorbed into counter <c_s3>: 1 register on signal <c_s3>.
-<<<<<<< HEAD
 INFO:Xst:3231 - The small RAM <Mram__n0079> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
-=======
-INFO:Xst:3231 - The small RAM <Mram__n0103> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
->>>>>>> 7e1accaaa59ba39be0ba6bcf7afe0bc142dc4dd3
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 8-word x 6-bit                      |          |
+    |     aspect ratio   | 8-word x 3-bit                      |          |
     |     weA            | connected to signal <GND>           | high     |
     |     addrA          | connected to signal <currentState>  |          |
     |     diA            | connected to signal <GND>           |          |
@@ -279,7 +229,7 @@ Advanced HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 1
- 8x6-bit single-port distributed Read Only RAM         : 1
+ 8x3-bit single-port distributed Read Only RAM         : 1
 # Adders/Subtractors                                   : 1
  32-bit adder                                          : 1
 # Counters                                             : 2
@@ -289,8 +239,8 @@ Macro Statistics
 # Comparators                                          : 4
  32-bit comparator greater                             : 1
  32-bit comparator lessequal                           : 3
-# Multiplexers                                         : 7
- 1-bit 2-to-1 multiplexer                              : 6
+# Multiplexers                                         : 5
+ 1-bit 2-to-1 multiplexer                              : 4
  1-bit 7-to-1 multiplexer                              : 1
 
 =========================================================================
@@ -298,17 +248,6 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-<<<<<<< HEAD
-=======
-WARNING:Xst:1426 - The value init of the FF/Latch ledout_3 hinder the constant cleaning in the block UART_receiver.
-   You should achieve better results by setting this init to 1.
-WARNING:Xst:1426 - The value init of the FF/Latch ledout_2 hinder the constant cleaning in the block UART_receiver.
-   You should achieve better results by setting this init to 1.
-WARNING:Xst:1426 - The value init of the FF/Latch ledout_1 hinder the constant cleaning in the block UART_receiver.
-   You should achieve better results by setting this init to 1.
-WARNING:Xst:1426 - The value init of the FF/Latch ledout_0 hinder the constant cleaning in the block UART_receiver.
-   You should achieve better results by setting this init to 1.
->>>>>>> 7e1accaaa59ba39be0ba6bcf7afe0bc142dc4dd3
 WARNING:Xst:1293 - FF/Latch <c_s3_15> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <c_s3_16> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <c_s3_17> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
@@ -326,12 +265,6 @@ WARNING:Xst:1293 - FF/Latch <c_s3_28> has a constant value of 0 in block <UART_r
 WARNING:Xst:1293 - FF/Latch <c_s3_29> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <c_s3_30> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <c_s3_31> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-<<<<<<< HEAD
-=======
-WARNING:Xst:1293 - FF/Latch <ledout_1> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ledout_3> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <ledout_2> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
->>>>>>> 7e1accaaa59ba39be0ba6bcf7afe0bc142dc4dd3
 WARNING:Xst:1293 - FF/Latch <c_s3_0> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <c_s3_1> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <c_s3_2> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
@@ -347,7 +280,6 @@ WARNING:Xst:1293 - FF/Latch <c_s3_11> has a constant value of 0 in block <UART_r
 WARNING:Xst:1293 - FF/Latch <c_s3_12> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <c_s3_13> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <c_s3_14> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
-<<<<<<< HEAD
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <let_s3> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <let_7> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <let_15> has a constant value of 0 in block <UART_receiver>. This FF/Latch will be trimmed during the optimization process.
@@ -358,47 +290,10 @@ WARNING:Xst:2677 - Node <currentState_0> of sequential type is unconnected in bl
 WARNING:Xst:2677 - Node <currentState_1> of sequential type is unconnected in block <UART_receiver>.
 WARNING:Xst:2677 - Node <currentState_2> of sequential type is unconnected in block <UART_receiver>.
 WARNING:Xst:2973 - All outputs of instance <baud_rate_generator_instance> of block <baud_rate_generator> are unconnected in block <uart_top>. Underlying logic will be removed.
-=======
->>>>>>> 7e1accaaa59ba39be0ba6bcf7afe0bc142dc4dd3
 
 Optimizing unit <uart_top> ...
 
-Optimizing unit <UART_receiver> ...
-
 Optimizing unit <baud_rate_generator> ...
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_0> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_31> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_30> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_29> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_28> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_27> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_26> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_25> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_24> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_23> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_22> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_21> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_20> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_19> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_18> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_16> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_15> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_17> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_14> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_13> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_12> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_11> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_10> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_9> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_7> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_6> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_8> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_5> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_4> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_3> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_2> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/counter_1> of sequential type is unconnected in block <uart_top>.
-WARNING:Xst:2677 - Node <baud_rate_generator_instance/s_tick> of sequential type is unconnected in block <uart_top>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -409,10 +304,7 @@ Final Macro Processing ...
 =========================================================================
 Final Register Report
 
-Macro Statistics
-# Registers                                            : 3
- Flip-Flops                                            : 3
-
+Found no macro
 =========================================================================
 
 =========================================================================
@@ -434,20 +326,9 @@ Top Level Output File Name         : uart_top.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 10
+# BELS                             : 1
 #      GND                         : 1
-#      INV                         : 1
-#      LUT2                        : 1
-#      LUT3                        : 5
-#      LUT4                        : 1
-#      VCC                         : 1
-# FlipFlops/Latches                : 11
-#      FDR                         : 3
-#      LD                          : 8
-# Clock Buffers                    : 1
-#      BUFGP                       : 1
-# IO Buffers                       : 11
-#      IBUF                        : 2
+# IO Buffers                       : 9
 #      OBUF                        : 9
 
 Device utilization summary:
@@ -457,24 +338,19 @@ Selected Device : 6slx45fgg676-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:               6  out of  54576     0%  
- Number of Slice LUTs:                    8  out of  27288     0%  
-    Number used as Logic:                 8  out of  27288     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     14
-   Number with an unused Flip Flop:       8  out of     14    57%  
-   Number with an unused LUT:             6  out of     14    42%  
-   Number of fully used LUT-FF pairs:     0  out of     14     0%  
-   Number of unique control sets:         3
+ Number of LUT Flip Flop pairs used:      0
+   Number with an unused Flip Flop:       0  out of      0         
+   Number with an unused LUT:             0  out of      0         
+   Number of fully used LUT-FF pairs:     0  out of      0         
+   Number of unique control sets:         0
 
 IO Utilization: 
  Number of IOs:                          12
- Number of bonded IOBs:                  12  out of    358     3%  
-    IOB Flip Flops/Latches:               5
+ Number of bonded IOBs:                   9  out of    358     2%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
 
 ---------------------------
 Partition Resource Summary:
@@ -494,17 +370,7 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+-------+
-Clock Signal                                                                                                               | Clock buffer(FF name)                      | Load  |
----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+-------+
-clk                                                                                                                        | BUFGP                                      | 3     |
-uart_receiver_instance/currentState[2]_GND_14_o_Mux_42_o(uart_receiver_instance/Mmux_currentState[2]_GND_14_o_Mux_42_o12:O)| NONE(*)(uart_receiver_instance/nextState_0)| 4     |
-uart_receiver_instance/Mram__n01034(uart_receiver_instance/Mram__n010341:O)                                                | NONE(*)(uart_receiver_instance/ledout_4)   | 4     |
----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------+-------+
-(*) These 2 clock signal(s) are generated by combinatorial logic,
-and XST is not able to identify which are the primary clock signals.
-Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
-INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+No clock signals found in this design
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -515,8 +381,8 @@ Timing Summary:
 Speed Grade: -2
 
    Minimum period: No path found
-   Minimum input arrival time before clock: 3.488ns
-   Maximum output required time after clock: 4.174ns
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -524,113 +390,21 @@ Timing Details:
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 3 / 3
--------------------------------------------------------------------------
-Offset:              3.488ns (Levels of Logic = 2)
-  Source:            rst (PAD)
-  Destination:       uart_receiver_instance/currentState_2 (FF)
-  Destination Clock: clk rising
-
-  Data Path: rst to uart_receiver_instance/currentState_2
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O             1   1.328   0.681  rst_IBUF (rst_IBUF)
-     INV:I->O              3   0.255   0.765  uart_receiver_instance/rst_inv1_INV_0 (uart_receiver_instance/rst_inv)
-     FDR:R                     0.459          uart_receiver_instance/currentState_0
-    ----------------------------------------
-    Total                      3.488ns (2.042ns logic, 1.446ns route)
-                                       (58.5% logic, 41.5% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'uart_receiver_instance/Mram__n01034'
-  Total number of paths / destination ports: 4 / 4
--------------------------------------------------------------------------
-Offset:              4.174ns (Levels of Logic = 1)
-  Source:            uart_receiver_instance/ledout_7 (LATCH)
-  Destination:       led<7> (PAD)
-  Source Clock:      uart_receiver_instance/Mram__n01034 falling
-
-  Data Path: uart_receiver_instance/ledout_7 to led<7>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               1   0.581   0.681  uart_receiver_instance/ledout_7 (uart_receiver_instance/ledout_7)
-     OBUF:I->O                 2.912          led_7_OBUF (led<7>)
-    ----------------------------------------
-    Total                      4.174ns (3.493ns logic, 0.681ns route)
-                                       (83.7% logic, 16.3% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'uart_receiver_instance/currentState[2]_GND_14_o_Mux_42_o'
-  Total number of paths / destination ports: 1 / 1
--------------------------------------------------------------------------
-Offset:              4.174ns (Levels of Logic = 1)
-  Source:            uart_receiver_instance/ledout_0 (LATCH)
-  Destination:       led<0> (PAD)
-  Source Clock:      uart_receiver_instance/currentState[2]_GND_14_o_Mux_42_o falling
-
-  Data Path: uart_receiver_instance/ledout_0 to led<0>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q               1   0.581   0.681  uart_receiver_instance/ledout_0 (uart_receiver_instance/ledout_0)
-     OBUF:I->O                 2.912          led_0_OBUF (led<0>)
-    ----------------------------------------
-    Total                      4.174ns (3.493ns logic, 0.681ns route)
-                                       (83.7% logic, 16.3% route)
-
-=========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock clk
---------------------------------------------------------+---------+---------+---------+---------+
-                                                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
---------------------------------------------------------+---------+---------+---------+---------+
-uart_receiver_instance/currentState[2]_GND_14_o_Mux_42_o|         |    1.336|         |         |
---------------------------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock uart_receiver_instance/Mram__n01034
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-clk            |         |         |    1.934|         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock uart_receiver_instance/currentState[2]_GND_14_o_Mux_42_o
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-clk            |         |         |    1.934|         |
----------------+---------+---------+---------+---------+
-
 =========================================================================
 
 
-<<<<<<< HEAD
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.46 secs
-=======
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.10 secs
->>>>>>> 7e1accaaa59ba39be0ba6bcf7afe0bc142dc4dd3
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.48 secs
  
 --> 
 
-Total memory usage is 4510272 kilobytes
+Total memory usage is 4458796 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-<<<<<<< HEAD
 Number of warnings :   49 (   0 filtered)
 Number of infos    :    1 (   0 filtered)
-=======
-Number of warnings :   91 (   0 filtered)
-Number of infos    :    3 (   0 filtered)
->>>>>>> 7e1accaaa59ba39be0ba6bcf7afe0bc142dc4dd3
 

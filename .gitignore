@@ -1,0 +1,6 @@
+*
+
+!*.vhd
+!*.txt
+!.gitignore
+!*.ucf

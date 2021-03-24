@@ -7,7 +7,7 @@
 -- \   \   \/     Version: P.20131013
 --  \   \         Application: netgen
 --  /   /         Filename: uart_top_timesim.vhd
--- /___/   /\     Timestamp: Wed Mar 24 22:00:04 2021
+-- /___/   /\     Timestamp: Wed Mar 24 22:24:09 2021
 -- \   \  /  \ 
 --  \___\/\___\
 --             
@@ -52,8 +52,8 @@ architecture Structure of uart_top is
   signal clk_IBUF_0 : STD_LOGIC; 
   signal rx_IBUF_0 : STD_LOGIC; 
   signal rst_IBUF_0 : STD_LOGIC; 
-  signal rst_IBUF_26 : STD_LOGIC; 
   signal rx_IBUF_21 : STD_LOGIC; 
+  signal rst_IBUF_26 : STD_LOGIC; 
   signal clk_IBUF_6 : STD_LOGIC; 
 begin
   led_0_OBUF : X_OBUF
@@ -71,32 +71,6 @@ begin
     port map (
       I => '0',
       O => tx
-    );
-  rst_IBUF : X_BUF
-    generic map(
-      LOC => "PAD117",
-      PATHPULSE => 115 ps
-    )
-    port map (
-      O => rst_IBUF_26,
-      I => rst
-    );
-  ProtoComp1_IMUX_2 : X_BUF
-    generic map(
-      LOC => "PAD117",
-      PATHPULSE => 115 ps
-    )
-    port map (
-      I => rst_IBUF_26,
-      O => rst_IBUF_0
-    );
-  led_2_OBUF : X_OBUF
-    generic map(
-      LOC => "PAD69"
-    )
-    port map (
-      I => '0',
-      O => led(2)
     );
   rx_IBUF : X_BUF
     generic map(
@@ -116,6 +90,80 @@ begin
       I => rx_IBUF_21,
       O => rx_IBUF_0
     );
+  led_6_OBUF : X_OBUF
+    generic map(
+      LOC => "PAD61"
+    )
+    port map (
+      I => '0',
+      O => led(6)
+    );
+  rst_IBUF : X_BUF
+    generic map(
+      LOC => "PAD117",
+      PATHPULSE => 115 ps
+    )
+    port map (
+      O => rst_IBUF_26,
+      I => rst
+    );
+  ProtoComp1_IMUX_2 : X_BUF
+    generic map(
+      LOC => "PAD117",
+      PATHPULSE => 115 ps
+    )
+    port map (
+      I => rst_IBUF_26,
+      O => rst_IBUF_0
+    );
+  led_7_OBUF : X_OBUF
+    generic map(
+      LOC => "PAD57"
+    )
+    port map (
+      I => '0',
+      O => led(7)
+    );
+  led_1_OBUF : X_OBUF
+    generic map(
+      LOC => "PAD94"
+    )
+    port map (
+      I => '0',
+      O => led(1)
+    );
+  led_2_OBUF : X_OBUF
+    generic map(
+      LOC => "PAD69"
+    )
+    port map (
+      I => '0',
+      O => led(2)
+    );
+  led_3_OBUF : X_OBUF
+    generic map(
+      LOC => "PAD78"
+    )
+    port map (
+      I => '0',
+      O => led(3)
+    );
+  led_5_OBUF : X_OBUF
+    generic map(
+      LOC => "PAD65"
+    )
+    port map (
+      I => '0',
+      O => led(5)
+    );
+  led_4_OBUF : X_OBUF
+    generic map(
+      LOC => "PAD77"
+    )
+    port map (
+      I => '0',
+      O => led(4)
+    );
   clk_IBUF : X_BUF
     generic map(
       LOC => "PAD100",
@@ -133,54 +181,6 @@ begin
     port map (
       I => clk_IBUF_6,
       O => clk_IBUF_0
-    );
-  led_5_OBUF : X_OBUF
-    generic map(
-      LOC => "PAD65"
-    )
-    port map (
-      I => '0',
-      O => led(5)
-    );
-  led_1_OBUF : X_OBUF
-    generic map(
-      LOC => "PAD94"
-    )
-    port map (
-      I => '0',
-      O => led(1)
-    );
-  led_3_OBUF : X_OBUF
-    generic map(
-      LOC => "PAD78"
-    )
-    port map (
-      I => '0',
-      O => led(3)
-    );
-  led_6_OBUF : X_OBUF
-    generic map(
-      LOC => "PAD61"
-    )
-    port map (
-      I => '0',
-      O => led(6)
-    );
-  led_7_OBUF : X_OBUF
-    generic map(
-      LOC => "PAD57"
-    )
-    port map (
-      I => '0',
-      O => led(7)
-    );
-  led_4_OBUF : X_OBUF
-    generic map(
-      LOC => "PAD77"
-    )
-    port map (
-      I => '0',
-      O => led(4)
     );
   NlwBlockROC : X_ROC
     generic map (ROC_WIDTH => 100 ns)

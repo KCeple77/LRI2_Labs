@@ -4,14 +4,14 @@ Command line:
      -sdfmax  /uut/=.sdf
      -sdfroot  /uut
      -simrunnum  0
-     -socket  61639
+     -socket  61896
 
-Wed Mar 24 22:00:13 2021
+Wed Mar 24 22:22:27 2021
 
 
  Elaboration Time: 0.046875 sec
 
- Current Memory Usage: 4699.75 Meg
+ Current Memory Usage: 4699.82 Meg
 
  Total Signals          : 6
  Total Nets             : 13
@@ -25,7 +25,7 @@ Total Line Count : 8
 
  Total Simulation Time: 0.078125 sec
 
- Current Memory Usage: 4699.75 Meg
+ Current Memory Usage: 4699.82 Meg
 
-Wed Mar 24 22:00:20 2021
+Wed Mar 24 22:22:49 2021
 

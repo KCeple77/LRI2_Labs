@@ -1,0 +1,2 @@
+vhdl work "netgen/par/uart_top_timesim.vhd"
+vhdl work "uart_top_tb.vhd"

@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.23 secs
+Total CPU time to Xst completion: 0.21 secs
  
 --> Parameter xsthdpdir set to E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1a/Lab1a/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.23 secs
+Total CPU time to Xst completion: 0.21 secs
  
 --> Reading design: UART_receiver.prj
 
@@ -45,7 +45,7 @@ Parsing architecture <UART_receiver_arch> of entity <uart_receiver>.
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.69 secs
+Total CPU time to Xst completion: 3.91 secs
  
 --> 
 
