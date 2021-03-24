@@ -34,6 +34,7 @@ entity UART_receiver is
 		clk, rst:  in std_logic;
 		rx, tick: in std_logic;
 		d_out: out std_logic_vector(7 downto 0);
+		led : out std_logic_vector (7 downto 0);
 		rx_done : out std_logic
 	);
 end UART_receiver;
@@ -54,6 +55,8 @@ architecture UART_receiver_arch of UART_receiver is
 	signal let_s3 : std_logic := '0';
 	signal let_7 : std_logic := '0';
 	signal let_15 : std_logic := '0';
+	
+	signal ledout : std_logic_vector (7 downto 0) := (others => '0');
 	
 	signal sampled_bit : std_logic := '0';
 	signal shift_enable : std_logic := '0';
@@ -134,24 +137,39 @@ begin
 		
 		case currentState is
 			when Idle =>
+				ledout(4) <= '1';
+				ledout(5) <= '0';
+				ledout(6) <= '0';
+				ledout(7) <= '0';
 				if to_x01(rx) = '0' then
+					ledout(0) <= '1';
 					nextState <= State1;
 					cr_brg <= '1';		-- Reset tick counter
 				end if;
 			when State1 =>
+				ledout(4) <= '0';
+				ledout(5) <= '1';
+				ledout(6) <= '0';
+				ledout(7) <= '0';
 				-- Need to wait until tick counter reaches 7!
 				if to_x01(let_7) = '1' then
 --					assert (rx = '0')
 --						report "RX Start bit not low?!"
 --						severity ERROR;
 					
+					ledout(1) <= '1';
 					nextState <= State3;
 					cr_brg <= '1';		-- Reset tick counter once again
 					cr_s3 <= '1';		-- Reset s3 cycles counter
 				end if;
 			when State3 =>
+				ledout(4) <= '0';
+				ledout(5) <= '0';
+				ledout(6) <= '1';
+				ledout(7) <= '0';
 				if to_x01(let_s3) = '1' then
 					-- Last bit sampled - go and sample the stop bit!
+						ledout(2) <= '1';
 						nextState <= State4;
 						cr_brg <= '0';
 				elsif to_x01(let_15) = '1' then
@@ -162,12 +180,17 @@ begin
 					cr_brg <= '1';
 				end if;
 			when State4 =>
+				ledout(4) <= '0';
+				ledout(5) <= '0';
+				ledout(6) <= '0';
+				ledout(7) <= '1';
 				if to_x01(let_15) = '1' then
 					-- (Maybe assert?) Check stop bit!
 --					assert (to_x01(rx) = '1')
 --						report "Stop bit should be high - before going into the idle state!"
 --						severity ERROR;
 					
+					ledout(3) <= '1';
 					nextState <= Idle;
 					rx_done <= '1';
 				end if;
@@ -175,6 +198,7 @@ begin
 		end case;
 	end process;
 	
+	led <= ledout;
 	
 	-- Shift register that will be used for storing the data -- Serial in, Parallel out = SIPO
 	process(shift_enable, rst) is

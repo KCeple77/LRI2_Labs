@@ -48,6 +48,7 @@ architecture uart_top_arch of uart_top is
          rx : IN  std_logic;
          tick : IN  std_logic;
          d_out : OUT  std_logic_vector(7 downto 0);
+			led : out std_logic_vector(7 downto 0);
          rx_done : OUT  std_logic
         );
     END COMPONENT;
@@ -60,6 +61,7 @@ architecture uart_top_arch of uart_top is
 	end component;
 	
 	signal tick : std_logic := '0';
+	signal receiver_out : std_logic_vector (7 downto 0) := (others => '0');
 begin
 	
 	uart_receiver_instance: UART_receiver PORT MAP (
@@ -67,7 +69,8 @@ begin
           rst => rst,
           rx => rx,
           tick => tick,
-          d_out => led,
+          d_out => receiver_out,
+			 led => led,
           rx_done => tx
         );
 	
