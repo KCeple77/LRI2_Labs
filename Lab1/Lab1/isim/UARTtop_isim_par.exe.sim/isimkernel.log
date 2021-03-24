@@ -1,0 +1,12 @@
+Command line:
+   UARTtop_isim_par.exe
+     -simmode  gui
+     -sdfmax  /UARTtop/=netgen/par/UARTtop_timesim.sdf
+     -sdfroot  /
+     -simrunnum  1
+     -socket  56254
+
+Wed Mar 24 09:37:36 2021
+
+
+ Elaboration Time: 0.046875 sec
