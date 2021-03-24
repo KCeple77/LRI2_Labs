@@ -47,7 +47,7 @@ architecture UART_receiver_arch of UART_receiver is
 	
 	signal c_s3 : integer := 0;
 	signal c_brg : integer := 0;
-	signal inc_s3 : std_logic := '0';
+	
 	signal cr_s3 : std_logic := '0';
 	signal cr_brg : std_logic := '0';
 	
@@ -74,13 +74,11 @@ begin
 --	end process;
 
 	-- FSM S3 Counter
-	process(inc_s3, rst, cr_s3) is
+	process(tick, rst, cr_s3) is
 	begin
-		if to_x01(rst) = '0' then
+		if to_x01(rst) = '0' or to_x01(cr_s3) = '1' then
 			c_s3 <= 0;
-		elsif to_x01(cr_s3) = '1' then
-			c_s3 <= 0;
-		elsif rising_edge(inc_s3) then
+		elsif rising_edge(tick) then
 			c_s3 <= c_s3 + 1;
 		end if;
 	end process;
@@ -88,23 +86,21 @@ begin
 	-- FSM Baud Rate Tick Counter
 	process(tick, rst, cr_brg) is
 	begin
-		if falling_edge(rst) then
-			c_brg <= 0;
-		elsif rising_edge(cr_brg) then
+		if to_x01(rst) = '0' or to_x01(cr_brg) = '1' then
 			c_brg <= 0;
 		elsif rising_edge(tick) then
 			c_brg <= c_brg + 1;
 		end if;
 	end process;
 	
-	-- FSM Comparator - S3_CNT vs. N-2=6 -> looks if the FSM has been in S3 for N-1 bit read cycles
+	-- FSM Comparator - S3_CNT vs. N-2=6 -> looks if the FSM has been in S3 long enough
 	process(clk) is
 	begin
 		if rising_edge(clk) then
 			if to_x01(rst) = '0' then
 				let_s3 <= '0';
 			else
-				if c_s3 >= 8 then
+				if c_s3 >= 128 then
 					let_s3 <= '1';
 				else
 					let_s3 <= '0';
@@ -160,13 +156,9 @@ begin
 	
 	-- FSM Asynchronous part -> Next State Decoder + Output Decoder
 	process(let_s3, let_7, let_15, currentState, rx) is
-		--variable d_out_new: std_logic_vector(7 downto 0) := (others => '0');
-		--variable tmp: std_logic;
-		--variable baud_rate_generator_counter : integer := 0;
 	begin
 		rx_done <= '0';
 		shift_enable <= '0';
-		inc_s3 <= '0';
 		
 		cr_s3 <= '0';
 		cr_brg <= '0';
@@ -197,7 +189,6 @@ begin
 					-- 15 ticks reached means we're in the middle of the bit - sample and increase the counter!
 					sampled_bit <= rx;
 					shift_enable <= '1';
-					inc_s3 <= '1';
 					cr_brg <= '1';
 				end if;
 			when State4 =>
