@@ -57,6 +57,6 @@ begin
 		end if;
 	end process;
 	
-	tick <= '1' when s_tick else '0';
+	tick <= '1' when (s_tick = True) else '0';
 end brg_arch;
 
