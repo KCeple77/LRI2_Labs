@@ -5,14 +5,14 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="par" timeStamp="Wed Mar 24 22:23:43 2021">
+  <application stringID="par" timeStamp="Wed Mar 24 22:45:56 2021">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
           <item stringID="variable" value="Path"/>
-          <item stringID="value" value="E:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;E:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;E:\Xilinx\14.7\ISE_DS\ISE\bin\nt64;E:\Xilinx\14.7\ISE_DS\ISE\lib\nt64;E:\Xilinx\14.7\ISE_DS\ISE\..\..\..\DocNav;E:\Xilinx\14.7\ISE_DS\PlanAhead\bin;E:\Xilinx\14.7\ISE_DS\EDK\bin\nt64;E:\Xilinx\14.7\ISE_DS\EDK\lib\nt64;E:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\nt\bin;E:\Xilinx\14.7\ISE_DS\EDK\gnu\powerpc-eabi\nt\bin;E:\Xilinx\14.7\ISE_DS\EDK\gnuwin\bin;E:\Xilinx\14.7\ISE_DS\EDK\gnu\arm\nt\bin;E:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin;E:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin;E:\Xilinx\14.7\ISE_DS\common\bin\nt64;E:\Xilinx\14.7\ISE_DS\common\lib\nt64;C:\Program Files (x86)\Microchip\mplabc18\v3.47\mpasm;C:\Program Files (x86)\Microchip\mplabc18\v3.47\bin;C:\Users\Kristijan Ceple\.jdks\liberica-14.0.2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\CTags;C:\Users\Kristijan Ceple\Downloads\pypy3.6-v7.3.0-win32;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\PuTTY\;C:\Program Files\CMake\bin;C:\Program Files\apache-maven-3.6.3\bin;C:\Program Files\Git\cmd;C:\Program Files\Microchip\xc16\v1.61\bin;C:\Program Files\Microchip\xc8\v2.31\bin;C:\Users\Kristijan Ceple\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\Kristijan Ceple\AppData\Local\Programs\Python\Python39\;C:\Users\Kristijan Ceple\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\Kristijan Ceple\AppData\Local\Programs\Python\Python38\;C:\Users\Kristijan Ceple\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm 2019.3.4\bin;C:\Program Files (x86)\FAHClient;E:\texlive\2019\bin\win32;C:\Users\Kristijan Ceple\Desktop\FaksHub\C++\vcpkg\vcpkg;E:\Program Files\JetBrains\CLion 2020.1.2\bin;C:\Users\Kristijan Ceple\AppData\Roaming\npm;C:\Program Files\JetBrains\WebStorm 2020.2.1\bin;C:\Program Files\JetBrains\IntelliJ IDEA Educational Edition 2020.2.4\bin"/>
+          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\..\..\..\DocNav;C:\Xilinx\14.7\ISE_DS\PlanAhead\bin;C:\Xilinx\14.7\ISE_DS\EDK\bin\nt64;C:\Xilinx\14.7\ISE_DS\EDK\lib\nt64;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\powerpc-eabi\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnuwin\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\arm\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin;C:\Xilinx\14.7\ISE_DS\common\bin\nt64;C:\Xilinx\14.7\ISE_DS\common\lib\nt64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\MATLAB\R2020b\bin;C:\Program Files (x86)\PuTTY\;C:\Program Files\Git\cmd;C:\Users\Stela\AppData\Local\Microsoft\WindowsApps"/>
         </row>
         <row stringID="row" value="1">
           <item stringID="variable" value="PATHEXT"/>
@@ -20,32 +20,36 @@
         </row>
         <row stringID="row" value="2">
           <item stringID="variable" value="XILINX"/>
-          <item stringID="value" value="E:\Xilinx\14.7\ISE_DS\ISE\"/>
+          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\"/>
         </row>
         <row stringID="row" value="3">
           <item stringID="variable" value="XILINX_DSP"/>
-          <item stringID="value" value="E:\Xilinx\14.7\ISE_DS\ISE"/>
+          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE"/>
         </row>
         <row stringID="row" value="4">
           <item stringID="variable" value="XILINX_EDK"/>
-          <item stringID="value" value="E:\Xilinx\14.7\ISE_DS\EDK"/>
+          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\EDK"/>
         </row>
         <row stringID="row" value="5">
           <item stringID="variable" value="XILINX_PLANAHEAD"/>
-          <item stringID="value" value="E:\Xilinx\14.7\ISE_DS\PlanAhead"/>
+          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\PlanAhead"/>
         </row>
       </table>
       <item stringID="User_EnvOs" value="OS Information">
         <item stringID="User_EnvOsname" value="Microsoft , 64-bit"/>
         <item stringID="User_EnvOsrelease" value="major release  (build 9200)"/>
       </item>
-      <item stringID="User_EnvHost" value="DESKTOP-KHLKMSK"/>
+      <item stringID="User_EnvHost" value="DESKTOP-LLN6PI3"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
         <row stringID="row" value="0">
-          <item stringID="arch" value="AMD Ryzen 5 3550H with Radeon Vega Mobile Gfx  "/>
-          <item stringID="speed" value="2096 MHz"/>
+          <item stringID="arch" value="AMD Ryzen 5 4600H with Radeon Graphics         "/>
+          <item stringID="speed" value="2994 MHz"/>
+        </row>
+        <row stringID="row" value="1">
+          <item stringID="arch" value="AMD Ryzen 5 4600H with Radeon Graphics         "/>
+          <item stringID="speed" value="2994 MHz"/>
         </row>
       </table>
     </section>
@@ -59,16 +63,52 @@
     </task>
     <task stringID="PAR_PAR">
       <section stringID="PAR_DESIGN_SUMMARY">
-        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="13 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="13 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="4 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="4 secs "/>
         <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
         <item dataType="float" stringID="PAR_TIMING_SCORE" value="0.000000"/>
-        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="15 secs "/>
-        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="15 secs "/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="5 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="5 secs "/>
       </section>
     </task>
     <task stringID="PAR_par">
       <section stringID="PAR_DLY_CLK_REPORT"/>
+      <section stringID="PAR_CLOCK_REPORT">
+        <table stringID="PAR_CLOCK_TABLE">
+          <column label="Clock Net" stringID="CLOCK_NET"/>
+          <column label="Routed" stringID="ROUTED"/>
+          <column label="Resource" stringID="RESOURCE"/>
+          <column label="Locked" stringID="LOCKED"/>
+          <column label="Fanout" stringID="FANOUT"/>
+          <column label="Net Skew(ns)" stringID="NET_SKEW"/>
+          <column label="Max Delay(ns)" stringID="MAX_DELAY"/>
+          <row stringID="row" value="1">
+            <item label="Clock Net" stringID="CLOCK_NET" value="clk_BUFGP"/>
+            <item label="Routed" stringID="ROUTED" value="ROUTED"/>
+            <item label="Resource" stringID="RESOURCE" value="BUFGMUX_X2Y2"/>
+            <item label="Locked" stringID="LOCKED" value="No"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="1.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.000000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.718000"/>
+          </row>
+          <row stringID="row" value="2">
+            <item label="Clock Net" stringID="CLOCK_NET" value="uart_receiver_instance/currentState[2]_GND_14_o_Mux_42_o"/>
+            <item label="Routed" stringID="ROUTED" value="ROUTED"/>
+            <item label="Resource" stringID="RESOURCE" value="Local"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="2.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="0.511000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="1.465000"/>
+          </row>
+          <row stringID="row" value="3">
+            <item label="Clock Net" stringID="CLOCK_NET" value="uart_receiver_instance/Mram__n01124"/>
+            <item label="Routed" stringID="ROUTED" value="ROUTED"/>
+            <item label="Resource" stringID="RESOURCE" value="Local"/>
+            <item dataType="float" label="Fanout" stringID="FANOUT" value="4.000000"/>
+            <item dataType="float" label="Net Skew(ns)" stringID="NET_SKEW" value="1.452000"/>
+            <item dataType="float" label="Max Delay(ns)" stringID="MAX_DELAY" value="2.652000"/>
+          </row>
+        </table>
+      </section>
       <section stringID="PAR_PAD_PIN_REPORT">
         <table stringID="PAR_PINOUT_BY_PIN_NUMBER">
           <column label="Pin&#xA;Number" sort="smart" stringID="Pin_Number"/>
@@ -1721,7 +1761,7 @@
             <item label="Drive&#xA;(mA)" stringID="Drive" value="12"/>
             <item label="Slew&#xA;Rate" stringID="Slew_Rate" value="SLOW"/>
             <item label="Constraint" stringID="Constraint" value="LOCATED"/>
-            <item label="IO&#xA;Register" stringID="IO_Register" value="NO"/>
+            <item label="IO&#xA;Register" stringID="IO_Register" value="YES"/>
             <item label="Signal&#xA;Integrity" stringID="Signal_Integrity" value="NONE"/>
           </row>
           <row stringID="row" value="259">
@@ -2218,7 +2258,7 @@
             <item label="Drive&#xA;(mA)" stringID="Drive" value="12"/>
             <item label="Slew&#xA;Rate" stringID="Slew_Rate" value="SLOW"/>
             <item label="Constraint" stringID="Constraint" value="LOCATED"/>
-            <item label="IO&#xA;Register" stringID="IO_Register" value="NO"/>
+            <item label="IO&#xA;Register" stringID="IO_Register" value="YES"/>
             <item label="Signal&#xA;Integrity" stringID="Signal_Integrity" value="NONE"/>
           </row>
           <row stringID="row" value="363">
@@ -2478,7 +2518,7 @@
             <item label="Drive&#xA;(mA)" stringID="Drive" value="12"/>
             <item label="Slew&#xA;Rate" stringID="Slew_Rate" value="SLOW"/>
             <item label="Constraint" stringID="Constraint" value="LOCATED"/>
-            <item label="IO&#xA;Register" stringID="IO_Register" value="NO"/>
+            <item label="IO&#xA;Register" stringID="IO_Register" value="YES"/>
             <item label="Signal&#xA;Integrity" stringID="Signal_Integrity" value="NONE"/>
           </row>
           <row stringID="row" value="415">
@@ -2624,7 +2664,7 @@
             <item label="Drive&#xA;(mA)" stringID="Drive" value="12"/>
             <item label="Slew&#xA;Rate" stringID="Slew_Rate" value="SLOW"/>
             <item label="Constraint" stringID="Constraint" value="LOCATED"/>
-            <item label="IO&#xA;Register" stringID="IO_Register" value="NO"/>
+            <item label="IO&#xA;Register" stringID="IO_Register" value="YES"/>
             <item label="Signal&#xA;Integrity" stringID="Signal_Integrity" value="NONE"/>
           </row>
           <row stringID="row" value="440">
@@ -2985,7 +3025,7 @@
             <item label="Drive&#xA;(mA)" stringID="Drive" value="12"/>
             <item label="Slew&#xA;Rate" stringID="Slew_Rate" value="SLOW"/>
             <item label="Constraint" stringID="Constraint" value="LOCATED"/>
-            <item label="IO&#xA;Register" stringID="IO_Register" value="NO"/>
+            <item label="IO&#xA;Register" stringID="IO_Register" value="YES"/>
             <item label="Signal&#xA;Integrity" stringID="Signal_Integrity" value="NONE"/>
           </row>
           <row stringID="row" value="493">
@@ -4104,19 +4144,19 @@
       <section stringID="PAR_UNROUTES_REPORT">
         <item dataType="int" stringID="PAR_UNROUTED_NETS" value="0"/>
         <item dataType="int" stringID="PAR_TOTAL_SOURCELESS_NETS" value="0"/>
-        <item dataType="int" stringID="PAR_TOTAL_LOADLESS_NETS" value="3"/>
+        <item dataType="int" stringID="PAR_TOTAL_LOADLESS_NETS" value="0"/>
       </section>
     </task>
   </application>
 
-  <application stringID="Par" timeStamp="Wed Mar 24 22:23:43 2021">
+  <application stringID="Par" timeStamp="Wed Mar 24 22:45:56 2021">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
         <column stringID="value"/>
         <row stringID="row" value="0">
           <item stringID="variable" value="Path"/>
-          <item stringID="value" value="E:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;E:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;E:\Xilinx\14.7\ISE_DS\ISE\bin\nt64;E:\Xilinx\14.7\ISE_DS\ISE\lib\nt64;E:\Xilinx\14.7\ISE_DS\ISE\..\..\..\DocNav;E:\Xilinx\14.7\ISE_DS\PlanAhead\bin;E:\Xilinx\14.7\ISE_DS\EDK\bin\nt64;E:\Xilinx\14.7\ISE_DS\EDK\lib\nt64;E:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\nt\bin;E:\Xilinx\14.7\ISE_DS\EDK\gnu\powerpc-eabi\nt\bin;E:\Xilinx\14.7\ISE_DS\EDK\gnuwin\bin;E:\Xilinx\14.7\ISE_DS\EDK\gnu\arm\nt\bin;E:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin;E:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin;E:\Xilinx\14.7\ISE_DS\common\bin\nt64;E:\Xilinx\14.7\ISE_DS\common\lib\nt64;C:\Program Files (x86)\Microchip\mplabc18\v3.47\mpasm;C:\Program Files (x86)\Microchip\mplabc18\v3.47\bin;C:\Users\Kristijan Ceple\.jdks\liberica-14.0.2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\CTags;C:\Users\Kristijan Ceple\Downloads\pypy3.6-v7.3.0-win32;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\PuTTY\;C:\Program Files\CMake\bin;C:\Program Files\apache-maven-3.6.3\bin;C:\Program Files\Git\cmd;C:\Program Files\Microchip\xc16\v1.61\bin;C:\Program Files\Microchip\xc8\v2.31\bin;C:\Users\Kristijan Ceple\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\Kristijan Ceple\AppData\Local\Programs\Python\Python39\;C:\Users\Kristijan Ceple\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\Kristijan Ceple\AppData\Local\Programs\Python\Python38\;C:\Users\Kristijan Ceple\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm 2019.3.4\bin;C:\Program Files (x86)\FAHClient;E:\texlive\2019\bin\win32;C:\Users\Kristijan Ceple\Desktop\FaksHub\C++\vcpkg\vcpkg;E:\Program Files\JetBrains\CLion 2020.1.2\bin;C:\Users\Kristijan Ceple\AppData\Roaming\npm;C:\Program Files\JetBrains\WebStorm 2020.2.1\bin;C:\Program Files\JetBrains\IntelliJ IDEA Educational Edition 2020.2.4\bin"/>
+          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64;C:\Xilinx\14.7\ISE_DS\ISE\lib\nt64;C:\Xilinx\14.7\ISE_DS\ISE\..\..\..\DocNav;C:\Xilinx\14.7\ISE_DS\PlanAhead\bin;C:\Xilinx\14.7\ISE_DS\EDK\bin\nt64;C:\Xilinx\14.7\ISE_DS\EDK\lib\nt64;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\powerpc-eabi\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnuwin\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\arm\nt\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin;C:\Xilinx\14.7\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin;C:\Xilinx\14.7\ISE_DS\common\bin\nt64;C:\Xilinx\14.7\ISE_DS\common\lib\nt64;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\MATLAB\R2020b\bin;C:\Program Files (x86)\PuTTY\;C:\Program Files\Git\cmd;C:\Users\Stela\AppData\Local\Microsoft\WindowsApps"/>
         </row>
         <row stringID="row" value="1">
           <item stringID="variable" value="PATHEXT"/>
@@ -4124,47 +4164,51 @@
         </row>
         <row stringID="row" value="2">
           <item stringID="variable" value="XILINX"/>
-          <item stringID="value" value="E:\Xilinx\14.7\ISE_DS\ISE\"/>
+          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE\"/>
         </row>
         <row stringID="row" value="3">
           <item stringID="variable" value="XILINX_DSP"/>
-          <item stringID="value" value="E:\Xilinx\14.7\ISE_DS\ISE"/>
+          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\ISE"/>
         </row>
         <row stringID="row" value="4">
           <item stringID="variable" value="XILINX_EDK"/>
-          <item stringID="value" value="E:\Xilinx\14.7\ISE_DS\EDK"/>
+          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\EDK"/>
         </row>
         <row stringID="row" value="5">
           <item stringID="variable" value="XILINX_PLANAHEAD"/>
-          <item stringID="value" value="E:\Xilinx\14.7\ISE_DS\PlanAhead"/>
+          <item stringID="value" value="C:\Xilinx\14.7\ISE_DS\PlanAhead"/>
         </row>
       </table>
       <item stringID="User_EnvOs" value="OS Information">
         <item stringID="User_EnvOsname" value="Microsoft , 64-bit"/>
         <item stringID="User_EnvOsrelease" value="major release  (build 9200)"/>
       </item>
-      <item stringID="User_EnvHost" value="DESKTOP-KHLKMSK"/>
+      <item stringID="User_EnvHost" value="DESKTOP-LLN6PI3"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
         <row stringID="row" value="0">
-          <item stringID="arch" value="AMD Ryzen 5 3550H with Radeon Vega Mobile Gfx  "/>
-          <item stringID="speed" value="2096 MHz"/>
+          <item stringID="arch" value="AMD Ryzen 5 4600H with Radeon Graphics         "/>
+          <item stringID="speed" value="2994 MHz"/>
+        </row>
+        <row stringID="row" value="1">
+          <item stringID="arch" value="AMD Ryzen 5 4600H with Radeon Graphics         "/>
+          <item stringID="speed" value="2994 MHz"/>
         </row>
       </table>
     </section>
     <task label="Device Utilization Summary" stringID="PAR_DEVICE_UTLIZATION">
       <section stringID="PAR_SLICE_REPORTING">
-        <item AVAILABLE="54576" dataType="int" label="Number of Slice Registers" stringID="PAR_SLICE_REGISTERS" value="0">
-          <item dataType="int" stringID="PAR_NUM_SLICE_FF" value="0"/>
-          <item dataType="int" stringID="PAR_NUM_SLICE_LATCH" value="0"/>
+        <item AVAILABLE="54576" dataType="int" label="Number of Slice Registers" stringID="PAR_SLICE_REGISTERS" value="6">
+          <item dataType="int" stringID="PAR_NUM_SLICE_FF" value="3"/>
+          <item dataType="int" stringID="PAR_NUM_SLICE_LATCH" value="3"/>
           <item dataType="int" stringID="PAR_NUM_SLICE_LATCHTHRU" value="0"/>
           <item dataType="int" stringID="PAR_NUM_SLICE_LATCHLOGIC" value="0"/>
         </item>
-        <item AVAILABLE="27288" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="0">
+        <item AVAILABLE="27288" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="4">
           <item dataType="int" stringID="PAR_NUM_LOGIC_O5ONLY" value="0"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O6ONLY" value="0"/>
-          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ANDO6" value="0"/>
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O6ONLY" value="1"/>
+          <item dataType="int" stringID="PAR_NUM_LOGIC_O5ANDO6" value="3"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O5ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O6ONLY" value="0"/>
           <item dataType="int" stringID="PAR_NUM_ROM_O5ANDO6" value="0"/>
@@ -4184,22 +4228,22 @@
           <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_CARRY4" value="0"/>
           <item dataType="int" stringID="PAR_NUM_LUT_RT_DRIVES_OTHERS" value="0"/>
         </item>
-        <item AVAILABLE="6822" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="0">
+        <item AVAILABLE="6822" dataType="int" stringID="PAR_OCCUPIED_SLICES" value="3">
           <item AVAILABLE="1809" dataType="int" stringID="PAR_NUM_SLICEL" value="0"/>
           <item AVAILABLE="1602" dataType="int" stringID="PAR_NUM_SLICEM" value="0"/>
-          <item AVAILABLE="3411" dataType="int" stringID="PAR_NUM_SLICEX" value="0"/>
+          <item AVAILABLE="3411" dataType="int" stringID="PAR_NUM_SLICEX" value="3"/>
         </item>
-        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="0">
-          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="0"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="0"/>
-          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="0"/>
+        <item dataType="int" stringID="PAR_OCCUPIED_LUT_AND_FF" value="7">
+          <item dataType="int" stringID="PAR_OCCUPIED_LUT_ONLY" value="1"/>
+          <item dataType="int" stringID="PAR_OCCUPIED_FF_ONLY" value="3"/>
+          <item dataType="int" stringID="PAR_OCCUPIED_FF_AND_LUT" value="3"/>
         </item>
       </section>
       <section stringID="PAR_IOB_REPORTING">
         <item AVAILABLE="358" dataType="int" stringID="PAR_AGG_BONDED_IO" value="12"/>
         <item AVAILABLE="12" dataType="int" stringID="PAR_AGG_UNBONDED_IO" value="0"/>
         <item AVAILABLE="0" dataType="int" stringID="PAR_NUM_IOB_FF" value="0"/>
-        <item AVAILABLE="0" dataType="int" stringID="PAR_NUM_IOB_LATCH" value="0"/>
+        <item AVAILABLE="0" dataType="int" stringID="PAR_NUM_IOB_LATCH" value="5"/>
         <item AVAILABLE="6" dataType="int" stringID="PAR_NUM_IOBM" value="0"/>
         <item AVAILABLE="179" dataType="int" stringID="PAR_NUM_BONDED_IOBM" value="0"/>
         <item AVAILABLE="6" dataType="int" stringID="PAR_NUM_IOBS" value="0"/>
@@ -4231,7 +4275,7 @@
         <item AVAILABLE="1" dataType="int" stringID="PAR_NUM_SUSPEND_SYNC" value="0"/>
       </section>
       <section stringID="PAR_BUFG_DATA">
-        <item dataType="int" stringID="PAR_NUM_BUFG" value="0"/>
+        <item dataType="int" stringID="PAR_NUM_BUFG" value="1"/>
         <item dataType="int" stringID="PAR_NUM_BUFGMUX" value="0"/>
         <item dataType="int" stringID="PAR_AVAILABLE" value="16"/>
       </section>

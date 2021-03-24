@@ -1,12 +1,12 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Wed Mar 24 22:23:35 2021
+// Written by: Map P.20131013 on Wed Mar 24 22:45:51 2021
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "led<0>" LOCATE = SITE "N24" LEVEL 1;
 COMP "led<1>" LOCATE = SITE "N23" LEVEL 1;
-COMP "clk" LOCATE = SITE "M21" LEVEL 1;
 COMP "led<2>" LOCATE = SITE "M24" LEVEL 1;
+COMP "clk" LOCATE = SITE "M21" LEVEL 1;
 COMP "led<3>" LOCATE = SITE "L24" LEVEL 1;
 COMP "led<4>" LOCATE = SITE "L23" LEVEL 1;
 COMP "led<5>" LOCATE = SITE "K24" LEVEL 1;
@@ -17,6 +17,10 @@ COMP "tx" LOCATE = SITE "A20" LEVEL 1;
 COMP "rst" LOCATE = SITE "AB24" LEVEL 1;
 PIN rst_pin<0> = BEL "rst" PINNAME PAD;
 PIN "rst_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
+TIMEGRP sys_clk_pin = BEL "uart_receiver_instance/currentState_2" BEL
+        "uart_receiver_instance/currentState_1" BEL
+        "uart_receiver_instance/currentState_0" BEL "clk_BUFGP/BUFG";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 27 MHz HIGH 50%;
 PIN rst_pins<0> = BEL "rst" PINNAME PAD;
 PIN "rst_pins<0>" TIG;
 SCHEMATIC END;
