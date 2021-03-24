@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.21 secs
+Total REAL time to Xst completion: 2.00 secs
+Total CPU time to Xst completion: 1.70 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.21 secs
+Total REAL time to Xst completion: 2.00 secs
+Total CPU time to Xst completion: 1.70 secs
  
 --> Reading design: UARTtop.prj
 
@@ -428,8 +428,8 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.48 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.32 secs
  
 --> 
 

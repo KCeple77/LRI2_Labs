@@ -44,7 +44,7 @@ entity UART_controller is
 end UART_controller;
 
 architecture UART_controller_arch of UART_controller is
-	signal tick : std_logic := '0';
+	signal s_tick : std_logic := '0';
 
 	component baud_rate_generator
 		port (
@@ -79,14 +79,14 @@ begin
 brg: component baud_rate_generator port map(
 	clk => clk,
 	rst => rst,
-	tick => tick
+	tick => s_tick
 );
 
 uart_receiver_comp: component UART_receiver port map(
 	clk => clk,
 	rst => rst,
 	rx => rx,
-	tick => tick,
+	tick => s_tick,
 	d_out => r_data,
 	rx_done => r_done
 );
@@ -94,7 +94,7 @@ uart_receiver_comp: component UART_receiver port map(
 uart_transmitter_comp: component UART_transmitter port map(
 	clk => clk,
 	rst => rst,
-	tick => tick,
+	tick => s_tick,
 	d_in => w_data,
 	tx_start => w_start,
 	tx_done => w_done,
