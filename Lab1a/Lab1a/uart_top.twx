@@ -329,7 +329,7 @@
 <!ELEMENT twName (#PCDATA)>
 <!ELEMENT twValue (#PCDATA)>
 ]>
-<twReport><twHead anchorID="1"><twExecVer>Release 14.7 Trace  (nt64)</twExecVer><twCopyright>Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.</twCopyright><twCmdLine>E:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
+<twReport><twHead anchorID="1"><twExecVer>Release 14.7 Trace  (nt64)</twExecVer><twCopyright>Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.</twCopyright><twCmdLine>C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
 -n 3 -fastpaths -xml uart_top.twx uart_top.ncd -o uart_top.twr uart_top.pcf
 -ucf uart.ucf
 
