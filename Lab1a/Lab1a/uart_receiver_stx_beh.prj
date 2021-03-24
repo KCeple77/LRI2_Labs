@@ -1,4 +1,0 @@
-vhdl isim_temp "baud_rate_generator.vhd"
-vhdl isim_temp "uart_top.vhd"
-vhdl isim_temp "uart_top_tb.vhd"
-vhdl isim_temp "uart_receiver.vhd"

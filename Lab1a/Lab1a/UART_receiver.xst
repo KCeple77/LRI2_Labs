@@ -2,7 +2,7 @@ set -tmpdir "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1a/Lab1a/xst
 set -xsthdpdir "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1a/Lab1a/xst"
 run -compileonly yes
 -p xc6slx45-2-fgg676
--top baud_rate_generator
+-top UART_receiver
 -opt_mode Speed
 -opt_level 1
 -power NO
@@ -47,4 +47,4 @@ run -compileonly yes
 -iob Auto
 -equivalent_register_removal YES
 -slice_utilization_ratio_maxmargin 5
--ifn baud_rate_generator.prj
+-ifn UART_receiver.prj

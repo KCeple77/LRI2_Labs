@@ -4,14 +4,14 @@ Command line:
      -sdfmax  /uut/=netgen/par/uart_top_timesim.sdf
      -sdfroot  /uut
      -simrunnum  0
-     -socket  60499
+     -socket  61237
 
-Wed Mar 24 19:35:13 2021
+Wed Mar 24 21:31:38 2021
 
 
  Elaboration Time: 0.078125 sec
 
- Current Memory Usage: 4700.07 Meg
+ Current Memory Usage: 4700.1 Meg
 
  Total Signals          : 106
  Total Nets             : 76
@@ -23,9 +23,9 @@ Wed Mar 24 19:35:13 2021
  Total Scalar Nets and Variables : 4883
 Total Line Count : 244
 
- Total Simulation Time: 0.265625 sec
+ Total Simulation Time: 0.296875 sec
 
- Current Memory Usage: 5014.65 Meg
+ Current Memory Usage: 4700.11 Meg
 
-Wed Mar 24 19:35:54 2021
+Wed Mar 24 21:59:27 2021
 

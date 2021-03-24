@@ -1,7 +1,7 @@
 (DELAYFILE
   (SDFVERSION "3.0")
   (DESIGN "uart_top")
-  (DATE "Wed Mar 24 19:31:30 2021")
+  (DATE "Wed Mar 24 22:00:04 2021")
   (VENDOR "Xilinx")
   (PROGRAM "Xilinx SDF Writer")
   (VERSION "P.20131013")
@@ -19,7 +19,32 @@
       )
   )
   (CELL (CELLTYPE "X_OBUF")
-    (INSTANCE led_6_OBUF)
+    (INSTANCE tx_OBUF)
+      (DELAY
+        (ABSOLUTE
+          (PORT I ( 0 )( 0 ))
+          (IOPATH I O (1396:2722:2722)(1396:2722:2722))
+        )
+      )
+  )
+  (CELL (CELLTYPE "X_BUF")
+    (INSTANCE rst_IBUF)
+      (DELAY
+        (ABSOLUTE
+          (IOPATH I O (672:1338:1338)(672:1338:1338))
+        )
+      )
+  )
+  (CELL (CELLTYPE "X_BUF")
+    (INSTANCE ProtoComp1_IMUX_2)
+      (DELAY
+        (ABSOLUTE
+          (IOPATH I O (73:177:177)(73:177:177))
+        )
+      )
+  )
+  (CELL (CELLTYPE "X_OBUF")
+    (INSTANCE led_2_OBUF)
       (DELAY
         (ABSOLUTE
           (PORT I ( 0 )( 0 ))
@@ -43,24 +68,6 @@
         )
       )
   )
-  (CELL (CELLTYPE "X_OBUF")
-    (INSTANCE led_5_OBUF)
-      (DELAY
-        (ABSOLUTE
-          (PORT I ( 0 )( 0 ))
-          (IOPATH I O (1396:2722:2722)(1396:2722:2722))
-        )
-      )
-  )
-  (CELL (CELLTYPE "X_OBUF")
-    (INSTANCE tx_OBUF)
-      (DELAY
-        (ABSOLUTE
-          (PORT I ( 0 )( 0 ))
-          (IOPATH I O (1396:2722:2722)(1396:2722:2722))
-        )
-      )
-  )
   (CELL (CELLTYPE "X_BUF")
     (INSTANCE clk_IBUF)
       (DELAY
@@ -77,19 +84,12 @@
         )
       )
   )
-  (CELL (CELLTYPE "X_BUF")
-    (INSTANCE rst_IBUF)
+  (CELL (CELLTYPE "X_OBUF")
+    (INSTANCE led_5_OBUF)
       (DELAY
         (ABSOLUTE
-          (IOPATH I O (672:1338:1338)(672:1338:1338))
-        )
-      )
-  )
-  (CELL (CELLTYPE "X_BUF")
-    (INSTANCE ProtoComp1_IMUX_2)
-      (DELAY
-        (ABSOLUTE
-          (IOPATH I O (73:177:177)(73:177:177))
+          (PORT I ( 0 )( 0 ))
+          (IOPATH I O (1396:2722:2722)(1396:2722:2722))
         )
       )
   )
@@ -103,7 +103,7 @@
       )
   )
   (CELL (CELLTYPE "X_OBUF")
-    (INSTANCE led_2_OBUF)
+    (INSTANCE led_3_OBUF)
       (DELAY
         (ABSOLUTE
           (PORT I ( 0 )( 0 ))
@@ -112,7 +112,7 @@
       )
   )
   (CELL (CELLTYPE "X_OBUF")
-    (INSTANCE led_3_OBUF)
+    (INSTANCE led_6_OBUF)
       (DELAY
         (ABSOLUTE
           (PORT I ( 0 )( 0 ))

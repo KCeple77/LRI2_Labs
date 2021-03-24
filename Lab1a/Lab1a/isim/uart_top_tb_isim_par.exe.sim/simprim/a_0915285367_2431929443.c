@@ -381,17 +381,17 @@ LAB35:    goto LAB33;
 }
 
 
-extern void simprim_a_0915285367_2431929443_2929143188_init()
-{
-	static char *pe[] = {(void *)simprim_a_0915285367_2431929443_p_0,(void *)simprim_a_0915285367_2431929443_p_1};
-	xsi_register_didat("simprim_a_0915285367_2431929443_2929143188", "isim/uart_top_tb_isim_par.exe.sim/simprim/a_0915285367_2431929443_2929143188.didat");
-	xsi_register_executes(pe);
-}
-
 extern void simprim_a_0915285367_2431929443_0116247414_init()
 {
 	static char *pe[] = {(void *)simprim_a_0915285367_2431929443_p_0,(void *)simprim_a_0915285367_2431929443_p_1};
 	xsi_register_didat("simprim_a_0915285367_2431929443_0116247414", "isim/uart_top_tb_isim_par.exe.sim/simprim/a_0915285367_2431929443_0116247414.didat");
+	xsi_register_executes(pe);
+}
+
+extern void simprim_a_0915285367_2431929443_2929143188_init()
+{
+	static char *pe[] = {(void *)simprim_a_0915285367_2431929443_p_0,(void *)simprim_a_0915285367_2431929443_p_1};
+	xsi_register_didat("simprim_a_0915285367_2431929443_2929143188", "isim/uart_top_tb_isim_par.exe.sim/simprim/a_0915285367_2431929443_2929143188.didat");
 	xsi_register_executes(pe);
 }
 

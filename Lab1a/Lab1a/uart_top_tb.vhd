@@ -52,7 +52,7 @@ ARCHITECTURE behavior OF uart_top_tb IS
 
    --Inputs
    signal clk : std_logic := '0';
-   signal rst : std_logic := '0';
+   signal rst : std_logic := '1';
    signal rx : std_logic := '1';
 
  	--Outputs

@@ -10,7 +10,7 @@ Target Device  : xc6slx45
 Target Package : fgg676
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Wed Mar 24 19:30:48 2021
+Mapped Date    : Wed Mar 24 21:59:22 2021
 
 Mapping design into LUTs...
 Running directed packing...
@@ -33,19 +33,19 @@ Phase 3.31  Local Placement Optimization (Checksum:4f574491) REAL time: 7 secs
 
 Phase 4.2  Initial Placement for Architecture Specific Features
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:4f574491) REAL time: 7 secs 
+(Checksum:4f574491) REAL time: 8 secs 
 
 Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:4f574491) REAL time: 7 secs 
+Phase 5.36  Local Placement Optimization (Checksum:4f574491) REAL time: 8 secs 
 
 Phase 6.30  Global Clock Region Assignment
-Phase 6.30  Global Clock Region Assignment (Checksum:4f574491) REAL time: 7 secs 
+Phase 6.30  Global Clock Region Assignment (Checksum:4f574491) REAL time: 8 secs 
 
 Phase 7.3  Local Placement Optimization
-Phase 7.3  Local Placement Optimization (Checksum:4f574491) REAL time: 7 secs 
+Phase 7.3  Local Placement Optimization (Checksum:4f574491) REAL time: 8 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:4f574491) REAL time: 7 secs 
+Phase 8.5  Local Placement Optimization (Checksum:4f574491) REAL time: 8 secs 
 
 Phase 9.8  Global Placement
 Phase 9.8  Global Placement (Checksum:4f574491) REAL time: 8 secs 
