@@ -1,0 +1,31 @@
+Command line:
+   UART_receiver_tb_isim_par.exe
+     -simmode  gui
+     -sdfmax  /uut/=.sdf
+     -sdfroot  /uut
+     -simrunnum  0
+     -socket  56204
+
+Wed Mar 24 09:32:44 2021
+
+
+ Elaboration Time: 0.046875 sec
+
+ Current Memory Usage: 4699.75 Meg
+
+ Total Signals          : 6
+ Total Nets             : 13
+ Total Signal Drivers   : 2
+ Total Blocks           : 2
+ Total Primitive Blocks : 2
+ Total Processes        : 2
+ Total Traceable Variables  : 10
+ Total Scalar Nets and Variables : 375
+Total Line Count : 8
+
+ Total Simulation Time: 0.0625 sec
+
+ Current Memory Usage: 5014.34 Meg
+
+Wed Mar 24 09:33:31 2021
+

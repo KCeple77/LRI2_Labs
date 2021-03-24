@@ -32,9 +32,6 @@ USE ieee.std_logic_1164.ALL;
 -- arithmetic functions with Signed or Unsigned values
 --USE ieee.numeric_std.ALL;
  
-library work;
-use work.transmitter_debug_pkg.all;
- 
 ENTITY uart_transmitter_tb IS
 END uart_transmitter_tb;
  

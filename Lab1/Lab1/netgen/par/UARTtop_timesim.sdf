@@ -1,0 +1,69 @@
+(DELAYFILE
+  (SDFVERSION "3.0")
+  (DESIGN "UARTtop")
+  (DATE "Wed Mar 24 09:32:36 2021")
+  (VENDOR "Xilinx")
+  (PROGRAM "Xilinx SDF Writer")
+  (VERSION "P.20131013")
+  (DIVIDER /)
+  (VOLTAGE 1.14)
+  (TEMPERATURE 85)
+  (TIMESCALE 1 ps)
+  (CELL (CELLTYPE "X_BUF")
+    (INSTANCE clk_IBUF)
+      (DELAY
+        (ABSOLUTE
+          (IOPATH I O (672:1338:1338)(672:1338:1338))
+        )
+      )
+  )
+  (CELL (CELLTYPE "X_BUF")
+    (INSTANCE ProtoComp0_IMUX)
+      (DELAY
+        (ABSOLUTE
+          (IOPATH I O (73:177:177)(73:177:177))
+        )
+      )
+  )
+  (CELL (CELLTYPE "X_BUF")
+    (INSTANCE rst_IBUF)
+      (DELAY
+        (ABSOLUTE
+          (IOPATH I O (672:1338:1338)(672:1338:1338))
+        )
+      )
+  )
+  (CELL (CELLTYPE "X_BUF")
+    (INSTANCE ProtoComp0_IMUX_2)
+      (DELAY
+        (ABSOLUTE
+          (IOPATH I O (73:177:177)(73:177:177))
+        )
+      )
+  )
+  (CELL (CELLTYPE "X_BUF")
+    (INSTANCE rx_IBUF)
+      (DELAY
+        (ABSOLUTE
+          (IOPATH I O (672:1338:1338)(672:1338:1338))
+        )
+      )
+  )
+  (CELL (CELLTYPE "X_BUF")
+    (INSTANCE ProtoComp0_IMUX_1)
+      (DELAY
+        (ABSOLUTE
+          (IOPATH I O (73:177:177)(73:177:177))
+        )
+      )
+  )
+  (CELL (CELLTYPE "X_OBUF")
+    (INSTANCE tx_OBUF)
+      (DELAY
+        (ABSOLUTE
+          (PORT I ( 0 )( 0 ))
+          (IOPATH I O (1396:2722:2722)(1396:2722:2722))
+        )
+      )
+  )
+)
