@@ -1,3 +1,4 @@
 vhdl work "uart_receiver.vhd"
 vhdl work "baud_rate_generator.vhd"
-vhdl work "uart_receiver_tb.vhd"
+vhdl work "uart_top.vhd"
+vhdl work "uart_top_tb.vhd"
