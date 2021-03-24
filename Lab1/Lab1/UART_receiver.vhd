@@ -98,13 +98,13 @@ begin
 	end process;
 	
 	-- FSM Comparator - S3_CNT vs. N-2=6 -> looks if the FSM has been in S3 for N-1 bit read cycles
-	let_s3 <= '1' when c_s3 = 8 else '0';
+	let_s3 <= '1' when c_s3 >= 8 else '0';
 	
 	-- FSM Comparator - BRG_CNT vs. 7 -> looks if the baud rate generator has generated 8 ticks
-	let_7 <= '1' when c_brg = 8 else '0';
+	let_7 <= '1' when c_brg >= 8 else '0';
 	
 	-- FSM Comparator - BRG_CNT vs. 15 -> looks if the baud rate generator has generated 16 ticks
-	let_15 <= '1' when c_brg = 16 else '0';
+	let_15 <= '1' when c_brg >= 16 else '0';
 	
 	-- FSM Synchronous part -> Register
 	process(clk) is
