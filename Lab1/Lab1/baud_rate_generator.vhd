@@ -31,29 +31,28 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity baud_rate_generator is
 	port (
-		clk, rst: in std_logic;
+		clk: in std_logic;
 		tick: out std_logic
 	);
 end baud_rate_generator;
 
 architecture brg_arch of baud_rate_generator is
 	signal s_tick : std_logic := '0';
+	signal counter : integer := 0;
 begin
 	process(clk) is
-		variable counter: integer := 0;
 	begin
 		if rising_edge(clk) then
-			if To_x01(rst) = '1' then
-				counter := 0;
-				s_tick <= '0';
-			else
-				counter := counter + 1;
-			
-				if (counter = 88) then
-					counter := 0;
-					s_tick <= '0' when s_tick = '1' else '0';
+			if (counter = 88) then
+				counter <= 0;
+				if (s_tick = '1') then
+					s_tick <= '0';
+				else
+					s_tick <= '1';
 				end if;
 			end if;
+			
+			counter <= counter + 1;
 		end if;
 	end process;
 	

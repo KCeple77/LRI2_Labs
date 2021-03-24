@@ -1,7 +1,7 @@
 (DELAYFILE
   (SDFVERSION "3.0")
   (DESIGN "UARTtop")
-  (DATE "Wed Mar 24 10:37:46 2021")
+  (DATE "Wed Mar 24 11:24:03 2021")
   (VENDOR "Xilinx")
   (PROGRAM "Xilinx SDF Writer")
   (VERSION "P.20131013")
@@ -41,6 +41,15 @@
         )
       )
   )
+  (CELL (CELLTYPE "X_OBUF")
+    (INSTANCE tx_OBUF)
+      (DELAY
+        (ABSOLUTE
+          (PORT I ( 0 )( 0 ))
+          (IOPATH I O (1396:2722:2722)(1396:2722:2722))
+        )
+      )
+  )
   (CELL (CELLTYPE "X_BUF")
     (INSTANCE rst_IBUF)
       (DELAY
@@ -54,15 +63,6 @@
       (DELAY
         (ABSOLUTE
           (IOPATH I O (73:177:177)(73:177:177))
-        )
-      )
-  )
-  (CELL (CELLTYPE "X_OBUF")
-    (INSTANCE tx_OBUF)
-      (DELAY
-        (ABSOLUTE
-          (PORT I ( 0 )( 0 ))
-          (IOPATH I O (1396:2722:2722)(1396:2722:2722))
         )
       )
   )

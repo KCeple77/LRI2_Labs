@@ -16,3 +16,33 @@ map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -re
 par -w -intstyle ise -ol high -mt off UARTtop_map.ncd UARTtop.ncd UARTtop.pcf 
 trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml UARTtop.twx UARTtop.ncd -o UARTtop.twr UARTtop.pcf -ucf UARTtop.ucf 
 netgen -intstyle ise -s 2  -pcf UARTtop.pcf -rpw 100 -tpw 0 -ar Structure -tm UARTtop -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim UARTtop.ncd UARTtop_timesim.vhd 
+xst -intstyle ise -ifn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.xst" -ofn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc UARTtop.ucf -p xc6slx45-fgg676-2 UARTtop.ngc UARTtop.ngd  
+netgen -intstyle ise -rpw 100 -tpw 0 -ar Structure -tm UARTtop -w -dir netgen/translate -ofmt vhdl -sim UARTtop.ngd UARTtop_translate.vhd 
+xst -intstyle ise -ifn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.xst" -ofn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc UARTtop.ucf -p xc6slx45-fgg676-2 UARTtop.ngc UARTtop.ngd  
+netgen -intstyle ise -rpw 100 -tpw 0 -ar Structure -tm UARTtop -w -dir netgen/translate -ofmt vhdl -sim UARTtop.ngd UARTtop_translate.vhd 
+xst -intstyle ise -ifn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.xst" -ofn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.syr" 
+xst -intstyle ise -ifn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.xst" -ofn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc UARTtop.ucf -p xc6slx45-fgg676-2 UARTtop.ngc UARTtop.ngd  
+netgen -intstyle ise -rpw 100 -tpw 0 -ar Structure -tm UARTtop -w -dir netgen/translate -ofmt vhdl -sim UARTtop.ngd UARTtop_translate.vhd 
+xst -intstyle ise -ifn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.xst" -ofn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc UARTtop.ucf -p xc6slx45-fgg676-2 UARTtop.ngc UARTtop.ngd  
+netgen -intstyle ise -rpw 100 -tpw 0 -ar Structure -tm UARTtop -w -dir netgen/translate -ofmt vhdl -sim UARTtop.ngd UARTtop_translate.vhd 
+map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o UARTtop_map.ncd UARTtop.ngd UARTtop.pcf 
+par -w -intstyle ise -ol high -mt off UARTtop_map.ncd UARTtop.ncd UARTtop.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml UARTtop.twx UARTtop.ncd -o UARTtop.twr UARTtop.pcf -ucf UARTtop.ucf 
+netgen -intstyle ise -s 2  -pcf UARTtop.pcf -rpw 100 -tpw 0 -ar Structure -tm UARTtop -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim UARTtop.ncd UARTtop_timesim.vhd 
+xst -intstyle ise -ifn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.xst" -ofn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc UARTtop.ucf -p xc6slx45-fgg676-2 UARTtop.ngc UARTtop.ngd  
+map -intstyle ise -p xc6slx45-fgg676-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o UARTtop_map.ncd UARTtop.ngd UARTtop.pcf 
+par -w -intstyle ise -ol high -mt off UARTtop_map.ncd UARTtop.ncd UARTtop.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml UARTtop.twx UARTtop.ncd -o UARTtop.twr UARTtop.pcf -ucf UARTtop.ucf 
+netgen -intstyle ise -s 2  -pcf UARTtop.pcf -rpw 100 -tpw 0 -ar Structure -tm UARTtop -insert_pp_buffers true -w -dir netgen/par -ofmt vhdl -sim UARTtop.ncd UARTtop_timesim.vhd 
+xst -intstyle ise -ifn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.xst" -ofn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.syr" 
+xst -intstyle ise -ifn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.xst" -ofn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.syr" 
+xst -intstyle ise -ifn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.xst" -ofn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.syr" 
+xst -intstyle ise -ifn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.xst" -ofn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.syr" 
+xst -intstyle ise -ifn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.xst" -ofn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.syr" 
+xst -intstyle ise -ifn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.xst" -ofn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.syr" 
+xst -intstyle ise -ifn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.xst" -ofn "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/UARTtop.syr" 

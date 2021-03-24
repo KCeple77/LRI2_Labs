@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity echo_device is
 	Port ( 
-		clk, rst: in STD_LOGIC;
+		clk: in STD_LOGIC;
 		r_done : in  STD_LOGIC;
 		w_start : out  STD_LOGIC;
 		w_done : in  STD_LOGIC
@@ -51,11 +51,7 @@ begin
 	process(clk) is
 	begin
 		if rising_edge(clk) then
-			if to_x01(rst) = '1' then
-				currState <= Waiting;
-			else
-				currState <= nextState;
-			end if;
+			currState <= nextState;
 		end if;
 	end process;
 	

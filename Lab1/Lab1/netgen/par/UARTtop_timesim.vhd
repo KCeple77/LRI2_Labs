@@ -7,7 +7,7 @@
 -- \   \   \/     Version: P.20131013
 --  \   \         Application: netgen
 --  /   /         Filename: UARTtop_timesim.vhd
--- /___/   /\     Timestamp: Wed Mar 24 10:37:46 2021
+-- /___/   /\     Timestamp: Wed Mar 24 11:24:03 2021
 -- \   \  /  \ 
 --  \___\/\___\
 --             
@@ -51,9 +51,9 @@ architecture Structure of UARTtop is
   signal clk_IBUF_0 : STD_LOGIC; 
   signal rx_IBUF_0 : STD_LOGIC; 
   signal rst_IBUF_0 : STD_LOGIC; 
-  signal clk_IBUF_2 : STD_LOGIC; 
-  signal rx_IBUF_5 : STD_LOGIC; 
-  signal rst_IBUF_10 : STD_LOGIC; 
+  signal clk_IBUF_1 : STD_LOGIC; 
+  signal rx_IBUF_4 : STD_LOGIC; 
+  signal rst_IBUF_9 : STD_LOGIC; 
 begin
   clk_IBUF : X_BUF
     generic map(
@@ -61,7 +61,7 @@ begin
       PATHPULSE => 115 ps
     )
     port map (
-      O => clk_IBUF_2,
+      O => clk_IBUF_1,
       I => clk
     );
   ProtoComp0_IMUX : X_BUF
@@ -70,7 +70,7 @@ begin
       PATHPULSE => 115 ps
     )
     port map (
-      I => clk_IBUF_2,
+      I => clk_IBUF_1,
       O => clk_IBUF_0
     );
   rx_IBUF : X_BUF
@@ -79,7 +79,7 @@ begin
       PATHPULSE => 115 ps
     )
     port map (
-      O => rx_IBUF_5,
+      O => rx_IBUF_4,
       I => rx
     );
   ProtoComp0_IMUX_1 : X_BUF
@@ -88,26 +88,8 @@ begin
       PATHPULSE => 115 ps
     )
     port map (
-      I => rx_IBUF_5,
+      I => rx_IBUF_4,
       O => rx_IBUF_0
-    );
-  rst_IBUF : X_BUF
-    generic map(
-      LOC => "PAD117",
-      PATHPULSE => 115 ps
-    )
-    port map (
-      O => rst_IBUF_10,
-      I => rst
-    );
-  ProtoComp0_IMUX_2 : X_BUF
-    generic map(
-      LOC => "PAD117",
-      PATHPULSE => 115 ps
-    )
-    port map (
-      I => rst_IBUF_10,
-      O => rst_IBUF_0
     );
   tx_OBUF : X_OBUF
     generic map(
@@ -116,6 +98,24 @@ begin
     port map (
       I => '1',
       O => tx
+    );
+  rst_IBUF : X_BUF
+    generic map(
+      LOC => "PAD117",
+      PATHPULSE => 115 ps
+    )
+    port map (
+      O => rst_IBUF_9,
+      I => rst
+    );
+  ProtoComp0_IMUX_2 : X_BUF
+    generic map(
+      LOC => "PAD117",
+      PATHPULSE => 115 ps
+    )
+    port map (
+      I => rst_IBUF_9,
+      O => rst_IBUF_0
     );
   NlwBlockROC : X_ROC
     generic map (ROC_WIDTH => 100 ns)

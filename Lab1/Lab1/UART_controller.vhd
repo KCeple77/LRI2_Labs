@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity UART_controller is
 	port (
-		clk, rst: in std_logic;
+		clk: in std_logic;
 		rx: in std_logic;
 		tx: out std_logic;
 		
@@ -49,7 +49,7 @@ architecture UART_controller_arch of UART_controller is
 	
 	component UART_receiver
 		port (
-			clk, rst:  in std_logic;
+			clk: in std_logic;
 			rx, tick: in std_logic;
 			d_out: out std_logic_vector(7 downto 0);
 			rx_done : out std_logic
@@ -58,7 +58,7 @@ architecture UART_controller_arch of UART_controller is
 
 	component UART_transmitter
 		port (
-			clk, rst:  in std_logic;
+			clk: in std_logic;
 		
 			tick: in std_logic;
 			d_in: in std_logic_vector(7 downto 0);
@@ -71,7 +71,7 @@ architecture UART_controller_arch of UART_controller is
 	
 	component baud_rate_generator
 		port (
-			clk, rst: in std_logic;
+			clk: in std_logic;
 			tick: out std_logic
 		);
 	end component;
@@ -79,7 +79,6 @@ begin
 
 	uart_receiver_instance: component UART_receiver port map(
 		clk => clk,
-		rst => rst,
 		rx => rx,
 		tick => s_tick_in,
 		d_out => r_data,
@@ -88,7 +87,6 @@ begin
 
 	uart_transmitter_instance: component UART_transmitter port map(
 		clk => clk,
-		rst => rst,
 		tick => s_tick_in,
 		d_in => w_data,
 		tx_start => w_start,
@@ -98,7 +96,6 @@ begin
 	
 	brg_instance: component baud_rate_generator port map(
 		clk => clk,
-		rst => rst,
 		tick => s_tick_out
 	);
 

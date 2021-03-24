@@ -31,7 +31,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity UART_receiver is
 	port (
-		clk, rst:  in std_logic;
+		clk:  in std_logic;
 		rx, tick: in std_logic;
 		d_out: out std_logic_vector(7 downto 0);
 		rx_done : out std_logic
@@ -74,11 +74,9 @@ begin
 --	end process;
 
 	-- FSM S3 Counter
-	process(inc_s3, rst, cr_s3) is
+	process(inc_s3, cr_s3) is
 	begin
-		if to_x01(rst) = '1' then
-			c_s3 <= 0;
-		elsif to_x01(cr_s3) = '1' then
+		if to_x01(cr_s3) = '1' then
 			c_s3 <= 0;
 		elsif rising_edge(inc_s3) then
 			c_s3 <= c_s3 + 1;
@@ -86,11 +84,9 @@ begin
 	end process;
 	
 	-- FSM Baud Rate Tick Counter
-	process(tick, rst, cr_brg) is
+	process(tick, cr_brg) is
 	begin
-		if rising_edge(rst) then
-			c_brg <= 0;
-		elsif rising_edge(cr_brg) then
+		if rising_edge(cr_brg) then
 			c_brg <= 0;
 		elsif rising_edge(tick) then
 			c_brg <= c_brg + 1;
@@ -98,23 +94,19 @@ begin
 	end process;
 	
 	-- FSM Comparator - S3_CNT vs. N-2=6 -> looks if the FSM has been in S3 for N-1 bit read cycles
-	let_s3 <= '1' when c_s3 >= 8 else '0';
+	let_s3 <= '1' when (c_s3 >= 8) else '0';
 	
 	-- FSM Comparator - BRG_CNT vs. 7 -> looks if the baud rate generator has generated 8 ticks
-	let_7 <= '1' when c_brg >= 8 else '0';
+	let_7 <= '1' when (c_brg >= 8) else '0';
 	
 	-- FSM Comparator - BRG_CNT vs. 15 -> looks if the baud rate generator has generated 16 ticks
-	let_15 <= '1' when c_brg >= 16 else '0';
+	let_15 <= '1' when (c_brg >= 16) else '0';
 	
 	-- FSM Synchronous part -> Register
 	process(clk) is
 	begin
 		if rising_edge(clk) then
-			if to_x01(rst) = '1' then
-				currentState <= Idle;
-			else
-				currentState <= nextState;
-			end if;
+			currentState <= nextState;
 		end if;
 	end process;
 		
@@ -177,11 +169,9 @@ begin
 	
 	
 	-- Shift register that will be used for storing the data -- Serial in, Parallel out = SIPO
-	process(shift_enable, rst) is
+	process(shift_enable) is
 	begin
-		if rising_edge(rst) then
-			shift_reg <= (others => '0');
-		elsif rising_edge(shift_enable) then
+		if rising_edge(shift_enable) then
 			-- Shift and write inside new val
 			shift_reg(6 downto 0) <= shift_reg(7 downto 1);
 			shift_reg(7) <= sampled_bit;

@@ -12,7 +12,8 @@ Compiling package standard
 Compiling package std_logic_1164
 Compiling architecture behavior of entity brg_tb
 Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
 Compiled 3 VHDL Units
 Built simulation executable E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1/Lab1/brg_tb_isim_par.exe
-Fuse Memory Usage: 30604 KB
-Fuse CPU Usage: 796 ms
+Fuse Memory Usage: 30576 KB
+Fuse CPU Usage: 718 ms
