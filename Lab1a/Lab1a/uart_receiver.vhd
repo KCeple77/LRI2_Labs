@@ -109,57 +109,57 @@ begin
 	end process;
 	
 	-- RX_Done Register
-	process(clk) is
-	begin
-		if rising_edge(clk) then
-			if to_x01(reg_rst) = '0' then
-				rx_done <= '0';
-			else
-				rx_done <= reg_rx_done;
-			end if;
-		end if;
-	end process;
+--	process(clk) is
+--	begin
+--		if rising_edge(clk) then
+--			if to_x01(reg_rst) = '0' then
+--				rx_done <= '0';
+--			else
+--				rx_done <= reg_rx_done;
+--			end if;
+--		end if;
+--	end process;
 	
 	-- shift_enable Register
-	process(clk) is
-	begin
-		if rising_edge(clk) then
-			if to_x01(reg_rst) = '0' then
-				reg_shift_enable  <= '0';
-			else
-				reg_shift_enable <= shift_enable;
-			end if;
-		end if;
-	end process;
+--	process(clk) is
+--	begin
+--		if rising_edge(clk) then
+--			if to_x01(reg_rst) = '0' then
+--				reg_shift_enable  <= '0';
+--			else
+--				reg_shift_enable <= shift_enable;
+--			end if;
+--		end if;
+--	end process;
 	
-	-- cr_s3 Register
-	process(clk) is
-	begin
-		if rising_edge(clk) then
-			if to_x01(reg_rst) = '0' then
-				reg_cr_s3  <= '0';
-			else
-				reg_cr_s3 <= cr_s3;
-			end if;
-		end if;
-	end process;
-
-	-- cr_brg Register
-	process(clk) is
-	begin
-		if rising_edge(clk) then
-			if to_x01(reg_rst) = '0' then
-				reg_cr_brg  <= '0';
-			else
-				reg_cr_brg <= cr_brg;
-			end if;
-		end if;
-	end process;
+--	-- cr_s3 Register
+--	process(clk) is
+--	begin
+--		if rising_edge(clk) then
+--			if to_x01(reg_rst) = '0' then
+--				reg_cr_s3  <= '0';
+--			else
+--				reg_cr_s3 <= cr_s3;
+--			end if;
+--		end if;
+--	end process;
+--
+--	-- cr_brg Register
+--	process(clk) is
+--	begin
+--		if rising_edge(clk) then
+--			if to_x01(reg_rst) = '0' then
+--				reg_cr_brg  <= '0';
+--			else
+--				reg_cr_brg <= cr_brg;
+--			end if;
+--		end if;
+--	end process;
 
 	-- FSM S3 Counter
-	process(tick, reg_rst, reg_cr_s3) is
+	process(tick, reg_rst, cr_s3) is
 	begin
-		if to_x01(reg_rst) = '0' or to_x01(reg_cr_s3) = '1' then
+		if to_x01(reg_rst) = '0' or to_x01(cr_s3) = '1' then
 			c_s3 <= 0;
 			cleared_s3 <= '1';
 		elsif to_x01(tick) = '1' then
@@ -170,9 +170,9 @@ begin
 	end process;
 	
 	-- FSM Baud Rate Tick Counter
-	process(tick, reg_rst, reg_cr_brg) is
+	process(tick, reg_rst, cr_brg) is
 	begin
-		if to_x01(reg_rst) = '0' or to_x01(reg_cr_brg) = '1' then
+		if to_x01(reg_rst) = '0' or to_x01(cr_brg) = '1' then
 			c_brg <= 0;
 			cleared_brg <= '1';
 		elsif to_x01(tick) = '1' then
@@ -268,7 +268,7 @@ begin
 		
 		case currentState is
 			when Idle =>
-				reg_rx_done <= '0';
+				rx_done <= '0';
 				
 				ledout(4) <= '1';
 				ledout(5) <= '0';
@@ -323,26 +323,24 @@ begin
 				if to_x01(let_7) = '1' and to_x01(rx) = '1' then
 					ledout(3) <= '1';
 					nextState <= Idle;
-					reg_rx_done <= '1';
+					rx_done <= '1';
 				end if;
 			when others => null;
 		end case;
 	end process;
 	
 	-- Shift register that will be used for storing the data -- Serial in, Parallel out = SIPO
-	process(clk) is
+	process(reg_rst, shift_enable) is
 	begin
-		if rising_edge(clk) then
-			if to_x01(reg_rst) = '0' then
-				shift_reg <= (others => '0');
-				shifted <= '0';
-			elsif to_x01(reg_shift_enable) = '1' and shifted = '0' then
-				shifted <= '1';
-				shift_reg(6 downto 0) <= shift_reg(7 downto 1);
-				shift_reg(7) <= reg_rx;
-			else
-				shifted <= '0';
-			end if;
+		if to_x01(reg_rst) = '0' then
+			shift_reg <= (others => '0');
+			shifted <= '0';
+		elsif to_x01(shift_enable) = '1' then
+			shifted <= '1';
+			shift_reg(6 downto 0) <= shift_reg(7 downto 1);
+			shift_reg(7) <= reg_rx;
+		else
+			shifted <= '0';
 		end if;
 	end process;
 	

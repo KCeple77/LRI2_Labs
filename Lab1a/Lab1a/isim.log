@@ -12,25 +12,511 @@ Time resolution is 1 ps
 # run 2 ms
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-at 211084 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_reg_rx_done/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
-  Expected := 0.235 ns; Observed := 0.129 ns; At : 211.084 ns
-at 3393351 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_reg_cr_brg/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.143 ns; Observed := 0.124 ns; At : 3393.351 ns
-at 3467423 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_reg_cr_brg/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.143 ns; Observed := 0.037 ns; At : 3467.423 ns
-at 3516202 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
-  Expected := 0.235 ns; Observed := 0.228 ns; At : 3516.202 ns
-at 3516202 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
-  Expected := 0.235 ns; Observed := 0.228 ns; At : 3516.202 ns
-at 3521754 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
-  Expected := 0.235 ns; Observed := 0.228 ns; At : 3521.754 ns
-at 3521754 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
-  Expected := 0.235 ns; Observed := 0.228 ns; At : 3521.754 ns
-at 3541495 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_reg_cr_brg/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.143 ns; Observed := 0.067 ns; At : 3541.495 ns
-at 3541499 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_reg_cr_brg/ : Warning: /X_SFF HOLD   X  VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.05 ns; Observed := 0.004 ns; At : 3541.499 ns
-at 3544706 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
-  Expected := 0.235 ns; Observed := 0.193 ns; At : 3544.706 ns
-at 3544706 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
-  Expected := 0.235 ns; Observed := 0.193 ns; At : 3544.706 ns
+at 3375475 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.212 ns; At : 3375.475 ns
+at 3375475 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.212 ns; At : 3375.475 ns
+at 3375475 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.212 ns; At : 3375.475 ns
+at 3375475 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.212 ns; At : 3375.475 ns
+at 3376548 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.212 ns; At : 3376.548 ns
+at 3376548 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.212 ns; At : 3376.548 ns
+at 3376548 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.212 ns; At : 3376.548 ns
+at 3376548 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.212 ns; At : 3376.548 ns
+at 3376811 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.212 ns; At : 3376.811 ns
+at 3376811 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.212 ns; At : 3376.811 ns
+at 3376811 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.212 ns; At : 3376.811 ns
+at 3376811 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE SETUP   X  VIOLATION ON I WITH RESPECT TO CLK;
+  Expected := 0.021 ns; Observed := 0.018 ns; At : 3376.811 ns
+at 3376811 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.212 ns; At : 3376.811 ns
+at 3385756 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.136 ns; At : 3385.756 ns
+at 3385756 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.136 ns; At : 3385.756 ns
+at 3385756 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.136 ns; At : 3385.756 ns
+at 3385756 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.136 ns; At : 3385.756 ns
+at 3386829 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.136 ns; At : 3386.829 ns
+at 3386829 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.136 ns; At : 3386.829 ns
+at 3386829 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.136 ns; At : 3386.829 ns
+at 3386829 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.136 ns; At : 3386.829 ns
+at 3387929 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3387.929 ns
+at 3387929 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3387.929 ns
+at 3387929 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3387.929 ns
+at 3387929 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3387.929 ns
+at 3389002 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3389.002 ns
+at 3389002 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3389.002 ns
+at 3389002 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3389.002 ns
+at 3389002 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3389.002 ns
+at 3389265 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3389.265 ns
+at 3389265 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3389.265 ns
+at 3389265 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3389.265 ns
+at 3389265 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3389.265 ns
+at 3390338 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3390.338 ns
+at 3390338 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3390.338 ns
+at 3390338 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3390.338 ns
+at 3390338 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3390.338 ns
+at 3390601 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3390.601 ns
+at 3390601 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3390.601 ns
+at 3390601 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3390.601 ns
+at 3390601 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3390.601 ns
+at 3391674 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3391.674 ns
+at 3391674 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3391.674 ns
+at 3391674 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3391.674 ns
+at 3391674 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.172 ns; At : 3391.674 ns
+at 3391934 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3391.934 ns
+at 3391934 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3391.934 ns
+at 3391934 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3391.934 ns
+at 3391934 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3391.934 ns
+at 3393007 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3393.007 ns
+at 3393007 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3393.007 ns
+at 3393007 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3393.007 ns
+at 3393007 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3393.007 ns
+at 3393270 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3393.27 ns
+at 3393270 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3393.27 ns
+at 3393270 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3393.27 ns
+at 3393270 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3393.27 ns
+at 3394343 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3394.343 ns
+at 3394343 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3394.343 ns
+at 3394343 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3394.343 ns
+at 3394343 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3394.343 ns
+at 3394606 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3394.606 ns
+at 3394606 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3394.606 ns
+at 3394606 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3394.606 ns
+at 3394606 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3394.606 ns
+at 3395679 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3395.679 ns
+at 3395679 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3395.679 ns
+at 3395679 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3395.679 ns
+at 3395679 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3395.679 ns
+at 3395942 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3395.942 ns
+at 3395942 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3395.942 ns
+at 3395942 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3395.942 ns
+at 3395942 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3395.942 ns
+at 3396860 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3396.86 ns
+at 3396860 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3396.86 ns
+at 3396860 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3396.86 ns
+at 3396860 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3396.86 ns
+at 3397015 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3397.015 ns
+at 3397015 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3397.015 ns
+at 3397015 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3397.015 ns
+at 3397015 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3397.015 ns
+at 3397278 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3397.278 ns
+at 3397278 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3397.278 ns
+at 3397278 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3397.278 ns
+at 3397278 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3397.278 ns
+at 3397933 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3397.933 ns
+at 3397933 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3397.933 ns
+at 3397933 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3397.933 ns
+at 3397933 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3397.933 ns
+at 3398196 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3398.196 ns
+at 3398196 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3398.196 ns
+at 3398196 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3398.196 ns
+at 3398196 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3398.196 ns
+at 3398351 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3398.351 ns
+at 3398351 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3398.351 ns
+at 3398351 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3398.351 ns
+at 3398351 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3398.351 ns
+at 3398614 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3398.614 ns
+at 3398614 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3398.614 ns
+at 3398614 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3398.614 ns
+at 3398614 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3398.614 ns
+at 3399269 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3399.269 ns
+at 3399269 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3399.269 ns
+at 3399269 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3399.269 ns
+at 3399269 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3399.269 ns
+at 3399532 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3399.532 ns
+at 3399532 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3399.532 ns
+at 3399532 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3399.532 ns
+at 3399532 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3399.532 ns
+at 3399687 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3399.687 ns
+at 3399687 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3399.687 ns
+at 3399687 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3399.687 ns
+at 3399687 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3399.687 ns
+at 3399950 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3399.95 ns
+at 3399950 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3399.95 ns
+at 3399950 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3399.95 ns
+at 3399950 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3399.95 ns
+at 3400605 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3400.605 ns
+at 3400605 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3400.605 ns
+at 3400605 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3400.605 ns
+at 3400605 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3400.605 ns
+at 3400836 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3400.836 ns
+at 3400836 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3400.836 ns
+at 3400836 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3400.836 ns
+at 3400836 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3400.836 ns
+at 3401023 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3401.023 ns
+at 3401023 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3401.023 ns
+at 3401023 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3401.023 ns
+at 3401023 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3401.023 ns
+at 3401909 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3401.909 ns
+at 3401909 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3401.909 ns
+at 3401909 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3401.909 ns
+at 3401909 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3401.909 ns
+at 3402172 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3402.172 ns
+at 3402172 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3402.172 ns
+at 3402172 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3402.172 ns
+at 3402172 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3402.172 ns
+at 3403245 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3403.245 ns
+at 3403245 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3403.245 ns
+at 3403245 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3403.245 ns
+at 3403245 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3403.245 ns
+at 3403508 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3403.508 ns
+at 3403508 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3403.508 ns
+at 3403508 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3403.508 ns
+at 3403508 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3403.508 ns
+at 3404581 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3404.581 ns
+at 3404581 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3404.581 ns
+at 3404581 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3404.581 ns
+at 3404581 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3404.581 ns
+at 3404844 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3404.844 ns
+at 3404844 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3404.844 ns
+at 3404844 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3404.844 ns
+at 3404844 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3404.844 ns
+at 3405214 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3405.214 ns
+at 3405214 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3405.214 ns
+at 3405214 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3405.214 ns
+at 3405214 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3405.214 ns
+at 3405917 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3405.917 ns
+at 3405917 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3405.917 ns
+at 3405917 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3405.917 ns
+at 3405917 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3405.917 ns
+at 3406180 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3406.18 ns
+at 3406180 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3406.18 ns
+at 3406180 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3406.18 ns
+at 3406180 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3406.18 ns
+at 3406287 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3406.287 ns
+at 3406287 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3406.287 ns
+at 3406287 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3406.287 ns
+at 3406287 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3406.287 ns
+at 3406550 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3406.55 ns
+at 3406550 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3406.55 ns
+at 3406550 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3406.55 ns
+at 3406550 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3406.55 ns
+at 3407253 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3407.253 ns
+at 3407253 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3407.253 ns
+at 3407253 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3407.253 ns
+at 3407253 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3407.253 ns
+at 3407516 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3407.516 ns
+at 3407516 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3407.516 ns
+at 3407516 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3407.516 ns
+at 3407516 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3407.516 ns
+at 3407623 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3407.623 ns
+at 3407623 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3407.623 ns
+at 3407623 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3407.623 ns
+at 3407623 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3407.623 ns
+at 3407886 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3407.886 ns
+at 3407886 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3407.886 ns
+at 3407886 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3407.886 ns
+at 3407886 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3407.886 ns
+at 3408589 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3408.589 ns
+at 3408589 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3408.589 ns
+at 3408589 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3408.589 ns
+at 3408589 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3408.589 ns
+at 3408852 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3408.852 ns
+at 3408852 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3408.852 ns
+at 3408852 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3408.852 ns
+at 3408852 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3408.852 ns
+at 3408959 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3408.959 ns
+at 3408959 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3408.959 ns
+at 3408959 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3408.959 ns
+at 3408959 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.201 ns; At : 3408.959 ns
+at 3409190 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3409.19 ns
+at 3409190 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3409.19 ns
+at 3409190 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3409.19 ns
+at 3409190 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3409.19 ns
+at 3410526 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3410.526 ns
+at 3410526 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3410.526 ns
+at 3410526 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3410.526 ns
+at 3410526 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3410.526 ns
+at 3411862 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3411.862 ns
+at 3411862 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3411.862 ns
+at 3411862 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3411.862 ns
+at 3411862 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3411.862 ns
+at 3412846 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.155 ns; At : 3412.846 ns
+at 3412846 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.155 ns; At : 3412.846 ns
+at 3412846 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.155 ns; At : 3412.846 ns
+at 3412846 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.155 ns; At : 3412.846 ns
+at 3412935 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_7/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3412.935 ns
+at 3412935 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_6/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3412.935 ns
+at 3412935 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_5/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3412.935 ns
+at 3412935 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_4/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3412.935 ns
+at 3413198 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3413.198 ns
+at 3413198 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3413.198 ns
+at 3413198 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3413.198 ns
+at 3413198 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.169 ns; At : 3413.198 ns
+at 3414534 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.152 ns; At : 3414.534 ns
+at 3414534 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.152 ns; At : 3414.534 ns
+at 3414534 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.152 ns; At : 3414.534 ns
+at 3414534 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.152 ns; At : 3414.534 ns
+at 3419831 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.178 ns; At : 3419.831 ns
+at 3419831 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.178 ns; At : 3419.831 ns
+at 3419831 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.178 ns; At : 3419.831 ns
+at 3419831 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.178 ns; At : 3419.831 ns
+at 3421214 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.153 ns; At : 3421.214 ns
+at 3421214 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.153 ns; At : 3421.214 ns
+at 3421214 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.153 ns; At : 3421.214 ns
+at 3421214 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.153 ns; At : 3421.214 ns
+at 3440052 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.07 ns; At : 3440.052 ns
+at 3440052 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.07 ns; At : 3440.052 ns
+at 3451228 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.044 ns; At : 3451.228 ns
+at 3451228 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.044 ns; At : 3451.228 ns
+at 3453974 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.218 ns; At : 3453.974 ns
+at 3453974 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.218 ns; At : 3453.974 ns
+at 3460964 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.218 ns; At : 3460.964 ns
+at 3460964 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.218 ns; At : 3460.964 ns
+at 3463928 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.184 ns; At : 3463.928 ns
+at 3463928 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_2/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.184 ns; At : 3463.928 ns
+at 3463928 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.184 ns; At : 3463.928 ns
+at 3463928 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.184 ns; At : 3463.928 ns
+at 3465037 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.134 ns; At : 3465.037 ns
+at 3465037 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.134 ns; At : 3465.037 ns
+at 6620568 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_c_s3_2/ : Warning: /X_LATCHE SETUP High VIOLATION ON I WITH RESPECT TO CLK;
+  Expected := 0.04 ns; Observed := 0.017 ns; At : 6620.568 ns
+at 6620568 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_c_s3_1/ : Warning: /X_LATCHE SETUP High VIOLATION ON I WITH RESPECT TO CLK;
+  Expected := 0.04 ns; Observed := 0.017 ns; At : 6620.568 ns
+at 13138853 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_c_brg_1/ : Warning: /X_LATCHE SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
+  Expected := 0.021 ns; Observed := 0.004 ns; At : 13138.853 ns
