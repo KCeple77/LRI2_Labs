@@ -183,52 +183,55 @@ begin
 	end process;
 	
 	-- FSM Comparator - S3_CNT vs. N-2=6 -> looks if the FSM has been in S3 long enough
-	process(clk) is
-	begin
-		if rising_edge(clk) then
-			if to_x01(reg_rst) = '0' then
-				let_s3 <= '0';
-			else
-				if c_s3 >= 136 then
-					let_s3 <= '1';
-				else
-					let_s3 <= '0';
-				end if;
-			end if;
-		end if;
-	end process;
+	let_s3 <= '1' when c_s3 >= 136 else '0';
+--	process(clk) is
+--	begin
+--		if rising_edge(clk) then
+--			if to_x01(reg_rst) = '0' then
+--				let_s3 <= '0';
+--			else
+--				if c_s3 >= 136 then
+--					let_s3 <= '1';
+--				else
+--					let_s3 <= '0';
+--				end if;
+--			end if;
+--		end if;
+--	end process;
 	
 	-- FSM Comparator - BRG_CNT vs. 7 -> looks if the baud rate generator has generated 8 ticks
-	process(clk) is
-	begin
-		if rising_edge(clk) then
-			if to_x01(reg_rst) = '0' then
-				let_7 <= '0';
-			else
-				if c_brg >= 8 then
-					let_7 <= '1';
-				else
-					let_7 <= '0';
-				end if;
-			end if;
-		end if;
-	end process;
+	let_7 <= '1' when c_brg >= 8 else '0';
+--	process(clk) is
+--	begin
+--		if rising_edge(clk) then
+--			if to_x01(reg_rst) = '0' then
+--				let_7 <= '0';
+--			else
+--				if c_brg >= 8 then
+--					let_7 <= '1';
+--				else
+--					let_7 <= '0';
+--				end if;
+--			end if;
+--		end if;
+--	end process;
 	
 	-- FSM Comparator - BRG_CNT vs. 15 -> looks if the baud rate generator has generated 16 ticks
-	process(clk) is
-	begin
-		if rising_edge(clk) then
-			if to_x01(reg_rst) = '0' then
-				let_15 <= '0';
-			else
-				if c_brg >= 16 then
-					let_15 <= '1';
-				else
-					let_15 <= '0';
-				end if;
-			end if;
-		end if;
-	end process;
+	let_15 <= '1' when c_brg >= 16 else '0';
+--	process(clk) is
+--	begin
+--		if rising_edge(clk) then
+--			if to_x01(reg_rst) = '0' then
+--				let_15 <= '0';
+--			else
+--				if c_brg >= 16 then
+--					let_15 <= '1';
+--				else
+--					let_15 <= '0';
+--				end if;
+--			end if;
+--		end if;
+--	end process;
 	
 	-- FSM Synchronous part -> Register
 	process(clk) is

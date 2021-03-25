@@ -12,67 +12,25 @@ Time resolution is 1 ps
 # run 2 ms
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-at 3393397 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_15/ : Warning: /X_SFF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.148 ns; Observed := 0.093 ns; At : 3393.397 ns
-at 3430433 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_15/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.148 ns; Observed := 0.13 ns; At : 3430.433 ns
-at 3689685 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_15/ : Warning: /X_SFF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.148 ns; Observed := 0.121 ns; At : 3689.685 ns
-at 3837829 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_15/ : Warning: /X_SFF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.148 ns; Observed := 0.121 ns; At : 3837.829 ns
-at 3948937 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_15/ : Warning: /X_SFF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.148 ns; Observed := 0.121 ns; At : 3948.937 ns
-at 4059953 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_s3/ : Warning: /X_SFF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.138 ns; Observed := 0.13 ns; At : 4059.953 ns
-at 4134025 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_s3/ : Warning: /X_SFF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.138 ns; Observed := 0.104 ns; At : 4134.025 ns
-at 4171153 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_7/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.148 ns; Observed := 0.097 ns; At : 4171.153 ns
-at 4245133 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_s3/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.138 ns; Observed := 0.118 ns; At : 4245.133 ns
-at 4430313 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_s3/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.138 ns; Observed := 0.096 ns; At : 4430.313 ns
-at 4467349 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_s3/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.138 ns; Observed := 0.122 ns; At : 4467.349 ns
-at 5059925 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_s3/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.138 ns; Observed := 0.127 ns; At : 5059.925 ns
-at 5874717 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_s3/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.138 ns; Observed := 0.101 ns; At : 5874.717 ns
-at 5911845 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_15/ : Warning: /X_SFF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.148 ns; Observed := 0.101 ns; At : 5911.845 ns
-at 5985917 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_7/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.148 ns; Observed := 0.131 ns; At : 5985.917 ns
-at 6022861 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_s3/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.138 ns; Observed := 0.125 ns; At : 6022.861 ns
-at 6022953 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_15/ : Warning: /X_SFF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.148 ns; Observed := 0.104 ns; At : 6022.953 ns
-at 6208133 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_7/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.148 ns; Observed := 0.124 ns; At : 6208.133 ns
-at 6282113 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_s3/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.138 ns; Observed := 0.097 ns; At : 6282.113 ns
-at 6282205 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_7/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.148 ns; Observed := 0.143 ns; At : 6282.205 ns
-at 6430257 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_s3/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.138 ns; Observed := 0.121 ns; At : 6430.257 ns
-at 6467293 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_s3/ : Warning: /X_SFF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.138 ns; Observed := 0.089 ns; At : 6467.293 ns
-at 6504421 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_let_7/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.148 ns; Observed := 0.102 ns; At : 6504.421 ns
-at 6620480 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_c_brg_11/ : Warning: /X_LATCHE SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.021 ns; Observed := 0.003 ns; At : 6620.48 ns
-at 6620524 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_c_s3_7/ : Warning: /X_LATCHE SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.04 ns; Observed := 0.014 ns; At : 6620.524 ns
-at 6620526 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_c_s3_8/ : Warning: /X_LATCHE SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.04 ns; Observed := 0.003 ns; At : 6620.526 ns
-at 13138813 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_c_brg_1/ : Warning: /X_LATCHE SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.021 ns; Observed := 0.004 ns; At : 13138.813 ns
-at 13138814 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_c_brg_7/ : Warning: /X_LATCHE SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.021 ns; Observed := 0.003 ns; At : 13138.814 ns
-at 13138816 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_c_brg_10/ : Warning: /X_LATCHE SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.021 ns; Observed := 0.017 ns; At : 13138.816 ns
-at 13138816 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_c_brg_9/ : Warning: /X_LATCHE SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.021 ns; Observed := 0.002 ns; At : 13138.816 ns
-at 13138857 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_c_s3_1/ : Warning: /X_LATCHE SETUP High VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.04 ns; Observed := 0.029 ns; At : 13138.857 ns
-at 13138860 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_c_s3_6/ : Warning: /X_LATCHE SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.04 ns; Observed := 0.023 ns; At : 13138.86 ns
+at 211084 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_reg_rx_done/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.129 ns; At : 211.084 ns
+at 3393351 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_reg_cr_brg/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
+  Expected := 0.143 ns; Observed := 0.124 ns; At : 3393.351 ns
+at 3467423 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_reg_cr_brg/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
+  Expected := 0.143 ns; Observed := 0.037 ns; At : 3467.423 ns
+at 3516202 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.228 ns; At : 3516.202 ns
+at 3516202 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.228 ns; At : 3516.202 ns
+at 3521754 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.228 ns; At : 3521.754 ns
+at 3521754 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.228 ns; At : 3521.754 ns
+at 3541495 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_reg_cr_brg/ : Warning: /X_SFF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
+  Expected := 0.143 ns; Observed := 0.067 ns; At : 3541.495 ns
+at 3541499 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_reg_cr_brg/ : Warning: /X_SFF HOLD   X  VIOLATION ON I WITH RESPECT TO CLK;
+  Expected := 0.05 ns; Observed := 0.004 ns; At : 3541.499 ns
+at 3544706 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_1/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.193 ns; At : 3544.706 ns
+at 3544706 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_nextState_0/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;
+  Expected := 0.235 ns; Observed := 0.193 ns; At : 3544.706 ns
