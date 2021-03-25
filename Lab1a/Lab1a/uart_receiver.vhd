@@ -43,36 +43,36 @@ architecture UART_receiver_arch of UART_receiver is
 	type State is (
 		Idle, State1, State3, State4
 	);
-	signal currentState : State := Idle;
+	signal currentState : State;
 	signal nextState : State;
 	
-	signal c_brg : integer := 0;
-	signal cr_brg : std_logic := '0';
-	signal reg_cr_brg : std_logic := '0';
-	signal cleared_brg : std_logic := '0';
-	signal inc_brg : std_logic := '0';
+	signal c_brg : integer;
+	signal cr_brg : std_logic;
+	signal reg_cr_brg : std_logic;
+	signal cleared_brg : std_logic;
+	signal inc_brg : std_logic;
 	
-	signal c_s3 : integer := 0;
-	signal cr_s3 : std_logic := '0';
-	signal reg_cr_s3 : std_logic := '0';
-	signal cleared_s3 : std_logic := '0';
-	signal inc_s3 : std_logic := '0';
+	signal c_s3 : integer;
+	signal cr_s3 : std_logic;
+	signal reg_cr_s3 : std_logic;
+	signal cleared_s3 : std_logic;
+	signal inc_s3 : std_logic;
 	
-	signal let_s3 : std_logic := '0';
-	signal let_7 : std_logic := '0';
-	signal let_15 : std_logic := '0';
+	signal let_s3 : std_logic;
+	signal let_7 : std_logic;
+	signal let_15 : std_logic;
 	
 	--signal sampled_bit : std_logic := '0';
-	signal shift_enable : std_logic := '0';
-	signal reg_shift_enable : std_logic := '0';
+	signal shift_enable : std_logic;
+	signal reg_shift_enable : std_logic;
 	signal shift_reg : std_logic_vector(7 downto 0) := (others => '0');
-	signal shifted : std_logic := '0';
+	signal shifted : std_logic;
 	
-	signal reg_rst : std_logic := '0';
-	signal reg_rx : std_logic := '0';
-	signal reg_rx_done : std_logic := '0';
+	signal reg_rst : std_logic;
+	signal reg_rx : std_logic;
+	signal reg_rx_done : std_logic;
 	
-	signal ledout : std_logic_vector(7 downto 0) := (others => '0');
+	signal ledout : std_logic_vector(7 downto 0);
 	
 begin
 
@@ -301,7 +301,7 @@ begin
 					-- Last bit sampled - go and sample the stop bit!
 						ledout(2) <= '1';
 						nextState <= State4;
-						--cr_brg <= '1';
+						cr_brg <= '1';
 				elsif to_x01(let_15) = '1' then
 					-- 15 ticks reached means we're in the middle of the bit - sample and increase the counter!
 					shift_enable <= '1';
@@ -312,15 +312,17 @@ begin
 				ledout(5) <= '0';
 				ledout(6) <= '0';
 				ledout(7) <= '1';
-				if to_x01(let_15) = '1' then
+				if to_x01(let_7) = '1' then
 					-- (Maybe assert?) Check stop bit!
 --					assert (to_x01(rx) = '1')
 --						report "Stop bit should be high - before going into the idle state!"
 --						severity ERROR;
 					
-					ledout(3) <= '1';
-					nextState <= Idle;
-					reg_rx_done <= '1';
+					if to_x01(reg_rx) = '1' then
+						ledout(3) <= '1';
+						nextState <= Idle;
+						reg_rx_done <= '1';
+					end if;
 				end if;
 			when others => null;
 		end case;
@@ -333,7 +335,7 @@ begin
 			if to_x01(reg_rst) = '0' then
 				shift_reg <= (others => '0');
 				shifted <= '0';
-			elsif to_x01(reg_shift_enable) = '1' and shifted = '0' then
+			elsif to_x01(reg_shift_enable) = '1' and to_x01(shifted) = '0' then
 				shifted <= '1';
 				shift_reg(6 downto 0) <= shift_reg(7 downto 1);
 				shift_reg(7) <= reg_rx;
