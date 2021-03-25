@@ -61,6 +61,7 @@ architecture UART_receiver_arch of UART_receiver is
 	signal sampled_bit : std_logic := '0';
 	signal shift_enable : std_logic := '0';
 	signal shift_reg : std_logic_vector(7 downto 0) := (others => '0');
+	signal shifted : std_logic := '0';
 begin
 	-- FSM inc_s3 Register
 --	process(clk) is
@@ -158,13 +159,16 @@ begin
 		
 	
 	-- FSM Asynchronous part -> Next State Decoder + Output Decoder
-	process(let_s3, let_7, let_15, currentState, rx) is
+	process(let_s3, let_7, let_15, currentState, rx, shifted) is
 	begin
 		rx_done <= '0';
-		shift_enable <= '0';
-		
 		cr_s3 <= '0';
 		cr_brg <= '0';
+		
+		if not(to_x01(shift_enable) = '1' and to_x01(shifted) = '0') then
+			shift_enable <= '0';
+			shifted <= '0';
+		end if;
 		
 		case currentState is
 			when Idle =>
@@ -231,14 +235,16 @@ begin
 	led <= ledout;
 	
 	-- Shift register that will be used for storing the data -- Serial in, Parallel out = SIPO
-	process(shift_enable, rst) is
+	process(clk) is
 	begin
-		if falling_edge(rst) then
-			shift_reg <= (others => '0');
-		elsif rising_edge(shift_enable) then
-			-- Shift and write inside new val
-			shift_reg(6 downto 0) <= shift_reg(7 downto 1);
-			shift_reg(7) <= sampled_bit;
+		if rising_edge(clk) then
+			if to_x01(rst) = '0' then
+				shift_reg <= (others => '0');
+			elsif to_x01(shift_enable) = '1' then
+				shifted <= '1';
+				shift_reg(6 downto 0) <= shift_reg(7 downto 1);
+				shift_reg(7) <= sampled_bit;
+			end if;
 		end if;
 	end process;
 	
