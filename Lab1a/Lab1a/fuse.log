@@ -21,17 +21,17 @@ Compiling architecture x_carry4_v of entity X_CARRY4 [\X_CARRY4(true,"*",true,tr
 Compiling architecture x_one_v of entity X_ONE [\X_ONE("UNPLACED")(1,8)\]
 Compiling architecture x_buf_v of entity X_BUF [\X_BUF(true,true,"UNPLACED",(0,0...]
 Compiling architecture x_zero_v of entity X_ZERO [\X_ZERO("UNPLACED")(1,8)\]
-Compiling architecture x_ff_v of entity X_FF [\X_FF(true,true,true,"UNPLACED",...]
 Compiling architecture x_sff_v of entity X_SFF [\X_SFF(true,true,true,"UNPLACED"...]
-Compiling architecture x_ckbuf_v of entity X_CKBUF [\X_CKBUF(true,true,"UNPLACED",(0...]
+Compiling architecture x_ff_v of entity X_FF [\X_FF(true,true,true,"UNPLACED",...]
 Compiling architecture x_obuf_v of entity X_OBUF [\X_OBUF(true,true,"DONT_CARE",12...]
+Compiling architecture x_ckbuf_v of entity X_CKBUF [\X_CKBUF(true,true,"UNPLACED",(0...]
 Compiling architecture x_roc_v of entity X_ROC [\X_ROC("UNPLACED",100000,"*")(1,...]
 Compiling architecture x_toc_v of entity X_TOC [\X_TOC("UNPLACED",0,"*")(1,8,1,1...]
 Compiling architecture structure of entity uart_top [uart_top_default]
 Compiling architecture behavior of entity uart_top_tb
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 426 VHDL Units
+Compiled 398 VHDL Units
 Built simulation executable E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1a/Lab1a/uart_top_tb_isim_par.exe
-Fuse Memory Usage: 89412 KB
-Fuse CPU Usage: 3858 ms
+Fuse Memory Usage: 88276 KB
+Fuse CPU Usage: 3592 ms

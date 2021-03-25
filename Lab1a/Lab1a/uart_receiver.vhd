@@ -247,27 +247,31 @@ begin
 	process(let_s3, let_7, let_15, currentState, reg_rx, shifted, cleared_s3, cleared_brg) is
 	begin
 		
-		if to_x01(shifted) = '1' then
-			shift_enable <= '0';
-		end if;
+--		if to_x01(shifted) = '1' then
+--			shift_enable <= '0';
+--		end if;
+--		
+--		if to_x01(cleared_s3) = '1' then
+--			cr_s3 <= '0';
+--		end if;
+--		
+--		if to_x01(cleared_brg) = '1' then
+--			cr_brg <= '0';
+--		end if;
 		
-		if to_x01(cleared_s3) = '1' then
-			cr_s3 <= '0';
-		end if;
-		
-		if to_x01(cleared_brg) = '1' then
-			cr_brg <= '0';
-		end if;
-		
-		reg_rx_done <= '0';		-- Output signal that must be Register-ed!
+		cr_s3 <= '0';
+		cr_brg <= '0';
+		shift_enable <= '0';
 		
 		case currentState is
 			when Idle =>
-			
+				reg_rx_done <= '0';
+				
 				ledout(4) <= '1';
 				ledout(5) <= '0';
 				ledout(6) <= '0';
 				ledout(7) <= '0';
+				
 				
 				if to_x01(reg_rx) = '0' then
 					ledout(0) <= '1';
@@ -301,7 +305,7 @@ begin
 					-- Last bit sampled - go and sample the stop bit!
 						ledout(2) <= '1';
 						nextState <= State4;
-						--cr_brg <= '1';
+						cr_brg <= '1';
 				elsif to_x01(let_15) = '1' then
 					-- 15 ticks reached means we're in the middle of the bit - sample and increase the counter!
 					shift_enable <= '1';
@@ -312,12 +316,8 @@ begin
 				ledout(5) <= '0';
 				ledout(6) <= '0';
 				ledout(7) <= '1';
-				if to_x01(let_15) = '1' then
-					-- (Maybe assert?) Check stop bit!
---					assert (to_x01(rx) = '1')
---						report "Stop bit should be high - before going into the idle state!"
---						severity ERROR;
-					
+				
+				if to_x01(let_7) = '1' and to_x01(rx) = '1' then
 					ledout(3) <= '1';
 					nextState <= Idle;
 					reg_rx_done <= '1';
