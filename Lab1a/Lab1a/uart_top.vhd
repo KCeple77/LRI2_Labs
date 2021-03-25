@@ -47,6 +47,7 @@ architecture uart_top_arch of uart_top is
          rst : IN  std_logic;
          rx : IN  std_logic;
          tick : IN  std_logic;
+			
          d_out : OUT  std_logic_vector(7 downto 0);
 			led : OUT std_logic_vector(7 downto 0);
          rx_done : OUT  std_logic
@@ -66,10 +67,56 @@ architecture uart_top_arch of uart_top is
 --	signal reg_tx_out : std_logic := '0';
 	signal reg_rst : std_logic := '1';
 	
-	signal receiver_out : std_logic_vector(7 downto 0) := (others => '0');
+	signal reg_rec_d_in : std_logic_vector(7 downto 0) := (others => '0');
+	signal reg_rec_d_out : std_logic_vector(7 downto 0) := (others => '0');
+	
+	signal reg_led_in : std_logic_vector(7 downto 0) := (others => '0');
+	signal reg_led_out : std_logic_vector(7 downto 0) := (others => '0');
+	
+	signal reg_rx_done_in : std_logic := '0';
+	signal reg_rx_done_out : std_logic := '0';
 begin
 	
-	-- RX register
+	-- Receiver Data Register
+	process(clk) is
+	begin
+		if rising_edge(clk) then
+			if to_x01(reg_rst) = '0' then
+				reg_rec_d_out <= (others => '0');
+			else
+				reg_rec_d_out <= reg_rec_d_in;
+			end if;
+		end if;
+	end process;
+	led <= reg_rec_d_out;
+	
+	-- Rx_done Register
+	process(clk) is
+	begin
+		if rising_edge(clk) then
+			if to_x01(reg_rst) = '0' then
+				reg_rx_done_out <= '0';
+			else
+				reg_rx_done_out <= reg_rx_done_in;
+			end if;
+		end if;
+	end process;
+	tx <= reg_rx_done_out;
+	
+	-- LED Register
+	process(clk) is
+	begin
+		if rising_edge(clk) then
+			if to_x01(reg_rst) = '0' then
+				reg_led_out <= (others => '0');
+			else
+				reg_led_out <= reg_led_in;
+			end if;
+		end if;
+	end process;
+--	led <= reg_led_out;
+	
+	-- RX Register
 	process(clk) is
 	begin
 		if rising_edge(clk) then
@@ -81,7 +128,7 @@ begin
 		end if;
 	end process;
 	
-	-- TX register
+	-- TX Register
 --	process(clk) is
 --	begin
 --		if rising_edge(clk) then
@@ -93,15 +140,11 @@ begin
 --		end if;
 --	end process;
 	
-	-- Rst register
+	-- Rst Register
 	process(clk) is
 	begin
 		if rising_edge(clk) then
-			if to_x01(reg_rst) = '0' then
-				reg_rst <= '0';
-			else
-				reg_rst <= rst;
-			end if;
+			reg_rst <= rst;
 		end if;
 	end process;
 	
@@ -110,9 +153,9 @@ begin
           rst => reg_rst,
           rx => reg_rx,
           tick => tick,
-          d_out => led,					-- This and next line are used for debugging - swap depending on whether the
-			 led => receiver_out,		-- debugging is done on the board, or in the simulator
-          rx_done => tx
+          d_out => reg_rec_d_in,				-- This and next line are used for debugging - swap depending on whether the
+			 led => open,							-- debugging is done on the board, or in the simulator
+          rx_done => reg_rx_done_in
 		 );
 	
 	baud_rate_generator_instance: component baud_rate_generator port map(

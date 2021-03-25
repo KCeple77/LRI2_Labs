@@ -56,12 +56,16 @@ architecture UART_receiver_arch of UART_receiver is
 	signal let_7 : std_logic := '0';
 	signal let_15 : std_logic := '0';
 	
-	signal ledout : std_logic_vector(7 downto 0) := (others => '0');
-	
 	--signal sampled_bit : std_logic := '0';
 	signal shift_enable : std_logic := '0';
 	signal shift_reg : std_logic_vector(7 downto 0) := (others => '0');
 	signal shifted : std_logic := '0';
+	
+	signal reg_rst : std_logic := '0';
+	signal reg_rx : std_logic := '0';
+	signal reg_rx_done : std_logic := '0';
+	signal ledout : std_logic_vector(7 downto 0) := (others => '0');
+	
 begin
 	-- FSM inc_s3 Register
 --	process(clk) is
@@ -77,10 +81,54 @@ begin
 --		end if;
 --	end process;
 
-	-- FSM S3 Counter
-	process(tick, rst, cr_s3) is
+	-- rst Register
+	process(clk) is
 	begin
-		if to_x01(rst) = '0' or to_x01(cr_s3) = '1' then
+		if rising_edge(clk) then
+			reg_rst <= rst;
+		end if;
+	end process;
+	
+	-- RX Register
+	process(clk) is
+	begin
+		if rising_edge(clk) then
+			if to_x01(reg_rst) = '0' then
+				reg_rx <= '0';
+			else
+				reg_rx <= rx;
+			end if;
+		end if;
+	end process;
+	
+	-- LED Register
+	process(clk) is
+	begin
+		if rising_edge(clk) then
+			if to_x01(reg_rst) = '0' then
+				led <= (others => '0');
+			else
+				led <= ledout;
+			end if;
+		end if;
+	end process;
+	
+	-- RX_Done Register
+	process(clk) is
+	begin
+		if rising_edge(clk) then
+			if to_x01(reg_rst) = '0' then
+				rx_done <= '0';
+			else
+				rx_done <= reg_rx_done;
+			end if;
+		end if;
+	end process;
+
+	-- FSM S3 Counter
+	process(tick, reg_rst, cr_s3) is
+	begin
+		if to_x01(reg_rst) = '0' or to_x01(cr_s3) = '1' then
 			c_s3 <= 0;
 		elsif rising_edge(tick) then
 			c_s3 <= c_s3 + 1;
@@ -88,9 +136,9 @@ begin
 	end process;
 	
 	-- FSM Baud Rate Tick Counter
-	process(tick, rst, cr_brg) is
+	process(tick, reg_rst, cr_brg) is
 	begin
-		if to_x01(rst) = '0' or to_x01(cr_brg) = '1' then
+		if to_x01(reg_rst) = '0' or to_x01(cr_brg) = '1' then
 			c_brg <= 0;
 		elsif rising_edge(tick) then
 			c_brg <= c_brg + 1;
@@ -101,7 +149,7 @@ begin
 	process(clk) is
 	begin
 		if rising_edge(clk) then
-			if to_x01(rst) = '0' then
+			if to_x01(reg_rst) = '0' then
 				let_s3 <= '0';
 			else
 				if c_s3 >= 136 then
@@ -117,7 +165,7 @@ begin
 	process(clk) is
 	begin
 		if rising_edge(clk) then
-			if to_x01(rst) = '0' then
+			if to_x01(reg_rst) = '0' then
 				let_7 <= '0';
 			else
 				if c_brg >= 8 then
@@ -133,7 +181,7 @@ begin
 	process(clk) is
 	begin
 		if rising_edge(clk) then
-			if to_x01(rst) = '0' then
+			if to_x01(reg_rst) = '0' then
 				let_15 <= '0';
 			else
 				if c_brg >= 16 then
@@ -149,7 +197,7 @@ begin
 	process(clk) is
 	begin
 		if rising_edge(clk) then
-			if to_x01(rst) = '0' then
+			if to_x01(reg_rst) = '0' then
 				currentState <= Idle;
 			else
 				currentState <= nextState;
@@ -159,33 +207,34 @@ begin
 		
 	
 	-- FSM Asynchronous part -> Next State Decoder + Output Decoder
-	process(let_s3, let_7, let_15, currentState, rx, shifted) is
+	process(let_s3, let_7, let_15, currentState, reg_rx, shifted) is
 	begin
-		rx_done <= '0';
 		cr_s3 <= '0';
 		cr_brg <= '0';
 		shift_enable <= '0';
 		
---		if not(to_x01(shift_enable) = '1' and to_x01(shifted) = '0') then
---			
---		end if;
+		reg_rx_done <= '0';		-- Output signal that must be Register-ed!
 		
 		case currentState is
 			when Idle =>
+			
 				ledout(4) <= '1';
 				ledout(5) <= '0';
 				ledout(6) <= '0';
 				ledout(7) <= '0';
-				if to_x01(rx) = '0' then
+				
+				if to_x01(reg_rx) = '0' then
 					ledout(0) <= '1';
 					nextState <= State1;
 					cr_brg <= '1';		-- Reset tick counter
 				end if;
 			when State1 =>
+			
 				ledout(4) <= '0';
 				ledout(5) <= '1';
 				ledout(6) <= '0';
 				ledout(7) <= '0';
+				
 				-- Need to wait until tick counter reaches 7!
 				if to_x01(let_7) = '1' then
 --					assert (rx = '0')
@@ -225,24 +274,22 @@ begin
 					
 					ledout(3) <= '1';
 					nextState <= Idle;
-					rx_done <= '1';
+					reg_rx_done <= '1';
 				end if;
 			when others => null;
 		end case;
 	end process;
 	
-	led <= ledout;
-	
 	-- Shift register that will be used for storing the data -- Serial in, Parallel out = SIPO
 	process(clk) is
 	begin
 		if rising_edge(clk) then
-			if to_x01(rst) = '0' then
+			if to_x01(reg_rst) = '0' then
 				shift_reg <= (others => '0');
 			elsif to_x01(shift_enable) = '1' then
 				shifted <= '1';
 				shift_reg(6 downto 0) <= shift_reg(7 downto 1);
-				shift_reg(7) <= rx;
+				shift_reg(7) <= reg_rx;
 			else
 				shifted <= '0';
 			end if;
