@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1a/Lab1a/uart_receiver_tb_isim_beh.exe" -prj "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1a/Lab1a/uart_receiver_tb_beh.prj" "work.uart_receiver_tb" 
+-intstyle "ise" -incremental -lib "secureip" -o "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1a/Lab1a/uart_top_tb_isim_beh.exe" -prj "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1a/Lab1a/uart_top_tb_beh.prj" "work.uart_top_tb" 

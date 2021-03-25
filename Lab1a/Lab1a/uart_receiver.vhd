@@ -41,7 +41,7 @@ end UART_receiver;
 
 architecture UART_receiver_arch of UART_receiver is
 	type State is (
-		Idle, State1, State2, State3, State4
+		Idle, State1, State3, State4
 	);
 	signal currentState : State := Idle;
 	signal nextState : State;
@@ -58,7 +58,7 @@ architecture UART_receiver_arch of UART_receiver is
 	
 	signal ledout : std_logic_vector(7 downto 0) := (others => '0');
 	
-	signal sampled_bit : std_logic := '0';
+	--signal sampled_bit : std_logic := '0';
 	signal shift_enable : std_logic := '0';
 	signal shift_reg : std_logic_vector(7 downto 0) := (others => '0');
 	signal shifted : std_logic := '0';
@@ -104,7 +104,7 @@ begin
 			if to_x01(rst) = '0' then
 				let_s3 <= '0';
 			else
-				if c_s3 >= 128 then
+				if c_s3 >= 136 then
 					let_s3 <= '1';
 				else
 					let_s3 <= '0';
@@ -164,11 +164,11 @@ begin
 		rx_done <= '0';
 		cr_s3 <= '0';
 		cr_brg <= '0';
+		shift_enable <= '0';
 		
-		if not(to_x01(shift_enable) = '1' and to_x01(shifted) = '0') then
-			shift_enable <= '0';
-			shifted <= '0';
-		end if;
+--		if not(to_x01(shift_enable) = '1' and to_x01(shifted) = '0') then
+--			
+--		end if;
 		
 		case currentState is
 			when Idle =>
@@ -206,10 +206,9 @@ begin
 					-- Last bit sampled - go and sample the stop bit!
 						ledout(2) <= '1';
 						nextState <= State4;
-						cr_brg <= '0';
+						--cr_brg <= '1';
 				elsif to_x01(let_15) = '1' then
 					-- 15 ticks reached means we're in the middle of the bit - sample and increase the counter!
-					sampled_bit <= rx;
 					shift_enable <= '1';
 					cr_brg <= '1';
 				end if;
@@ -243,7 +242,9 @@ begin
 			elsif to_x01(shift_enable) = '1' then
 				shifted <= '1';
 				shift_reg(6 downto 0) <= shift_reg(7 downto 1);
-				shift_reg(7) <= sampled_bit;
+				shift_reg(7) <= rx;
+			else
+				shifted <= '0';
 			end if;
 		end if;
 	end process;
