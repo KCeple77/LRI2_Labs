@@ -46,11 +46,17 @@ architecture UART_receiver_arch of UART_receiver is
 	signal currentState : State := Idle;
 	signal nextState : State;
 	
-	signal c_s3 : integer := 0;
 	signal c_brg : integer := 0;
-	
-	signal cr_s3 : std_logic := '0';
 	signal cr_brg : std_logic := '0';
+	signal reg_cr_brg : std_logic := '0';
+	signal cleared_brg : std_logic := '0';
+	signal inc_brg : std_logic := '0';
+	
+	signal c_s3 : integer := 0;
+	signal cr_s3 : std_logic := '0';
+	signal reg_cr_s3 : std_logic := '0';
+	signal cleared_s3 : std_logic := '0';
+	signal inc_s3 : std_logic := '0';
 	
 	signal let_s3 : std_logic := '0';
 	signal let_7 : std_logic := '0';
@@ -58,28 +64,17 @@ architecture UART_receiver_arch of UART_receiver is
 	
 	--signal sampled_bit : std_logic := '0';
 	signal shift_enable : std_logic := '0';
+	signal reg_shift_enable : std_logic := '0';
 	signal shift_reg : std_logic_vector(7 downto 0) := (others => '0');
 	signal shifted : std_logic := '0';
 	
 	signal reg_rst : std_logic := '0';
 	signal reg_rx : std_logic := '0';
 	signal reg_rx_done : std_logic := '0';
+	
 	signal ledout : std_logic_vector(7 downto 0) := (others => '0');
 	
 begin
-	-- FSM inc_s3 Register
---	process(clk) is
---	begin
---		if rising_edge(clk) then
---			if to_x01(rst) = '1' then
---				r_inc_s3 <= '0';
---			elsif to_x01(cr_s3) = '1' then
---				r_inc_s3 <= '0';
---			else
---				r_inc_s3 <= inc_s3;
---			end if;
---		end if;
---	end process;
 
 	-- rst Register
 	process(clk) is
@@ -124,24 +119,66 @@ begin
 			end if;
 		end if;
 	end process;
+	
+	-- shift_enable Register
+	process(clk) is
+	begin
+		if rising_edge(clk) then
+			if to_x01(reg_rst) = '0' then
+				reg_shift_enable  <= '0';
+			else
+				reg_shift_enable <= shift_enable;
+			end if;
+		end if;
+	end process;
+	
+	-- cr_s3 Register
+	process(clk) is
+	begin
+		if rising_edge(clk) then
+			if to_x01(reg_rst) = '0' then
+				reg_cr_s3  <= '0';
+			else
+				reg_cr_s3 <= cr_s3;
+			end if;
+		end if;
+	end process;
+
+	-- cr_brg Register
+	process(clk) is
+	begin
+		if rising_edge(clk) then
+			if to_x01(reg_rst) = '0' then
+				reg_cr_brg  <= '0';
+			else
+				reg_cr_brg <= cr_brg;
+			end if;
+		end if;
+	end process;
 
 	-- FSM S3 Counter
-	process(tick, reg_rst, cr_s3) is
+	process(tick, reg_rst, reg_cr_s3) is
 	begin
-		if to_x01(reg_rst) = '0' or to_x01(cr_s3) = '1' then
+		if to_x01(reg_rst) = '0' or to_x01(reg_cr_s3) = '1' then
 			c_s3 <= 0;
-		elsif rising_edge(tick) then
+			cleared_s3 <= '1';
+		elsif to_x01(tick) = '1' then
 			c_s3 <= c_s3 + 1;
+		else
+			cleared_s3 <= '0';
 		end if;
 	end process;
 	
 	-- FSM Baud Rate Tick Counter
-	process(tick, reg_rst, cr_brg) is
+	process(tick, reg_rst, reg_cr_brg) is
 	begin
-		if to_x01(reg_rst) = '0' or to_x01(cr_brg) = '1' then
+		if to_x01(reg_rst) = '0' or to_x01(reg_cr_brg) = '1' then
 			c_brg <= 0;
-		elsif rising_edge(tick) then
+			cleared_brg <= '1';
+		elsif to_x01(tick) = '1' then
 			c_brg <= c_brg + 1;
+		else
+			cleared_brg <= '0';
 		end if;
 	end process;
 	
@@ -207,11 +244,20 @@ begin
 		
 	
 	-- FSM Asynchronous part -> Next State Decoder + Output Decoder
-	process(let_s3, let_7, let_15, currentState, reg_rx, shifted) is
+	process(let_s3, let_7, let_15, currentState, reg_rx, shifted, cleared_s3, cleared_brg) is
 	begin
-		cr_s3 <= '0';
-		cr_brg <= '0';
-		shift_enable <= '0';
+		
+		if to_x01(shifted) = '1' then
+			shift_enable <= '0';
+		end if;
+		
+		if to_x01(cleared_s3) = '1' then
+			cr_s3 <= '0';
+		end if;
+		
+		if to_x01(cleared_brg) = '1' then
+			cr_brg <= '0';
+		end if;
 		
 		reg_rx_done <= '0';		-- Output signal that must be Register-ed!
 		
@@ -286,7 +332,8 @@ begin
 		if rising_edge(clk) then
 			if to_x01(reg_rst) = '0' then
 				shift_reg <= (others => '0');
-			elsif to_x01(shift_enable) = '1' then
+				shifted <= '0';
+			elsif to_x01(reg_shift_enable) = '1' and shifted = '0' then
 				shifted <= '1';
 				shift_reg(6 downto 0) <= shift_reg(7 downto 1);
 				shift_reg(7) <= reg_rx;
