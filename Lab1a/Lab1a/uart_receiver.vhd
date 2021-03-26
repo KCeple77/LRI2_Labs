@@ -45,13 +45,13 @@ architecture UART_receiver_arch of UART_receiver is
 	signal currentState : State;
 	
 	signal c_brg : integer;
+	signal c_s3_debug : integer;
 	signal cr_brg : std_logic := '0';
 	signal shift_reg : std_logic_vector(7 downto 0);
 	
 	signal reg_rst : std_logic;
 	signal reg_rx : std_logic;
 	signal reg_rx_done : std_logic;
-	signal reg_ledout : std_logic_vector(7 downto 0);
 begin
 
 	-- ################################################################################################################################################
@@ -95,12 +95,21 @@ begin
 	-- ################################################################################################################################################
 	
 	-- FSM Baud Rate Tick Counter
-	process(tick, reg_rst, cr_brg) is
+	process(clk) is
+		variable ticked : boolean;
 	begin
-		if to_x01(reg_rst) = '0' or to_x01(cr_brg) = '1' then
-			c_brg <= 0;
-		elsif to_x01(tick) = '1' then
-			c_brg <= c_brg + 1;
+		if falling_edge(clk) then
+			if to_x01(reg_rst) = '0' or to_x01(cr_brg) = '1' then
+				c_brg <= 0;				
+				ticked := False;
+			elsif to_x01(tick) = '1' and not ticked then
+				c_brg <= c_brg + 1;
+				ticked := true;
+			elsif to_x01(tick) = '0' then
+				ticked := false;
+			else
+				null;
+			end if;
 		end if;
 	end process;
 	
@@ -117,42 +126,22 @@ begin
 			
 			case currentState is
 				when Idle =>
-					cr_brg <= '1';		-- Reset tick counter
+					cr_brg <= '1';
 				
-					reg_ledout(4) <= '1';
-					reg_ledout(5) <= '0';
-					reg_ledout(6) <= '0';
-					reg_ledout(7) <= '0';
-					
 					if to_x01(reg_rx) = '0' then
-						reg_ledout(0) <= '1';
 						currentState <= State1;
 						cr_brg <= '1';
 					end if;
 				when State1 =>
-				
-					reg_ledout(4) <= '0';
-					reg_ledout(5) <= '1';
-					reg_ledout(6) <= '0';
-					reg_ledout(7) <= '0';
-					
 					-- Need to wait until tick counter reaches 7!
 					if c_brg > 8 then
-						reg_ledout(1) <= '1';
 						currentState <= State3;
 						cr_brg <= '1';		-- Reset tick counter once again
 						c_s3 := 0;			-- Reset s3 cycles counter
 					end if;
 				when State3 =>
-					
-					reg_ledout(4) <= '0';
-					reg_ledout(5) <= '0';
-					reg_ledout(6) <= '1';
-					reg_ledout(7) <= '0';
-					
 					if c_s3 = 8 then
 						-- Last bit sampled - go and sample the stop bit!
-						reg_ledout(2) <= '1';
 						currentState <= State4;
 						cr_brg <= '1';
 					elsif c_brg > 16 then
@@ -165,20 +154,15 @@ begin
 						cr_brg <= '1';
 					end if;
 				when State4 =>
-					
-					reg_ledout(4) <= '0';
-					reg_ledout(5) <= '0';
-					reg_ledout(6) <= '0';
-					reg_ledout(7) <= '1';
-					
 					-- Wait 15 more ticks
-					if c_brg > 16 then
-						reg_ledout(3) <= '1';
+					if c_brg >= 16 then
 						reg_rx_done <= '1';
 						currentState <= Idle;
 					end if;
 				when others => null;
 			end case;
+			
+			c_s3_debug <= c_s3;
 		end if;
 	end process;
 
