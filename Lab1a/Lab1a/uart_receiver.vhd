@@ -42,7 +42,7 @@ architecture UART_receiver_arch of UART_receiver is
 	type State is (
 		Idle, State1, State3, State4
 	);
-	signal currentState : State;
+	signal currentState, nextState : State;
 	
 	signal c_brg : integer;
 	signal c_s3_debug : integer;
@@ -119,6 +119,7 @@ begin
 	begin
 		if to_x01(reg_rst) = '0' then
 			currentState <= Idle;
+			nextState <= Idle;
 			shift_reg <= (others => '0');
 		elsif rising_edge(clk) then
 			reg_rx_done <= '0';
@@ -129,20 +130,20 @@ begin
 					cr_brg <= '1';
 				
 					if to_x01(reg_rx) = '0' then
-						currentState <= State1;
+						nextState <= State1;
 						cr_brg <= '1';
 					end if;
 				when State1 =>
 					-- Need to wait until tick counter reaches 7!
 					if c_brg > 8 then
-						currentState <= State3;
+						nextState <= State3;
 						cr_brg <= '1';		-- Reset tick counter once again
 						c_s3 := 0;			-- Reset s3 cycles counter
 					end if;
 				when State3 =>
 					if c_s3 = 8 then
 						-- Last bit sampled - go and sample the stop bit!
-						currentState <= State4;
+						nextState <= State4;
 						cr_brg <= '1';
 					elsif c_brg > 16 then
 						-- 15 ticks reached means we're in the middle of the bit - sample and increase the counter!
@@ -157,12 +158,12 @@ begin
 					-- Wait 15 more ticks
 					if c_brg >= 16 then
 						reg_rx_done <= '1';
-						currentState <= Idle;
+						nextState <= Idle;
 					end if;
 				when others => null;
 			end case;
 			
-			c_s3_debug <= c_s3;
+			currentState <= nextState;
 		end if;
 	end process;
 
