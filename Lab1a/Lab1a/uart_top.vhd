@@ -61,20 +61,20 @@ architecture uart_top_arch of uart_top is
 		);
 	end component;
 	
-	signal tick : std_logic := '0';
-	signal reg_rx : std_logic := '0';
+	signal tick : std_logic;
+	signal reg_rx : std_logic;
 --	signal reg_tx_in : std_logic := '0';
 --	signal reg_tx_out : std_logic := '0';
-	signal reg_rst : std_logic := '1';
+	signal reg_rst : std_logic;
 	
-	signal reg_rec_d_in : std_logic_vector(7 downto 0) := (others => '0');
-	signal reg_rec_d_out : std_logic_vector(7 downto 0) := (others => '0');
+	signal reg_rec_d_in : std_logic_vector(7 downto 0);
+	signal reg_rec_d_out : std_logic_vector(7 downto 0);
 	
-	signal reg_led_in : std_logic_vector(7 downto 0) := (others => '0');
-	signal reg_led_out : std_logic_vector(7 downto 0) := (others => '0');
+	signal reg_led_in : std_logic_vector(7 downto 0);
+	signal reg_led_out : std_logic_vector(7 downto 0);
 	
-	signal reg_rx_done_in : std_logic := '0';
-	signal reg_rx_done_out : std_logic := '0';
+	signal reg_rx_done_in : std_logic;
+	signal reg_rx_done_out : std_logic;
 begin
 	
 	-- Receiver Data Register
@@ -121,7 +121,7 @@ begin
 	begin
 		if rising_edge(clk) then
 			if to_x01(reg_rst) = '0' then
-				reg_rx <= '0';
+				reg_rx <= '1';
 			else
 				reg_rx <= rx;
 			end if;
