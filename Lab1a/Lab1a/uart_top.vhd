@@ -54,6 +54,15 @@ architecture uart_top_arch of uart_top is
 		);
 	end component;
 	
+	component echo_device
+		Port ( 
+			clk, rst: in STD_LOGIC;
+			r_done : in  STD_LOGIC;
+			w_start : out  STD_LOGIC;
+			w_done : in  STD_LOGIC
+		);
+	end component;
+	
 	signal reg_rx : std_logic;
 	signal reg_tx : std_logic;
 	signal reg_rst : std_logic;
@@ -113,32 +122,11 @@ begin
 		r_data => s_dr_in
 	);
 	
-	-- Echo FSM
-	process(reg_rst, clk, s_r_done, s_w_done) is
-		type EchoState is (
-			Waiting, Echoing
-		);
-		variable currentState : EchoState;
-	begin
-		if to_x01(reg_rst) = '0' then
-			currentState := Waiting;
-			s_w_start <= '0';
-		elsif rising_edge(clk) then
-			s_w_start <= '0';
-			
-			case currentState is
-				when Waiting =>
-					if to_x01(s_r_done) = '1' then
-						s_w_start <= '1';
-						currentState := Echoing;
-					end if;
-				when Echoing =>
-					if to_x01(s_w_done) = '1' then
-						currentState := Waiting;
-					end if;
-				when others => null;
-			end case;
-		end if;
-	end process;
+	echo_device_instance: component echo_device port map(
+		clk => clk, rst => reg_rst,
+		r_done => s_r_done,
+		w_start => s_w_start,
+		w_done => s_w_done
+	);
 end uart_top_arch;
 

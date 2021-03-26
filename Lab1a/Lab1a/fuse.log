@@ -7,6 +7,7 @@ Parsing VHDL file "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1a/Lab
 Parsing VHDL file "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1a/Lab1a/uart_receiver.vhd" into library work
 Parsing VHDL file "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1a/Lab1a/baud_rate_generator.vhd" into library work
 Parsing VHDL file "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1a/Lab1a/uart_controller.vhd" into library work
+Parsing VHDL file "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1a/Lab1a/echo_device.vhd" into library work
 Parsing VHDL file "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1a/Lab1a/uart_top.vhd" into library work
 Parsing VHDL file "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1a/Lab1a/uart_top_comlpete_tb.vhd" into library work
 Starting static elaboration
@@ -18,11 +19,12 @@ Compiling architecture uart_receiver_arch of entity UART_receiver [uart_receiver
 Compiling architecture uart_transmitter_arch of entity UART_transmitter [uart_transmitter_default]
 Compiling architecture baud_rate_generator_arch of entity baud_rate_generator [baud_rate_generator_default]
 Compiling architecture uart_controller_arch of entity UART_controller [uart_controller_default]
+Compiling architecture echo_device_arch of entity echo_device [echo_device_default]
 Compiling architecture uart_top_arch of entity uart_top [uart_top_default]
 Compiling architecture behavior of entity uart_top_comlpete_tb
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 14 VHDL Units
+Compiled 16 VHDL Units
 Built simulation executable E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1a/Lab1a/uart_top_comlpete_tb_isim_beh.exe
-Fuse Memory Usage: 36864 KB
+Fuse Memory Usage: 36808 KB
 Fuse CPU Usage: 671 ms
