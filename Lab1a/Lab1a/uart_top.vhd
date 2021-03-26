@@ -68,9 +68,35 @@ architecture uart_top_arch of uart_top is
 	signal reg_rst : std_logic;
 	
 	signal s_dr_in, s_dr_out : std_logic_vector(7 downto 0);
-	signal s_r_done, s_w_start, s_w_done : std_logic;
+	
+	signal reg_r_done_in, reg_r_done_out : std_logic;
+	signal s_w_start : std_logic;
+	signal reg_w_done_in, reg_w_done_out : std_logic;
 	
 begin
+	-- UART Receiver Read Done Register
+	process(clk) is
+	begin
+		if rising_edge(clk) then
+			if to_x01(reg_rst) = '0' then
+				reg_r_done_out <= '0';
+			else
+				reg_r_done_out <= reg_r_done_in;
+			end if;
+		end if;
+	end process;
+	
+	-- UART Transmitter Write Done Register
+	process(clk) is
+	begin
+		if rising_edge(clk) then
+			if to_x01(reg_rst) = '0' then
+				reg_w_done_out <= '0';
+			else
+				reg_w_done_out <= reg_w_done_in;
+			end if;
+		end if;
+	end process;
 	
 	-- RX Register
 	process(clk) is
@@ -118,16 +144,16 @@ begin
 	uart_controller_instance: component UART_controller port map(
 		clk => clk, rst => reg_rst,
 		rx => reg_rx, tx => tx,
-		r_done => s_r_done, w_done => s_w_done, w_start => s_w_start, 
+		r_done => reg_r_done_in, w_done => reg_w_done_in, w_start => s_w_start, 
 		w_data => s_dr_out,
 		r_data => s_dr_in
 	);
 	
 	echo_device_instance: component echo_device port map(
 		clk => clk, rst => reg_rst,
-		r_done => s_r_done,
+		r_done => reg_r_done_out,
 		w_start => s_w_start,
-		w_done => s_w_done
+		w_done => reg_w_done_out
 	);
 end uart_top_arch;
 
