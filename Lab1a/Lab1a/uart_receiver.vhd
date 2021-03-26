@@ -133,8 +133,8 @@ begin
 	-- ################################################################################################################################################
 
 	-- FSM Comparators
-	let_7 <= '1' when c_brg >= 8 else '0';
-	let_15 <= '1' when c_brg >= 16 else '0';
+	let_7 <= '1' when c_brg > 8 else '0';
+	let_15 <= '1' when c_brg > 16 else '0';
 	
 	-- FSM Baud Rate Tick Counter
 	process(tick, reg_rst, cr_brg) is
@@ -191,6 +191,7 @@ begin
 				if to_x01(reg_rx) = '0' then
 					reg_ledout(0) <= '1';
 					nextState <= State1;
+					cr_brg <= '1';
 				end if;
 			when State1 =>
 			
@@ -215,14 +216,14 @@ begin
 				
 				if c_s3 = 8 then
 					-- Last bit sampled - go and sample the stop bit!
-					cr_brg <= '1';
 					reg_ledout(2) <= '1';
 					nextState <= State4;
+					cr_brg <= '1';
 				elsif to_x01(let_15) = '1' then
 					-- 15 ticks reached means we're in the middle of the bit - sample and increase the counter!
 					shift_enable <= '1';
-					cr_brg <= '1';
 					c_s3 := c_s3 + 1;
+					cr_brg <= '1';
 				end if;
 			when State4 =>
 				

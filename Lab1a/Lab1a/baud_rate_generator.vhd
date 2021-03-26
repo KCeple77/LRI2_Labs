@@ -48,7 +48,7 @@ begin
 			else
 				counter := counter + 1;
 				
-				if (counter >= CNT_CMP) then
+				if (counter = CNT_CMP) then
 					counter := 0;
 					s_tick <= not s_tick;
 				end if;

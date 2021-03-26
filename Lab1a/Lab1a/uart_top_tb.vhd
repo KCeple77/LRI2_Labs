@@ -92,11 +92,11 @@ BEGIN
 
       wait for clk_period*10;
 
-      -- insert stimulus here 
-		rx <= '0', 		-- Start bit
-			'0' after sample_period, '0' after 2*sample_period, '1' after 3*sample_period, '1' after 4*sample_period,
-			'1' after 5*sample_period, '0' after 6*sample_period, '0' after 7*sample_period, '0' after 8*sample_period,
-			'1' after 9 * sample_period;		-- Stop bit
+      -- insert stimulus here
+		rx <= '0' after sample_period, 		-- Start bit
+			'1' after 2*sample_period, '0' after 3*sample_period, '1' after 4*sample_period, '0' after 5*sample_period,
+			'1' after 6*sample_period, '0' after 7*sample_period, '1' after 8*sample_period, '0' after 9*sample_period,
+			'1' after 10*sample_period;		-- Stop bit
 
       wait;
    end process;
