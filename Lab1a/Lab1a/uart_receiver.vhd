@@ -47,11 +47,7 @@ architecture UART_receiver_arch of UART_receiver is
 	signal nextState : State;
 	
 	signal c_brg : integer;
-	signal cr_brg : std_logic;
-	signal cleared_brg : std_logic;
-	
-	--signal sampled_bit : std_logic := '0';
-	signal shift_enable : std_logic;
+	signal cr_brg : std_logic := '0';
 	signal shift_reg : std_logic_vector(7 downto 0);
 	
 	signal reg_rst : std_logic;
@@ -60,9 +56,6 @@ architecture UART_receiver_arch of UART_receiver is
 	
 	signal reg_ledout : std_logic_vector(7 downto 0);
 	signal reg_d_out : std_logic_vector(7 downto 0);
-	
-	signal let_7 : std_logic := '0';
-	signal let_15 : std_logic := '0';
 begin
 
 	-- ################################################################################################################################################
@@ -130,32 +123,13 @@ begin
 	-- #################################################				FSM					##################################################################
 	-- ################################################################################################################################################
 	
-	-- FSM Comparators
-	let_7 <= '1' when c_brg > 8 else '0';
-	let_15 <= '1' when c_brg > 16 else '0';
-	
 	-- FSM Baud Rate Tick Counter
 	process(tick, reg_rst, cr_brg) is
 	begin
 		if to_x01(reg_rst) = '0' or to_x01(cr_brg) = '1' then
 			c_brg <= 0;
-			cleared_brg <= '1';
 		elsif to_x01(tick) = '1' then
 			c_brg <= c_brg + 1;
-		else
-			cleared_brg <= '0';
-		end if;
-	end process;
-	
-	-- FSM Synchronous part -> Register
-	process(clk) is
-	begin
-		if rising_edge(clk) then
-			if to_x01(reg_rst) = '0' then
-				currentState <= Idle;
-			else
-				currentState <= nextState;
-			end if;
 		end if;
 	end process;
 	
@@ -169,7 +143,6 @@ begin
 		elsif rising_edge(clk) then
 			reg_rx_done <= '0';
 			cr_brg <= '0';
-			shift_enable <= '0';
 			
 			case currentState is
 				when Idle =>
@@ -193,7 +166,7 @@ begin
 					reg_ledout(7) <= '0';
 					
 					-- Need to wait until tick counter reaches 7!
-					if to_x01(let_7) = '1' then
+					if c_brg > 8 then
 						reg_ledout(1) <= '1';
 						nextState <= State3;
 						cr_brg <= '1';		-- Reset tick counter once again
@@ -211,7 +184,7 @@ begin
 						reg_ledout(2) <= '1';
 						nextState <= State4;
 						cr_brg <= '1';
-					elsif to_x01(let_15) = '1' then
+					elsif c_brg > 16 then
 						-- 15 ticks reached means we're in the middle of the bit - sample and increase the counter!
 						
 						shift_reg(6 downto 0) <= shift_reg(7 downto 1);
@@ -228,13 +201,15 @@ begin
 					reg_ledout(7) <= '1';
 					
 					-- Wait 15 more ticks
-					if to_x01(let_15) = '1' then
+					if c_brg > 16 then
 						reg_ledout(3) <= '1';
 						reg_rx_done <= '1';
 						nextState <= Idle;
 					end if;
 				when others => null;
 			end case;
+			
+			currentState <= nextState;
 		end if;
 	end process;
 	

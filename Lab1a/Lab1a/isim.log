@@ -12,5 +12,7 @@ Time resolution is 1 ps
 # run 2 ms
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-at 107723764 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_cr_brg/ : Warning: /X_FF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
-  Expected := 0.143 ns; Observed := 0.1 ns; At : 107723.764 ns
+at 107723727 ps, Instance /uart_top_tb/uut/uart_receiver_instance_nextState_0/ : Warning: /X_FF SETUP  Low VIOLATION ON I WITH RESPECT TO CLK;
+  Expected := 0.138 ns; Observed := 0.121 ns; At : 107723.714 ns
+at 107723760 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_cr_brg/ : Warning: /X_FF SETUP High VIOLATION ON I WITH RESPECT TO CLK;
+  Expected := 0.143 ns; Observed := 0.031 ns; At : 107723.76 ns
