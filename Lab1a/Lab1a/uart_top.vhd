@@ -54,46 +54,23 @@ architecture uart_top_arch of uart_top is
 		);
 	end component;
 	
-	
-	component echo_device
-		Port ( 
-			clk, rst: in STD_LOGIC;
-			r_done : in  STD_LOGIC;
-			w_start : out  STD_LOGIC;
-			w_done : in  STD_LOGIC
-		);
-	end component;
-	
 	signal reg_rx : std_logic;
+	signal reg_tx : std_logic;
 	signal reg_rst : std_logic;
 	
+	signal s_r_done, s_w_done, s_w_start : std_logic := '0';
+	
 	signal s_dr_in, s_dr_out : std_logic_vector(7 downto 0);
-	
-	signal reg_r_done_in, reg_r_done_out : std_logic;
-	signal s_w_start : std_logic;
-	signal reg_w_done_in, reg_w_done_out : std_logic;
-	
 begin
-	-- UART Receiver Read Done Register
-	process(clk) is
-	begin
-		if rising_edge(clk) then
-			if to_x01(reg_rst) = '0' then
-				reg_r_done_out <= '0';
-			else
-				reg_r_done_out <= reg_r_done_in;
-			end if;
-		end if;
-	end process;
 	
-	-- UART Transmitter Write Done Register
+	-- TX Register
 	process(clk) is
 	begin
 		if rising_edge(clk) then
 			if to_x01(reg_rst) = '0' then
-				reg_w_done_out <= '0';
+				tx <= '1';
 			else
-				reg_w_done_out <= reg_w_done_in;
+				tx <= reg_tx;
 			end if;
 		end if;
 	end process;
@@ -118,20 +95,7 @@ begin
 		end if;
 	end process;
 	
-	-- LED Register
---	process(clk) is
---	begin
---		if rising_edge(clk) then
---			if to_x01(reg_rst) = '0' then
---				reg_led_out <= (others => '0');
---			else
---				reg_led_out <= reg_led_in;
---			end if;
---		end if;
---	end process;
---	led <= reg_led_out;
-	
-	data_reg:
+	-- Data Register
 	process(clk, reg_rst) is
 	begin
 		if to_x01(reg_rst) = '0' then
@@ -143,17 +107,38 @@ begin
 	
 	uart_controller_instance: component UART_controller port map(
 		clk => clk, rst => reg_rst,
-		rx => reg_rx, tx => tx,
-		r_done => reg_r_done_in, w_done => reg_w_done_in, w_start => s_w_start, 
+		rx => reg_rx, tx => reg_tx,
+		r_done => s_r_done, w_done => s_w_done, w_start => s_w_start, 
 		w_data => s_dr_out,
 		r_data => s_dr_in
 	);
 	
-	echo_device_instance: component echo_device port map(
-		clk => clk, rst => reg_rst,
-		r_done => reg_r_done_out,
-		w_start => s_w_start,
-		w_done => reg_w_done_out
-	);
+	-- Echo FSM
+	process(reg_rst, clk, s_r_done, s_w_done) is
+		type EchoState is (
+			Waiting, Echoing
+		);
+		variable currentState : EchoState;
+	begin
+		if to_x01(reg_rst) = '0' then
+			currentState := Waiting;
+			s_w_start <= '0';
+		elsif rising_edge(clk) then
+			s_w_start <= '0';
+			
+			case currentState is
+				when Waiting =>
+					if to_x01(s_r_done) = '1' then
+						s_w_start <= '1';
+						currentState := Echoing;
+					end if;
+				when Echoing =>
+					if to_x01(s_w_done) = '1' then
+						currentState := Waiting;
+					end if;
+				when others => null;
+			end case;
+		end if;
+	end process;
 end uart_top_arch;
 
