@@ -44,7 +44,6 @@ architecture UART_receiver_arch of UART_receiver is
 		Idle, State1, State3, State4
 	);
 	signal currentState : State;
-	signal nextState : State;
 	
 	signal c_brg : integer;
 	signal cr_brg : std_logic := '0';
@@ -53,9 +52,6 @@ architecture UART_receiver_arch of UART_receiver is
 	signal reg_rst : std_logic;
 	signal reg_rx : std_logic;
 	signal reg_rx_done : std_logic;
-	
-	signal reg_ledout : std_logic_vector(7 downto 0);
-	signal reg_d_out : std_logic_vector(7 downto 0);
 begin
 
 	-- ################################################################################################################################################
@@ -94,31 +90,6 @@ begin
 		end if;
 	end process;
 		
-	-- D_Out Register
-	process(clk) is
-	begin
-		if rising_edge(clk) then
-			if to_x01(reg_rst) = '0' then
-				d_out <= (others => '0');
-			else
-				d_out <= reg_d_out;
-			end if;
-		end if;
-	end process;
-	
-	-- Led Out Register
-	process(clk) is
-	begin
-		if rising_edge(clk) then
-			if to_x01(reg_rst) = '0' then
-				led <= (others => '0');
-			else
-				led <= reg_ledout;
-			end if;
-		end if;
-	end process;
-	
-		
 	-- ################################################################################################################################################
 	-- #################################################				FSM					##################################################################
 	-- ################################################################################################################################################
@@ -138,8 +109,10 @@ begin
 		variable c_s3 : integer := 0;
 	begin
 		if to_x01(reg_rst) = '0' then
-			nextState <= Idle;
+			currentState <= Idle;
 			shift_reg <= (others => '0');
+			led <= (others => '0');
+			d_out <= (others => '0');
 		elsif rising_edge(clk) then
 			reg_rx_done <= '0';
 			cr_brg <= '0';
@@ -155,7 +128,7 @@ begin
 					
 					if to_x01(reg_rx) = '0' then
 						reg_ledout(0) <= '1';
-						nextState <= State1;
+						currentState <= State1;
 						cr_brg <= '1';
 					end if;
 				when State1 =>
@@ -168,7 +141,7 @@ begin
 					-- Need to wait until tick counter reaches 7!
 					if c_brg > 8 then
 						reg_ledout(1) <= '1';
-						nextState <= State3;
+						currentState <= State3;
 						cr_brg <= '1';		-- Reset tick counter once again
 						c_s3 := 0;			-- Reset s3 cycles counter
 					end if;
@@ -182,7 +155,7 @@ begin
 					if c_s3 = 8 then
 						-- Last bit sampled - go and sample the stop bit!
 						reg_ledout(2) <= '1';
-						nextState <= State4;
+						currentState <= State4;
 						cr_brg <= '1';
 					elsif c_brg > 16 then
 						-- 15 ticks reached means we're in the middle of the bit - sample and increase the counter!
@@ -204,15 +177,12 @@ begin
 					if c_brg > 16 then
 						reg_ledout(3) <= '1';
 						reg_rx_done <= '1';
-						nextState <= Idle;
+						currentState <= Idle;
 					end if;
 				when others => null;
 			end case;
-			
-			currentState <= nextState;
 		end if;
 	end process;
-	
-	reg_d_out <= shift_reg;
 
+	d_out <= shift_reg;
 end UART_receiver_arch;

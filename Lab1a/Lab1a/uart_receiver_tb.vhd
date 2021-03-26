@@ -108,8 +108,6 @@ BEGIN
 		rst <= '1';
 
       wait for clk_period*10;
-		
-		wait for 100 us;
 
       -- insert stimulus here 
 		rx <= '0' after sample_period, 		-- Start bit
