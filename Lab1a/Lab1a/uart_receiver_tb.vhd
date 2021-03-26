@@ -60,9 +60,9 @@ ARCHITECTURE behavior OF uart_receiver_tb IS
 
    --Inputs
    signal clk : std_logic := '0';
-   signal rst : std_logic := '1';
+   signal rst : std_logic := '0';
    signal rx : std_logic := '1';
-   signal tick : std_logic := '0';
+   signal tick : std_logic;
 
  	--Outputs
    signal d_out : std_logic_vector(7 downto 0);
@@ -105,14 +105,15 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
+		rst <= '1';
 
       wait for clk_period*10;
 
       -- insert stimulus here 
-		rx <= '0', 		-- Start bit
-			'0' after sample_period, '0' after 2*sample_period, '1' after 3*sample_period, '1' after 4*sample_period,
-			'1' after 5*sample_period, '0' after 6*sample_period, '0' after 7*sample_period, '0' after 8*sample_period,
-			'1' after 9 * sample_period;		-- Stop bit
+		rx <= '0' after sample_period, 		-- Start bit
+			'1' after 2*sample_period, '0' after 3*sample_period, '1' after 4*sample_period, '0' after 5*sample_period,
+			'1' after 6*sample_period, '0' after 7*sample_period, '1' after 8*sample_period, '0' after 9*sample_period,
+			'1' after 10*sample_period;		-- Stop bit
 			
       wait;
    end process;

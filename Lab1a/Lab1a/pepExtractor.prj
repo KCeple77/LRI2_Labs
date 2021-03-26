@@ -1,1 +1,6 @@
+work	"baud_rate_generator.vhd"
+work	"echo_device.vhd"
+work	"uart_controller.vhd"
 work	"uart_receiver.vhd"
+work	"uart_top.vhd"
+work	"uart_transmitter.vhd"

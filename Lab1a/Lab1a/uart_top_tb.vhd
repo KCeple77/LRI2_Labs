@@ -52,12 +52,12 @@ ARCHITECTURE behavior OF uart_top_tb IS
 
    --Inputs
    signal clk : std_logic := '0';
-   signal rst : std_logic := '1';
+   signal rst : std_logic := '0';
    signal rx : std_logic := '1';
 
  	--Outputs
-   signal tx : std_logic;
-	signal led : STD_LOGIC_VECTOR (7 downto 0);
+   signal tx : std_logic := '0';
+	signal led : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
 
    -- Clock period definitions
    constant clk_period : time := 37.03703704 ns;
@@ -88,14 +88,15 @@ BEGIN
    begin		
       -- hold reset state for 100 ns.
       wait for 100 ns;	
+		rst <= '1';
 
       wait for clk_period*10;
 
-      -- insert stimulus here 
-		rx <= '0', 		-- Start bit
-			'0' after sample_period, '0' after 2*sample_period, '1' after 3*sample_period, '1' after 4*sample_period,
-			'1' after 5*sample_period, '0' after 6*sample_period, '0' after 7*sample_period, '0' after 8*sample_period,
-			'1' after 9 * sample_period;		-- Stop bit
+      -- insert stimulus here
+		rx <= '0' after sample_period, 		-- Start bit
+			'1' after 2*sample_period, '0' after 3*sample_period, '1' after 4*sample_period, '0' after 5*sample_period,
+			'1' after 6*sample_period, '0' after 7*sample_period, '1' after 8*sample_period, '0' after 9*sample_period,
+			'1' after 10*sample_period;		-- Stop bit
 
       wait;
    end process;

@@ -65,6 +65,7 @@ architecture UARTtop_arch of UARTtop is
 	
 	signal s_dr_in, s_dr_out : std_logic_vector(7 downto 0);
 	signal s_r_done, s_w_start, s_w_done : std_logic;
+	
 begin
 
 data_reg:

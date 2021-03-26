@@ -1,5 +1,9 @@
 ISim log file
+<<<<<<< HEAD
 Running: E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1a\Lab1a\uart_top_tb_isim_par.exe -intstyle ise -gui -sdfmax /uut/=netgen/par/uart_top_timesim.sdf -sdfroot /uut -tclbatch isim.cmd -wdb E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1a/Lab1a/uart_top_tb_isim_par.wdb 
+=======
+Running: E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1a\Lab1a\uart_top_comlpete_tb_isim_par.exe -intstyle ise -gui -sdfmax /uut/=netgen/par/uart_top_timesim.sdf -sdfroot /uut -tclbatch isim.cmd -wdb E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/Lab1a/Lab1a/uart_top_comlpete_tb_isim_par.wdb 
+>>>>>>> synchr
 ISim P.20131013 (signature 0x7708f090)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -9,7 +13,7 @@ INFO: SDF backannotation was successful with SDF file netgen/par/uart_top_timesi
 Time resolution is 1 ps
 # onerror resume
 # wave add /
-# run 2 ms
+# run 5 ms
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 at 3375475 ps(1), Instance /uart_top_tb/uut/uart_receiver_instance_shift_reg_3/ : Warning: /X_LATCHE PULSE WIDTH High VIOLATION ON CLK;

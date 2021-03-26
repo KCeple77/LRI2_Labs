@@ -36,8 +36,8 @@ entity baud_rate_generator is
 end baud_rate_generator;
 
 architecture baud_rate_generator_arch of baud_rate_generator is
-	signal s_tick : boolean := False;
 	constant CNT_CMP : integer := 88;
+	signal s_tick : std_logic;
 begin
 	process(clk) is
 		variable counter : integer := 0;
@@ -45,17 +45,23 @@ begin
 		if rising_edge(clk) then
 			if to_x01(rst) = '0' then
 				counter := 0;
+				s_tick <= '0';
 			else
 				counter := counter + 1;
 				
-				if (counter >= CNT_CMP) then
+				if (counter = CNT_CMP) then
 					counter := 0;
-					s_tick <= not s_tick;
+					
+					if(s_tick = '0') then
+						s_tick <= '1';
+					else
+						s_tick <= '0';
+					end if;
 				end if;
 			end if;
 		end if;
 	end process;
 	
-	tick <= '1' when (s_tick = True) else '0';
+	tick <= s_tick;
 end baud_rate_generator_arch;
 
