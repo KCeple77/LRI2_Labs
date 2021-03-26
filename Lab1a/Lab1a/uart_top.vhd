@@ -40,68 +40,37 @@ end uart_top;
 
 architecture uart_top_arch of uart_top is
 	
-	COMPONENT UART_receiver
-    PORT(
-         clk : IN  std_logic;
-         rst : IN  std_logic;
-         rx : IN  std_logic;
-         tick : IN  std_logic;
-			
-         d_out : OUT  std_logic_vector(7 downto 0);
-         rx_done : OUT  std_logic
-        );
-    END COMPONENT;
-	
-	component baud_rate_generator
+	component UART_controller
 		port (
 			clk, rst: in std_logic;
-			tick: out std_logic
+			rx: in std_logic;
+			tx: out std_logic;
+			
+			r_done, w_done: out std_logic;
+			w_start: in std_logic;
+			
+			w_data: in std_logic_vector(7 downto 0);
+			r_data: out std_logic_vector(7 downto 0)
 		);
 	end component;
 	
-	signal tick : std_logic;
+	
+	component echo_device
+		Port ( 
+			clk, rst: in STD_LOGIC;
+			r_done : in  STD_LOGIC;
+			w_start : out  STD_LOGIC;
+			w_done : in  STD_LOGIC
+		);
+	end component;
+	
 	signal reg_rx : std_logic;
 	signal reg_rst : std_logic;
+	
+	signal s_dr_in, s_dr_out : std_logic_vector(7 downto 0);
+	signal s_r_done, s_w_start, s_w_done : std_logic;
+	
 begin
-	
-	-- Receiver Data Register
-	process(clk) is
-	begin
-		if rising_edge(clk) then
-			if to_x01(reg_rst) = '0' then
-				reg_rec_d_out <= (others => '0');
-			else
-				reg_rec_d_out <= reg_rec_d_in;
-			end if;
-		end if;
-	end process;
-	led <= reg_rec_d_out;
-	
-	-- Rx_done Register
-	process(clk) is
-	begin
-		if rising_edge(clk) then
-			if to_x01(reg_rst) = '0' then
-				reg_rx_done_out <= '0';
-			else
-				reg_rx_done_out <= reg_rx_done_in;
-			end if;
-		end if;
-	end process;
-	tx <= reg_rx_done_out;
-	
-	-- LED Register
-	process(clk) is
-	begin
-		if rising_edge(clk) then
-			if to_x01(reg_rst) = '0' then
-				reg_led_out <= (others => '0');
-			else
-				reg_led_out <= reg_led_in;
-			end if;
-		end if;
-	end process;
---	led <= reg_led_out;
 	
 	-- RX Register
 	process(clk) is
@@ -123,20 +92,42 @@ begin
 		end if;
 	end process;
 	
-	uart_receiver_instance: UART_receiver PORT MAP (
-          clk => clk,
-          rst => reg_rst,
-          rx => reg_rx,
-          tick => tick,
-          d_out => reg_rec_d_in,				-- This and next line are used for debugging - swap depending on whether the
-			 led => open,							-- debugging is done on the board, or in the simulator
-          rx_done => reg_rx_done_in
-		 );
+	-- LED Register
+--	process(clk) is
+--	begin
+--		if rising_edge(clk) then
+--			if to_x01(reg_rst) = '0' then
+--				reg_led_out <= (others => '0');
+--			else
+--				reg_led_out <= reg_led_in;
+--			end if;
+--		end if;
+--	end process;
+--	led <= reg_led_out;
 	
-	baud_rate_generator_instance: component baud_rate_generator port map(
-		clk => clk,
-		rst => reg_rst,
-		tick => tick
+	data_reg:
+	process(clk, reg_rst) is
+	begin
+		if to_x01(reg_rst) = '0' then
+			s_dr_out <= (others => '0');
+		elsif rising_edge(clk) then
+			s_dr_out <= s_dr_in;
+		end if;
+	end process;
+	
+	uart_controller_instance: component UART_controller port map(
+		clk => clk, rst => reg_rst,
+		rx => reg_rx, tx => tx,
+		r_done => s_r_done, w_done => s_w_done, w_start => s_w_start, 
+		w_data => s_dr_out,
+		r_data => s_dr_in
+	);
+	
+	echo_device_instance: component echo_device port map(
+		clk => clk, rst => reg_rst,
+		r_done => s_r_done,
+		w_start => s_w_start,
+		w_done => s_w_done
 	);
 end uart_top_arch;
 

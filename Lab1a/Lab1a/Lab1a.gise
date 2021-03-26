@@ -37,6 +37,9 @@
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
     <file xil_pn:branch="PostRouteSimulation" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="baud_rate_generator_tb_isim_par.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="echo_device.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="echo_device.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="echo_device.xst"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd">
@@ -91,7 +94,7 @@
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="uart_top_tb_isim_par.wdb"/>
     <file xil_pn:branch="PostTranslateSimulation" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="uart_top_tb_isim_translate.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="uart_top_tb_isim_translate.wdb"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="uart_top_tb_par.prj"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="uart_top_tb_par.prj"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="uart_top_tb_stx_beh.prj"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="uart_top_tb_translate.prj"/>
     <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="uart_top_usage.xml"/>
@@ -206,17 +209,25 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1616725469" xil_pn:in_ck="9332411398089467" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="2884790363210634471" xil_pn:start_ts="1616725459">
+    <transform xil_pn:end_ts="1616753352" xil_pn:in_ck="-6164864785761761328" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="2884790363210634471" xil_pn:start_ts="1616753342">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputAdded"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="InputRemoved"/>
-      <status xil_pn:value="OutputChanged"/>
-      <status xil_pn:value="OutputRemoved"/>
+      <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
+      <outfile xil_pn:name="uart_top.lso"/>
+      <outfile xil_pn:name="uart_top.ngc"/>
+      <outfile xil_pn:name="uart_top.ngr"/>
+      <outfile xil_pn:name="uart_top.prj"/>
+      <outfile xil_pn:name="uart_top.stx"/>
+      <outfile xil_pn:name="uart_top.syr"/>
+      <outfile xil_pn:name="uart_top.xst"/>
+      <outfile xil_pn:name="uart_top_tb_beh.prj"/>
+      <outfile xil_pn:name="uart_top_tb_par.prj"/>
+      <outfile xil_pn:name="uart_top_tb_stx_beh.prj"/>
+      <outfile xil_pn:name="uart_top_tb_translate.prj"/>
+      <outfile xil_pn:name="uart_top_xst.xrpt"/>
+      <outfile xil_pn:name="webtalk_pn.xml"/>
+      <outfile xil_pn:name="xst"/>
     </transform>
     <transform xil_pn:end_ts="1616724795" xil_pn:in_ck="5116231006824" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="-3077150140884901036" xil_pn:start_ts="1616724795">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -224,10 +235,11 @@
     </transform>
     <transform xil_pn:end_ts="1616725474" xil_pn:in_ck="2182899159413735100" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="939977075919301177" xil_pn:start_ts="1616725469">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="InputRemoved"/>
       <status xil_pn:value="OutputRemoved"/>
     </transform>

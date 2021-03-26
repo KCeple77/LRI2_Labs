@@ -111,7 +111,6 @@ begin
 		if to_x01(reg_rst) = '0' then
 			currentState <= Idle;
 			shift_reg <= (others => '0');
-			d_out <= (others => '0');
 		elsif rising_edge(clk) then
 			reg_rx_done <= '0';
 			cr_brg <= '0';
