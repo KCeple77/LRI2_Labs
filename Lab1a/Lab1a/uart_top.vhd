@@ -34,8 +34,7 @@ entity uart_top is
 			  clk : in  STD_LOGIC;
            rst : in  STD_LOGIC;
            rx : in  STD_LOGIC;
-           tx : out  STD_LOGIC;
-			  led : out  STD_LOGIC_VECTOR (7 downto 0)
+           tx : out  STD_LOGIC
 			  );
 end uart_top;
 
@@ -49,7 +48,6 @@ architecture uart_top_arch of uart_top is
          tick : IN  std_logic;
 			
          d_out : OUT  std_logic_vector(7 downto 0);
-			led : OUT std_logic_vector(7 downto 0);
          rx_done : OUT  std_logic
         );
     END COMPONENT;
@@ -64,15 +62,6 @@ architecture uart_top_arch of uart_top is
 	signal tick : std_logic;
 	signal reg_rx : std_logic;
 	signal reg_rst : std_logic;
-	
-	signal reg_rec_d_in : std_logic_vector(7 downto 0);
-	signal reg_rec_d_out : std_logic_vector(7 downto 0);
-	
-	signal reg_led_in : std_logic_vector(7 downto 0);
-	signal reg_led_out : std_logic_vector(7 downto 0);
-	
-	signal reg_rx_done_in : std_logic;
-	signal reg_rx_done_out : std_logic;
 begin
 	
 	-- Receiver Data Register

@@ -22,6 +22,9 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="Lab1a.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="UART_receiver.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="UART_receiver.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="UART_receiver.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="UART_transmitter.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="UART_transmitter.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="UART_transmitter.xst"/>
@@ -111,6 +114,11 @@
     <transform xil_pn:end_ts="1616741010" xil_pn:in_ck="1131936731227773178" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1616741010">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="baud_rate_generator.vhd"/>
       <outfile xil_pn:name="baud_rate_generator_tb.vhd"/>
       <outfile xil_pn:name="uart_receiver.vhd"/>
@@ -135,6 +143,11 @@
     <transform xil_pn:end_ts="1616741016" xil_pn:in_ck="1131936731227773178" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1616741015">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="baud_rate_generator.vhd"/>
       <outfile xil_pn:name="baud_rate_generator_tb.vhd"/>
       <outfile xil_pn:name="uart_receiver.vhd"/>
@@ -147,6 +160,11 @@
     <transform xil_pn:end_ts="1616741025" xil_pn:in_ck="1131936731227773178" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-1702741095423881658" xil_pn:start_ts="1616741016">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForInputs"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputChanged"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
@@ -157,6 +175,9 @@
     <transform xil_pn:end_ts="1616741026" xil_pn:in_ck="-251131354266282781" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-3530610492158966173" xil_pn:start_ts="1616741025">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForPredecessor"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="uart_transmitter_tb_isim_beh.wdb"/>

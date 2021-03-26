@@ -34,7 +34,6 @@ entity UART_receiver is
 		clk, rst:  in std_logic;
 		rx, tick: in std_logic;
 		d_out: out std_logic_vector(7 downto 0);
-		led : out std_logic_vector(7 downto 0);
 		rx_done : out std_logic
 	);
 end UART_receiver;
@@ -52,6 +51,7 @@ architecture UART_receiver_arch of UART_receiver is
 	signal reg_rst : std_logic;
 	signal reg_rx : std_logic;
 	signal reg_rx_done : std_logic;
+	signal reg_ledout : std_logic_vector(7 downto 0);
 begin
 
 	-- ################################################################################################################################################
@@ -111,7 +111,6 @@ begin
 		if to_x01(reg_rst) = '0' then
 			currentState <= Idle;
 			shift_reg <= (others => '0');
-			led <= (others => '0');
 			d_out <= (others => '0');
 		elsif rising_edge(clk) then
 			reg_rx_done <= '0';
