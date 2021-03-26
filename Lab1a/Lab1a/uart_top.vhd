@@ -63,8 +63,6 @@ architecture uart_top_arch of uart_top is
 	
 	signal tick : std_logic;
 	signal reg_rx : std_logic;
---	signal reg_tx_in : std_logic := '0';
---	signal reg_tx_out : std_logic := '0';
 	signal reg_rst : std_logic;
 	
 	signal reg_rec_d_in : std_logic_vector(7 downto 0);
@@ -127,18 +125,6 @@ begin
 			end if;
 		end if;
 	end process;
-	
-	-- TX Register
---	process(clk) is
---	begin
---		if rising_edge(clk) then
---			if to_x01(rst) = '0' then
---				reg_tx <= '0';
---			else
---				reg_tx_out <= reg_tx_in;
---			end if;
---		end if;
---	end process;
 	
 	-- Rst Register
 	process(clk) is

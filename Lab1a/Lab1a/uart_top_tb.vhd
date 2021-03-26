@@ -52,12 +52,12 @@ ARCHITECTURE behavior OF uart_top_tb IS
 
    --Inputs
    signal clk : std_logic := '0';
-   signal rst : std_logic := '1';
+   signal rst : std_logic := '0';
    signal rx : std_logic := '1';
 
  	--Outputs
-   signal tx : std_logic;
-	signal led : STD_LOGIC_VECTOR (7 downto 0);
+   signal tx : std_logic := '0';
+	signal led : STD_LOGIC_VECTOR (7 downto 0) := (others => '0');
 
    -- Clock period definitions
    constant clk_period : time := 37.03703704 ns;
