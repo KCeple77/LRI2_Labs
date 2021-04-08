@@ -1,0 +1,183 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Thu Apr 08 18:48:49 2021
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "rx" LOCATE = SITE "A21" LEVEL 1;
+COMP "clk" LOCATE = SITE "M21" LEVEL 1;
+COMP "rst" LOCATE = SITE "AB24" LEVEL 1;
+PIN rst_pin<0> = BEL "rst" PINNAME PAD;
+PIN "rst_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
+COMP "tx" LOCATE = SITE "A20" LEVEL 1;
+TIMEGRP sys_clk_pin = BEL "reg_rst" BEL "s_dr_out_0" BEL "s_dr_out_1" BEL
+        "s_dr_out_2" BEL "s_dr_out_3" BEL "s_dr_out_4" BEL "s_dr_out_5" BEL
+        "s_dr_out_6" BEL "s_dr_out_7" BEL "reg_rx" BEL "tx" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_30" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_29" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_28" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_27" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_26" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_25" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_24" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_23" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_22" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_21" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_20" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_19" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_18" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_17" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_16" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_15" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_14" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_13" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_12" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_11" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_10" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_9" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_8" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_7" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_6" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_5" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_4" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_3" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_2" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_1" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_0" BEL
+        "uart_controller_instance/uart_transmitter_instance/shift_reg_7" BEL
+        "uart_controller_instance/uart_transmitter_instance/shift_reg_6" BEL
+        "uart_controller_instance/uart_transmitter_instance/shift_reg_5" BEL
+        "uart_controller_instance/uart_transmitter_instance/shift_reg_4" BEL
+        "uart_controller_instance/uart_transmitter_instance/shift_reg_3" BEL
+        "uart_controller_instance/uart_transmitter_instance/shift_reg_2" BEL
+        "uart_controller_instance/uart_transmitter_instance/shift_reg_1" BEL
+        "uart_controller_instance/uart_transmitter_instance/shift_reg_0" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_30" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_29" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_28" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_27" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_26" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_25" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_24" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_23" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_22" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_21" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_20" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_19" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_18" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_17" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_16" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_15" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_14" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_13" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_12" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_11" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_10" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_9" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_8" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_7" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_6" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_5" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_4" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_3" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_2" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_1" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_0" BEL
+        "uart_controller_instance/uart_transmitter_instance/tx_done" BEL
+        "uart_controller_instance/uart_transmitter_instance/currentState_1"
+        BEL
+        "uart_controller_instance/uart_transmitter_instance/currentState_0"
+        BEL "uart_controller_instance/uart_transmitter_instance/nextState_1"
+        BEL "uart_controller_instance/uart_transmitter_instance/nextState_0"
+        BEL "uart_controller_instance/uart_transmitter_instance/reg_tx_start"
+        BEL "uart_controller_instance/uart_transmitter_instance/cr_brg" BEL
+        "uart_controller_instance/uart_transmitter_instance/reg_d_in_7" BEL
+        "uart_controller_instance/uart_transmitter_instance/reg_d_in_6" BEL
+        "uart_controller_instance/uart_transmitter_instance/reg_d_in_5" BEL
+        "uart_controller_instance/uart_transmitter_instance/reg_d_in_4" BEL
+        "uart_controller_instance/uart_transmitter_instance/reg_d_in_3" BEL
+        "uart_controller_instance/uart_transmitter_instance/reg_d_in_2" BEL
+        "uart_controller_instance/uart_transmitter_instance/reg_d_in_1" BEL
+        "uart_controller_instance/uart_transmitter_instance/reg_d_in_0" BEL
+        "uart_controller_instance/uart_transmitter_instance/reg_rst" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_30" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_29" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_28" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_27" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_26" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_25" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_24" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_23" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_22" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_21" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_20" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_19" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_18" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_17" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_16" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_15" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_14" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_13" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_12" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_11" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_10" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_9" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_8" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_7" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_6" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_5" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_4" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_3" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_2" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_1" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_0" BEL
+        "uart_controller_instance/uart_receiver_instance/c_s3_3" BEL
+        "uart_controller_instance/uart_receiver_instance/c_s3_2" BEL
+        "uart_controller_instance/uart_receiver_instance/c_s3_1" BEL
+        "uart_controller_instance/uart_receiver_instance/c_s3_0" BEL
+        "uart_controller_instance/uart_receiver_instance/currentState_1" BEL
+        "uart_controller_instance/uart_receiver_instance/currentState_0" BEL
+        "uart_controller_instance/uart_receiver_instance/nextState_1" BEL
+        "uart_controller_instance/uart_receiver_instance/nextState_0" BEL
+        "uart_controller_instance/uart_receiver_instance/rx_done" BEL
+        "uart_controller_instance/uart_receiver_instance/reg_rx" BEL
+        "uart_controller_instance/brg_instance/counter_6" BEL
+        "uart_controller_instance/brg_instance/counter_5" BEL
+        "uart_controller_instance/brg_instance/counter_4" BEL
+        "uart_controller_instance/brg_instance/counter_3" BEL
+        "uart_controller_instance/brg_instance/counter_2" BEL
+        "uart_controller_instance/brg_instance/counter_1" BEL
+        "uart_controller_instance/brg_instance/counter_0" BEL
+        "echo_device_instance/w_start" BEL "echo_device_instance/currentState"
+        BEL "echo_device_instance/reg_w_start" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_brg_31" BEL
+        "uart_controller_instance/uart_receiver_instance/c_brg_31" BEL
+        "uart_controller_instance/uart_transmitter_instance/tx" BEL
+        "uart_controller_instance/brg_instance/s_tick" BEL
+        "echo_device_instance/nextState" BEL
+        "uart_controller_instance/uart_receiver_instance/cr_brg" BEL
+        "uart_controller_instance/uart_transmitter_instance/ticked" BEL
+        "uart_controller_instance/uart_receiver_instance/ticked" BEL
+        "uart_controller_instance/uart_receiver_instance/reg_rx_done" BEL
+        "uart_controller_instance/uart_receiver_instance/shift_reg_7" BEL
+        "uart_controller_instance/uart_receiver_instance/shift_reg_6" BEL
+        "uart_controller_instance/uart_receiver_instance/shift_reg_5" BEL
+        "uart_controller_instance/uart_receiver_instance/shift_reg_4" BEL
+        "uart_controller_instance/uart_receiver_instance/shift_reg_3" BEL
+        "uart_controller_instance/uart_receiver_instance/shift_reg_2" BEL
+        "uart_controller_instance/uart_receiver_instance/shift_reg_1" BEL
+        "uart_controller_instance/uart_receiver_instance/shift_reg_0" BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_31_C_31"
+        BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_31_P_31"
+        BEL "clk_BUFGP/BUFG";
+TIMEGRP TO_uart_controller_instanceuart_transmitter_instancec_conv_31_LD = BEL
+        "uart_controller_instance/uart_transmitter_instance/c_conv_31_LD";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 27 MHz HIGH 50%;
+TS_TO_uart_controller_instanceuart_transmitter_instancec_conv_31_LD = MAXDELAY
+        TO TIMEGRP
+        "TO_uart_controller_instanceuart_transmitter_instancec_conv_31_LD"
+        TS_sys_clk_pin DATAPATHONLY;
+PIN rst_pins<0> = BEL "rst" PINNAME PAD;
+PIN "rst_pins<0>" TIG;
+SCHEMATIC END;
+
