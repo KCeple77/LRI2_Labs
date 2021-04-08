@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=C:\Users\Stela\Documents\LRI2_Labs\Lab1a\Lab1a\uart_top.ncd
-OUTFILE=C:\Users\Stela\Documents\LRI2_Labs\Lab1a\Lab1a\uart_top.bit
-FAMILY=Spartan6
-PART=xc6slx45-2fgg676
-WORKINGDIR=C:\Users\Stela\Documents\LRI2_Labs\Lab1a\Lab1a
-LICENSE=WebPack
-USER_INFO=211717055_0_0_933
