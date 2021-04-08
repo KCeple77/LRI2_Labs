@@ -1,0 +1,4 @@
+vhdl isim_temp "transmitter_debug_pkg.vhd"
+vhdl isim_temp "UART_transmitter.vhd"
+vhdl isim_temp "baud_rate_generator.vhd"
+vhdl isim_temp "uart_transmitter_tb.vhd"

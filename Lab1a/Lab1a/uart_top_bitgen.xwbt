@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab1a\Lab1a\uart_top.ncd
+OUTFILE=E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab1a\Lab1a\uart_top.bit
+FAMILY=Spartan6
+PART=xc6slx45-2fgg676
+WORKINGDIR=E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab1a\Lab1a
+LICENSE=WebPack
+USER_INFO=212090788_0_0_533

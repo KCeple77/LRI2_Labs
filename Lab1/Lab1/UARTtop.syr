@@ -1,0 +1,444 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
+ 
+--> Reading design: UARTtop.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "UARTtop.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "UARTtop"
+Output Format                      : NGC
+Target Device                      : xc6slx45-2-fgg676
+
+---- Source Options
+Top Module Name                    : UARTtop
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\transmitter_debug_pkg.vhd" into library work
+Parsing package <transmitter_debug_pkg>.
+Parsing package body <transmitter_debug_pkg>.
+Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\UART_transmitter.vhd" into library work
+Parsing entity <UART_transmitter>.
+Parsing architecture <UART_transmitter_arch> of entity <uart_transmitter>.
+Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\UART_receiver.vhd" into library work
+Parsing entity <UART_receiver>.
+Parsing architecture <UART_receiver_arch> of entity <uart_receiver>.
+Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\baud_rate_generator.vhd" into library work
+Parsing entity <baud_rate_generator>.
+Parsing architecture <brg_arch> of entity <baud_rate_generator>.
+Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\UART_controller.vhd" into library work
+Parsing entity <UART_controller>.
+Parsing architecture <UART_controller_arch> of entity <uart_controller>.
+Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\echo_device.vhd" into library work
+Parsing entity <echo_device>.
+Parsing architecture <echo_device_arch> of entity <echo_device>.
+Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\UARTtop.vhd" into library work
+Parsing entity <UARTtop>.
+Parsing architecture <UARTtop_arch> of entity <uarttop>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <UARTtop> (architecture <UARTtop_arch>) from library <work>.
+
+Elaborating entity <UART_controller> (architecture <UART_controller_arch>) from library <work>.
+
+Elaborating entity <UART_receiver> (architecture <UART_receiver_arch>) from library <work>.
+
+Elaborating entity <UART_transmitter> (architecture <UART_transmitter_arch>) from library <work>.
+
+Elaborating entity <baud_rate_generator> (architecture <brg_arch>) from library <work>.
+
+Elaborating entity <echo_device> (architecture <echo_device_arch>) from library <work>.
+INFO:HDLCompiler:679 - "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\echo_device.vhd" Line 77. Case statement is complete. others clause is never selected
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <UARTtop>.
+    Related source file is "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\UARTtop.vhd".
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8-bit register for signal <s_dr_out>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <UARTtop> synthesized.
+
+Synthesizing Unit <UART_controller>.
+    Related source file is "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\UART_controller.vhd".
+    Summary:
+	no macro.
+Unit <UART_controller> synthesized.
+
+Synthesizing Unit <UART_receiver>.
+    Related source file is "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\UART_receiver.vhd".
+WARNING:Xst:647 - Input <tick> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    WARNING:Xst:2404 -  FFs/Latches <c_brg<1:32>> (without init value) have a constant value of 0 in block <UART_receiver>.
+    WARNING:Xst:2404 -  FFs/Latches <shift_reg<1:8>> (without init value) have a constant value of 0 in block <UART_receiver>.
+    Summary:
+	no macro.
+Unit <UART_receiver> synthesized.
+
+Synthesizing Unit <UART_transmitter>.
+    Related source file is "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\UART_transmitter.vhd".
+WARNING:Xst:647 - Input <tick> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <r_tx_start>.
+    Found 2-bit register for signal <currentState>.
+    Found 1-bit register for signal <shift_reg_out>.
+    Found 4x2-bit Read Only RAM for signal <_n0066>
+WARNING:Xst:737 - Found 1-bit latch for signal <r_tx_start_rst>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <nextState<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <nextState<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    WARNING:Xst:2404 -  FFs/Latches <c_brg<1:32>> (without init value) have a constant value of 0 in block <UART_transmitter>.
+    WARNING:Xst:2404 -  FFs/Latches <c_conv<31:0>> (without init value) have a constant value of 0 in block <UART_transmitter>.
+    WARNING:Xst:2404 -  FFs/Latches <shift_reg<1:8>> (without init value) have a constant value of 0 in block <UART_transmitter>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   4 D-type flip-flop(s).
+	inferred   3 Latch(s).
+	inferred   3 Multiplexer(s).
+Unit <UART_transmitter> synthesized.
+
+Synthesizing Unit <baud_rate_generator>.
+    Related source file is "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\baud_rate_generator.vhd".
+    Found 1-bit register for signal <s_tick>.
+    Found 32-bit register for signal <counter>.
+    Found 32-bit adder for signal <counter[31]_GND_17_o_add_0_OUT> created at line 50.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
+Unit <baud_rate_generator> synthesized.
+
+Synthesizing Unit <echo_device>.
+    Related source file is "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\Lab1\Lab1\echo_device.vhd".
+    Found 1-bit register for signal <currState>.
+WARNING:Xst:737 - Found 1-bit latch for signal <nextState>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Latch(s).
+	inferred   2 Multiplexer(s).
+Unit <echo_device> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x2-bit single-port Read Only RAM                     : 1
+# Adders/Subtractors                                   : 1
+ 32-bit adder                                          : 1
+# Registers                                            : 7
+ 1-bit register                                        : 4
+ 2-bit register                                        : 1
+ 32-bit register                                       : 1
+ 8-bit register                                        : 1
+# Latches                                              : 4
+ 1-bit latch                                           : 4
+# Multiplexers                                         : 5
+ 1-bit 2-to-1 multiplexer                              : 5
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1290 - Hierarchical block <brg_instance> is unconnected in block <uart_controller_instance>.
+   It will be removed from the design.
+WARNING:Xst:1426 - The value init of the FF/Latch shift_reg_out hinder the constant cleaning in the block uart_transmitter_instance.
+   You should achieve better results by setting this init to 0.
+
+Synthesizing (advanced) Unit <UART_transmitter>.
+INFO:Xst:3231 - The small RAM <Mram__n0066> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 2-bit                      |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <currentState>  |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <UART_transmitter> synthesized (advanced).
+
+Synthesizing (advanced) Unit <baud_rate_generator>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <baud_rate_generator> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x2-bit single-port distributed Read Only RAM         : 1
+# Adders/Subtractors                                   : 1
+ 32-bit adder                                          : 1
+# Counters                                             : 1
+ 32-bit up counter                                     : 1
+# Registers                                            : 14
+ Flip-Flops                                            : 14
+# Multiplexers                                         : 5
+ 1-bit 2-to-1 multiplexer                              : 5
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch shift_reg_out hinder the constant cleaning in the block UART_transmitter.
+   You should achieve better results by setting this init to 0.
+INFO:Xst:2261 - The FF/Latch <s_dr_out_0> in Unit <UARTtop> is equivalent to the following 7 FFs/Latches, which will be removed : <s_dr_out_1> <s_dr_out_2> <s_dr_out_3> <s_dr_out_4> <s_dr_out_5> <s_dr_out_6> <s_dr_out_7> 
+WARNING:Xst:1710 - FF/Latch <s_dr_out_0> (without init value) has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <echo_device_instance/currState> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <echo_device_instance/nextState> of sequential type is unconnected in block <UARTtop>.
+
+Optimizing unit <UARTtop> ...
+
+Optimizing unit <UART_transmitter> ...
+WARNING:Xst:1293 - FF/Latch <uart_controller_instance/uart_transmitter_instance/shift_reg_out> has a constant value of 1 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_controller_instance/uart_transmitter_instance/r_tx_start> has a constant value of 0 in block <UARTtop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/s_tick> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_0> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_1> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_2> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_3> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_4> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_5> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_6> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_7> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_8> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_9> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_10> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_11> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_12> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_13> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_14> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_15> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_16> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_17> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_18> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_19> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_20> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_21> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_22> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_23> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_24> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_25> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_26> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_27> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_28> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_29> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_30> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/brg_instance/counter_31> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:1898 - Due to constant pushing, FF/Latch <uart_controller_instance/uart_transmitter_instance/r_tx_start_rst> is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/uart_transmitter_instance/currentState_1> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/uart_transmitter_instance/currentState_0> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/uart_transmitter_instance/nextState_0> of sequential type is unconnected in block <UARTtop>.
+WARNING:Xst:2677 - Node <uart_controller_instance/uart_transmitter_instance/nextState_1> of sequential type is unconnected in block <UARTtop>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block UARTtop, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : UARTtop.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1
+#      VCC                         : 1
+# IO Buffers                       : 1
+#      OBUF                        : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45fgg676-2 
+
+
+Slice Logic Utilization: 
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:      0
+   Number with an unused Flip Flop:       0  out of      0         
+   Number with an unused LUT:             0  out of      0         
+   Number of fully used LUT-FF pairs:     0  out of      0         
+   Number of unique control sets:         0
+
+IO Utilization: 
+ Number of IOs:                           4
+ Number of bonded IOBs:                   1  out of    358     0%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.87 secs
+ 
+--> 
+
+Total memory usage is 4458796 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   58 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+
