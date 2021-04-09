@@ -1,0 +1,94 @@
+Xilinx Platform Studio (XPS)
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Assigned Driver gpio 3.01.a for instance axi_gpio_0
+axi_gpio_0 has been added to the project
+ERROR:EDK:4125 - IPNAME: axi_gpio, INSTANCE: axi_gpio_0, PARAMETER: C_BASEADDR - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a value in the MHS. 
+ERROR:EDK:4125 - IPNAME: axi_gpio, INSTANCE: axi_gpio_0, PARAMETER: C_HIGHADDR - ASSIGNMENT=REQUIRE is defined in the MPD. You must specify a value in the MHS. 
+WARNING:EDK:2137 - Peripheral axi_gpio_0 is not accessible from any processor in the system. Check Bus Interface connections and address parameters. 
+Address Map for Processor microblaze_0
+  (0000000000-0x0000ffff) microblaze_0_d_bram_ctrl	microblaze_0_dlmb
+  (0000000000-0x0000ffff) microblaze_0_i_bram_ctrl	microblaze_0_ilmb
+  (0x40000000-0x4000ffff) axi_gpio_0	axi4lite_0
+  (0x41400000-0x4140ffff) debug_module	axi4lite_0
+INFO:EDK - Use debug_module as reference
+INFO:EDK - Connect bus interface S_AXI to axi4lite_0
+INFO:EDK - Connect clock port S_AXI_ACLK to clk_100_0000MHz
+INFO:EDK - External IO port grouping doneINFO:EDK - Generate address successfully
+INFO:EDK - Successfully finished auto bus connection for IP instance: axi_gpio_0
+Writing filter settings....
+Done writing filter settings to:
+	E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2\etc\system.filters
+Done writing Tab View settings to:
+	E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2\etc\system.gui
+Writing filter settings....
+Done writing filter settings to:
+	E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2\etc\system.filters
+Done writing Tab View settings to:
+	E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2\etc\system.gui
+Assigned Driver led_axi_ip 1.00.a for instance led_axi_ip_0
+led_axi_ip_0 has been added to the project
+WARNING:EDK:2137 - Peripheral led_axi_ip_0 is not accessible from any processor in the system. Check Bus Interface connections and address parameters. 
+Address Map for Processor microblaze_0
+  (0000000000-0x0000ffff) microblaze_0_d_bram_ctrl	microblaze_0_dlmb
+  (0000000000-0x0000ffff) microblaze_0_i_bram_ctrl	microblaze_0_ilmb
+  (0x40000000-0x4000ffff) axi_gpio_0	axi4lite_0
+  (0x41400000-0x4140ffff) debug_module	axi4lite_0
+  (0x7f000000-0x7f00ffff) led_axi_ip_0	axi4lite_0
+INFO:EDK - Use axi_gpio_0 as reference
+INFO:EDK - Connect bus interface S_AXI to axi4lite_0
+INFO:EDK - Connect clock port S_AXI_ACLK to clk_100_0000MHz
+INFO:EDK - External IO port grouping doneINFO:EDK - Generate address successfully
+INFO:EDK - Successfully finished auto bus connection for IP instance: led_axi_ip_0
+Overriding Xilinx file <TextEditor.cfg> with local file <E:/Xilinx/14.7/ISE_DS/EDK/data/TextEditor.cfg>
+Writing filter settings....
+Done writing filter settings to:
+	E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2\etc\system.filters
+Done writing Tab View settings to:
+	E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2\etc\system.gui
+Writing filter settings....
+Done writing filter settings to:
+	E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2\etc\system.filters
+Done writing Tab View settings to:
+	E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2\etc\system.gui
+Writing filter settings....
+Done writing filter settings to:
+	E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2\etc\system.filters
+Done writing Tab View settings to:
+	E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2\etc\system.gui
+Writing filter settings....
+Done writing filter settings to:
+	E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2\etc\system.filters
+Done writing Tab View settings to:
+	E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2\etc\system.gui
+Assigned Driver uart_cntrl 1.00.a for instance uart_cntrl_0
+uart_cntrl_0 has been added to the project
+WARNING:EDK:2137 - Peripheral uart_cntrl_0 is not accessible from any processor in the system. Check Bus Interface connections and address parameters. 
+Address Map for Processor microblaze_0
+  (0000000000-0x0000ffff) microblaze_0_d_bram_ctrl	microblaze_0_dlmb
+  (0000000000-0x0000ffff) microblaze_0_i_bram_ctrl	microblaze_0_ilmb
+  (0x40000000-0x4000ffff) axi_gpio_0	axi4lite_0
+  (0x41400000-0x4140ffff) debug_module	axi4lite_0
+  (0x77000000-0x7700ffff) uart_cntrl_0	axi4lite_0
+  (0x7f000000-0x7f00ffff) led_axi_ip_0	axi4lite_0
+INFO:EDK - Use axi_gpio_0 as reference
+INFO:EDK - Connect bus interface S_AXI to axi4lite_0
+INFO:EDK - Connect clock port S_AXI_ACLK to clk_100_0000MHz
+INFO:EDK - External IO port grouping doneINFO:EDK - Generate address successfully
+INFO:EDK - Successfully finished auto bus connection for IP instance: uart_cntrl_0
+Writing filter settings....
+Done writing filter settings to:
+	E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2\etc\system.filters
+Done writing Tab View settings to:
+	E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2\etc\system.gui
+Writing filter settings....
+Done writing filter settings to:
+	E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2\etc\system.filters
+Done writing Tab View settings to:
+	E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2\etc\system.gui
+Writing filter settings....
+Done writing filter settings to:
+	E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2\etc\system.filters
+Done writing Tab View settings to:
+	E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2\etc\system.gui

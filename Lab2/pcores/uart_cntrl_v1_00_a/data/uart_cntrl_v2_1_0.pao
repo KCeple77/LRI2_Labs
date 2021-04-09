@@ -1,0 +1,10 @@
+##############################################################################
+## Filename:          E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2/pcores/uart_cntrl_v1_00_a/data/uart_cntrl_v2_1_0.pao
+## Description:       Peripheral Analysis Order
+## Date:              Fri Apr 09 13:23:45 2021 (by Create and Import Peripheral Wizard)
+##############################################################################
+
+lib proc_common_v3_00_a  all 
+lib axi_lite_ipif_v1_01_a  all 
+lib uart_cntrl_v1_00_a user_logic vhdl
+lib uart_cntrl_v1_00_a uart_cntrl vhdl

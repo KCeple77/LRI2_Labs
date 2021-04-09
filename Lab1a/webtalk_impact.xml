@@ -3,18 +3,18 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="impact" timeStamp="Thu Apr 08 20:00:59 2021">
+<application name="impact" timeStamp="Fri Apr 09 03:22:38 2021">
 <section name="Project Information" visible="false">
-<property name="ProjectID" value="c3394452026e4777b0e7a04f36ad44dc"/>
+<property name="ProjectID" value="e8a7226579c64cefb964ad7bc0d0cafe"/>
 <property name="ProjectIteration" value="1"/>
 </section>
 <section name="iMPACT Project Info" visible="true">
-<property name="Use Project File" value="Yes"/>
+<property name="Use Project File" value="No"/>
 <property name="Project Entry" value="ise"/>
 <property name="OS Name" value="Microsoft Windows NT (64 Bit)"/>
-<property name="User Lic. Info" value="212090788_0_0_533"/>
+<property name="User Lic. Info" value="202989980_174153212_210561167_901"/>
 </section>
-<section name="iMPACT Boundary Scan Mode" visible="true">
+<section name="iMPACT One Step SVF File Mode" visible="true">
 <item name="Chain Summary">
 <property name="Number of device" value="3"/>
 <property name="Number of Xilinx device" value="3"/>
@@ -32,11 +32,15 @@ This means code written to parse this file will need to be revisited each subseq
 <item name="Boundary Scan Operations Statistics">
 <property name="BSCAN Operation" value="Program -p 2
 "/>
+<property name="BSCAN Operation" value="Program -p 2
+"/>
+<property name="BSCAN Operation" value="Program -p 2
+"/>
 </item>
 <item name="Cable Summary">
-<property name="Cable Type" value=""/>
-<property name="Cable Speed" value="0"/>
-<property name="Port" value="NULL"/>
+<property name="Cable Type" value="Platform Cable USB"/>
+<property name="Cable Speed" value="6 MHz"/>
+<property name="Port" value="usb-hs"/>
 <property name="Local_Server_Mode" value="Local"/>
 </item>
 </section>
