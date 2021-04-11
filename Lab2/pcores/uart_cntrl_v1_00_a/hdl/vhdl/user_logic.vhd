@@ -134,6 +134,8 @@ architecture IMP of user_logic is
   --USER signal declarations added here, as needed for user logic
   signal rx_i : std_logic;
   signal tx_i : std_logic;
+  signal r_done_i, w_done_i, w_start_i : std_logic;
+  signal w_data_i, r_data_i : std_logic_vector(7 downto 0);
 
   ------------------------------------------
   -- Signals for user logic slave model s/w accessible register example
@@ -145,9 +147,39 @@ architecture IMP of user_logic is
   signal slv_read_ack                   : std_logic;
   signal slv_write_ack                  : std_logic;
 
+	component UART_controller
+		port(
+			clk, rst: in std_logic;
+			rx: in std_logic;
+			tx: out std_logic;
+			
+			-- Only signals above were used in lab1 uart top!
+			r_done, w_done: out std_logic;
+			w_start: in std_logic;
+			
+			w_data: in std_logic_vector(7 downto 0);
+			r_data: out std_logic_vector(7 downto 0)
+		);
+	end component;
 begin
 
   --USER logic implementation added here
+	UART_Controller_Instance: component UART_Controller port map(
+		clk => Bus2IP_Clk,
+		rst => Bus2IP_Resetn,
+		
+		rx => rx_i,
+		tx => tx_i,
+		
+		-- TODO: Implement these signals
+		w_data => w_data_i,
+		r_data => r_data_i,
+		
+		w_start => w_start_i,
+		w_done => w_done_i,
+		r_done => r_done_i,
+		
+	);
 
   ------------------------------------------
   -- Example code to read/write user logic slave model s/w accessible registers
@@ -215,4 +247,6 @@ begin
   IP2Bus_RdAck <= slv_read_ack;
   IP2Bus_Error <= '0';
 
+  TX <= tx_i;
+  RX <= rx_i;
 end IMP;

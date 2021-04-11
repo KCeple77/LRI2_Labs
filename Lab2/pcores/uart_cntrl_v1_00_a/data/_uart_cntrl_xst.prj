@@ -10,3 +10,7 @@ vhdl axi_lite_ipif_v1_01_a "E:\Xilinx\14.7\ISE_DS\EDK/hw/XilinxProcessorIPLib/pc
 vhdl axi_lite_ipif_v1_01_a "E:\Xilinx\14.7\ISE_DS\EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/axi_lite_ipif.vhd"
 vhdl uart_cntrl_v1_00_a "../hdl/vhdl/user_logic.vhd"
 vhdl uart_cntrl_v1_00_a "../hdl/vhdl/uart_cntrl.vhd"
+vhdl uart_cntrl_v1_00_a "../hdl/vhdl/baud_rate_generator.vhd"
+vhdl uart_cntrl_v1_00_a "../hdl/vhdl/uart_controller.vhd"
+vhdl uart_cntrl_v1_00_a "../hdl/vhdl/uart_receiver.vhd"
+vhdl uart_cntrl_v1_00_a "../hdl/vhdl/uart_transmitter.vhd"

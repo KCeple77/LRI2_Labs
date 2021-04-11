@@ -132,15 +132,7 @@ architecture IMP of user_logic is
 
   --USER signal declarations added here, as needed for user logic
   signal led_i: std_logic_vector(7 downto 0);
-
-  ------------------------------------------
-  -- Signals for user logic slave model s/w accessible register example
-  ------------------------------------------
-  signal slv_reg0                       : std_logic_vector(C_SLV_DWIDTH-1 downto 0);
   signal slv_reg_write_sel              : std_logic_vector(0 to 0);
-  signal slv_reg_read_sel               : std_logic_vector(0 to 0);
-  signal slv_ip2bus_data                : std_logic_vector(C_SLV_DWIDTH-1 downto 0);
-  signal slv_read_ack                   : std_logic;
   signal slv_write_ack                  : std_logic;
 
 begin
@@ -166,17 +158,15 @@ begin
   -- 
   ------------------------------------------
   slv_reg_write_sel <= Bus2IP_WrCE(0 downto 0);
-  slv_reg_read_sel  <= Bus2IP_RdCE(0 downto 0);
   slv_write_ack     <= Bus2IP_WrCE(0);
-  slv_read_ack      <= Bus2IP_RdCE(0);
 
   -- implement slave model software accessible register(s)
-  SLAVE_REG_WRITE_PROC : process( Bus2IP_Clk ) is
+  LED_WRITE_PROC : process( Bus2IP_Clk ) is
   begin
 
-    if rising_edge(Bus2IP_Clk) then
+    if Bus2IP_Clk'event and Bus2IP_Clk = '1' then
       if Bus2IP_Resetn = '0' then
-        slv_reg0 <= (others => '0');
+        led_i <= (others => '0');
       else
         case slv_reg_write_sel is
           when "1" =>
@@ -185,29 +175,14 @@ begin
         end case;
       end if;
     end if;
-  end process SLAVE_REG_WRITE_PROC;
+  end process LED_WRITE_PROC;
 
   LED <= led_i;
 
-  -- implement slave model software accessible register(s) read mux
-  SLAVE_REG_READ_PROC : process( slv_reg_read_sel, slv_reg0 ) is
-  begin
-
-    case slv_reg_read_sel is
-      when "1" => slv_ip2bus_data <= slv_reg0;
-      when others => slv_ip2bus_data <= (others => '0');
-    end case;
-
-  end process SLAVE_REG_READ_PROC;
-
   ------------------------------------------
-  -- Example code to drive IP to Bus signals
+  -- Drive IP to Bus signals
   ------------------------------------------
-  IP2Bus_Data  <= slv_ip2bus_data when slv_read_ack = '1' else
-                  (others => '0');
-
   IP2Bus_WrAck <= slv_write_ack;
-  IP2Bus_RdAck <= slv_read_ack;
   IP2Bus_Error <= '0';
 
 end IMP;

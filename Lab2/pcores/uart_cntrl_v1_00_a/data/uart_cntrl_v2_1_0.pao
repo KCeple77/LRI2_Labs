@@ -8,3 +8,7 @@ lib proc_common_v3_00_a  all
 lib axi_lite_ipif_v1_01_a  all 
 lib uart_cntrl_v1_00_a user_logic vhdl
 lib uart_cntrl_v1_00_a uart_cntrl vhdl
+lib uart_cntrl_v1_00_a baud_rate_generator vhdl
+lib uart_cntrl_v1_00_a uart_controller vhdl
+lib uart_cntrl_v1_00_a uart_receiver vhdl
+lib uart_cntrl_v1_00_a uart_transmitter vhdl
