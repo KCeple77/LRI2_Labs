@@ -138,7 +138,7 @@ entity led_axi_ip is
   (
     -- ADD USER PORTS BELOW THIS LINE ------------------
     --USER ports added here
-	 LED: out std_logic_vector(7 donwto 0);
+	 LED : out std_logic_vector (7 downto 0);
     -- ADD USER PORTS ABOVE THIS LINE ------------------
 
     -- DO NOT EDIT BELOW THIS LINE ---------------------
@@ -303,7 +303,7 @@ begin
     (
       -- MAP USER PORTS BELOW THIS LINE ------------------
       --USER ports mapped here
-		LED => LED
+		LED => LED,
       -- MAP USER PORTS ABOVE THIS LINE ------------------
 
       Bus2IP_Clk                     => ipif_Bus2IP_Clk,

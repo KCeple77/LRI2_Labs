@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="error" file="HDLCompiler" num="806" delta="new" >"E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2/pcores/uart_cntrl_v1_00_a/hdl/vhdl/user_logic.vhd" Line 182: Syntax error near &quot;<arg fmt="%s" index="1">)</arg>&quot;.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="432" delta="new" >"E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2/pcores/uart_cntrl_v1_00_a/hdl/vhdl/user_logic.vhd" Line 167: Formal &lt;<arg fmt="%s" index="1">clk</arg>&gt; has no actual or default value.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="294" delta="new" >"E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2/pcores/uart_cntrl_v1_00_a/hdl/vhdl/user_logic.vhd" Line 251: Cannot update &apos;in&apos; object <arg fmt="%s" index="1">rx</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="854" delta="new" >"E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2/pcores/uart_cntrl_v1_00_a/hdl/vhdl/user_logic.vhd" Line 132: Unit &lt;<arg fmt="%s" index="1">imp</arg>&gt; ignored due to previous errors.
+</msg>
+
+</messages>
+

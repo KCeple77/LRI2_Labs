@@ -1,0 +1,9 @@
+-batch 
+-create led_axi_ip 
+-ver 1.00.a 
+-dir "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a" 
+-lang vhdl 
+-bus axi4lite s 
+-reg 1 
+-xps 
+-driver 
