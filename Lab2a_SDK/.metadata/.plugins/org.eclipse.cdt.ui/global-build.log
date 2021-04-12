@@ -1,0 +1,797 @@
+01:25:54 **** Build of project LAB2a_SDK_Project_1_bsp ****
+make -k all 
+libgen -hw ../Lab2a_hw_platform/system.xml\
+	       \
+	       -pe microblaze_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../Lab2a_hw_platform/system.xml -pe microblaze_0 -log
+libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+
+Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+"Compiling common"
+"Compiling standalone";
+"Compiling gpio"
+"Compiling uartlite"
+"Compiling bram"
+"Compiling cpu"
+Running execs_generate.
+'Finished building libraries'
+01:26:09 **** Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: LAB2a_SDK_Project_1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size LAB2a_SDK_Project_1.elf  |tee "LAB2a_SDK_Project_1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   2174	    268	   2084	   4526	   11ae	LAB2a_SDK_Project_1.elf
+'Finished building: LAB2a_SDK_Project_1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck LAB2a_SDK_Project_1.elf -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0  |tee "LAB2a_SDK_Project_1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0
+LAB2a_SDK_Project_1.elf 
+
+ELF file	: LAB2a_SDK_Project_1.elf
+elfcheck passed.
+'Finished building: LAB2a_SDK_Project_1.elf.elfcheck'
+' '
+01:26:55 **** Clean-only build of project LAB2a_SDK_Project_1_bsp ****
+make -k clean 
+rm -rf microblaze_0
+01:26:56 **** Build of project LAB2a_SDK_Project_1_bsp ****
+make -k all 
+libgen -hw ../Lab2a_hw_platform/system.xml\
+	       -lp ../../Lab2a\
+	       -pe microblaze_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../Lab2a_hw_platform/system.xml -lp ../../Lab2a -pe
+microblaze_0 -log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+
+Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+"Compiling common"
+"Compiling standalone";
+"Compiling gpio"
+"Compiling uartlite"
+"Compiling bram"
+"Compiling cpu"
+Running execs_generate.
+'Finished building libraries'
+01:27:10 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+make: Nothing to be done for `all'.
+01:27:26 **** Clean-only build of project LAB2a_SDK_Project_1_bsp ****
+make -k clean 
+rm -rf microblaze_0
+01:27:27 **** Build of project LAB2a_SDK_Project_1_bsp ****
+make -k all 
+libgen -hw ../Lab2a_hw_platform/system.xml\
+	       -lp ../../Lab2a\
+	       -pe microblaze_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../Lab2a_hw_platform/system.xml -lp ../../Lab2a -pe
+microblaze_0 -log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+
+Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+"Compiling common"
+"Compiling standalone";
+"Compiling gpio"
+"Compiling uartlite"
+"Compiling led_axi_ip"
+led_axi_ip_selftest.c: In function 'LED_AXI_IP_SelfTest':
+led_axi_ip_selftest.c:70:50: error: 'LED_AXI_IP_USER_NUM_REG' undeclared (first use in this function)
+led_axi_ip_selftest.c:70:50: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [libs] Error 1
+"Compiling bram"
+"Compiling uart_cntrl"
+uart_cntrl_selftest.c: In function 'UART_CNTRL_SelfTest':
+uart_cntrl_selftest.c:70:50: error: 'UART_CNTRL_USER_NUM_REG' undeclared (first use in this function)
+uart_cntrl_selftest.c:70:50: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [libs] Error 1
+"Compiling cpu"
+ERROR:EDK:369 -  make failed for target "libs" 
+ERROR:EDK:3418 - Error(s) while running make.
+make: *** [microblaze_0/lib/libxil.a] Error 2
+make: Target `all' not remade because of errors.
+01:27:42 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+make: Nothing to be done for `all'.
+01:28:30 **** Auto Build of project LAB2a_SDK_Project_1_bsp ****
+make -k all 
+libgen -hw ../Lab2a_hw_platform/system.xml\
+	       -lp ../../Lab2a\
+	       -pe microblaze_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../Lab2a_hw_platform/system.xml -lp ../../Lab2a -pe
+microblaze_0 -log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+
+Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+"Compiling common"
+"Compiling standalone";
+"Compiling gpio"
+"Compiling uartlite"
+"Compiling led_axi_ip"
+led_axi_ip_selftest.c: In function 'LED_AXI_IP_SelfTest':
+led_axi_ip_selftest.c:70:50: error: 'LED_AXI_IP_USER_NUM_REG' undeclared (first use in this function)
+led_axi_ip_selftest.c:70:50: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [libs] Error 1
+"Compiling bram"
+"Compiling uart_cntrl"
+uart_cntrl_selftest.c: In function 'UART_CNTRL_SelfTest':
+uart_cntrl_selftest.c:70:50: error: 'UART_CNTRL_USER_NUM_REG' undeclared (first use in this function)
+uart_cntrl_selftest.c:70:50: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [libs] Error 1
+"Compiling cpu"
+ERROR:EDK:369 -  make failed for target "libs" 
+ERROR:EDK:3418 - Error(s) while running make.
+make: *** [microblaze_0/lib/libxil.a] Error 2
+make: Target `all' not remade because of errors.
+01:28:46 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+make: Nothing to be done for `all'.
+01:28:55 **** Auto Build of project LAB2a_SDK_Project_1_bsp ****
+make -k all 
+libgen -hw ../Lab2a_hw_platform/system.xml\
+	       -lp ../../Lab2a\
+	       -pe microblaze_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../Lab2a_hw_platform/system.xml -lp ../../Lab2a -pe
+microblaze_0 -log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+
+Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+"Compiling common"
+"Compiling standalone";
+"Compiling gpio"
+"Compiling uartlite"
+"Compiling led_axi_ip"
+led_axi_ip_selftest.c: In function 'LED_AXI_IP_SelfTest':
+led_axi_ip_selftest.c:70:50: error: 'LED_AXI_IP_USER_NUM_REG' undeclared (first use in this function)
+led_axi_ip_selftest.c:70:50: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [libs] Error 1
+"Compiling bram"
+"Compiling uart_cntrl"
+uart_cntrl_selftest.c: In function 'UART_CNTRL_SelfTest':
+uart_cntrl_selftest.c:70:50: error: 'UART_CNTRL_USER_NUM_REG' undeclared (first use in this function)
+uart_cntrl_selftest.c:70:50: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [libs] Error 1
+"Compiling cpu"
+ERROR:EDK:369 -  make failed for target "libs" 
+ERROR:EDK:3418 - Error(s) while running make.
+make: *** [microblaze_0/lib/libxil.a] Error 2
+make: Target `all' not remade because of errors.
+01:29:10 **** Incremental Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+make: Nothing to be done for `all'.
+01:29:31 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le/crtinit.o: In function `_crtinit':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/crtinit.S:69: undefined reference to `main'
+collect2: ld returned 1 exit status
+make: *** [LAB2a_SDK_Project_1.elf] Error 1
+01:29:38 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le/crtinit.o: In function `_crtinit':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/crtinit.S:69: undefined reference to `main'
+collect2: ld returned 1 exit status
+make: *** [LAB2a_SDK_Project_1.elf] Error 1
+01:32:18 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:20:28: error: expected expression before '^' token
+../src/main.c:20:28: error: too few arguments to function 'XGpio_Initialize'
+../../LAB2a_SDK_Project_1_bsp/microblaze_0/include/xgpio.h:162:5: note: declared here
+../src/main.c:15:6: warning: unused variable 'dip_state' [-Wunused-variable]
+../src/main.c:13:8: warning: unused variable 'dip' [-Wunused-variable]
+../src/main.c:24:1: warning: control reaches end of non-void function [-Wreturn-type]
+make: *** [src/main.o] Error 1
+01:32:32 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:15:6: warning: unused variable 'dip_state' [-Wunused-variable]
+'Finished building: ../src/main.c'
+' '
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le\libxil.a(print.o): In function `print':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/print.c:25: undefined reference to `outbyte'
+./src/main.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `XGpio_Initialize'
+collect2: ld returned 1 exit status
+make: *** [LAB2a_SDK_Project_1.elf] Error 1
+01:33:33 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le\libxil.a(print.o): In function `print':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/print.c:25: undefined reference to `outbyte'
+./src/main.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `XGpio_Initialize'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:26: undefined reference to `XGpio_SetDataDirection'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:27: undefined reference to `XGpio_DiscreteRead'
+collect2: ld returned 1 exit status
+make: *** [LAB2a_SDK_Project_1.elf] Error 1
+01:34:06 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le\libxil.a(print.o): In function `print':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/print.c:25: undefined reference to `outbyte'
+./src/main.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `XGpio_Initialize'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:26: undefined reference to `XGpio_SetDataDirection'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:27: undefined reference to `XGpio_DiscreteRead'
+collect2: ld returned 1 exit status
+make: *** [LAB2a_SDK_Project_1.elf] Error 1
+01:34:18 **** Incremental Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le\libxil.a(print.o): In function `print':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/print.c:25: undefined reference to `outbyte'
+./src/main.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `XGpio_Initialize'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:26: undefined reference to `XGpio_SetDataDirection'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:27: undefined reference to `XGpio_DiscreteRead'
+collect2: ld returned 1 exit status
+make: *** [LAB2a_SDK_Project_1.elf] Error 1
+03:39:09 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le\libxil.a(print.o): In function `print':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/print.c:25: undefined reference to `outbyte'
+./src/main.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `XGpio_Initialize'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:26: undefined reference to `XGpio_SetDataDirection'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:27: undefined reference to `XGpio_DiscreteRead'
+collect2: ld returned 1 exit status
+make: *** [LAB2a_SDK_Project_1.elf] Error 1
+03:41:18 **** Incremental Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le\libxil.a(print.o): In function `print':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/print.c:25: undefined reference to `outbyte'
+./src/main.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `XGpio_Initialize'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:26: undefined reference to `XGpio_SetDataDirection'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:27: undefined reference to `XGpio_DiscreteRead'
+collect2: ld returned 1 exit status
+make: *** [LAB2a_SDK_Project_1.elf] Error 1
+03:45:40 **** Auto Build of project LAB2a_SDK_Project_1_bsp ****
+make -k all 
+libgen -hw ../Lab2a_hw_platform/system.xml\
+	       -lp ../../Lab2a\
+	       -pe microblaze_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../Lab2a_hw_platform/system.xml -lp ../../Lab2a -pe
+microblaze_0 -log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+
+Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+"Compiling common"
+"Compiling standalone";
+"Compiling gpio"
+"Compiling uartlite"
+"Compiling led_axi_ip"
+led_axi_ip_selftest.c: In function 'LED_AXI_IP_SelfTest':
+led_axi_ip_selftest.c:70:50: error: 'LED_AXI_IP_USER_NUM_REG' undeclared (first use in this function)
+led_axi_ip_selftest.c:70:50: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [libs] Error 1
+"Compiling bram"
+"Compiling uart_cntrl"
+uart_cntrl_selftest.c: In function 'UART_CNTRL_SelfTest':
+uart_cntrl_selftest.c:70:50: error: 'UART_CNTRL_USER_NUM_REG' undeclared (first use in this function)
+uart_cntrl_selftest.c:70:50: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [libs] Error 1
+"Compiling cpu"
+ERROR:EDK:369 -  make failed for target "libs" 
+ERROR:EDK:3418 - Error(s) while running make.
+make: *** [microblaze_0/lib/libxil.a] Error 2
+make: Target `all' not remade because of errors.
+03:46:01 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le\libxil.a(print.o): In function `print':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/print.c:25: undefined reference to `outbyte'
+./src/main.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `XGpio_Initialize'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:26: undefined reference to `XGpio_SetDataDirection'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:27: undefined reference to `XGpio_DiscreteRead'
+collect2: ld returned 1 exit status
+make: *** [LAB2a_SDK_Project_1.elf] Error 1
+04:00:39 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le\libxil.a(print.o): In function `print':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/print.c:25: undefined reference to `outbyte'
+./src/main.o: In function `XGpio_Initialize':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_AssertStatus'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:27: undefined reference to `XGpio_LookupConfig'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_Assert'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_AssertStatus'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:33: undefined reference to `XGpio_CfgInitialize'
+./src/main.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:51: undefined reference to `XGpio_SetDataDirection'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:52: undefined reference to `XGpio_DiscreteRead'
+collect2: ld returned 1 exit status
+make: *** [LAB2a_SDK_Project_1.elf] Error 1
+04:01:38 **** Clean-only build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/main.o ./src/platform.o  ./src/helloworld.d ./src/main.d ./src/platform.d  LAB2a_SDK_Project_1.elf.size  LAB2a_SDK_Project_1.elf.elfcheck  LAB2a_SDK_Project_1.elf
+' '
+04:01:39 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -I"E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1_bsp\microblaze_0\include" -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -I"E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1_bsp\microblaze_0\include" -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -I"E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1_bsp\microblaze_0\include" -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le\libxil.a(print.o): In function `print':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/print.c:25: undefined reference to `outbyte'
+./src/main.o: In function `XGpio_Initialize':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_AssertStatus'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:27: undefined reference to `XGpio_LookupConfig'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_Assert'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_AssertStatus'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:33: undefined reference to `XGpio_CfgInitialize'
+./src/main.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:51: undefined reference to `XGpio_SetDataDirection'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:52: undefined reference to `XGpio_DiscreteRead'
+collect2: ld returned 1 exit status
+make: *** [LAB2a_SDK_Project_1.elf] Error 1
+04:01:42 **** Clean-only build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/main.o ./src/platform.o  ./src/helloworld.d ./src/main.d ./src/platform.d  LAB2a_SDK_Project_1.elf.size  LAB2a_SDK_Project_1.elf.elfcheck  LAB2a_SDK_Project_1.elf
+' '
+04:01:42 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -I"E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1_bsp\microblaze_0\include" -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -I"E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1_bsp\microblaze_0\include" -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -I"E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1_bsp\microblaze_0\include" -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le\libxil.a(print.o): In function `print':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/print.c:25: undefined reference to `outbyte'
+./src/main.o: In function `XGpio_Initialize':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_AssertStatus'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:27: undefined reference to `XGpio_LookupConfig'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_Assert'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_AssertStatus'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:33: undefined reference to `XGpio_CfgInitialize'
+./src/main.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:51: undefined reference to `XGpio_SetDataDirection'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:52: undefined reference to `XGpio_DiscreteRead'
+collect2: ld returned 1 exit status
+make: *** [LAB2a_SDK_Project_1.elf] Error 1
+04:02:19 **** Clean-only build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/main.o ./src/platform.o  ./src/helloworld.d ./src/main.d ./src/platform.d  LAB2a_SDK_Project_1.elf.size  LAB2a_SDK_Project_1.elf.elfcheck  LAB2a_SDK_Project_1.elf
+' '
+04:02:20 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -I"E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1_bsp" -I"E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1" -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -I"E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1_bsp" -I"E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1" -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -I"E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1_bsp" -I"E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1" -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le\libxil.a(print.o): In function `print':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/print.c:25: undefined reference to `outbyte'
+./src/main.o: In function `XGpio_Initialize':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_AssertStatus'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:27: undefined reference to `XGpio_LookupConfig'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_Assert'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_AssertStatus'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:33: undefined reference to `XGpio_CfgInitialize'
+./src/main.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:51: undefined reference to `XGpio_SetDataDirection'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:52: undefined reference to `XGpio_DiscreteRead'
+collect2: ld returned 1 exit status
+make: *** [LAB2a_SDK_Project_1.elf] Error 1
+04:02:23 **** Clean-only build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/main.o ./src/platform.o  ./src/helloworld.d ./src/main.d ./src/platform.d  LAB2a_SDK_Project_1.elf.size  LAB2a_SDK_Project_1.elf.elfcheck  LAB2a_SDK_Project_1.elf
+' '
+04:02:23 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -I"E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1_bsp" -I"E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1" -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -I"E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1_bsp" -I"E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1" -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -I"E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1_bsp" -I"E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1" -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le\libxil.a(print.o): In function `print':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/print.c:25: undefined reference to `outbyte'
+./src/main.o: In function `XGpio_Initialize':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_AssertStatus'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:27: undefined reference to `XGpio_LookupConfig'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_Assert'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_AssertStatus'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:33: undefined reference to `XGpio_CfgInitialize'
+./src/main.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:51: undefined reference to `XGpio_SetDataDirection'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:52: undefined reference to `XGpio_DiscreteRead'
+collect2: ld returned 1 exit status
+make: *** [LAB2a_SDK_Project_1.elf] Error 1
+04:04:57 **** Clean-only build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/main.o ./src/platform.o  ./src/helloworld.d ./src/main.d ./src/platform.d  LAB2a_SDK_Project_1.elf.size  LAB2a_SDK_Project_1.elf.elfcheck  LAB2a_SDK_Project_1.elf
+' '
+04:04:57 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le\libxil.a(print.o): In function `print':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/print.c:25: undefined reference to `outbyte'
+./src/main.o: In function `XGpio_Initialize':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_AssertStatus'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:27: undefined reference to `XGpio_LookupConfig'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_Assert'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_AssertStatus'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:33: undefined reference to `XGpio_CfgInitialize'
+./src/main.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:51: undefined reference to `XGpio_SetDataDirection'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:52: undefined reference to `XGpio_DiscreteRead'
+collect2: ld returned 1 exit status
+make: *** [LAB2a_SDK_Project_1.elf] Error 1
+04:05:01 **** Clean-only build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/main.o ./src/platform.o  ./src/helloworld.d ./src/main.d ./src/platform.d  LAB2a_SDK_Project_1.elf.size  LAB2a_SDK_Project_1.elf.elfcheck  LAB2a_SDK_Project_1.elf
+' '
+04:05:01 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le\libxil.a(print.o): In function `print':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/print.c:25: undefined reference to `outbyte'
+./src/main.o: In function `XGpio_Initialize':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_AssertStatus'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:27: undefined reference to `XGpio_LookupConfig'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_Assert'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:20: undefined reference to `Xil_AssertStatus'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:33: undefined reference to `XGpio_CfgInitialize'
+./src/main.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:51: undefined reference to `XGpio_SetDataDirection'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:52: undefined reference to `XGpio_DiscreteRead'
+collect2: ld returned 1 exit status
+make: *** [LAB2a_SDK_Project_1.elf] Error 1
+04:09:15 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le\libxil.a(print.o): In function `print':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/print.c:25: undefined reference to `outbyte'
+./src/main.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:22: undefined reference to `XGpio_Initialize'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:28: undefined reference to `XGpio_SetDataDirection'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:29: undefined reference to `XGpio_DiscreteRead'
+collect2: ld returned 1 exit status
+make: *** [LAB2a_SDK_Project_1.elf] Error 1
+04:09:33 **** Clean-only build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/main.o ./src/platform.o  ./src/helloworld.d ./src/main.d ./src/platform.d  LAB2a_SDK_Project_1.elf.size  LAB2a_SDK_Project_1.elf.elfcheck  LAB2a_SDK_Project_1.elf
+' '
+04:09:34 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le\libxil.a(print.o): In function `print':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/print.c:25: undefined reference to `outbyte'
+./src/main.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:22: undefined reference to `XGpio_Initialize'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:28: undefined reference to `XGpio_SetDataDirection'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:29: undefined reference to `XGpio_DiscreteRead'
+collect2: ld returned 1 exit status
+make: *** [LAB2a_SDK_Project_1.elf] Error 1
+04:09:37 **** Clean-only build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make clean 
+rm -rf  ./src/helloworld.o ./src/main.o ./src/platform.o  ./src/helloworld.d ./src/main.d ./src/platform.d  LAB2a_SDK_Project_1.elf.size  LAB2a_SDK_Project_1.elf.elfcheck  LAB2a_SDK_Project_1.elf
+' '
+04:09:37 **** Auto Build of configuration Debug for project LAB2a_SDK_Project_1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../LAB2a_SDK_Project_1_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: LAB2a_SDK_Project_1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../LAB2a_SDK_Project_1_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "LAB2a_SDK_Project_1.elf"  ./src/helloworld.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le\libxil.a(print.o): In function `print':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/print.c:25: undefined reference to `outbyte'
+./src/main.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:22: undefined reference to `XGpio_Initialize'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:28: undefined reference to `XGpio_SetDataDirection'
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\LAB2a_SDK_Project_1\Debug/../src/main.c:29: undefined reference to `XGpio_DiscreteRead'
+collect2: ld returned 1 exit status
+make: *** [LAB2a_SDK_Project_1.elf] Error 1

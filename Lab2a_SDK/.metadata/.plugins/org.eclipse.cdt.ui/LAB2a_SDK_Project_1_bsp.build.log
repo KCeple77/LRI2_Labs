@@ -1,0 +1,51 @@
+03:45:40 **** Auto Build of project LAB2a_SDK_Project_1_bsp ****
+make -k all 
+libgen -hw ../Lab2a_hw_platform/system.xml\
+	       -lp ../../Lab2a\
+	       -pe microblaze_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../Lab2a_hw_platform/system.xml -lp ../../Lab2a -pe
+microblaze_0 -log libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+
+Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+"Compiling common"
+"Compiling standalone";
+"Compiling gpio"
+"Compiling uartlite"
+"Compiling led_axi_ip"
+led_axi_ip_selftest.c: In function 'LED_AXI_IP_SelfTest':
+led_axi_ip_selftest.c:70:50: error: 'LED_AXI_IP_USER_NUM_REG' undeclared (first use in this function)
+led_axi_ip_selftest.c:70:50: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [libs] Error 1
+"Compiling bram"
+"Compiling uart_cntrl"
+uart_cntrl_selftest.c: In function 'UART_CNTRL_SelfTest':
+uart_cntrl_selftest.c:70:50: error: 'UART_CNTRL_USER_NUM_REG' undeclared (first use in this function)
+uart_cntrl_selftest.c:70:50: note: each undeclared identifier is reported only once for each function it appears in
+make[1]: *** [libs] Error 1
+"Compiling cpu"
+ERROR:EDK:369 -  make failed for target "libs" 
+ERROR:EDK:3418 - Error(s) while running make.
+make: *** [microblaze_0/lib/libxil.a] Error 2
+make: Target `all' not remade because of errors.
+
+03:46:01 Build Finished (took 20s.690ms)
+
