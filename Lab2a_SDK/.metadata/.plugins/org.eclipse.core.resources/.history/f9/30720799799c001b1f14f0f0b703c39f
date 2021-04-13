@@ -37,7 +37,6 @@
 #include "xgpio.h"
 #include "xparameters.h"
 #include "led_axi_ip.h"
-#include "uart_cntrl.h"
 
 /***************************** Include Files *******************************/
 
@@ -50,7 +49,7 @@
 /************************** Constant Definitions ***************************/
 
 void my_uart_transmit_msg(const char *str);
-void my_uart_transmit_byte(const char toWrite);
+void my_uart_transmit_byte(const char * const str);
 
 void my_uart_receive(const char* readData);
 void dip_2_led(XGpio* dip);
@@ -70,9 +69,9 @@ int main(){
 	char readBuffer[1024] = "Buffer Init!";
 	while(1) {
 		dip_2_led(&dip);
-		my_uart_transmit_msg("In while loop!\0");
-		//my_uart_receive(readBuffer);
-		//my_uart_transmit_msg(readBuffer);
+		my_uart_transmit_msg("In while loop!");
+		my_uart_receive(readBuffer);
+		my_uart_transmit_msg(readBuffer);
 	}
 
 	return 0;
@@ -83,39 +82,12 @@ void my_uart_transmit_msg(const char *str) {
 	const char* currChar = str;
 	do {
 		// Transmit byte here
-		my_uart_transmit_byte(*currChar);
-		currChar++;
+		my_uart_transmit_byte(currChar++);
 	} while(*currChar != '\0');
 }
 
-void my_uart_transmit_byte(const char toWrite) {
-	// 1. Put data into the specified place in the slave register
-	Xuint32 tmpData = UART_CNTRL_mReadSlaveReg0(XPAR_UART_CNTRL_0_BASEADDR, UART_CNTRL_SLV_REG0_OFFSET);
-	Xuint32 toWriteExtended = toWrite;
+void my_uart_transmit_byte(const char * const str) {
 
-	toWriteExtended <<= 16;
-	toWriteExtended &= 0x00FF0000;
-
-	tmpData &= 0xFF00FFFF;
-	tmpData |= toWriteExtended;
-
-	// 2. Put Write Start high and write to UART Controller
-	tmpData |= 0x00000001;
-	UART_CNTRL_mWriteReg(XPAR_UART_CNTRL_0_BASEADDR, UART_CNTRL_SLV_REG0_OFFSET, tmpData);
-
-	// 3. Wait until Write Done is set -> then lower the flag
-	Xuint32 tmpWD;
-	while(1) {
-		tmpData = UART_CNTRL_mReadSlaveReg0(XPAR_UART_CNTRL_0_BASEADDR, UART_CNTRL_SLV_REG0_OFFSET);
-
-		tmpWD = tmpData & 0x00000002;
-		if(tmpWD == 0x00000002) {
-			// 4. Lower Write Done! Our data has been transmitted!
-			tmpData ^= 0x00000002;
-			UART_CNTRL_mWriteReg(XPAR_UART_CNTRL_0_BASEADDR, UART_CNTRL_SLV_REG0_OFFSET, tmpData);
-			break;
-		}
-	}
 }
 
 void dip_2_led(XGpio* dip) {
@@ -125,9 +97,9 @@ void dip_2_led(XGpio* dip) {
 }
 
 
-/***************************************************************************/
-/***************************** Leftover Code *******************************/
-/***************************************************************************/
+/****************************************************************************/
+/***************************** Leftover Files *******************************/
+/****************************************************************************/
 int main_former()
 {
     init_platform();

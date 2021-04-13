@@ -83,7 +83,7 @@ void my_uart_transmit_msg(const char *str) {
 	const char* currChar = str;
 	do {
 		// Transmit byte here
-		my_uart_transmit_byte(*currChar);
+		//my_uart_transmit_byte(*currChar);
 		currChar++;
 	} while(*currChar != '\0');
 }
@@ -92,15 +92,12 @@ void my_uart_transmit_byte(const char toWrite) {
 	// 1. Put data into the specified place in the slave register
 	Xuint32 tmpData = UART_CNTRL_mReadSlaveReg0(XPAR_UART_CNTRL_0_BASEADDR, UART_CNTRL_SLV_REG0_OFFSET);
 	Xuint32 toWriteExtended = toWrite;
-
 	toWriteExtended <<= 16;
-	toWriteExtended &= 0x00FF0000;
-
 	tmpData &= 0xFF00FFFF;
 	tmpData |= toWriteExtended;
 
 	// 2. Put Write Start high and write to UART Controller
-	tmpData |= 0x00000001;
+	tmpData |= 0x01;
 	UART_CNTRL_mWriteReg(XPAR_UART_CNTRL_0_BASEADDR, UART_CNTRL_SLV_REG0_OFFSET, tmpData);
 
 	// 3. Wait until Write Done is set -> then lower the flag
@@ -108,10 +105,10 @@ void my_uart_transmit_byte(const char toWrite) {
 	while(1) {
 		tmpData = UART_CNTRL_mReadSlaveReg0(XPAR_UART_CNTRL_0_BASEADDR, UART_CNTRL_SLV_REG0_OFFSET);
 
-		tmpWD = tmpData & 0x00000002;
-		if(tmpWD == 0x00000002) {
+		tmpWD = tmpData & 0x02;
+		if(tmpWD == 0x02) {
 			// 4. Lower Write Done! Our data has been transmitted!
-			tmpData ^= 0x00000002;
+			tmpData ^= 0x02;
 			UART_CNTRL_mWriteReg(XPAR_UART_CNTRL_0_BASEADDR, UART_CNTRL_SLV_REG0_OFFSET, tmpData);
 			break;
 		}

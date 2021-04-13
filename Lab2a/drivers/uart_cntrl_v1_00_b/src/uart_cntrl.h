@@ -1,8 +1,8 @@
 /*****************************************************************************
-* Filename:          E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a/drivers/uart_cntrl_v1_00_b/src/uart_cntrl.h
-* Version:           1.00.b
+* Filename:          E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a/drivers/uart_cntrl_v1_00_a/src/uart_cntrl.h
+* Version:           1.00.a
 * Description:       uart_cntrl Driver Header File
-* Date:              Tue Apr 13 03:12:42 2021 (by Create and Import Peripheral Wizard)
+* Date:              Sun Apr 11 16:54:33 2021 (by Create and Import Peripheral Wizard)
 *****************************************************************************/
 
 #ifndef UART_CNTRL_H
@@ -20,11 +20,9 @@
 /**
  * User Logic Slave Space Offsets
  * -- SLV_REG0 : user logic slave module register 0
- * -- SLV_REG1 : user logic slave module register 1
  */
 #define UART_CNTRL_USER_SLV_SPACE_OFFSET (0x00000000)
 #define UART_CNTRL_SLV_REG0_OFFSET (UART_CNTRL_USER_SLV_SPACE_OFFSET + 0x00000000)
-#define UART_CNTRL_SLV_REG1_OFFSET (UART_CNTRL_USER_SLV_SPACE_OFFSET + 0x00000004)
 
 /**************************** Type Definitions *****************************/
 
@@ -90,13 +88,9 @@
  */
 #define UART_CNTRL_mWriteSlaveReg0(BaseAddress, RegOffset, Value) \
  	Xil_Out32((BaseAddress) + (UART_CNTRL_SLV_REG0_OFFSET) + (RegOffset), (Xuint32)(Value))
-#define UART_CNTRL_mWriteSlaveReg1(BaseAddress, RegOffset, Value) \
- 	Xil_Out32((BaseAddress) + (UART_CNTRL_SLV_REG1_OFFSET) + (RegOffset), (Xuint32)(Value))
 
 #define UART_CNTRL_mReadSlaveReg0(BaseAddress, RegOffset) \
  	Xil_In32((BaseAddress) + (UART_CNTRL_SLV_REG0_OFFSET) + (RegOffset))
-#define UART_CNTRL_mReadSlaveReg1(BaseAddress, RegOffset) \
- 	Xil_In32((BaseAddress) + (UART_CNTRL_SLV_REG1_OFFSET) + (RegOffset))
 
 /************************** Function Prototypes ****************************/
 
@@ -123,7 +117,7 @@
 XStatus UART_CNTRL_SelfTest(void * baseaddr_p);
 /**
 *  Defines the number of registers available for read and write*/
-#define TEST_AXI_LITE_USER_NUM_REG 2
+#define TEST_AXI_LITE_USER_NUM_REG 1
 
 
 #endif /** UART_CNTRL_H */

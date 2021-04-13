@@ -1259,3 +1259,493 @@ ELF file	: Lab2a_SDK_proj1.elf
 elfcheck passed.
 'Finished building: Lab2a_SDK_proj1.elf.elfcheck'
 ' '
+17:35:55 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:72:3: warning: passing argument 1 of 'my_uart_receive' from incompatible pointer type [enabled by default]
+../src/helloworld.c:52:6: note: expected 'const char *' but argument is of type 'char (*)[1024]'
+../src/helloworld.c:73:3: warning: passing argument 1 of 'my_uart_transmit' from incompatible pointer type [enabled by default]
+../src/helloworld.c:51:6: note: expected 'const char *' but argument is of type 'char (*)[1024]'
+../src/helloworld.c:58:6: warning: unused variable 'dip_state' [-Wunused-variable]
+../src/helloworld.c: In function 'my_uart_transmit':
+../src/helloworld.c:84:10: error: expected expression before ')' token
+../src/helloworld.c:81:8: warning: unused variable 'currChar' [-Wunused-variable]
+../src/helloworld.c: In function 'dip_2_led':
+../src/helloworld.c:88:26: error: 'dip' undeclared (first use in this function)
+../src/helloworld.c:88:26: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:89:2: error: 'dip_state' undeclared (first use in this function)
+../src/helloworld.c: In function 'main_former':
+../src/helloworld.c:99:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+make: *** [src/helloworld.o] Error 1
+17:36:13 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:58:6: warning: unused variable 'dip_state' [-Wunused-variable]
+../src/helloworld.c: In function 'my_uart_transmit':
+../src/helloworld.c:84:10: error: expected expression before ')' token
+../src/helloworld.c:81:8: warning: unused variable 'currChar' [-Wunused-variable]
+../src/helloworld.c: In function 'dip_2_led':
+../src/helloworld.c:88:26: error: 'dip' undeclared (first use in this function)
+../src/helloworld.c:88:26: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:89:2: error: 'dip_state' undeclared (first use in this function)
+../src/helloworld.c: In function 'main_former':
+../src/helloworld.c:99:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+make: *** [src/helloworld.o] Error 1
+17:37:16 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:58:6: warning: unused variable 'dip_state' [-Wunused-variable]
+../src/helloworld.c: In function 'dip_2_led':
+../src/helloworld.c:89:26: error: 'dip' undeclared (first use in this function)
+../src/helloworld.c:89:26: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:90:2: error: 'dip_state' undeclared (first use in this function)
+../src/helloworld.c: In function 'main_former':
+../src/helloworld.c:100:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+make: *** [src/helloworld.o] Error 1
+17:38:04 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:70:3: error: incompatible type for argument 1 of 'dip_2_led'
+../src/helloworld.c:53:6: note: expected 'struct XGpio *' but argument is of type 'XGpio'
+../src/helloworld.c:58:6: warning: unused variable 'dip_state' [-Wunused-variable]
+../src/helloworld.c: In function 'dip_2_led':
+../src/helloworld.c:89:2: warning: passing argument 1 of 'XGpio_SetDataDirection' from incompatible pointer type [enabled by default]
+../../my_bsp/microblaze_0/include/xgpio.h:170:6: note: expected 'struct XGpio *' but argument is of type 'struct XGpio **'
+../src/helloworld.c:90:2: error: 'dip_state' undeclared (first use in this function)
+../src/helloworld.c:90:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:90:2: warning: passing argument 1 of 'XGpio_DiscreteRead' from incompatible pointer type [enabled by default]
+../../my_bsp/microblaze_0/include/xgpio.h:173:5: note: expected 'struct XGpio *' but argument is of type 'struct XGpio **'
+../src/helloworld.c: In function 'main_former':
+../src/helloworld.c:100:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+make: *** [src/helloworld.o] Error 1
+17:38:17 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:58:6: warning: unused variable 'dip_state' [-Wunused-variable]
+../src/helloworld.c: In function 'dip_2_led':
+../src/helloworld.c:90:2: error: 'dip_state' undeclared (first use in this function)
+../src/helloworld.c:90:2: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c: In function 'main_former':
+../src/helloworld.c:100:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+make: *** [src/helloworld.o] Error 1
+17:38:58 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main_former':
+../src/helloworld.c:99:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Lab2a_SDK_proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../my_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Lab2a_SDK_proj1.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/helloworld.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\Lab2a_SDK_proj1\Debug/../src/helloworld.c:71: undefined reference to `my_uart_receive'
+collect2: ld returned 1 exit status
+make: *** [Lab2a_SDK_proj1.elf] Error 1
+18:12:01 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main_former':
+../src/helloworld.c:101:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Lab2a_SDK_proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../my_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Lab2a_SDK_proj1.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/helloworld.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\Lab2a_SDK_proj1\Debug/../src/helloworld.c:73: undefined reference to `my_uart_receive'
+./src/helloworld.o: In function `my_uart_transmit_msg':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\Lab2a_SDK_proj1\Debug/../src/helloworld.c:85: undefined reference to `my_uart_transmit_byte'
+collect2: ld returned 1 exit status
+make: *** [Lab2a_SDK_proj1.elf] Error 1
+18:13:49 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main_former':
+../src/helloworld.c:105:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Lab2a_SDK_proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../my_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Lab2a_SDK_proj1.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/helloworld.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\Lab2a_SDK_proj1\Debug/../src/helloworld.c:73: undefined reference to `my_uart_receive'
+collect2: ld returned 1 exit status
+make: *** [Lab2a_SDK_proj1.elf] Error 1
+18:59:24 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'my_uart_transmit_msg':
+../src/helloworld.c:85:3: warning: passing argument 1 of 'my_uart_transmit_byte' makes integer from pointer without a cast [enabled by default]
+../src/helloworld.c:52:6: note: expected 'char' but argument is of type 'const char *'
+../src/helloworld.c: In function 'my_uart_transmit_byte':
+../src/helloworld.c:91:2: warning: implicit declaration of function 'UART_CNTRL_mReadSlaveReg0' [-Wimplicit-function-declaration]
+../src/helloworld.c:91:74: error: 'UART_CNTRL_SLV_REG0_OFFSET' undeclared (first use in this function)
+../src/helloworld.c:91:74: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:96:2: error: 'readData' undeclared (first use in this function)
+../src/helloworld.c:97:2: warning: implicit declaration of function 'UART_CNTRL_mWriteReg' [-Wimplicit-function-declaration]
+../src/helloworld.c: In function 'main_former':
+../src/helloworld.c:125:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+make: *** [src/helloworld.o] Error 1
+18:59:43 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'my_uart_transmit_msg':
+../src/helloworld.c:85:3: warning: passing argument 1 of 'my_uart_transmit_byte' makes integer from pointer without a cast [enabled by default]
+../src/helloworld.c:52:6: note: expected 'char' but argument is of type 'const char *'
+../src/helloworld.c: In function 'my_uart_transmit_byte':
+../src/helloworld.c:91:2: warning: implicit declaration of function 'UART_CNTRL_mReadSlaveReg0' [-Wimplicit-function-declaration]
+../src/helloworld.c:91:74: error: 'UART_CNTRL_SLV_REG0_OFFSET' undeclared (first use in this function)
+../src/helloworld.c:91:74: note: each undeclared identifier is reported only once for each function it appears in
+../src/helloworld.c:97:2: warning: implicit declaration of function 'UART_CNTRL_mWriteReg' [-Wimplicit-function-declaration]
+../src/helloworld.c: In function 'main_former':
+../src/helloworld.c:125:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+make: *** [src/helloworld.o] Error 1
+19:01:46 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'my_uart_transmit_msg':
+../src/helloworld.c:86:3: warning: passing argument 1 of 'my_uart_transmit_byte' makes integer from pointer without a cast [enabled by default]
+../src/helloworld.c:53:6: note: expected 'char' but argument is of type 'const char *'
+../src/helloworld.c: In function 'main_former':
+../src/helloworld.c:126:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Lab2a_SDK_proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../my_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Lab2a_SDK_proj1.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+./src/helloworld.o: In function `main':
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\Lab2a_SDK_proj1\Debug/../src/helloworld.c:74: undefined reference to `my_uart_receive'
+collect2: ld returned 1 exit status
+make: *** [Lab2a_SDK_proj1.elf] Error 1
+19:02:22 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:70:7: warning: unused variable 'readBuffer' [-Wunused-variable]
+../src/helloworld.c: In function 'main_former':
+../src/helloworld.c:127:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Lab2a_SDK_proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../my_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Lab2a_SDK_proj1.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Lab2a_SDK_proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size Lab2a_SDK_proj1.elf  |tee "Lab2a_SDK_proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   4666	    288	   2094	   7048	   1b88	Lab2a_SDK_proj1.elf
+'Finished building: Lab2a_SDK_proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck Lab2a_SDK_proj1.elf -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0  |tee "Lab2a_SDK_proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0
+Lab2a_SDK_proj1.elf 
+
+ELF file	: Lab2a_SDK_proj1.elf
+elfcheck passed.
+'Finished building: Lab2a_SDK_proj1.elf.elfcheck'
+' '
+19:02:34 **** Incremental Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+make: Nothing to be done for `all'.
+19:04:11 **** Auto Build of project my_bsp ****
+make -k all 
+'Finished building libraries'
+19:04:46 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:70:7: warning: unused variable 'readBuffer' [-Wunused-variable]
+../src/helloworld.c: In function 'main_former':
+../src/helloworld.c:128:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Lab2a_SDK_proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../my_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Lab2a_SDK_proj1.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Lab2a_SDK_proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size Lab2a_SDK_proj1.elf  |tee "Lab2a_SDK_proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   4686	    288	   2088	   7062	   1b96	Lab2a_SDK_proj1.elf
+'Finished building: Lab2a_SDK_proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck Lab2a_SDK_proj1.elf -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0  |tee "Lab2a_SDK_proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0
+Lab2a_SDK_proj1.elf 
+
+ELF file	: Lab2a_SDK_proj1.elf
+elfcheck passed.
+'Finished building: Lab2a_SDK_proj1.elf.elfcheck'
+' '
+19:05:01 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:70:7: warning: unused variable 'readBuffer' [-Wunused-variable]
+../src/helloworld.c: In function 'main_former':
+../src/helloworld.c:128:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Lab2a_SDK_proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../my_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Lab2a_SDK_proj1.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Lab2a_SDK_proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size Lab2a_SDK_proj1.elf  |tee "Lab2a_SDK_proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   4338	    288	   2094	   6720	   1a40	Lab2a_SDK_proj1.elf
+'Finished building: Lab2a_SDK_proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck Lab2a_SDK_proj1.elf -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0  |tee "Lab2a_SDK_proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0
+Lab2a_SDK_proj1.elf 
+
+ELF file	: Lab2a_SDK_proj1.elf
+elfcheck passed.
+'Finished building: Lab2a_SDK_proj1.elf.elfcheck'
+' '
+19:05:17 **** Auto Build of project my_bsp ****
+make -k all 
+'Finished building libraries'
+19:05:20 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:70:7: warning: unused variable 'readBuffer' [-Wunused-variable]
+../src/helloworld.c: In function 'main_former':
+../src/helloworld.c:128:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Lab2a_SDK_proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../my_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Lab2a_SDK_proj1.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Lab2a_SDK_proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size Lab2a_SDK_proj1.elf  |tee "Lab2a_SDK_proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   4686	    288	   2088	   7062	   1b96	Lab2a_SDK_proj1.elf
+'Finished building: Lab2a_SDK_proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck Lab2a_SDK_proj1.elf -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0  |tee "Lab2a_SDK_proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0
+Lab2a_SDK_proj1.elf 
+
+ELF file	: Lab2a_SDK_proj1.elf
+elfcheck passed.
+'Finished building: Lab2a_SDK_proj1.elf.elfcheck'
+' '
+19:05:33 **** Auto Build of project my_bsp ****
+make -k all 
+'Finished building libraries'
+19:06:17 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:70:7: warning: unused variable 'readBuffer' [-Wunused-variable]
+../src/helloworld.c: In function 'main_former':
+../src/helloworld.c:128:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Lab2a_SDK_proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../my_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Lab2a_SDK_proj1.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Lab2a_SDK_proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size Lab2a_SDK_proj1.elf  |tee "Lab2a_SDK_proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   4686	    288	   2088	   7062	   1b96	Lab2a_SDK_proj1.elf
+'Finished building: Lab2a_SDK_proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck Lab2a_SDK_proj1.elf -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0  |tee "Lab2a_SDK_proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0
+Lab2a_SDK_proj1.elf 
+
+ELF file	: Lab2a_SDK_proj1.elf
+elfcheck passed.
+'Finished building: Lab2a_SDK_proj1.elf.elfcheck'
+' '
+19:06:30 **** Auto Build of project my_bsp ****
+make -k all 
+'Finished building libraries'
+19:21:58 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:70:7: warning: unused variable 'readBuffer' [-Wunused-variable]
+../src/helloworld.c: In function 'main_former':
+../src/helloworld.c:130:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Lab2a_SDK_proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../my_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Lab2a_SDK_proj1.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Lab2a_SDK_proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size Lab2a_SDK_proj1.elf  |tee "Lab2a_SDK_proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   4702	    288	   2088	   7078	   1ba6	Lab2a_SDK_proj1.elf
+'Finished building: Lab2a_SDK_proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck Lab2a_SDK_proj1.elf -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0  |tee "Lab2a_SDK_proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0
+Lab2a_SDK_proj1.elf 
+
+ELF file	: Lab2a_SDK_proj1.elf
+elfcheck passed.
+'Finished building: Lab2a_SDK_proj1.elf.elfcheck'
+' '
+19:22:15 **** Auto Build of project my_bsp ****
+make -k all 
+'Finished building libraries'
+19:22:46 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:70:7: warning: unused variable 'readBuffer' [-Wunused-variable]
+../src/helloworld.c: In function 'main_former':
+../src/helloworld.c:130:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Lab2a_SDK_proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../my_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Lab2a_SDK_proj1.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Lab2a_SDK_proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size Lab2a_SDK_proj1.elf  |tee "Lab2a_SDK_proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   4446	    288	   2088	   6822	   1aa6	Lab2a_SDK_proj1.elf
+'Finished building: Lab2a_SDK_proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck Lab2a_SDK_proj1.elf -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0  |tee "Lab2a_SDK_proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0
+Lab2a_SDK_proj1.elf 
+
+ELF file	: Lab2a_SDK_proj1.elf
+elfcheck passed.
+'Finished building: Lab2a_SDK_proj1.elf.elfcheck'
+' '
+19:22:59 **** Auto Build of project my_bsp ****
+make -k all 
+'Finished building libraries'
+19:26:27 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+'Building file: ../src/helloworld.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:70:7: warning: unused variable 'readBuffer' [-Wunused-variable]
+../src/helloworld.c: In function 'main_former':
+../src/helloworld.c:133:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+'Finished building: ../src/helloworld.c'
+' '
+'Building target: Lab2a_SDK_proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../my_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Lab2a_SDK_proj1.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: Lab2a_SDK_proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size Lab2a_SDK_proj1.elf  |tee "Lab2a_SDK_proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   4718	    288	   2088	   7094	   1bb6	Lab2a_SDK_proj1.elf
+'Finished building: Lab2a_SDK_proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck Lab2a_SDK_proj1.elf -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0  |tee "Lab2a_SDK_proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0
+Lab2a_SDK_proj1.elf 
+
+ELF file	: Lab2a_SDK_proj1.elf
+elfcheck passed.
+'Finished building: Lab2a_SDK_proj1.elf.elfcheck'
+' '
+19:26:42 **** Auto Build of project my_bsp ****
+make -k all 
+'Finished building libraries'

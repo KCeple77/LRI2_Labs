@@ -1,16 +1,13 @@
-06:36:27 **** Build of configuration Debug for project Lab2a_SDK_proj1 ****
+19:26:27 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
+../src/helloworld.c: In function 'main':
+../src/helloworld.c:70:7: warning: unused variable 'readBuffer' [-Wunused-variable]
 ../src/helloworld.c: In function 'main_former':
-../src/helloworld.c:77:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
+../src/helloworld.c:133:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
 'Finished building: ../src/helloworld.c'
-' '
-'Building file: ../src/platform.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
-'Finished building: ../src/platform.c'
 ' '
 'Building target: Lab2a_SDK_proj1.elf'
 'Invoking: MicroBlaze gcc linker'
@@ -20,7 +17,7 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../my_bsp/microblaze_0/lib -mlittle-end
 'Invoking: MicroBlaze Print Size'
 mb-size Lab2a_SDK_proj1.elf  |tee "Lab2a_SDK_proj1.elf.size"
    text	   data	    bss	    dec	    hex	filename
-   2682	    288	   2094	   5064	   13c8	Lab2a_SDK_proj1.elf
+   4718	    288	   2088	   7094	   1bb6	Lab2a_SDK_proj1.elf
 'Finished building: Lab2a_SDK_proj1.elf.size'
 ' '
 'Invoking: Xilinx ELF Check'
@@ -37,5 +34,5 @@ elfcheck passed.
 'Finished building: Lab2a_SDK_proj1.elf.elfcheck'
 ' '
 
-06:36:30 Build Finished (took 3s.891ms)
+19:26:30 Build Finished (took 3s.42ms)
 
