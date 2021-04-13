@@ -31,12 +31,24 @@
  *   ps7_uart    115200 (configured by bootrom/bsp)
  */
 
+/***************************** Include Files *******************************/
+
 #include <stdio.h>
 #include "xgpio.h"
 #include "xparameters.h"
 #include "led_axi_ip.h"
 
-void print(char *str);
+/***************************** Include Files *******************************/
+
+
+/************************** Constant Definitions ***************************/
+
+#define MY_UART_READ_REG UART_CNTRL_SLV_REG0_OFFSET
+#define MY_UART_WRITE_REG UART_CNTRL_SLV_REG1_OFFSET
+
+/************************** Constant Definitions ***************************/
+
+void my_uart_print(const char *str);
 
 int main(){
 	XGpio dip;

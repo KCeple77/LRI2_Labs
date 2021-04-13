@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item value="system_bd.bmm" key="Lab2a_hw_platform-bmmFile"/>
-	<item value="bootloop" key="Lab2a_hw_platform-microblaze_0-initElf"/>
+	<item value="E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\Lab2a_SDK_proj1\Debug\Lab2a_SDK_proj1.elf" key="Lab2a_hw_platform-microblaze_0-initElf"/>
 	<item value="system.bit" key="Lab2a_hw_platform-bitFile"/>
 </section>

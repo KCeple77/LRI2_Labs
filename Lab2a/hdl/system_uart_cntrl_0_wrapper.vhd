@@ -7,9 +7,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 
-library uart_cntrl_v1_00_a;
-use uart_cntrl_v1_00_a.all;
-
 entity system_uart_cntrl_0_wrapper is
   port (
     RX : in std_logic;

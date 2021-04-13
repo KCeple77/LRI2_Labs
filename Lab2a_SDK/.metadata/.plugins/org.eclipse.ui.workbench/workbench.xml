@@ -61,7 +61,7 @@
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="helloworld.c" partName="helloworld.c" path="E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_SDK_proj1/src/helloworld.c" title="helloworld.c" tooltip="Lab2a_SDK_proj1/src/helloworld.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Lab2a_SDK_proj1/src/helloworld.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1421" selectionTopPixel="170"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1988" selectionTopPixel="93"/>
 </editor>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="platform.c" partName="platform.c" path="E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_SDK_proj1/src/platform.c" title="platform.c" tooltip="Lab2a_SDK_proj1/src/platform.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Lab2a_SDK_proj1/src/platform.c"/>
@@ -88,6 +88,9 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
+<expanded>
+<category IMemento.internal.id="Warnings (1 item)"/>
+</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="90" org.eclipse.ui.ide.markerType="90" org.eclipse.ui.ide.pathField="120" org.eclipse.ui.ide.resourceField="90" org.eclipse.ui.ide.severityAndDescriptionField="534"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -237,11 +240,8 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.hw.ui.HwSpecXMLEditor" path="/Lab2a_hw_platform/system.xml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab2a_SDK_proj1/src/platform.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/Lab2a_SDK_proj1/src/helloworld.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.xilinx.sdk.sw.MSSEditor" path="/my_bsp/system.mss"/>
 </editors>
-<item historyLabel="Makefile" index="2">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="system.mss" index="1"/>
 <item historyLabel="main.c" index="0">
 <position info="not_deleted" x="471" y="0"/>
 </item>
@@ -343,8 +343,12 @@
 <item historyLabel="main.c" index="13">
 <position info="not_deleted" x="140" y="0"/>
 </item>
-<item active="true" historyLabel="helloworld.c" index="17">
+<item historyLabel="helloworld.c" index="17">
 <position info="not_deleted" x="1854" y="0"/>
+</item>
+<item historyLabel="system.mss" index="18"/>
+<item active="true" historyLabel="helloworld.c" index="17">
+<position info="not_deleted" x="1857" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>

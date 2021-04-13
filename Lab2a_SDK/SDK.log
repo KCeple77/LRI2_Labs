@@ -34,3 +34,30 @@ If this project was a BSP referenced by other C/C++ applications, then those app
 18:34:56.153 INFO  - Saving repository preferences. 
 00:42:30.155 INFO  - Restoring local repository preferences: 
 		 E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a 
+02:57:54.648 INFO  - Restoring local repository preferences: 
+		 E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a 
+02:57:55.036 INFO  - Project Lab2a_hw_platform's source hardware specification located at E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+02:58:06.924 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml into \Lab2a_hw_platform\system.xml. 
+02:58:06.935 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.bit into \Lab2a_hw_platform\system.bit. 
+02:58:06.941 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system_bd.bmm into \Lab2a_hw_platform\system_bd.bmm. 
+02:58:07.081 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+02:58:26.673 INFO  - Updating hardware inferred compiler options for Lab2a_SDK_proj1. 
+02:58:26.696 INFO  - Clearing existing target manager status. 
+03:00:55.079 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+03:04:18.526 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+03:32:35.149 INFO  - Project Lab2a_hw_platform's source hardware specification located at E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated. 
+03:32:54.148 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml into \Lab2a_hw_platform\system.xml. 
+03:32:54.165 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.bit into \Lab2a_hw_platform\system.bit. 
+03:32:54.173 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system_bd.bmm into \Lab2a_hw_platform\system_bd.bmm. 
+03:32:54.824 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+03:32:57.391 INFO  - Updating hardware inferred compiler options for Lab2a_SDK_proj1. 
+03:32:57.447 INFO  - Clearing existing target manager status. 
+03:33:46.424 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+03:38:15.396 INFO  - Processing command line option -hwspec E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml. 
+03:39:55.316 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+06:23:57.710 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+06:33:48.418 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+06:34:05.565 INFO  - Processing command line option -hwspec E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml. 
+06:35:14.574 INFO  - Processing command line option -hwspec E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml. 
