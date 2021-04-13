@@ -1,4 +1,4 @@
-03:45:40 **** Auto Build of project LAB2a_SDK_Project_1_bsp ****
+17:11:48 **** Build of project LAB2a_SDK_Project_1_bsp ****
 make -k all 
 libgen -hw ../Lab2a_hw_platform/system.xml\
 	       -lp ../../Lab2a\
@@ -47,5 +47,5 @@ ERROR:EDK:3418 - Error(s) while running make.
 make: *** [microblaze_0/lib/libxil.a] Error 2
 make: Target `all' not remade because of errors.
 
-03:46:01 Build Finished (took 20s.690ms)
+17:12:08 Build Finished (took 20s.160ms)
 
