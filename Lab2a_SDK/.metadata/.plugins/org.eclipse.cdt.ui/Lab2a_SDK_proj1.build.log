@@ -1,4 +1,4 @@
-02:08:11 **** Build of configuration Debug for project Lab2a_SDK_proj1 ****
+03:00:19 **** Build of configuration Debug for project Lab2a_SDK_proj1 ****
 make all 
 'Building file: ../src/helloworld.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -15,12 +15,27 @@ mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -
 'Building target: Lab2a_SDK_proj1.elf'
 'Invoking: MicroBlaze gcc linker'
 mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../my_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Lab2a_SDK_proj1.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-./src/helloworld.o: In function `main':
-E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\Lab2a_SDK_proj1\Debug/../src/helloworld.c:49: undefined reference to `XGpio_Initialize'
-E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\Lab2a_SDK_proj1\Debug/../src/helloworld.c:55: undefined reference to `XGpio_SetDataDirection'
-E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a_SDK\Lab2a_SDK_proj1\Debug/../src/helloworld.c:56: undefined reference to `XGpio_DiscreteRead'
-collect2: ld returned 1 exit status
-make: *** [Lab2a_SDK_proj1.elf] Error 1
+'Finished building target: Lab2a_SDK_proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size Lab2a_SDK_proj1.elf  |tee "Lab2a_SDK_proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+   2682	    288	   2094	   5064	   13c8	Lab2a_SDK_proj1.elf
+'Finished building: Lab2a_SDK_proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck Lab2a_SDK_proj1.elf -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0  |tee "Lab2a_SDK_proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-02:08:13 Build Finished (took 1s.594ms)
+Command Line: elfcheck -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0
+Lab2a_SDK_proj1.elf 
+
+ELF file	: Lab2a_SDK_proj1.elf
+elfcheck passed.
+'Finished building: Lab2a_SDK_proj1.elf.elfcheck'
+' '
+
+03:00:25 Build Finished (took 5s.448ms)
 

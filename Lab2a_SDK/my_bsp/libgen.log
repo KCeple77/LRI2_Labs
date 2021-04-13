@@ -19,5 +19,4 @@ Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
 "COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
 -mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
 -ffunction-sections -fdata-sections"'.
-ERROR:EDK:369 -  make failed for target "libs" 
-ERROR:EDK:3418 - Error(s) while running make.
+Running execs_generate.

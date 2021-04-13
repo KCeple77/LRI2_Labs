@@ -1,0 +1,9 @@
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0
+Lab2a_SDK_proj1.elf 
+
+ELF file	: Lab2a_SDK_proj1.elf
+elfcheck passed.

@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-DESKTOP-KHLKMSK::  Mon Apr 12 01:22:51 2021
+DESKTOP-KHLKMSK::  Tue Apr 13 02:52:56 2021
 
 par -w -ol high system_map.ncd system.ncd system.pcf 
 
@@ -159,7 +159,7 @@ WARNING:Par:288 - The signal
 Starting Router
 
 
-Phase  1  : 15349 unrouted;      REAL time: 9 secs 
+Phase  1  : 15349 unrouted;      REAL time: 10 secs 
 
 Phase  2  : 11234 unrouted;      REAL time: 11 secs 
 
@@ -169,19 +169,19 @@ Phase  4  : 4708 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     RE
 
 Updating file: system.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 29 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 30 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 29 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 30 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 29 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 30 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 29 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 30 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 29 secs 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 30 secs 
 
-Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 30 secs 
-Total REAL time to Router completion: 30 secs 
-Total CPU time to Router completion: 29 secs 
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 31 secs 
+Total REAL time to Router completion: 31 secs 
+Total CPU time to Router completion: 30 secs 
 
 Partition Implementation Status
 -------------------------------

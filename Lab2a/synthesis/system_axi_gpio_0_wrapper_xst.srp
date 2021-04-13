@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.21 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> 
 TABLE OF CONTENTS
@@ -1188,8 +1188,8 @@ S_AXI_ACLK     |    3.260|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 14.00 secs
-Total CPU time to Xst completion: 14.90 secs
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 14.84 secs
  
 --> 
 
