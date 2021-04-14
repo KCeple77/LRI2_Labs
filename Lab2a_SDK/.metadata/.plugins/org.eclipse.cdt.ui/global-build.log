@@ -4344,3 +4344,15 @@ make -k all
 08:30:40 **** Incremental Build of configuration Debug for project Lab2a_SDK_proj1 ****
 make all 
 make: Nothing to be done for `all'.
+12:17:01 **** Auto Build of project my_bsp ****
+make -k all 
+'Finished building libraries'
+12:19:07 **** Auto Build of project my_bsp ****
+make -k all 
+'Finished building libraries'
+12:31:56 **** Incremental Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+make: Nothing to be done for `all'.
+12:33:57 **** Incremental Build of configuration Debug for project Lab2a_SDK_proj1 ****
+make all 
+make: Nothing to be done for `all'.

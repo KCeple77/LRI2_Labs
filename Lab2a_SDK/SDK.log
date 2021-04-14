@@ -209,3 +209,16 @@ If this project was a BSP referenced by other C/C++ applications, then those app
 06:55:46.925 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
 06:55:56.861 INFO  - System reset is completed. 
 06:55:58.465 ERROR - Port COM7 is already in use. 
+08:29:20.370 WARN  - Terminating existing sessions on processor microblaze_0 
+08:29:24.561 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+08:30:17.237 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+08:30:36.628 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+12:16:59.606 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+12:19:05.747 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+12:32:01.980 INFO  - System reset is completed. 
+12:33:58.659 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+20:12:53.270 ERROR - Unable to disconnect from existing targets java.lang.NullPointerException
+	at com.xilinx.sdk.targetmanager.internal.json.XMDJSONProcess.issueCommand(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.disconnectTarget(Unknown Source)
+
+20:12:54.410 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
