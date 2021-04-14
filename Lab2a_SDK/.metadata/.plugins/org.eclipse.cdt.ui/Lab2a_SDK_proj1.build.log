@@ -1,6 +1,6 @@
-07:34:16 **** Incremental Build of configuration Debug for project Lab2a_SDK_proj1 ****
+08:30:40 **** Incremental Build of configuration Debug for project Lab2a_SDK_proj1 ****
 make all 
 make: Nothing to be done for `all'.
 
-07:34:17 Build Finished (took 721ms)
+08:30:40 Build Finished (took 347ms)
 

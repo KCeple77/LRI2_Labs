@@ -75,13 +75,8 @@ int main(){
 	char readBuffer[1024] = "Buffer Init!";
 	while(1) {
 		dip_2_led(&dip);
-
-		my_uart_transmit_msg("In while loop!\n\0");		// Debug
-
-		/*
-		 * Echo
-		 */
-		//my_uart_receive_msg(readBuffer);
+		my_uart_transmit_msg("In while loop!\n\0");
+		//my_uart_receive(readBuffer);
 		//my_uart_transmit_msg(readBuffer);
 	}
 
@@ -145,8 +140,7 @@ void my_uart_transmit_byte(const char toWrite) {
 
 void my_uart_receive_msg(char *str, unsigned int N) {
 	char tmp;
-	int i;
-	for(i = 0; i < N; i++) {
+	for(int i = 0; i < N; i++) {
 		tmp = my_uart_receive_byte();
 		str[i] = tmp;
 

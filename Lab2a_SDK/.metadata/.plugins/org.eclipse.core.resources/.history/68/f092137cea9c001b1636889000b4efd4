@@ -52,7 +52,7 @@
 void my_uart_transmit_msg(const char *str);
 void my_uart_transmit_byte(const char toWrite);
 
-void my_uart_receive_msg(char *str, unsigned int N);
+void my_uart_receive_msg(const char *str);
 char my_uart_receive_byte();
 
 //void my_uart_receive(const char* readData);
@@ -75,13 +75,8 @@ int main(){
 	char readBuffer[1024] = "Buffer Init!";
 	while(1) {
 		dip_2_led(&dip);
-
-		my_uart_transmit_msg("In while loop!\n\0");		// Debug
-
-		/*
-		 * Echo
-		 */
-		//my_uart_receive_msg(readBuffer);
+		my_uart_transmit_msg("In while loop!\n\0");
+		//my_uart_receive(readBuffer);
 		//my_uart_transmit_msg(readBuffer);
 	}
 
@@ -139,49 +134,6 @@ void my_uart_transmit_byte(const char toWrite) {
 		// Is write_done cleared?
 		if((tmpData2 & 0x1) == 0) {
 			break;
-		}
-	}
-}
-
-void my_uart_receive_msg(char *str, unsigned int N) {
-	char tmp;
-	int i;
-	for(i = 0; i < N; i++) {
-		tmp = my_uart_receive_byte();
-		str[i] = tmp;
-
-		if(tmp == '\0') {
-			break;
-		}
-	}
-}
-
-char my_uart_receive_byte() {
-	char toRet;
-
-	// Check if read is done?
-	Xuint32 tmpData = 0;
-	Xuint32 tmpData2;
-	while(1) {
-		// If we've received read_done, need to go on to set read_done_ack bit
-		tmpData2 = UART_CNTRL_mReadSlaveReg0(XPAR_UART_CNTRL_0_BASEADDR, HW2SW_REG);
-
-		if(tmpData2 & 0x2) {
-			toRet = tmpData2 >> 8;		// Get data
-			break;
-		}
-	}
-
-	// Set read_done_ack bit and wait for read_done to be cleared
-	tmpData |= 0x2;
-	UART_CNTRL_mWriteReg(XPAR_UART_CNTRL_0_BASEADDR, SW2HW_REG, tmpData);
-
-	// Wait until read_done is cleared
-	while(1) {
-		tmpData2 = UART_CNTRL_mReadSlaveReg0(XPAR_UART_CNTRL_0_BASEADDR, HW2SW_REG);
-
-		if((tmpData & 0x2) == 0) {
-			return toRet;		// Okay, go back with the data
 		}
 	}
 }

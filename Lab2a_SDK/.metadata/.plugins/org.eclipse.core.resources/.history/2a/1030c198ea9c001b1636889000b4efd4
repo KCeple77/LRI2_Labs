@@ -78,9 +78,7 @@ int main(){
 
 		my_uart_transmit_msg("In while loop!\n\0");		// Debug
 
-		/*
-		 * Echo
-		 */
+		// Echo
 		//my_uart_receive_msg(readBuffer);
 		//my_uart_transmit_msg(readBuffer);
 	}
