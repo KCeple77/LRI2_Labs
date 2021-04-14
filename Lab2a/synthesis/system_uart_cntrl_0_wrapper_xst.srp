@@ -3,8 +3,8 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\synthesis\xst_temp_dir\
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.24 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> 
 TABLE OF CONTENTS
@@ -427,22 +427,22 @@ Parsing architecture <imp> of entity <slave_attachment>.
 Parsing VHDL file "E:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/axi_lite_ipif.vhd" into library axi_lite_ipif_v1_01_a
 Parsing entity <axi_lite_ipif>.
 Parsing architecture <imp> of entity <axi_lite_ipif>.
-Parsing VHDL file "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/user_logic.vhd" into library uart_cntrl_v1_00_a
+Parsing VHDL file "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_c/hdl/vhdl/user_logic.vhd" into library uart_cntrl_v1_00_c
 Parsing entity <user_logic>.
 Parsing architecture <IMP> of entity <user_logic>.
-Parsing VHDL file "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/uart_cntrl.vhd" into library uart_cntrl_v1_00_a
+Parsing VHDL file "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_c/hdl/vhdl/uart_cntrl.vhd" into library uart_cntrl_v1_00_c
 Parsing entity <uart_cntrl>.
 Parsing architecture <IMP> of entity <uart_cntrl>.
-Parsing VHDL file "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/baud_rate_generator.vhd" into library uart_cntrl_v1_00_a
+Parsing VHDL file "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_c/hdl/vhdl/baud_rate_generator.vhd" into library uart_cntrl_v1_00_c
 Parsing entity <baud_rate_generator>.
 Parsing architecture <baud_rate_generator_arch> of entity <baud_rate_generator>.
-Parsing VHDL file "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/uart_controller.vhd" into library uart_cntrl_v1_00_a
+Parsing VHDL file "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_c/hdl/vhdl/uart_controller.vhd" into library uart_cntrl_v1_00_c
 Parsing entity <UART_controller>.
 Parsing architecture <UART_controller_arch> of entity <uart_controller>.
-Parsing VHDL file "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/uart_receiver.vhd" into library uart_cntrl_v1_00_a
+Parsing VHDL file "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_c/hdl/vhdl/uart_receiver.vhd" into library uart_cntrl_v1_00_c
 Parsing entity <UART_receiver>.
 Parsing architecture <UART_receiver_arch> of entity <uart_receiver>.
-Parsing VHDL file "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/uart_transmitter.vhd" into library uart_cntrl_v1_00_a
+Parsing VHDL file "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_c/hdl/vhdl/uart_transmitter.vhd" into library uart_cntrl_v1_00_c
 Parsing entity <UART_transmitter>.
 Parsing architecture <UART_transmitter_arch> of entity <uart_transmitter>.
 Parsing VHDL file "E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\hdl\system_uart_cntrl_0_wrapper.vhd" into library work
@@ -455,28 +455,30 @@ Parsing architecture <STRUCTURE> of entity <system_uart_cntrl_0_wrapper>.
 
 Elaborating entity <system_uart_cntrl_0_wrapper> (architecture <STRUCTURE>) from library <work>.
 
-Elaborating entity <uart_cntrl> (architecture <IMP>) with generics from library <uart_cntrl_v1_00_a>.
+Elaborating entity <uart_cntrl> (architecture <IMP>) with generics from library <uart_cntrl_v1_00_c>.
 
 Elaborating entity <axi_lite_ipif> (architecture <imp>) with generics from library <axi_lite_ipif_v1_01_a>.
 
 Elaborating entity <slave_attachment> (architecture <imp>) with generics from library <axi_lite_ipif_v1_01_a>.
 
 Elaborating entity <address_decoder> (architecture <IMP>) with generics from library <axi_lite_ipif_v1_01_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
+
+Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
 INFO:HDLCompiler:679 - "E:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd" Line 417. Case statement is complete. others clause is never selected
 
-Elaborating entity <user_logic> (architecture <IMP>) with generics from library <uart_cntrl_v1_00_a>.
+Elaborating entity <user_logic> (architecture <IMP>) with generics from library <uart_cntrl_v1_00_c>.
 
-Elaborating entity <UART_controller> (architecture <UART_controller_arch>) from library <uart_cntrl_v1_00_a>.
+Elaborating entity <UART_controller> (architecture <UART_controller_arch>) from library <uart_cntrl_v1_00_c>.
 
-Elaborating entity <UART_receiver> (architecture <UART_receiver_arch>) from library <uart_cntrl_v1_00_a>.
-INFO:HDLCompiler:679 - "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/uart_receiver.vhd" Line 163. Case statement is complete. others clause is never selected
+Elaborating entity <UART_receiver> (architecture <UART_receiver_arch>) from library <uart_cntrl_v1_00_c>.
+INFO:HDLCompiler:679 - "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_c/hdl/vhdl/uart_receiver.vhd" Line 163. Case statement is complete. others clause is never selected
 
-Elaborating entity <UART_transmitter> (architecture <UART_transmitter_arch>) from library <uart_cntrl_v1_00_a>.
-INFO:HDLCompiler:679 - "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/uart_transmitter.vhd" Line 168. Case statement is complete. others clause is never selected
+Elaborating entity <UART_transmitter> (architecture <UART_transmitter_arch>) from library <uart_cntrl_v1_00_c>.
+INFO:HDLCompiler:679 - "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_c/hdl/vhdl/uart_transmitter.vhd" Line 168. Case statement is complete. others clause is never selected
 
-Elaborating entity <baud_rate_generator> (architecture <baud_rate_generator_arch>) from library <uart_cntrl_v1_00_a>.
-WARNING:HDLCompiler:634 - "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/user_logic.vhd" Line 137: Net <w_start_i> does not have a driver.
-WARNING:HDLCompiler:634 - "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/user_logic.vhd" Line 138: Net <w_data_i[7]> does not have a driver.
+Elaborating entity <baud_rate_generator> (architecture <baud_rate_generator_arch>) from library <uart_cntrl_v1_00_c>.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -489,7 +491,7 @@ Synthesizing Unit <system_uart_cntrl_0_wrapper>.
 Unit <system_uart_cntrl_0_wrapper> synthesized.
 
 Synthesizing Unit <uart_cntrl>.
-    Related source file is "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/uart_cntrl.vhd".
+    Related source file is "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_c/hdl/vhdl/uart_cntrl.vhd".
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
         C_S_AXI_DATA_WIDTH = 32
@@ -508,9 +510,9 @@ WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/p
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
     Set property "MAX_FANOUT = 10000" for signal <S_AXI_ARESETN>.
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
-INFO:Xst:3210 - "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/uart_cntrl.vhd" line 242: Output port <Bus2IP_Addr> of the instance <AXI_LITE_IPIF_I> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/uart_cntrl.vhd" line 242: Output port <Bus2IP_CS> of the instance <AXI_LITE_IPIF_I> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/uart_cntrl.vhd" line 242: Output port <Bus2IP_RNW> of the instance <AXI_LITE_IPIF_I> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_c/hdl/vhdl/uart_cntrl.vhd" line 242: Output port <Bus2IP_Addr> of the instance <AXI_LITE_IPIF_I> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_c/hdl/vhdl/uart_cntrl.vhd" line 242: Output port <Bus2IP_CS> of the instance <AXI_LITE_IPIF_I> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_c/hdl/vhdl/uart_cntrl.vhd" line 242: Output port <Bus2IP_RNW> of the instance <AXI_LITE_IPIF_I> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <uart_cntrl> synthesized.
@@ -523,7 +525,7 @@ Synthesizing Unit <axi_lite_ipif>.
         C_USE_WSTRB = 0
         C_DPHASE_TIMEOUT = 8
         C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000001110111000000000000000000000000","0000000000000000000000000000000001110111000000001111111111111111")
-        C_ARD_NUM_CE_ARRAY = (1)
+        C_ARD_NUM_CE_ARRAY = (2)
         C_FAMILY = "spartan6"
     Summary:
 	no macro.
@@ -532,7 +534,7 @@ Unit <axi_lite_ipif> synthesized.
 Synthesizing Unit <slave_attachment>.
     Related source file is "E:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd".
         C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000001110111000000000000000000000000","0000000000000000000000000000000001110111000000001111111111111111")
-        C_ARD_NUM_CE_ARRAY = (1)
+        C_ARD_NUM_CE_ARRAY = (2)
         C_IPIF_ABUS_WIDTH = 32
         C_IPIF_DBUS_WIDTH = 32
         C_S_AXI_MIN_SIZE = "00000000000000000000000111111111"
@@ -578,44 +580,64 @@ Synthesizing Unit <address_decoder>.
         C_BUS_AWIDTH = 9
         C_S_AXI_MIN_SIZE = "00000000000000000000000111111111"
         C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000001110111000000000000000000000000","0000000000000000000000000000000001110111000000001111111111111111")
-        C_ARD_NUM_CE_ARRAY = (1)
+        C_ARD_NUM_CE_ARRAY = (2)
         C_FAMILY = "nofamily"
-WARNING:Xst:647 - Input <Address_In_Erly> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Address_In_Erly<0:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <Bus_RNW> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <Bus_RNW_reg>.
-    Found 1-bit register for signal <ce_out_i>.
+    Found 1-bit register for signal <ce_out_i<0>>.
+    Found 1-bit register for signal <ce_out_i<1>>.
     Found 1-bit register for signal <cs_out_i>.
     Summary:
-	inferred   3 D-type flip-flop(s).
+	inferred   4 D-type flip-flop(s).
 Unit <address_decoder> synthesized.
 
+Synthesizing Unit <pselect_f_1>.
+    Related source file is "E:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
+        C_AB = 1
+        C_AW = 1
+        C_BAR = "0"
+        C_FAMILY = "nofamily"
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <pselect_f_1> synthesized.
+
+Synthesizing Unit <pselect_f_2>.
+    Related source file is "E:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
+        C_AB = 1
+        C_AW = 1
+        C_BAR = "1"
+        C_FAMILY = "nofamily"
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <pselect_f_2> synthesized.
+
 Synthesizing Unit <user_logic>.
-    Related source file is "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/user_logic.vhd".
+    Related source file is "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_c/hdl/vhdl/user_logic.vhd".
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
-        C_NUM_REG = 1
+        C_NUM_REG = 2
         C_SLV_DWIDTH = 32
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
-INFO:Xst:3210 - "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/user_logic.vhd" line 167: Output port <r_data> of the instance <uart_controller_instance> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/user_logic.vhd" line 167: Output port <r_done> of the instance <uart_controller_instance> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/user_logic.vhd" line 167: Output port <w_done> of the instance <uart_controller_instance> is unconnected or connected to loadless signal.
-WARNING:Xst:653 - Signal <w_data_i> is used but never assigned. This sourceless signal will be automatically connected to value GND.
-WARNING:Xst:653 - Signal <w_start_i> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 1-bit register for signal <w_start_i>.
+    Found 1-bit register for signal <write_start_received_tmp>.
+    Found 8-bit register for signal <w_data_i>.
     Found 32-bit register for signal <slv_reg0>.
+    Found 32-bit register for signal <slv_reg1>.
     Summary:
-	inferred  32 D-type flip-flop(s).
-	inferred  34 Multiplexer(s).
+	inferred  74 D-type flip-flop(s).
+	inferred  49 Multiplexer(s).
 Unit <user_logic> synthesized.
 
 Synthesizing Unit <UART_controller>.
-    Related source file is "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/uart_controller.vhd".
+    Related source file is "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_c/hdl/vhdl/uart_controller.vhd".
     Summary:
 	no macro.
 Unit <UART_controller> synthesized.
 
 Synthesizing Unit <UART_receiver>.
-    Related source file is "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/uart_receiver.vhd".
+    Related source file is "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_c/hdl/vhdl/uart_receiver.vhd".
     Found 2-bit register for signal <currentState>.
     Found 2-bit register for signal <nextState>.
     Found 8-bit register for signal <shift_reg>.
@@ -627,12 +649,12 @@ Synthesizing Unit <UART_receiver>.
     Found 1-bit register for signal <cr_brg>.
     Found 32-bit register for signal <c_s3>.
     Found 1-bit register for signal <reg_rst>.
-    Found 32-bit adder for signal <c_brg[31]_GND_18_o_add_0_OUT> created at line 106.
-    Found 32-bit adder for signal <c_s3[31]_GND_18_o_add_10_OUT> created at line 154.
-    Found 1-bit 4-to-1 multiplexer for signal <currentState[1]_GND_18_o_Mux_18_o> created at line 128.
+    Found 32-bit adder for signal <c_brg[31]_GND_20_o_add_0_OUT> created at line 106.
+    Found 32-bit adder for signal <c_s3[31]_GND_20_o_add_10_OUT> created at line 154.
+    Found 1-bit 4-to-1 multiplexer for signal <currentState[1]_GND_20_o_Mux_18_o> created at line 128.
     Found 2-bit 4-to-1 multiplexer for signal <currentState[1]_nextState[1]_wide_mux_19_OUT> created at line 128.
-    Found 32-bit comparator greater for signal <c_brg[31]_GND_18_o_LessThan_6_o> created at line 138
-    Found 32-bit comparator greater for signal <c_brg[31]_GND_18_o_LessThan_10_o> created at line 148
+    Found 32-bit comparator greater for signal <c_brg[31]_GND_20_o_LessThan_6_o> created at line 138
+    Found 32-bit comparator greater for signal <c_brg[31]_GND_20_o_LessThan_10_o> created at line 148
     Found 32-bit comparator lessequal for signal <n0032> created at line 159
     Summary:
 	inferred   2 Adder/Subtractor(s).
@@ -642,37 +664,40 @@ Synthesizing Unit <UART_receiver>.
 Unit <UART_receiver> synthesized.
 
 Synthesizing Unit <UART_transmitter>.
-    Related source file is "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/uart_transmitter.vhd".
+    Related source file is "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_c/hdl/vhdl/uart_transmitter.vhd".
+    Found 1-bit register for signal <cr_brg>.
+    Found 1-bit register for signal <tx>.
     Found 2-bit register for signal <currentState>.
     Found 2-bit register for signal <nextState>.
     Found 32-bit register for signal <c_conv>.
     Found 1-bit register for signal <tx_done>.
-    Found 1-bit register for signal <cr_brg>.
-    Found 1-bit register for signal <tx>.
+    Found 8-bit register for signal <reg_d_in>.
+    Found 1-bit register for signal <reg_tx_start>.
     Found 32-bit register for signal <c_brg>.
     Found 1-bit register for signal <ticked>.
     Found 8-bit register for signal <shift_reg>.
     Found 1-bit register for signal <reg_rst>.
-    Found 32-bit adder for signal <c_brg[31]_GND_19_o_add_2_OUT> created at line 113.
-    Found 32-bit adder for signal <c_conv[31]_GND_19_o_add_11_OUT> created at line 159.
+    Found 32-bit adder for signal <c_brg[31]_GND_21_o_add_2_OUT> created at line 113.
+    Found 32-bit adder for signal <c_conv[31]_GND_21_o_add_11_OUT> created at line 159.
+    Found 2-bit 3-to-1 multiplexer for signal <currentState[1]_X_21_o_wide_mux_20_OUT> created at line 138.
     Found 32-bit comparator greater for signal <n0023> created at line 155
-    WARNING:Xst:2404 -  FFs/Latches <reg_tx_start<0:0>> (without init value) have a constant value of 0 in block <UART_transmitter>.
-    WARNING:Xst:2404 -  FFs/Latches <reg_d_in<7:0>> (without init value) have a constant value of 0 in block <UART_transmitter>.
     Summary:
 	inferred   2 Adder/Subtractor(s).
-	inferred  81 D-type flip-flop(s).
+	inferred  90 D-type flip-flop(s).
 	inferred   1 Comparator(s).
-	inferred  17 Multiplexer(s).
+	inferred  24 Multiplexer(s).
 Unit <UART_transmitter> synthesized.
 
 Synthesizing Unit <baud_rate_generator>.
-    Related source file is "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_a/hdl/vhdl/baud_rate_generator.vhd".
+    Related source file is "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a/pcores/uart_cntrl_v1_00_c/hdl/vhdl/baud_rate_generator.vhd".
     Found 1-bit register for signal <s_tick>.
     Found 32-bit register for signal <counter>.
-    Found 32-bit adder for signal <counter[31]_GND_21_o_add_0_OUT> created at line 50.
+    Found 32-bit adder for signal <counter[31]_GND_23_o_add_0_OUT> created at line 50.
+    Found 32-bit comparator greater for signal <n0002> created at line 52
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  33 D-type flip-flop(s).
+	inferred   1 Comparator(s).
 	inferred   1 Multiplexer(s).
 Unit <baud_rate_generator> synthesized.
 
@@ -683,21 +708,23 @@ Macro Statistics
 # Adders/Subtractors                                   : 6
  32-bit adder                                          : 5
  4-bit adder                                           : 1
-# Registers                                            : 34
- 1-bit register                                        : 18
+# Registers                                            : 41
+ 1-bit register                                        : 22
  2-bit register                                        : 6
- 32-bit register                                       : 7
+ 32-bit register                                       : 8
  4-bit register                                        : 1
- 8-bit register                                        : 2
-# Comparators                                          : 4
- 32-bit comparator greater                             : 3
+ 8-bit register                                        : 4
+# Comparators                                          : 5
+ 32-bit comparator greater                             : 4
  32-bit comparator lessequal                           : 1
-# Multiplexers                                         : 62
- 1-bit 2-to-1 multiplexer                              : 51
+# Multiplexers                                         : 86
+ 1-bit 2-to-1 multiplexer                              : 69
  1-bit 4-to-1 multiplexer                              : 1
- 2-bit 2-to-1 multiplexer                              : 4
+ 2-bit 2-to-1 multiplexer                              : 7
+ 2-bit 3-to-1 multiplexer                              : 1
  2-bit 4-to-1 multiplexer                              : 1
- 32-bit 2-to-1 multiplexer                             : 5
+ 32-bit 2-to-1 multiplexer                             : 6
+ 8-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 1
 
 =========================================================================
@@ -706,7 +733,7 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
-WARNING:Xst:2404 -  FFs/Latches <shift_reg<7:7>> (without init value) have a constant value of 0 in block <UART_transmitter>.
+WARNING:Xst:2404 -  FFs/Latches <slv_reg1<31:16>> (without init value) have a constant value of 0 in block <user_logic>.
 
 Synthesizing (advanced) Unit <UART_receiver>.
 The following registers are absorbed into counter <c_s3>: 1 register on signal <c_s3>.
@@ -720,6 +747,27 @@ Unit <UART_transmitter> synthesized (advanced).
 Synthesizing (advanced) Unit <slave_attachment>.
 The following registers are absorbed into counter <INCLUDE_DPHASE_TIMER.dpto_cnt>: 1 register on signal <INCLUDE_DPHASE_TIMER.dpto_cnt>.
 Unit <slave_attachment> synthesized (advanced).
+WARNING:Xst:2677 - Node <slv_reg0_3> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_4> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_5> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_6> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_7> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_16> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_17> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_18> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_19> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_20> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_21> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_22> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_23> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_24> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_25> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_26> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_27> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_28> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_29> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_30> of sequential type is unconnected in block <user_logic>.
+WARNING:Xst:2677 - Node <slv_reg0_31> of sequential type is unconnected in block <user_logic>.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -730,17 +778,18 @@ Macro Statistics
 # Counters                                             : 4
  32-bit up counter                                     : 3
  4-bit up counter                                      : 1
-# Registers                                            : 173
- Flip-Flops                                            : 173
-# Comparators                                          : 4
- 32-bit comparator greater                             : 3
+# Registers                                            : 189
+ Flip-Flops                                            : 189
+# Comparators                                          : 5
+ 32-bit comparator greater                             : 4
  32-bit comparator lessequal                           : 1
-# Multiplexers                                         : 61
- 1-bit 2-to-1 multiplexer                              : 51
+# Multiplexers                                         : 69
+ 1-bit 2-to-1 multiplexer                              : 54
  1-bit 4-to-1 multiplexer                              : 1
- 2-bit 2-to-1 multiplexer                              : 4
+ 2-bit 2-to-1 multiplexer                              : 7
+ 2-bit 3-to-1 multiplexer                              : 1
  2-bit 4-to-1 multiplexer                              : 1
- 32-bit 2-to-1 multiplexer                             : 4
+ 32-bit 2-to-1 multiplexer                             : 5
 # FSMs                                                 : 1
 
 =========================================================================
@@ -750,50 +799,11 @@ Macro Statistics
 =========================================================================
 WARNING:Xst:1293 - FF/Latch <s_axi_rresp_i_0> has a constant value of 0 in block <slave_attachment>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <s_axi_bresp_i_0> has a constant value of 0 in block <slave_attachment>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <nextState_0> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <currentState_0> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <tx> (without init value) has a constant value of 1 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_30> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_29> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_28> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_27> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_26> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_25> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_24> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_23> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_22> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_21> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_20> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_19> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_18> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_17> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_16> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_15> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_14> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_13> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_12> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_11> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_10> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_9> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_8> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_7> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_6> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_5> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_4> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_3> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_2> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_1> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <c_conv_0> has a constant value of 0 in block <UART_transmitter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <c_conv_31> of sequential type is unconnected in block <UART_transmitter>.
-WARNING:Xst:2677 - Node <shift_reg_0> of sequential type is unconnected in block <UART_transmitter>.
-WARNING:Xst:2677 - Node <shift_reg_1> of sequential type is unconnected in block <UART_transmitter>.
-WARNING:Xst:2677 - Node <shift_reg_2> of sequential type is unconnected in block <UART_transmitter>.
-WARNING:Xst:2677 - Node <shift_reg_3> of sequential type is unconnected in block <UART_transmitter>.
-WARNING:Xst:2677 - Node <shift_reg_4> of sequential type is unconnected in block <UART_transmitter>.
-WARNING:Xst:2677 - Node <shift_reg_5> of sequential type is unconnected in block <UART_transmitter>.
-WARNING:Xst:2677 - Node <shift_reg_6> of sequential type is unconnected in block <UART_transmitter>.
-INFO:Xst:2261 - The FF/Latch <I_DECODER/ce_out_i_0> in Unit <slave_attachment> is equivalent to the following FF/Latch, which will be removed : <I_DECODER/cs_out_i_0> 
-WARNING:Xst:2973 - All outputs of instance <uart_controller_instance/uart_receiver_instance> of block <UART_receiver> are unconnected in block <user_logic>. Underlying logic will be removed.
+WARNING:Xst:1710 - FF/Latch <slv_reg1_3> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv_reg1_4> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv_reg1_5> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv_reg1_6> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <slv_reg1_7> (without init value) has a constant value of 0 in block <user_logic>. This FF/Latch will be trimmed during the optimization process.
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/FSM_0> on signal <state[1:2]> with user encoding.
 ----------------------
@@ -804,99 +814,127 @@ Optimizing FSM <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/FSM_0> on signal
  sm_write | 10
  sm_resp  | 11
 ----------------------
+WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
+   incompatible with the Spartan6 architecture. The two primary causes of this is
+   either a register or latch described with both an asynchronous set and
+   asynchronous reset, or a register or latch described with an asynchronous
+   set or reset which however has an initialization value of the opposite 
+   polarity (i.e. asynchronous reset with an initialization value of 1).
+    While this circuit can be built, it creates a sub-optimal implementation
+   in terms of area, power and performance. For a more optimal implementation
+   Xilinx highly recommends one of the following:
+
+          1) Remove either the set or reset from all registers and latches
+             if not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Ensure all registers have the same initialization value as the
+             described asynchronous set or reset polarity
+          4) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set or reset and opposite initialization value:
+    c_conv_31 in unit <UART_transmitter>
+
 
 Optimizing unit <system_uart_cntrl_0_wrapper> ...
 
 Optimizing unit <slave_attachment> ...
 
-Optimizing unit <user_logic> ...
+Optimizing unit <address_decoder> ...
 
-Optimizing unit <UART_receiver> ...
+Optimizing unit <user_logic> ...
 
 Optimizing unit <UART_transmitter> ...
 
+Optimizing unit <UART_receiver> ...
+
 Optimizing unit <baud_rate_generator> ...
-WARNING:Xst:1293 - FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_1> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_3> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_4> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_5> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_6> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_7> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_16> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_17> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_18> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_19> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_20> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_21> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_22> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_23> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_24> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_25> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_26> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_27> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_28> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_29> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_30> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rdata_i_31> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_rresp_i_1> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_31> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_30> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_29> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_28> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_27> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_26> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_25> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_24> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_23> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_22> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_21> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_20> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_19> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_18> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_17> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_16> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_15> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_14> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_13> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_12> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_11> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_10> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_9> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_8> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_7> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_6> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_5> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_4> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_3> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_2> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_1> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_0> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/tx_done> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/currentState_1> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/nextState_1> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/cr_brg> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/ticked> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/reg_rst> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_31> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_30> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_29> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_28> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_27> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_26> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_25> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_24> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_23> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_22> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_21> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_20> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_19> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_18> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_17> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_16> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_15> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_14> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_13> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_12> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_11> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_10> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_9> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_8> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_7> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_6> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_5> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_4> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_3> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_2> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_1> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_0> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
-WARNING:Xst:2677 - Node <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/s_tick> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/s_axi_bresp_i_1> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> of sequential type is unconnected in block <system_uart_cntrl_0_wrapper>.
+WARNING:Xst:1293 - FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_6> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_5> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_4> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_31> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_30> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_29> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_28> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_27> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_26> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_25> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_24> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_23> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_22> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_21> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_20> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_19> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_18> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_17> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_16> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_15> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_14> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_13> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_12> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_11> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/brg_instance/counter_10> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_31> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_30> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_29> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_28> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_27> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_26> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_25> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_24> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_23> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_22> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_21> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_20> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_19> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_18> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_17> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_16> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_15> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_14> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_13> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_12> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_11> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_10> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_9> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_8> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_receiver_instance/c_s3_7> has a constant value of 0 in block <system_uart_cntrl_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:3203 - The FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst> in Unit <system_uart_cntrl_0_wrapper> is the opposite to the following FF/Latch, which will be removed : <uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/reg_rst> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block system_uart_cntrl_0_wrapper, actual ratio is 0.
-FlipFlop uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg has been replicated 1 time(s)
-FlipFlop uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0 has been replicated 2 time(s)
-FlipFlop uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1 has been replicated 2 time(s)
-FlipFlop uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2 has been replicated 3 time(s)
+Found area constraint ratio of 100 (+ 0) on block system_uart_cntrl_0_wrapper, actual ratio is 1.
+WARNING:Xst:1426 - The value init of the FF/Latch uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_conv_31_LD hinder the constant cleaning in the block system_uart_cntrl_0_wrapper.
+   You should achieve better results by setting this init to 0.
+FlipFlop uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -904,8 +942,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 83
- Flip-Flops                                            : 83
+# Registers                                            : 211
+ Flip-Flops                                            : 211
 
 =========================================================================
 
@@ -928,19 +966,30 @@ Top Level Output File Name         : system_uart_cntrl_0_wrapper.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 85
+# BELS                             : 637
 #      GND                         : 1
-#      INV                         : 1
-#      LUT3                        : 35
-#      LUT4                        : 2
-#      LUT5                        : 41
-#      LUT6                        : 2
+#      INV                         : 11
+#      LUT1                        : 103
+#      LUT2                        : 31
+#      LUT3                        : 59
+#      LUT4                        : 26
+#      LUT5                        : 46
+#      LUT6                        : 102
+#      MUXCY                       : 144
 #      MUXF7                       : 2
 #      VCC                         : 1
-# FlipFlops/Latches                : 83
-#      FD                          : 10
-#      FDR                         : 9
-#      FDRE                        : 64
+#      XORCY                       : 111
+# FlipFlops/Latches                : 212
+#      FD                          : 41
+#      FD_1                        : 2
+#      FDC                         : 17
+#      FDCE                        : 32
+#      FDE                         : 21
+#      FDP                         : 2
+#      FDR                         : 40
+#      FDRE                        : 55
+#      FDS                         : 1
+#      LD                          : 1
 
 Device utilization summary:
 ---------------------------
@@ -949,16 +998,16 @@ Selected Device : 6slx45fgg676-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              83  out of  54576     0%  
- Number of Slice LUTs:                   81  out of  27288     0%  
-    Number used as Logic:                81  out of  27288     0%  
+ Number of Slice Registers:             212  out of  54576     0%  
+ Number of Slice LUTs:                  378  out of  27288     1%  
+    Number used as Logic:               378  out of  27288     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     89
-   Number with an unused Flip Flop:       6  out of     89     6%  
-   Number with an unused LUT:             8  out of     89     8%  
-   Number of fully used LUT-FF pairs:    75  out of     89    84%  
-   Number of unique control sets:         4
+ Number of LUT Flip Flop pairs used:    412
+   Number with an unused Flip Flop:     200  out of    412    48%  
+   Number with an unused LUT:            34  out of    412     8%  
+   Number of fully used LUT-FF pairs:   178  out of    412    43%  
+   Number of unique control sets:        18
 
 IO Utilization: 
  Number of IOs:                         150
@@ -984,11 +1033,12 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+---------------------------------------------------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)                                               | Load  |
------------------------------------+---------------------------------------------------------------------+-------+
-S_AXI_ACLK                         | NONE(uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1)| 83    |
------------------------------------+---------------------------------------------------------------------+-------+
+---------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
+Clock Signal                                       | Clock buffer(FF name)                                                                          | Load  |
+---------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
+S_AXI_ACLK                                         | NONE(uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1)                           | 211   |
+uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst| NONE(uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_conv_31_LD)| 1     |
+---------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
@@ -999,9 +1049,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 2.953ns (Maximum Frequency: 338.639MHz)
-   Minimum input arrival time before clock: 2.250ns
-   Maximum output required time after clock: 1.714ns
+   Minimum period: 8.786ns (Maximum Frequency: 113.819MHz)
+   Minimum input arrival time before clock: 2.283ns
+   Maximum output required time after clock: 2.316ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -1010,65 +1060,70 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'S_AXI_ACLK'
-  Clock period: 2.953ns (frequency: 338.639MHz)
-  Total number of paths / destination ports: 442 / 187
+  Clock period: 8.786ns (frequency: 113.819MHz)
+  Total number of paths / destination ports: 8980 / 418
 -------------------------------------------------------------------------
-Delay:               2.953ns (Levels of Logic = 3)
-  Source:            uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2_1 (FF)
-  Destination:       uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1 (FF)
-  Source Clock:      S_AXI_ACLK rising
+Delay:               4.393ns (Levels of Logic = 8)
+  Source:            uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_5 (FF)
+  Destination:       uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/shift_reg_6 (FF)
+  Source Clock:      S_AXI_ACLK falling
   Destination Clock: S_AXI_ACLK rising
 
-  Data Path: uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2_1 to uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1
+  Data Path: uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_5 to uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/shift_reg_6
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              5   0.525   0.949  uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2_1 (uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2_1)
-     LUT5:I3->O            2   0.250   0.726  uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In1 (uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In1)
-     LUT5:I4->O            1   0.254   0.000  uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In3_G (N5)
-     MUXF7:I1->O           3   0.175   0.000  uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In3 (uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1-In)
-     FDR:D                     0.074          uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1
+     FD:C->Q               4   0.525   1.234  uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_5 (uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_brg_5)
+     LUT5:I0->O            1   0.254   0.000  uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_lut<0> (uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<0> (uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<1> (uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<2> (uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<3> (uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<4> (uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<4>)
+     MUXCY:CI->O          44   0.023   1.721  uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<5> (uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<5>)
+     LUT6:I5->O            1   0.254   0.000  uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/Mmux_currentState[1]_X_21_o_wide_mux_20_OUT11 (uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/currentState[1]_X_21_o_wide_mux_20_OUT<0>)
+     FDC:D                     0.074          uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/nextState_0
     ----------------------------------------
-    Total                      2.953ns (1.278ns logic, 1.675ns route)
-                                       (43.3% logic, 56.7% route)
+    Total                      4.393ns (1.438ns logic, 2.955ns route)
+                                       (32.7% logic, 67.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'S_AXI_ACLK'
-  Total number of paths / destination ports: 121 / 79
+  Total number of paths / destination ports: 91 / 69
 -------------------------------------------------------------------------
-Offset:              2.250ns (Levels of Logic = 1)
+Offset:              2.283ns (Levels of Logic = 1)
   Source:            S_AXI_ARESETN (PAD)
-  Destination:       uart_cntrl_0/USER_LOGIC_I/slv_reg0_31 (FF)
+  Destination:       uart_cntrl_0/USER_LOGIC_I/slv_reg1_15 (FF)
   Destination Clock: S_AXI_ACLK rising
 
-  Data Path: S_AXI_ARESETN to uart_cntrl_0/USER_LOGIC_I/slv_reg0_31
+  Data Path: S_AXI_ARESETN to uart_cntrl_0/USER_LOGIC_I/slv_reg1_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     INV:I->O             33   0.255   1.536  uart_cntrl_0/USER_LOGIC_I/Bus2IP_Resetn_inv1_INV_0 (uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst_rstpot)
-     FDRE:R                    0.459          uart_cntrl_0/USER_LOGIC_I/slv_reg0_0
+     INV:I->O             35   0.255   1.569  uart_cntrl_0/USER_LOGIC_I/Bus2IP_Resetn_inv1_INV_0 (uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst_rstpot)
+     FDR:R                     0.459          uart_cntrl_0/USER_LOGIC_I/slv_reg1_0
     ----------------------------------------
-    Total                      2.250ns (0.714ns logic, 1.536ns route)
-                                       (31.7% logic, 68.3% route)
+    Total                      2.283ns (0.714ns logic, 1.569ns route)
+                                       (31.3% logic, 68.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'S_AXI_ACLK'
-  Total number of paths / destination ports: 43 / 37
+  Total number of paths / destination ports: 26 / 17
 -------------------------------------------------------------------------
-Offset:              1.714ns (Levels of Logic = 1)
-  Source:            uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_2 (FF)
+Offset:              2.316ns (Levels of Logic = 1)
+  Source:            uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg (FF)
   Destination:       S_AXI_ARREADY (PAD)
   Source Clock:      S_AXI_ACLK rising
 
-  Data Path: uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_2 to S_AXI_ARREADY
+  Data Path: uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg to S_AXI_ARREADY
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.525   0.954  uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_2 (uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_2)
-     LUT3:I0->O            1   0.235   0.000  uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rd_done1 (S_AXI_ARREADY)
+     FD:C->Q              19   0.525   1.537  uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg (uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg)
+     LUT4:I0->O            2   0.254   0.000  uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rd_done1 (S_AXI_ARREADY)
     ----------------------------------------
-    Total                      1.714ns (0.760ns logic, 0.954ns route)
-                                       (44.3% logic, 55.7% route)
+    Total                      2.316ns (0.779ns logic, 1.537ns route)
+                                       (33.6% logic, 66.4% route)
 
 =========================================================================
 
@@ -1076,24 +1131,25 @@ Cross Clock Domains Report:
 --------------------------
 
 Clock to Setup on destination clock S_AXI_ACLK
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-S_AXI_ACLK     |    2.953|         |         |         |
----------------+---------+---------+---------+---------+
+---------------------------------------------------+---------+---------+---------+---------+
+                                                   | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------------------------+---------+---------+---------+---------+
+S_AXI_ACLK                                         |    6.689|    4.393|    3.838|         |
+uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst|         |    6.004|         |         |
+---------------------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 14.00 secs
-Total CPU time to Xst completion: 13.35 secs
+Total CPU time to Xst completion: 14.13 secs
  
 --> 
 
 Total memory usage is 4507372 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  138 (   0 filtered)
-Number of infos    :    9 (   0 filtered)
+Number of warnings :  118 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
 

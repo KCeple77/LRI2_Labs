@@ -1,7 +1,7 @@
 #Release 14.7 - par P.20131013 (nt64)
 #Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-#Thu Apr 08 18:49:06 2021
+#Wed Apr 14 05:43:40 2021
 
 #
 ## NOTE: This file is designed to be imported into a spreadsheet program
@@ -94,7 +94,7 @@ AB20,,,GND,,,,,,,,,,,,
 AB21,,,NC,,,,,,,,,,,,
 AB22,,,NC,,,,,,,,,,,,
 AB23,,,VCCO_1,,,1,,,,,any******,,,,
-AB24,rst,IOB,IO_L49P_M1DQ10_1,INPUT,LVCMOS33,1,,,,NONE,,LOCATED,NO,NONE,
+AB24,,IOBM,IO_L49P_M1DQ10_1,UNUSED,,1,,,,,,,,,
 AB25,,,GND,,,,,,,,,,,,
 AB26,,IOBS,IO_L49N_M1DQ11_1,UNUSED,,1,,,,,,,,,
 AC1,,IOBS,IO_L34N_M3UDQSN_3,UNUSED,,3,,,,,,,,,
@@ -172,7 +172,7 @@ AE20,,,VCCO_2,,,2,,,,,any******,,,,
 AE21,,IOBM,IO_L2P_CMPCLK_2,UNUSED,,2,,,,,,,,,
 AE22,,,GND,,,,,,,,,,,,
 AE23,,IOBM,IO_L74P_AWAKE_1,UNUSED,,1,,,,,,,,,
-AE24,,IOBM,IO_L67P_1,UNUSED,,1,,,,,,,,,
+AE24,rst,IOB,IO_L67P_1,INPUT,LVCMOS33,1,,,,NONE,,LOCATED,NO,NONE,
 AE25,,IOBM,IO_L52P_M1DQ14_1,UNUSED,,1,,,,,,,,,
 AE26,,IOBS,IO_L52N_M1DQ15_1,UNUSED,,1,,,,,,,,,
 AF1,,,GND,,,,,,,,,,,,

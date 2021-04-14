@@ -156,6 +156,42 @@ Creating hardware output directories ...
 Managing hardware (BBD-specified) netlist files ...
 
 Managing cache ...
+IPNAME:proc_sys_reset INSTANCE:proc_sys_reset_0 -
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
+line 23 - Copying cache implementation netlist
+IPNAME:lmb_v10 INSTANCE:microblaze_0_ilmb -
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
+line 36 - Copying cache implementation netlist
+IPNAME:lmb_bram_if_cntlr INSTANCE:microblaze_0_i_bram_ctrl -
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
+line 43 - Copying cache implementation netlist
+IPNAME:lmb_v10 INSTANCE:microblaze_0_dlmb -
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
+line 52 - Copying cache implementation netlist
+IPNAME:lmb_bram_if_cntlr INSTANCE:microblaze_0_d_bram_ctrl -
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
+line 59 - Copying cache implementation netlist
+IPNAME:bram_block INSTANCE:microblaze_0_bram_block -
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
+line 68 - Copying cache implementation netlist
+IPNAME:microblaze INSTANCE:microblaze_0 -
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
+line 75 - Copying cache implementation netlist
+IPNAME:mdm INSTANCE:debug_module -
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
+line 98 - Copying cache implementation netlist
+IPNAME:axi_interconnect INSTANCE:axi4lite_0 -
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
+line 124 - Copying cache implementation netlist
+IPNAME:axi_gpio INSTANCE:axi_gpio_0 -
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
+line 132 - Copying cache implementation netlist
+IPNAME:led_axi_ip INSTANCE:led_axi_ip_0 -
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
+line 144 - Copying cache implementation netlist
+IPNAME:uart_cntrl INSTANCE:uart_cntrl_0 -
+E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
+line 154 - Copying cache implementation netlist
 
 Elaborating instances ...
 IPNAME:bram_block INSTANCE:microblaze_0_bram_block -
@@ -187,39 +223,9 @@ Running XST synthesis ...
 INFO:EDK:4211 - The following instances are synthesized with XST. The MPD option
    IMP_NETLIST=TRUE indicates that a NGC file is to be produced using XST
    synthesis. IMP_NETLIST=FALSE (default) instances are not synthesized. 
-INSTANCE:proc_sys_reset_0 -
-E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
-line 23 - Running XST synthesis
-INSTANCE:microblaze_0_ilmb -
-E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
-line 36 - Running XST synthesis
-INSTANCE:microblaze_0_i_bram_ctrl -
-E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
-line 43 - Running XST synthesis
-INSTANCE:microblaze_0_dlmb -
-E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
-line 52 - Running XST synthesis
-INSTANCE:microblaze_0_d_bram_ctrl -
-E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
-line 59 - Running XST synthesis
-INSTANCE:microblaze_0_bram_block -
-E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
-line 68 - Running XST synthesis
-INSTANCE:microblaze_0 -
-E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
-line 75 - Running XST synthesis
-INSTANCE:debug_module -
-E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
-line 98 - Running XST synthesis
 INSTANCE:clock_generator_0 -
 E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
 line 111 - Running XST synthesis
-INSTANCE:axi4lite_0 -
-E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
-line 124 - Running XST synthesis
-INSTANCE:axi_gpio_0 -
-E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
-line 132 - Running XST synthesis
 INSTANCE:led_axi_ip_0 -
 E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
 line 144 - Running XST synthesis
@@ -228,25 +234,13 @@ E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
 line 154 - Running XST synthesis
 
 Running NGCBUILD ...
-IPNAME:system_microblaze_0_ilmb_wrapper INSTANCE:microblaze_0_ilmb -
-E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
-line 36 - Running NGCBUILD
-IPNAME:system_microblaze_0_dlmb_wrapper INSTANCE:microblaze_0_dlmb -
-E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
-line 52 - Running NGCBUILD
-IPNAME:system_microblaze_0_wrapper INSTANCE:microblaze_0 -
-E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
-line 75 - Running NGCBUILD
 IPNAME:system_clock_generator_0_wrapper INSTANCE:clock_generator_0 -
 E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
 line 111 - Running NGCBUILD
-IPNAME:system_axi4lite_0_wrapper INSTANCE:axi4lite_0 -
-E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\system.mhs
-line 124 - Running NGCBUILD
 INFO:EDK:3509 - NCF files should not be modified as they will be regenerated.
    If any constraint needs to be overridden, this should be done by modifying
    the data/system.ucf file.
 
 Rebuilding cache ...
 
-Total run time: 232.00 seconds
+Total run time: 60.00 seconds

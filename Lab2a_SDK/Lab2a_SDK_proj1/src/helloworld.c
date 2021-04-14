@@ -44,18 +44,20 @@
 
 /************************** Constant Definitions ***************************/
 
-#define MY_UART_READ_REG UART_CNTRL_SLV_REG0_OFFSET
-#define MY_UART_WRITE_REG UART_CNTRL_SLV_REG1_OFFSET
+#define SW2HW_REG UART_CNTRL_SLV_REG0_OFFSET
+#define HW2SW_REG UART_CNTRL_SLV_REG1_OFFSET
 
 /************************** Constant Definitions ***************************/
 
 void my_uart_transmit_msg(const char *str);
 void my_uart_transmit_byte(const char toWrite);
 
-void my_uart_receive(const char* readData);
+//void my_uart_receive(const char* readData);
 void dip_2_led(XGpio* dip);
 
 int main(){
+	//print("Hello World\n\r");
+
 	XGpio dip;
 	XStatus status;
 
@@ -70,7 +72,7 @@ int main(){
 	char readBuffer[1024] = "Buffer Init!";
 	while(1) {
 		dip_2_led(&dip);
-		my_uart_transmit_msg("In while loop!\0");
+		my_uart_transmit_msg("In while loop!\n\0");
 		//my_uart_receive(readBuffer);
 		//my_uart_transmit_msg(readBuffer);
 	}
@@ -89,30 +91,45 @@ void my_uart_transmit_msg(const char *str) {
 }
 
 void my_uart_transmit_byte(const char toWrite) {
-	// 1. Put data into the specified place in the slave register
-	Xuint32 tmpData = UART_CNTRL_mReadSlaveReg0(XPAR_UART_CNTRL_0_BASEADDR, UART_CNTRL_SLV_REG0_OFFSET);
-	Xuint32 toWriteExtended = toWrite;
+	// 1. Put data and write start into the register
+	Xuint32 tmpData = toWrite;
 
-	toWriteExtended <<= 16;
-	toWriteExtended &= 0x00FF0000;
+	// Putting data in
+	tmpData <<= 8;
+	tmpData &= 0x0000FF00;
 
-	tmpData &= 0xFF00FFFF;
-	tmpData |= toWriteExtended;
+	// Setting write_start high
+	tmpData |= 0x4;
 
-	// 2. Put Write Start high and write to UART Controller
-	tmpData |= 0x00000001;
-	UART_CNTRL_mWriteReg(XPAR_UART_CNTRL_0_BASEADDR, UART_CNTRL_SLV_REG0_OFFSET, tmpData);
+	// 2. Write to UART Controller
+	UART_CNTRL_mWriteReg(XPAR_UART_CNTRL_0_BASEADDR, SW2HW_REG, tmpData);
 
 	// 3. Wait until Write Done is set -> then lower the flag
-	Xuint32 tmpWD;
+	Xuint32 tmpData2;
 	while(1) {
-		tmpData = UART_CNTRL_mReadSlaveReg0(XPAR_UART_CNTRL_0_BASEADDR, UART_CNTRL_SLV_REG0_OFFSET);
+		tmpData2 = UART_CNTRL_mReadSlaveReg0(XPAR_UART_CNTRL_0_BASEADDR, HW2SW_REG);
 
-		tmpWD = tmpData & 0x00000002;
-		if(tmpWD == 0x00000002) {
-			// 4. Lower Write Done! Our data has been transmitted!
-			tmpData ^= 0x00000002;
-			UART_CNTRL_mWriteReg(XPAR_UART_CNTRL_0_BASEADDR, UART_CNTRL_SLV_REG0_OFFSET, tmpData);
+		// Wait until HW tells us it's received our write_start via write_start_ack, then clear our write_start
+		if(tmpData2 & 0x4) {
+			tmpData ^= 0x4;
+			UART_CNTRL_mWriteReg(XPAR_UART_CNTRL_0_BASEADDR, SW2HW_REG, tmpData);
+		}
+
+		// Wait until we receive write_done!
+		if(tmpData2 & 0x1) {
+			// Write is done! Send write_done_ack and then(in another while loop) wait until write_done is cleared
+			tmpData |= 0x1;
+			UART_CNTRL_mWriteReg(XPAR_UART_CNTRL_0_BASEADDR, SW2HW_REG, tmpData);
+			break;
+		}
+	}
+
+	while(1) {
+		// Have to wait until write_done is cleared
+		tmpData2 = UART_CNTRL_mReadSlaveReg0(XPAR_UART_CNTRL_0_BASEADDR, HW2SW_REG);
+
+		// Is write_done cleared?
+		if((tmpData2 & 0x1) == 0) {
 			break;
 		}
 	}

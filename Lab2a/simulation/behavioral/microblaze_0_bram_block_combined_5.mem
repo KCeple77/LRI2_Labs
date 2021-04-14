@@ -1,0 +1,18 @@
+// Mem file initialization records.
+//
+// Release 14.6 - Data2MEM P.20131013, build 3.0.10 Apr 3, 2013
+// Copyright (c) 1995-2021 Xilinx, Inc.  All rights reserved.
+//
+// Command: data2mem -bm system_sim.bmm -bd E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\bootloops\microblaze_0.elf tag microblaze_0 -bx E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\simulation\behavioral -u -p "xc6slx45fgg676-2"
+//
+// Created on Wednesday April 14, 2021 - 03:42:41 am, from:
+//
+//     Map file     - system_sim.bmm
+//     Data file(s) - E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\bootloops\microblaze_0.elf
+//
+// Address space 'microblaze_0.microblaze_0_bram_block_combined', bit lane [26:26].
+//
+// Bus width = 32 bits, number of bus blocks = 1.
+
+@00000000
+    0

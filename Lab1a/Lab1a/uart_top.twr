@@ -26,25 +26,25 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
    please see the device datasheet.
 
 ================================================================================
-Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 27 MHz HIGH 
+Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 
 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
  7395 paths analyzed, 915 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   9.592ns.
+ Minimum period is   9.164ns.
 --------------------------------------------------------------------------------
 
-Paths for end point uart_controller_instance/uart_receiver_instance/c_brg_21 (SLICE_X58Y91.SR), 2 paths
+Paths for end point uart_controller_instance/uart_transmitter_instance/c_conv_31_C_31 (SLICE_X37Y81.DX), 125 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     13.722ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               uart_controller_instance/uart_transmitter_instance/reg_rst (FF)
-  Destination:          uart_controller_instance/uart_receiver_instance/c_brg_21 (FF)
-  Requirement:          18.518ns
-  Data Path Delay:      4.711ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.050ns (0.587 - 0.637)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP falling at 18.518ns
+Slack (setup path):     0.418ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               uart_controller_instance/uart_transmitter_instance/c_brg_17 (FF)
+  Destination:          uart_controller_instance/uart_transmitter_instance/c_conv_31_C_31 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      4.494ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.053ns (0.592 - 0.645)
+  Source Clock:         clk_BUFGP falling at 5.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
 
   Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
@@ -53,31 +53,191 @@ Slack (setup path):     13.722ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: uart_controller_instance/uart_transmitter_instance/reg_rst to uart_controller_instance/uart_receiver_instance/c_brg_21
+  Maximum Data Path at Slow Process Corner: uart_controller_instance/uart_transmitter_instance/c_brg_17 to uart_controller_instance/uart_transmitter_instance/c_conv_31_C_31
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X55Y72.AQ      Tcko                  0.430   uart_controller_instance/uart_transmitter_instance/reg_rst
-                                                       uart_controller_instance/uart_transmitter_instance/reg_rst
-    SLICE_X57Y86.C3      net (fanout=13)       2.396   uart_controller_instance/uart_transmitter_instance/reg_rst
-    SLICE_X57Y86.C       Tilo                  0.259   uart_controller_instance/uart_receiver_instance/cr_brg
-                                                       uart_controller_instance/uart_receiver_instance/reg_rst_cr_brg_OR_1_o1
-    SLICE_X58Y91.SR      net (fanout=8)        1.197   uart_controller_instance/uart_receiver_instance/reg_rst_cr_brg_OR_1_o
-    SLICE_X58Y91.CLK     Tsrck                 0.429   uart_controller_instance/uart_receiver_instance/c_brg<23>
-                                                       uart_controller_instance/uart_receiver_instance/c_brg_21
+    SLICE_X38Y74.BQ      Tcko                  0.525   uart_controller_instance/uart_transmitter_instance/c_brg<19>
+                                                       uart_controller_instance/uart_transmitter_instance/c_brg_17
+    SLICE_X40Y74.C1      net (fanout=2)        1.181   uart_controller_instance/uart_transmitter_instance/c_brg<17>
+    SLICE_X40Y74.COUT    Topcyc                0.348   uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<3>
+                                                       uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_lutdi2
+                                                       uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<3>
+    SLICE_X40Y75.CIN     net (fanout=1)        0.003   uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<3>
+    SLICE_X40Y75.BMUX    Tcinb                 0.239   uart_controller_instance/uart_transmitter_instance/nextState<1>
+                                                       uart_controller_instance/uart_transmitter_instance/Mmux_currentState[1]_X_7_o_wide_mux_20_OUT21_cy1
+    SLICE_X37Y82.A6      net (fanout=43)       1.192   uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<5>
+    SLICE_X37Y82.A       Tilo                  0.259   uart_controller_instance/uart_transmitter_instance/c_conv_31_P_31
+                                                       uart_controller_instance/uart_transmitter_instance/c_conv_31_dpot
+    SLICE_X37Y81.DX      net (fanout=1)        0.633   uart_controller_instance/uart_transmitter_instance/c_conv_31_dpot
+    SLICE_X37Y81.CLK     Tdick                 0.114   uart_controller_instance/uart_transmitter_instance/c_conv_31_C_31
+                                                       uart_controller_instance/uart_transmitter_instance/c_conv_31_C_31
     -------------------------------------------------  ---------------------------
-    Total                                      4.711ns (1.118ns logic, 3.593ns route)
-                                                       (23.7% logic, 76.3% route)
+    Total                                      4.494ns (1.485ns logic, 3.009ns route)
+                                                       (33.0% logic, 67.0% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     15.746ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               uart_controller_instance/uart_receiver_instance/cr_brg (FF)
-  Destination:          uart_controller_instance/uart_receiver_instance/c_brg_21 (FF)
-  Requirement:          18.518ns
-  Data Path Delay:      2.725ns (Levels of Logic = 1)
+Slack (setup path):     0.440ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               uart_controller_instance/uart_transmitter_instance/c_brg_6 (FF)
+  Destination:          uart_controller_instance/uart_transmitter_instance/c_conv_31_C_31 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      4.478ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.047ns (0.592 - 0.639)
+  Source Clock:         clk_BUFGP falling at 5.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: uart_controller_instance/uart_transmitter_instance/c_brg_6 to uart_controller_instance/uart_transmitter_instance/c_conv_31_C_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X38Y71.CQ      Tcko                  0.525   uart_controller_instance/uart_transmitter_instance/c_brg<7>
+                                                       uart_controller_instance/uart_transmitter_instance/c_brg_6
+    SLICE_X40Y74.A1      net (fanout=2)        1.018   uart_controller_instance/uart_transmitter_instance/c_brg<6>
+    SLICE_X40Y74.COUT    Topcya                0.495   uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<3>
+                                                       uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_lutdi
+                                                       uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<3>
+    SLICE_X40Y75.CIN     net (fanout=1)        0.003   uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<3>
+    SLICE_X40Y75.BMUX    Tcinb                 0.239   uart_controller_instance/uart_transmitter_instance/nextState<1>
+                                                       uart_controller_instance/uart_transmitter_instance/Mmux_currentState[1]_X_7_o_wide_mux_20_OUT21_cy1
+    SLICE_X37Y82.A6      net (fanout=43)       1.192   uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<5>
+    SLICE_X37Y82.A       Tilo                  0.259   uart_controller_instance/uart_transmitter_instance/c_conv_31_P_31
+                                                       uart_controller_instance/uart_transmitter_instance/c_conv_31_dpot
+    SLICE_X37Y81.DX      net (fanout=1)        0.633   uart_controller_instance/uart_transmitter_instance/c_conv_31_dpot
+    SLICE_X37Y81.CLK     Tdick                 0.114   uart_controller_instance/uart_transmitter_instance/c_conv_31_C_31
+                                                       uart_controller_instance/uart_transmitter_instance/c_conv_31_C_31
+    -------------------------------------------------  ---------------------------
+    Total                                      4.478ns (1.632ns logic, 2.846ns route)
+                                                       (36.4% logic, 63.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.441ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               uart_controller_instance/uart_transmitter_instance/c_brg_17 (FF)
+  Destination:          uart_controller_instance/uart_transmitter_instance/c_conv_31_C_31 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      4.471ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.053ns (0.592 - 0.645)
+  Source Clock:         clk_BUFGP falling at 5.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: uart_controller_instance/uart_transmitter_instance/c_brg_17 to uart_controller_instance/uart_transmitter_instance/c_conv_31_C_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X38Y74.BQ      Tcko                  0.525   uart_controller_instance/uart_transmitter_instance/c_brg<19>
+                                                       uart_controller_instance/uart_transmitter_instance/c_brg_17
+    SLICE_X40Y74.C1      net (fanout=2)        1.181   uart_controller_instance/uart_transmitter_instance/c_brg<17>
+    SLICE_X40Y74.COUT    Topcyc                0.325   uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<3>
+                                                       uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_lut<2>
+                                                       uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<3>
+    SLICE_X40Y75.CIN     net (fanout=1)        0.003   uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<3>
+    SLICE_X40Y75.BMUX    Tcinb                 0.239   uart_controller_instance/uart_transmitter_instance/nextState<1>
+                                                       uart_controller_instance/uart_transmitter_instance/Mmux_currentState[1]_X_7_o_wide_mux_20_OUT21_cy1
+    SLICE_X37Y82.A6      net (fanout=43)       1.192   uart_controller_instance/uart_transmitter_instance/Mcompar_n0023_cy<5>
+    SLICE_X37Y82.A       Tilo                  0.259   uart_controller_instance/uart_transmitter_instance/c_conv_31_P_31
+                                                       uart_controller_instance/uart_transmitter_instance/c_conv_31_dpot
+    SLICE_X37Y81.DX      net (fanout=1)        0.633   uart_controller_instance/uart_transmitter_instance/c_conv_31_dpot
+    SLICE_X37Y81.CLK     Tdick                 0.114   uart_controller_instance/uart_transmitter_instance/c_conv_31_C_31
+                                                       uart_controller_instance/uart_transmitter_instance/c_conv_31_C_31
+    -------------------------------------------------  ---------------------------
+    Total                                      4.471ns (1.462ns logic, 3.009ns route)
+                                                       (32.7% logic, 67.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point uart_controller_instance/uart_receiver_instance/shift_reg_2 (SLICE_X51Y76.C6), 34 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.702ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               uart_controller_instance/uart_receiver_instance/c_brg_27 (FF)
+  Destination:          uart_controller_instance/uart_receiver_instance/shift_reg_2 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      4.239ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.024ns (0.292 - 0.316)
+  Source Clock:         clk_BUFGP falling at 5.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: uart_controller_instance/uart_receiver_instance/c_brg_27 to uart_controller_instance/uart_receiver_instance/shift_reg_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X58Y79.DQ      Tcko                  0.476   uart_controller_instance/uart_receiver_instance/c_brg<27>
+                                                       uart_controller_instance/uart_receiver_instance/c_brg_27
+    SLICE_X56Y74.B1      net (fanout=4)        1.511   uart_controller_instance/uart_receiver_instance/c_brg<27>
+    SLICE_X56Y74.CMUX    Topbc                 0.640   uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<6>
+                                                       uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_lut<5>
+                                                       uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<6>
+    SLICE_X51Y76.C6      net (fanout=13)       1.239   uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<6>
+    SLICE_X51Y76.CLK     Tas                   0.373   uart_controller_instance/uart_receiver_instance/shift_reg<3>
+                                                       uart_controller_instance/uart_receiver_instance/shift_reg_2_rstpot
+                                                       uart_controller_instance/uart_receiver_instance/shift_reg_2
+    -------------------------------------------------  ---------------------------
+    Total                                      4.239ns (1.489ns logic, 2.750ns route)
+                                                       (35.1% logic, 64.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.927ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               uart_controller_instance/uart_receiver_instance/c_brg_26 (FF)
+  Destination:          uart_controller_instance/uart_receiver_instance/shift_reg_2 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      4.014ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.024ns (0.292 - 0.316)
+  Source Clock:         clk_BUFGP falling at 5.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: uart_controller_instance/uart_receiver_instance/c_brg_26 to uart_controller_instance/uart_receiver_instance/shift_reg_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X58Y79.CQ      Tcko                  0.476   uart_controller_instance/uart_receiver_instance/c_brg<27>
+                                                       uart_controller_instance/uart_receiver_instance/c_brg_26
+    SLICE_X56Y74.B4      net (fanout=4)        1.286   uart_controller_instance/uart_receiver_instance/c_brg<26>
+    SLICE_X56Y74.CMUX    Topbc                 0.640   uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<6>
+                                                       uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_lut<5>
+                                                       uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<6>
+    SLICE_X51Y76.C6      net (fanout=13)       1.239   uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<6>
+    SLICE_X51Y76.CLK     Tas                   0.373   uart_controller_instance/uart_receiver_instance/shift_reg<3>
+                                                       uart_controller_instance/uart_receiver_instance/shift_reg_2_rstpot
+                                                       uart_controller_instance/uart_receiver_instance/shift_reg_2
+    -------------------------------------------------  ---------------------------
+    Total                                      4.014ns (1.489ns logic, 2.525ns route)
+                                                       (37.1% logic, 62.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.932ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               uart_controller_instance/uart_receiver_instance/c_brg_2 (FF)
+  Destination:          uart_controller_instance/uart_receiver_instance/shift_reg_2 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      4.021ns (Levels of Logic = 3)
   Clock Path Skew:      -0.012ns (0.292 - 0.304)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP falling at 18.518ns
+  Source Clock:         clk_BUFGP falling at 5.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
 
   Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
@@ -86,34 +246,39 @@ Slack (setup path):     15.746ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: uart_controller_instance/uart_receiver_instance/cr_brg to uart_controller_instance/uart_receiver_instance/c_brg_21
+  Maximum Data Path at Slow Process Corner: uart_controller_instance/uart_receiver_instance/c_brg_2 to uart_controller_instance/uart_receiver_instance/shift_reg_2
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X57Y86.AQ      Tcko                  0.430   uart_controller_instance/uart_receiver_instance/cr_brg
-                                                       uart_controller_instance/uart_receiver_instance/cr_brg
-    SLICE_X57Y86.C5      net (fanout=4)        0.410   uart_controller_instance/uart_receiver_instance/cr_brg
-    SLICE_X57Y86.C       Tilo                  0.259   uart_controller_instance/uart_receiver_instance/cr_brg
-                                                       uart_controller_instance/uart_receiver_instance/reg_rst_cr_brg_OR_1_o1
-    SLICE_X58Y91.SR      net (fanout=8)        1.197   uart_controller_instance/uart_receiver_instance/reg_rst_cr_brg_OR_1_o
-    SLICE_X58Y91.CLK     Tsrck                 0.429   uart_controller_instance/uart_receiver_instance/c_brg<23>
-                                                       uart_controller_instance/uart_receiver_instance/c_brg_21
+    SLICE_X58Y73.CQ      Tcko                  0.476   uart_controller_instance/uart_receiver_instance/c_brg<3>
+                                                       uart_controller_instance/uart_receiver_instance/c_brg_2
+    SLICE_X56Y73.A1      net (fanout=3)        1.154   uart_controller_instance/uart_receiver_instance/c_brg<2>
+    SLICE_X56Y73.COUT    Topcya                0.474   uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<3>
+                                                       uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_lut<0>
+                                                       uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<3>
+    SLICE_X56Y74.CIN     net (fanout=1)        0.003   uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<3>
+    SLICE_X56Y74.CMUX    Tcinc                 0.302   uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<6>
+                                                       uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<6>
+    SLICE_X51Y76.C6      net (fanout=13)       1.239   uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<6>
+    SLICE_X51Y76.CLK     Tas                   0.373   uart_controller_instance/uart_receiver_instance/shift_reg<3>
+                                                       uart_controller_instance/uart_receiver_instance/shift_reg_2_rstpot
+                                                       uart_controller_instance/uart_receiver_instance/shift_reg_2
     -------------------------------------------------  ---------------------------
-    Total                                      2.725ns (1.118ns logic, 1.607ns route)
-                                                       (41.0% logic, 59.0% route)
+    Total                                      4.021ns (1.625ns logic, 2.396ns route)
+                                                       (40.4% logic, 59.6% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point uart_controller_instance/uart_receiver_instance/c_brg_20 (SLICE_X58Y91.SR), 2 paths
+Paths for end point uart_controller_instance/uart_receiver_instance/shift_reg_3 (SLICE_X51Y76.D6), 34 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     13.733ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               uart_controller_instance/uart_transmitter_instance/reg_rst (FF)
-  Destination:          uart_controller_instance/uart_receiver_instance/c_brg_20 (FF)
-  Requirement:          18.518ns
-  Data Path Delay:      4.700ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.050ns (0.587 - 0.637)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP falling at 18.518ns
+Slack (setup path):     0.702ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               uart_controller_instance/uart_receiver_instance/c_brg_27 (FF)
+  Destination:          uart_controller_instance/uart_receiver_instance/shift_reg_3 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      4.239ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.024ns (0.292 - 0.316)
+  Source Clock:         clk_BUFGP falling at 5.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
 
   Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
@@ -122,31 +287,68 @@ Slack (setup path):     13.733ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: uart_controller_instance/uart_transmitter_instance/reg_rst to uart_controller_instance/uart_receiver_instance/c_brg_20
+  Maximum Data Path at Slow Process Corner: uart_controller_instance/uart_receiver_instance/c_brg_27 to uart_controller_instance/uart_receiver_instance/shift_reg_3
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X55Y72.AQ      Tcko                  0.430   uart_controller_instance/uart_transmitter_instance/reg_rst
-                                                       uart_controller_instance/uart_transmitter_instance/reg_rst
-    SLICE_X57Y86.C3      net (fanout=13)       2.396   uart_controller_instance/uart_transmitter_instance/reg_rst
-    SLICE_X57Y86.C       Tilo                  0.259   uart_controller_instance/uart_receiver_instance/cr_brg
-                                                       uart_controller_instance/uart_receiver_instance/reg_rst_cr_brg_OR_1_o1
-    SLICE_X58Y91.SR      net (fanout=8)        1.197   uart_controller_instance/uart_receiver_instance/reg_rst_cr_brg_OR_1_o
-    SLICE_X58Y91.CLK     Tsrck                 0.418   uart_controller_instance/uart_receiver_instance/c_brg<23>
-                                                       uart_controller_instance/uart_receiver_instance/c_brg_20
+    SLICE_X58Y79.DQ      Tcko                  0.476   uart_controller_instance/uart_receiver_instance/c_brg<27>
+                                                       uart_controller_instance/uart_receiver_instance/c_brg_27
+    SLICE_X56Y74.B1      net (fanout=4)        1.511   uart_controller_instance/uart_receiver_instance/c_brg<27>
+    SLICE_X56Y74.CMUX    Topbc                 0.640   uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<6>
+                                                       uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_lut<5>
+                                                       uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<6>
+    SLICE_X51Y76.D6      net (fanout=13)       1.239   uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<6>
+    SLICE_X51Y76.CLK     Tas                   0.373   uart_controller_instance/uart_receiver_instance/shift_reg<3>
+                                                       uart_controller_instance/uart_receiver_instance/shift_reg_3_rstpot
+                                                       uart_controller_instance/uart_receiver_instance/shift_reg_3
     -------------------------------------------------  ---------------------------
-    Total                                      4.700ns (1.107ns logic, 3.593ns route)
-                                                       (23.6% logic, 76.4% route)
+    Total                                      4.239ns (1.489ns logic, 2.750ns route)
+                                                       (35.1% logic, 64.9% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     15.757ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               uart_controller_instance/uart_receiver_instance/cr_brg (FF)
-  Destination:          uart_controller_instance/uart_receiver_instance/c_brg_20 (FF)
-  Requirement:          18.518ns
-  Data Path Delay:      2.714ns (Levels of Logic = 1)
+Slack (setup path):     0.927ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               uart_controller_instance/uart_receiver_instance/c_brg_26 (FF)
+  Destination:          uart_controller_instance/uart_receiver_instance/shift_reg_3 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      4.014ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.024ns (0.292 - 0.316)
+  Source Clock:         clk_BUFGP falling at 5.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: uart_controller_instance/uart_receiver_instance/c_brg_26 to uart_controller_instance/uart_receiver_instance/shift_reg_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X58Y79.CQ      Tcko                  0.476   uart_controller_instance/uart_receiver_instance/c_brg<27>
+                                                       uart_controller_instance/uart_receiver_instance/c_brg_26
+    SLICE_X56Y74.B4      net (fanout=4)        1.286   uart_controller_instance/uart_receiver_instance/c_brg<26>
+    SLICE_X56Y74.CMUX    Topbc                 0.640   uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<6>
+                                                       uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_lut<5>
+                                                       uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<6>
+    SLICE_X51Y76.D6      net (fanout=13)       1.239   uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<6>
+    SLICE_X51Y76.CLK     Tas                   0.373   uart_controller_instance/uart_receiver_instance/shift_reg<3>
+                                                       uart_controller_instance/uart_receiver_instance/shift_reg_3_rstpot
+                                                       uart_controller_instance/uart_receiver_instance/shift_reg_3
+    -------------------------------------------------  ---------------------------
+    Total                                      4.014ns (1.489ns logic, 2.525ns route)
+                                                       (37.1% logic, 62.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.932ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               uart_controller_instance/uart_receiver_instance/c_brg_2 (FF)
+  Destination:          uart_controller_instance/uart_receiver_instance/shift_reg_3 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      4.021ns (Levels of Logic = 3)
   Clock Path Skew:      -0.012ns (0.292 - 0.304)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP falling at 18.518ns
+  Source Clock:         clk_BUFGP falling at 5.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.035ns
 
   Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
@@ -155,206 +357,139 @@ Slack (setup path):     15.757ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: uart_controller_instance/uart_receiver_instance/cr_brg to uart_controller_instance/uart_receiver_instance/c_brg_20
+  Maximum Data Path at Slow Process Corner: uart_controller_instance/uart_receiver_instance/c_brg_2 to uart_controller_instance/uart_receiver_instance/shift_reg_3
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X57Y86.AQ      Tcko                  0.430   uart_controller_instance/uart_receiver_instance/cr_brg
-                                                       uart_controller_instance/uart_receiver_instance/cr_brg
-    SLICE_X57Y86.C5      net (fanout=4)        0.410   uart_controller_instance/uart_receiver_instance/cr_brg
-    SLICE_X57Y86.C       Tilo                  0.259   uart_controller_instance/uart_receiver_instance/cr_brg
-                                                       uart_controller_instance/uart_receiver_instance/reg_rst_cr_brg_OR_1_o1
-    SLICE_X58Y91.SR      net (fanout=8)        1.197   uart_controller_instance/uart_receiver_instance/reg_rst_cr_brg_OR_1_o
-    SLICE_X58Y91.CLK     Tsrck                 0.418   uart_controller_instance/uart_receiver_instance/c_brg<23>
-                                                       uart_controller_instance/uart_receiver_instance/c_brg_20
+    SLICE_X58Y73.CQ      Tcko                  0.476   uart_controller_instance/uart_receiver_instance/c_brg<3>
+                                                       uart_controller_instance/uart_receiver_instance/c_brg_2
+    SLICE_X56Y73.A1      net (fanout=3)        1.154   uart_controller_instance/uart_receiver_instance/c_brg<2>
+    SLICE_X56Y73.COUT    Topcya                0.474   uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<3>
+                                                       uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_lut<0>
+                                                       uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<3>
+    SLICE_X56Y74.CIN     net (fanout=1)        0.003   uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<3>
+    SLICE_X56Y74.CMUX    Tcinc                 0.302   uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<6>
+                                                       uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<6>
+    SLICE_X51Y76.D6      net (fanout=13)       1.239   uart_controller_instance/uart_receiver_instance/Mcompar_c_brg[31]_GND_6_o_LessThan_10_o_cy<6>
+    SLICE_X51Y76.CLK     Tas                   0.373   uart_controller_instance/uart_receiver_instance/shift_reg<3>
+                                                       uart_controller_instance/uart_receiver_instance/shift_reg_3_rstpot
+                                                       uart_controller_instance/uart_receiver_instance/shift_reg_3
     -------------------------------------------------  ---------------------------
-    Total                                      2.714ns (1.107ns logic, 1.607ns route)
-                                                       (40.8% logic, 59.2% route)
+    Total                                      4.021ns (1.625ns logic, 2.396ns route)
+                                                       (40.4% logic, 59.6% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point uart_controller_instance/uart_receiver_instance/c_brg_22 (SLICE_X58Y91.SR), 2 paths
---------------------------------------------------------------------------------
-Slack (setup path):     13.756ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               uart_controller_instance/uart_transmitter_instance/reg_rst (FF)
-  Destination:          uart_controller_instance/uart_receiver_instance/c_brg_22 (FF)
-  Requirement:          18.518ns
-  Data Path Delay:      4.677ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.050ns (0.587 - 0.637)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP falling at 18.518ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: uart_controller_instance/uart_transmitter_instance/reg_rst to uart_controller_instance/uart_receiver_instance/c_brg_22
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X55Y72.AQ      Tcko                  0.430   uart_controller_instance/uart_transmitter_instance/reg_rst
-                                                       uart_controller_instance/uart_transmitter_instance/reg_rst
-    SLICE_X57Y86.C3      net (fanout=13)       2.396   uart_controller_instance/uart_transmitter_instance/reg_rst
-    SLICE_X57Y86.C       Tilo                  0.259   uart_controller_instance/uart_receiver_instance/cr_brg
-                                                       uart_controller_instance/uart_receiver_instance/reg_rst_cr_brg_OR_1_o1
-    SLICE_X58Y91.SR      net (fanout=8)        1.197   uart_controller_instance/uart_receiver_instance/reg_rst_cr_brg_OR_1_o
-    SLICE_X58Y91.CLK     Tsrck                 0.395   uart_controller_instance/uart_receiver_instance/c_brg<23>
-                                                       uart_controller_instance/uart_receiver_instance/c_brg_22
-    -------------------------------------------------  ---------------------------
-    Total                                      4.677ns (1.084ns logic, 3.593ns route)
-                                                       (23.2% logic, 76.8% route)
-
---------------------------------------------------------------------------------
-Slack (setup path):     15.780ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               uart_controller_instance/uart_receiver_instance/cr_brg (FF)
-  Destination:          uart_controller_instance/uart_receiver_instance/c_brg_22 (FF)
-  Requirement:          18.518ns
-  Data Path Delay:      2.691ns (Levels of Logic = 1)
-  Clock Path Skew:      -0.012ns (0.292 - 0.304)
-  Source Clock:         clk_BUFGP rising at 0.000ns
-  Destination Clock:    clk_BUFGP falling at 18.518ns
-  Clock Uncertainty:    0.035ns
-
-  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter (TSJ):  0.070ns
-    Total Input Jitter (TIJ):   0.000ns
-    Discrete Jitter (DJ):       0.000ns
-    Phase Error (PE):           0.000ns
-
-  Maximum Data Path at Slow Process Corner: uart_controller_instance/uart_receiver_instance/cr_brg to uart_controller_instance/uart_receiver_instance/c_brg_22
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X57Y86.AQ      Tcko                  0.430   uart_controller_instance/uart_receiver_instance/cr_brg
-                                                       uart_controller_instance/uart_receiver_instance/cr_brg
-    SLICE_X57Y86.C5      net (fanout=4)        0.410   uart_controller_instance/uart_receiver_instance/cr_brg
-    SLICE_X57Y86.C       Tilo                  0.259   uart_controller_instance/uart_receiver_instance/cr_brg
-                                                       uart_controller_instance/uart_receiver_instance/reg_rst_cr_brg_OR_1_o1
-    SLICE_X58Y91.SR      net (fanout=8)        1.197   uart_controller_instance/uart_receiver_instance/reg_rst_cr_brg_OR_1_o
-    SLICE_X58Y91.CLK     Tsrck                 0.395   uart_controller_instance/uart_receiver_instance/c_brg<23>
-                                                       uart_controller_instance/uart_receiver_instance/c_brg_22
-    -------------------------------------------------  ---------------------------
-    Total                                      2.691ns (1.084ns logic, 1.607ns route)
-                                                       (40.3% logic, 59.7% route)
-
+Hold Paths: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
 --------------------------------------------------------------------------------
 
-Hold Paths: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 27 MHz HIGH 50%;
+Paths for end point s_dr_out_0 (SLICE_X50Y76.AX), 1 path
 --------------------------------------------------------------------------------
-
-Paths for end point uart_controller_instance/uart_transmitter_instance/reg_d_in_2 (SLICE_X50Y85.CX), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.381ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               s_dr_out_2 (FF)
-  Destination:          uart_controller_instance/uart_transmitter_instance/reg_d_in_2 (FF)
+Slack (hold path):      0.401ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               uart_controller_instance/uart_receiver_instance/shift_reg_0 (FF)
+  Destination:          s_dr_out_0 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.383ns (Levels of Logic = 0)
-  Clock Path Skew:      0.002ns (0.036 - 0.034)
-  Source Clock:         clk_BUFGP rising at 37.037ns
-  Destination Clock:    clk_BUFGP rising at 37.037ns
+  Data Path Delay:      0.403ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.040 - 0.038)
+  Source Clock:         clk_BUFGP rising at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: s_dr_out_2 to uart_controller_instance/uart_transmitter_instance/reg_d_in_2
+  Minimum Data Path at Fast Process Corner: uart_controller_instance/uart_receiver_instance/shift_reg_0 to s_dr_out_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X51Y85.CQ      Tcko                  0.198   s_dr_out<3>
+    SLICE_X51Y76.AQ      Tcko                  0.198   uart_controller_instance/uart_receiver_instance/shift_reg<3>
+                                                       uart_controller_instance/uart_receiver_instance/shift_reg_0
+    SLICE_X50Y76.AX      net (fanout=2)        0.157   uart_controller_instance/uart_receiver_instance/shift_reg<0>
+    SLICE_X50Y76.CLK     Tckdi       (-Th)    -0.048   s_dr_out<3>
+                                                       s_dr_out_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.403ns (0.246ns logic, 0.157ns route)
+                                                       (61.0% logic, 39.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point s_dr_out_2 (SLICE_X50Y76.CX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.412ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               uart_controller_instance/uart_receiver_instance/shift_reg_2 (FF)
+  Destination:          s_dr_out_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.414ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.040 - 0.038)
+  Source Clock:         clk_BUFGP rising at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: uart_controller_instance/uart_receiver_instance/shift_reg_2 to s_dr_out_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y76.CQ      Tcko                  0.198   uart_controller_instance/uart_receiver_instance/shift_reg<3>
+                                                       uart_controller_instance/uart_receiver_instance/shift_reg_2
+    SLICE_X50Y76.CX      net (fanout=3)        0.168   uart_controller_instance/uart_receiver_instance/shift_reg<2>
+    SLICE_X50Y76.CLK     Tckdi       (-Th)    -0.048   s_dr_out<3>
                                                        s_dr_out_2
-    SLICE_X50Y85.CX      net (fanout=1)        0.137   s_dr_out<2>
-    SLICE_X50Y85.CLK     Tckdi       (-Th)    -0.048   uart_controller_instance/uart_transmitter_instance/reg_d_in<3>
-                                                       uart_controller_instance/uart_transmitter_instance/reg_d_in_2
     -------------------------------------------------  ---------------------------
-    Total                                      0.383ns (0.246ns logic, 0.137ns route)
-                                                       (64.2% logic, 35.8% route)
+    Total                                      0.414ns (0.246ns logic, 0.168ns route)
+                                                       (59.4% logic, 40.6% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point uart_controller_instance/uart_transmitter_instance/nextState_0 (SLICE_X42Y83.D6), 1 path
+Paths for end point uart_controller_instance/uart_transmitter_instance/shift_reg_4 (SLICE_X46Y76.A6), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.416ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               uart_controller_instance/uart_transmitter_instance/nextState_0 (FF)
-  Destination:          uart_controller_instance/uart_transmitter_instance/nextState_0 (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      0.416ns (Levels of Logic = 1)
-  Clock Path Skew:      0.000ns
-  Source Clock:         clk_BUFGP rising at 37.037ns
-  Destination Clock:    clk_BUFGP rising at 37.037ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path at Fast Process Corner: uart_controller_instance/uart_transmitter_instance/nextState_0 to uart_controller_instance/uart_transmitter_instance/nextState_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X42Y83.DQ      Tcko                  0.200   uart_controller_instance/uart_transmitter_instance/nextState<0>
-                                                       uart_controller_instance/uart_transmitter_instance/nextState_0
-    SLICE_X42Y83.D6      net (fanout=2)        0.026   uart_controller_instance/uart_transmitter_instance/nextState<0>
-    SLICE_X42Y83.CLK     Tah         (-Th)    -0.190   uart_controller_instance/uart_transmitter_instance/nextState<0>
-                                                       uart_controller_instance/uart_transmitter_instance/Mmux_currentState[1]_X_7_o_wide_mux_20_OUT11
-                                                       uart_controller_instance/uart_transmitter_instance/nextState_0
-    -------------------------------------------------  ---------------------------
-    Total                                      0.416ns (0.390ns logic, 0.026ns route)
-                                                       (93.8% logic, 6.3% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point uart_controller_instance/uart_transmitter_instance/shift_reg_4 (SLICE_X49Y84.A6), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.437ns (requirement - (clock path skew + uncertainty - data path))
+Slack (hold path):      0.415ns (requirement - (clock path skew + uncertainty - data path))
   Source:               uart_controller_instance/uart_transmitter_instance/shift_reg_4 (FF)
   Destination:          uart_controller_instance/uart_transmitter_instance/shift_reg_4 (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.437ns (Levels of Logic = 1)
+  Data Path Delay:      0.415ns (Levels of Logic = 1)
   Clock Path Skew:      0.000ns
-  Source Clock:         clk_BUFGP rising at 37.037ns
-  Destination Clock:    clk_BUFGP rising at 37.037ns
+  Source Clock:         clk_BUFGP rising at 10.000ns
+  Destination Clock:    clk_BUFGP rising at 10.000ns
   Clock Uncertainty:    0.000ns
 
   Minimum Data Path at Fast Process Corner: uart_controller_instance/uart_transmitter_instance/shift_reg_4 to uart_controller_instance/uart_transmitter_instance/shift_reg_4
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X49Y84.AQ      Tcko                  0.198   uart_controller_instance/uart_transmitter_instance/shift_reg<7>
+    SLICE_X46Y76.AQ      Tcko                  0.200   uart_controller_instance/uart_transmitter_instance/shift_reg<7>
                                                        uart_controller_instance/uart_transmitter_instance/shift_reg_4
-    SLICE_X49Y84.A6      net (fanout=2)        0.024   uart_controller_instance/uart_transmitter_instance/shift_reg<4>
-    SLICE_X49Y84.CLK     Tah         (-Th)    -0.215   uart_controller_instance/uart_transmitter_instance/shift_reg<7>
+    SLICE_X46Y76.A6      net (fanout=2)        0.025   uart_controller_instance/uart_transmitter_instance/shift_reg<4>
+    SLICE_X46Y76.CLK     Tah         (-Th)    -0.190   uart_controller_instance/uart_transmitter_instance/shift_reg<7>
                                                        uart_controller_instance/uart_transmitter_instance/mux411
                                                        uart_controller_instance/uart_transmitter_instance/shift_reg_4
     -------------------------------------------------  ---------------------------
-    Total                                      0.437ns (0.413ns logic, 0.024ns route)
-                                                       (94.5% logic, 5.5% route)
+    Total                                      0.415ns (0.390ns logic, 0.025ns route)
+                                                       (94.0% logic, 6.0% route)
 
 --------------------------------------------------------------------------------
 
-Component Switching Limit Checks: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 27 MHz HIGH 50%;
+Component Switching Limit Checks: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
 --------------------------------------------------------------------------------
-Slack: 34.371ns (period - min period limit)
-  Period: 37.037ns
+Slack: 7.334ns (period - min period limit)
+  Period: 10.000ns
   Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
   Physical resource: clk_BUFGP/BUFG/I0
   Logical resource: clk_BUFGP/BUFG/I0
   Location pin: BUFGMUX_X2Y2.I0
   Clock network: clk_BUFGP/IBUFG
 --------------------------------------------------------------------------------
-Slack: 36.557ns (period - (min high pulse limit / (high pulse / period)))
-  Period: 37.037ns
-  High pulse: 18.518ns
-  High pulse limit: 0.240ns (Trpw)
-  Physical resource: uart_controller_instance/uart_receiver_instance/shift_reg<3>/SR
-  Logical resource: uart_controller_instance/uart_receiver_instance/shift_reg_0/SR
-  Location pin: SLICE_X52Y85.SR
-  Clock network: uart_controller_instance/uart_receiver_instance/reg_rst_inv
+Slack: 9.520ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: uart_controller_instance/uart_receiver_instance/reg_rx_done/CLK
+  Logical resource: uart_controller_instance/uart_receiver_instance/reg_rx_done/CK
+  Location pin: SLICE_X56Y79.CLK
+  Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 36.557ns (period - (min high pulse limit / (high pulse / period)))
-  Period: 37.037ns
-  High pulse: 18.518ns
-  High pulse limit: 0.240ns (Trpw)
-  Physical resource: uart_controller_instance/uart_receiver_instance/shift_reg<3>/SR
-  Logical resource: uart_controller_instance/uart_receiver_instance/shift_reg_1/SR
-  Location pin: SLICE_X52Y85.SR
-  Clock network: uart_controller_instance/uart_receiver_instance/reg_rst_inv
+Slack: 9.520ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: uart_controller_instance/uart_transmitter_instance/c_brg<3>/CLK
+  Logical resource: uart_controller_instance/uart_transmitter_instance/c_brg_0/CK
+  Location pin: SLICE_X38Y70.CLK
+  Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 
 ================================================================================
@@ -367,57 +502,57 @@ For more information, see From:To (Multicycle) Analysis in the Timing Closure Us
 
  1 path analyzed, 1 endpoint analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors)
- Maximum delay is   3.889ns.
+ Maximum delay is   3.862ns.
 --------------------------------------------------------------------------------
 
-Paths for end point uart_controller_instance/uart_transmitter_instance/c_conv_31_LD (SLICE_X39Y88.CLK), 1 path
+Paths for end point uart_controller_instance/uart_transmitter_instance/c_conv_31_LD (SLICE_X38Y81.CLK), 1 path
 --------------------------------------------------------------------------------
-Slack (slowest paths):  33.148ns (requirement - data path)
+Slack (slowest paths):  6.138ns (requirement - data path)
   Source:               uart_controller_instance/uart_transmitter_instance/reg_rst (FF)
   Destination:          uart_controller_instance/uart_transmitter_instance/c_conv_31_LD (LATCH)
-  Requirement:          37.037ns
-  Data Path Delay:      3.889ns (Levels of Logic = 1)
+  Requirement:          10.000ns
+  Data Path Delay:      3.862ns (Levels of Logic = 1)
   Source Clock:         clk_BUFGP rising at 0.000ns
 
   Maximum Data Path at Slow Process Corner: uart_controller_instance/uart_transmitter_instance/reg_rst to uart_controller_instance/uart_transmitter_instance/c_conv_31_LD
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X55Y72.AQ      Tcko                  0.430   uart_controller_instance/uart_transmitter_instance/reg_rst
+    SLICE_X55Y68.BQ      Tcko                  0.430   uart_controller_instance/uart_transmitter_instance/reg_rst
                                                        uart_controller_instance/uart_transmitter_instance/reg_rst
-    SLICE_X50Y85.A4      net (fanout=13)       1.747   uart_controller_instance/uart_transmitter_instance/reg_rst
-    SLICE_X50Y85.A       Tilo                  0.235   uart_controller_instance/uart_transmitter_instance/reg_d_in<3>
+    SLICE_X47Y76.A4      net (fanout=13)       1.339   uart_controller_instance/uart_transmitter_instance/reg_rst
+    SLICE_X47Y76.A       Tilo                  0.259   uart_controller_instance/uart_transmitter_instance/reg_d_in<3>
                                                        uart_controller_instance/uart_transmitter_instance/reg_rst_inv1_INV_0
-    SLICE_X39Y88.CLK     net (fanout=23)       1.477   uart_controller_instance/uart_receiver_instance/reg_rst_inv
+    SLICE_X38Y81.CLK     net (fanout=23)       1.834   uart_controller_instance/uart_receiver_instance/reg_rst_inv
     -------------------------------------------------  ---------------------------
-    Total                                      3.889ns (0.665ns logic, 3.224ns route)
-                                                       (17.1% logic, 82.9% route)
+    Total                                      3.862ns (0.689ns logic, 3.173ns route)
+                                                       (17.8% logic, 82.2% route)
 
 --------------------------------------------------------------------------------
 Hold Paths: TS_TO_uart_controller_instanceuart_transmitter_instancec_conv_31_LD = MAXDELAY         TO TIMEGRP         "TO_uart_controller_instanceuart_transmitter_instancec_conv_31_LD"         TS_sys_clk_pin DATAPATHONLY;
 --------------------------------------------------------------------------------
 
-Paths for end point uart_controller_instance/uart_transmitter_instance/c_conv_31_LD (SLICE_X39Y88.CLK), 1 path
+Paths for end point uart_controller_instance/uart_transmitter_instance/c_conv_31_LD (SLICE_X38Y81.CLK), 1 path
 --------------------------------------------------------------------------------
-Delay (fastest path):   2.061ns (data path)
+Delay (fastest path):   2.084ns (data path)
   Source:               uart_controller_instance/uart_transmitter_instance/reg_rst (FF)
   Destination:          uart_controller_instance/uart_transmitter_instance/c_conv_31_LD (LATCH)
-  Data Path Delay:      2.061ns (Levels of Logic = 1)
+  Data Path Delay:      2.084ns (Levels of Logic = 1)
   Source Clock:         clk_BUFGP rising at 0.000ns
 
   Minimum Data Path at Fast Process Corner: uart_controller_instance/uart_transmitter_instance/reg_rst to uart_controller_instance/uart_transmitter_instance/c_conv_31_LD
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X55Y72.AQ      Tcko                  0.198   uart_controller_instance/uart_transmitter_instance/reg_rst
+    SLICE_X55Y68.BQ      Tcko                  0.198   uart_controller_instance/uart_transmitter_instance/reg_rst
                                                        uart_controller_instance/uart_transmitter_instance/reg_rst
-    SLICE_X50Y85.A4      net (fanout=13)       0.909   uart_controller_instance/uart_transmitter_instance/reg_rst
-    SLICE_X50Y85.A       Tilo                  0.142   uart_controller_instance/uart_transmitter_instance/reg_d_in<3>
+    SLICE_X47Y76.A4      net (fanout=13)       0.700   uart_controller_instance/uart_transmitter_instance/reg_rst
+    SLICE_X47Y76.A       Tilo                  0.156   uart_controller_instance/uart_transmitter_instance/reg_d_in<3>
                                                        uart_controller_instance/uart_transmitter_instance/reg_rst_inv1_INV_0
-    SLICE_X39Y88.CLK     net (fanout=23)       0.812   uart_controller_instance/uart_receiver_instance/reg_rst_inv
+    SLICE_X38Y81.CLK     net (fanout=23)       1.030   uart_controller_instance/uart_receiver_instance/reg_rst_inv
     -------------------------------------------------  ---------------------------
-    Total                                      2.061ns (0.340ns logic, 1.721ns route)
-                                                       (16.5% logic, 83.5% route)
+    Total                                      2.084ns (0.354ns logic, 1.730ns route)
+                                                       (17.0% logic, 83.0% route)
 --------------------------------------------------------------------------------
 
 
@@ -428,8 +563,8 @@ Derived Constraints for TS_sys_clk_pin
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|TS_sys_clk_pin                 |     37.037ns|      9.592ns|      3.889ns|            0|            0|         7395|            1|
-| TS_TO_uart_controller_instance|     37.037ns|      3.889ns|          N/A|            0|            0|            1|            0|
+|TS_sys_clk_pin                 |     10.000ns|      9.164ns|      3.862ns|            0|            0|         7395|            1|
+| TS_TO_uart_controller_instance|     10.000ns|      3.862ns|          N/A|            0|            0|            1|            0|
 | uart_transmitter_instancec_con|             |             |             |             |             |             |             |
 | v_31_LD                       |             |             |             |             |             |             |             |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
@@ -446,7 +581,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    6.368|    4.725|    4.796|    4.166|
+clk            |    6.472|    4.582|    3.980|    4.012|
 ---------------+---------+---------+---------+---------+
 
 
@@ -455,17 +590,17 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 7396 paths, 0 nets, and 945 connections
+Constraints cover 7396 paths, 0 nets, and 942 connections
 
 Design statistics:
-   Minimum period:   9.592ns{1}   (Maximum frequency: 104.254MHz)
-   Maximum path delay from/to any node:   3.889ns
+   Minimum period:   9.164ns{1}   (Maximum frequency: 109.123MHz)
+   Maximum path delay from/to any node:   3.862ns
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Thu Apr 08 18:49:15 2021 
+Analysis completed Wed Apr 14 05:43:48 2021 
 --------------------------------------------------------------------------------
 
 Trace Settings:

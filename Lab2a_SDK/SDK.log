@@ -61,3 +61,151 @@ If this project was a BSP referenced by other C/C++ applications, then those app
 06:33:48.418 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
 06:34:05.565 INFO  - Processing command line option -hwspec E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml. 
 06:35:14.574 INFO  - Processing command line option -hwspec E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml. 
+18:30:14.623 INFO  - Restoring local repository preferences: 
+		 E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a 
+19:03:01.230 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+19:03:29.841 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+19:04:10.289 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+19:05:16.048 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+19:05:32.759 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+19:06:29.597 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+19:22:14.646 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+19:22:58.456 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+19:26:41.773 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+23:08:02.044 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+23:09:19.391 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+23:09:21.301 ERROR - Port COM6 is already in use. 
+23:09:57.863 INFO  - System reset is completed. 
+23:10:41.394 INFO  - System reset is completed. 
+23:14:32.230 INFO  - System reset is completed. 
+01:30:24.399 ERROR - Unable to disconnect from existing targets java.lang.NullPointerException
+	at com.xilinx.sdk.targetmanager.internal.json.XMDJSONProcess.issueCommand(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.disconnectTarget(Unknown Source)
+
+01:30:24.494 ERROR - Unexpected error while fetching XMD's response:  java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(Unknown Source)
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+
+01:30:24.497 ERROR - Zero sized response read from XMD. This indicates a communication error or a programming error. 
+01:44:49.259 INFO  - Processing command line option -hwspec E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml. 
+01:44:50.267 INFO  - The hardware specification for project 'Lab2a_hw_platform' is different from E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml. 
+01:44:50.614 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml into \Lab2a_hw_platform\system.xml. 
+01:44:50.643 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.bit into \Lab2a_hw_platform\system.bit. 
+01:44:50.648 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system_bd.bmm into \Lab2a_hw_platform\system_bd.bmm. 
+01:44:51.049 INFO  - Synchronizing projects in the workspace with the hardware platform specification changes. 
+01:44:52.598 INFO  - Restoring local repository preferences: 
+		 E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a 
+01:44:53.906 INFO  - Updating hardware inferred compiler options for Lab2a_SDK_proj1. 
+01:44:53.937 INFO  - Clearing existing target manager status. 
+01:48:27.920 INFO  - Saving repository preferences. 
+01:48:29.501 INFO  - Saving repository preferences. 
+01:49:19.797 INFO  - Settings changed on project my_bsp. Triggering a rebuild... 
+01:49:20.581 INFO  - Refreshed build settings on project Lab2a_SDK_proj1 
+02:18:11.758 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+02:18:26.007 INFO  - Processing command line option -hwspec E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml. 
+02:18:31.027 INFO  - Updating .bit and .bmm files from XPS's export folder. 
+02:18:36.650 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.bit into \Lab2a_hw_platform\system.bit. 
+02:18:36.655 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system_bd.bmm into \Lab2a_hw_platform\system_bd.bmm. 
+02:24:37.860 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+02:27:10.972 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+02:27:24.851 INFO  - Processing command line option -hwspec E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml. 
+02:30:47.306 INFO  - System reset is completed. 
+02:46:22.882 INFO  - System reset is completed. 
+02:48:25.620 INFO  - System reset is completed. 
+02:50:35.082 INFO  - System reset is completed. 
+02:53:42.841 INFO  - System reset is completed. 
+02:58:46.547 INFO  - System reset is completed. 
+02:59:11.502 INFO  - System reset is completed. 
+03:00:18.444 INFO  - System reset is completed. 
+03:05:43.075 ERROR - Port COM6 is already in use. 
+03:17:33.195 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+03:17:52.553 INFO  - Processing command line option -hwspec E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml. 
+03:17:57.617 INFO  - Updating .bit and .bmm files from XPS's export folder. 
+03:18:00.966 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.bit into \Lab2a_hw_platform\system.bit. 
+03:18:00.971 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system_bd.bmm into \Lab2a_hw_platform\system_bd.bmm. 
+03:28:11.175 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+03:32:16.893 INFO  - Processing command line option -hwspec E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml. 
+03:33:56.935 INFO  - Processing command line option -hwspec E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml. 
+03:53:10.949 ERROR - Unable to disconnect from existing targets java.lang.NullPointerException
+	at com.xilinx.sdk.targetmanager.internal.json.XMDJSONProcess.issueCommand(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.disconnectTarget(Unknown Source)
+
+03:53:10.981 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+03:53:27.164 INFO  - Processing command line option -hwspec E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml. 
+03:53:32.233 INFO  - Updating .bit and .bmm files from XPS's export folder. 
+03:53:34.061 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.bit into \Lab2a_hw_platform\system.bit. 
+03:53:34.065 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system_bd.bmm into \Lab2a_hw_platform\system_bd.bmm. 
+03:55:18.801 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+03:56:29.526 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+04:08:38.136 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+04:09:00.522 INFO  - Processing command line option -hwspec E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml. 
+04:09:05.540 INFO  - Updating .bit and .bmm files from XPS's export folder. 
+04:09:06.808 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.bit into \Lab2a_hw_platform\system.bit. 
+04:09:06.813 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system_bd.bmm into \Lab2a_hw_platform\system_bd.bmm. 
+04:10:18.027 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+04:15:25.913 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+04:24:16.308 INFO  - Processing command line option -hwspec E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml. 
+04:24:21.373 INFO  - Updating .bit and .bmm files from XPS's export folder. 
+04:24:28.598 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.bit into \Lab2a_hw_platform\system.bit. 
+04:24:28.603 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system_bd.bmm into \Lab2a_hw_platform\system_bd.bmm. 
+04:25:29.145 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+04:32:34.889 INFO  - System reset is completed. 
+04:43:13.328 ERROR - Unable to disconnect from existing targets java.lang.NullPointerException
+	at com.xilinx.sdk.targetmanager.internal.json.XMDJSONProcess.issueCommand(Unknown Source)
+	at com.xilinx.sdk.targetmanager.internal.TM.disconnectTarget(Unknown Source)
+
+04:43:13.355 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+04:43:35.048 INFO  - Processing command line option -hwspec E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml. 
+04:43:40.913 INFO  - Updating .bit and .bmm files from XPS's export folder. 
+04:43:48.903 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.bit into \Lab2a_hw_platform\system.bit. 
+04:43:48.907 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system_bd.bmm into \Lab2a_hw_platform\system_bd.bmm. 
+04:48:37.399 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+05:14:04.840 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+05:14:21.823 INFO  - Processing command line option -hwspec E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml. 
+05:14:26.889 INFO  - Updating .bit and .bmm files from XPS's export folder. 
+05:14:29.699 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.bit into \Lab2a_hw_platform\system.bit. 
+05:14:29.703 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system_bd.bmm into \Lab2a_hw_platform\system_bd.bmm. 
+05:54:28.619 INFO  - Processing command line option -hwspec E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml. 
+05:54:33.746 INFO  - Updating .bit and .bmm files from XPS's export folder. 
+05:54:35.096 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.bit into \Lab2a_hw_platform\system.bit. 
+05:54:35.100 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system_bd.bmm into \Lab2a_hw_platform\system_bd.bmm. 
+05:55:20.966 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+06:28:10.098 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+06:28:38.199 INFO  - Processing command line option -hwspec E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.xml. 
+06:28:43.246 INFO  - Updating .bit and .bmm files from XPS's export folder. 
+06:28:49.378 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.bit into \Lab2a_hw_platform\system.bit. 
+06:28:49.382 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system_bd.bmm into \Lab2a_hw_platform\system_bd.bmm. 
+06:29:46.760 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+06:30:41.894 INFO  - System reset is completed. 
+06:30:43.854 ERROR - Port COM7 is already in use. 
+06:38:48.784 INFO  - Updating .bit and .bmm files from XPS's export folder. 
+06:38:51.012 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system.bit into \Lab2a_hw_platform\system.bit. 
+06:38:51.017 INFO  - Copied contents of E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\SDK\SDK_Export\hw\system_bd.bmm into \Lab2a_hw_platform\system_bd.bmm. 
+06:40:05.109 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+06:48:48.385 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+06:50:35.809 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+06:51:53.203 ERROR - Port COM7 is already in use. 
+06:53:10.739 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+06:53:48.848 INFO  - System reset is completed. 
+06:53:50.048 INFO  - System reset is completed. 
+06:53:50.452 ERROR - Port COM7 is already in use. 
+06:54:09.861 INFO  - System reset is completed. 
+06:54:11.465 ERROR - Port COM7 is already in use. 
+06:54:40.779 ERROR - Port COM7 is already in use. 
+06:55:30.337 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Target selection failed.
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.debugApplication(Unknown Source)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(Unknown Source)
+
+06:55:46.925 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/LRI2/Labs/LRI2_Labs/Lab2a_SDK/Lab2a_hw_platform/download.bit" 
+06:55:56.861 INFO  - System reset is completed. 
+06:55:58.465 ERROR - Port COM7 is already in use. 

@@ -3,8 +3,8 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\synthesis\xst_temp_dir\
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.23 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.22 secs
  
 --> 
 TABLE OF CONTENTS
@@ -995,11 +995,8 @@ Optimizing unit <system> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block system, actual ratio is 6.
-INFO:Xst:2260 - The FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2> in Unit <uart_cntrl_0> is equivalent to the following 3 FFs/Latches : <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2_1> <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2_2> <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2_3> 
-INFO:Xst:2260 - The FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <uart_cntrl_0> is equivalent to the following FF/Latch : <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> 
-INFO:Xst:2260 - The FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1> in Unit <uart_cntrl_0> is equivalent to the following 2 FFs/Latches : <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1_1> <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1_2> 
-INFO:Xst:2260 - The FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0> in Unit <uart_cntrl_0> is equivalent to the following 2 FFs/Latches : <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_1> <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_2> 
+Found area constraint ratio of 100 (+ 0) on block system, actual ratio is 7.
+INFO:Xst:2260 - The FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst> in Unit <uart_cntrl_0> is equivalent to the following FF/Latch : <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst_1> 
 INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi4lite_0> is equivalent to the following 2 FFs/Latches : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_2> 
 INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi4lite_0> is equivalent to the following FF/Latch : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
 INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i> in Unit <axi4lite_0> is equivalent to the following 2 FFs/Latches : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_1> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_2> 
@@ -1009,10 +1006,7 @@ INFO:Xst:2260 - The FF/Latch <microblaze_0/MicroBlaze_Core_I/Performance.Decode_
 INFO:Xst:2260 - The FF/Latch <microblaze_0/MicroBlaze_Core_I/Performance.Decode_I/wb_exception_kind_i_29> in Unit <microblaze_0> is equivalent to the following FF/Latch : <microblaze_0/MicroBlaze_Core_I/Performance.Decode_I/wb_exception_kind_i_29_1> 
 INFO:Xst:2260 - The FF/Latch <microblaze_0/MicroBlaze_Core_I/Performance.Decode_I/wb_exception_kind_i_28> in Unit <microblaze_0> is equivalent to the following FF/Latch : <microblaze_0/MicroBlaze_Core_I/Performance.Decode_I/wb_exception_kind_i_28_1> 
 INFO:Xst:2260 - The FF/Latch <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> in Unit <axi_gpio_0> is equivalent to the following FF/Latch : <axi_gpio_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0_1> 
-INFO:Xst:2260 - The FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2> in Unit <uart_cntrl_0> is equivalent to the following 3 FFs/Latches : <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2_1> <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2_2> <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd2_3> 
-INFO:Xst:2260 - The FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg> in Unit <uart_cntrl_0> is equivalent to the following FF/Latch : <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg_1> 
-INFO:Xst:2260 - The FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1> in Unit <uart_cntrl_0> is equivalent to the following 2 FFs/Latches : <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1_1> <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/state_FSM_FFd1_2> 
-INFO:Xst:2260 - The FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0> in Unit <uart_cntrl_0> is equivalent to the following 2 FFs/Latches : <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_1> <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_out_i_0_2> 
+INFO:Xst:2260 - The FF/Latch <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst> in Unit <uart_cntrl_0> is equivalent to the following FF/Latch : <uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst_1> 
 INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw> in Unit <axi4lite_0> is equivalent to the following 2 FFs/Latches : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_1> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/grant_rnw_2> 
 INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0> in Unit <axi4lite_0> is equivalent to the following FF/Latch : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/m_atarget_enc_0_1> 
 INFO:Xst:2260 - The FF/Latch <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i> in Unit <axi4lite_0> is equivalent to the following 2 FFs/Latches : <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_1> <axi4lite_0/crossbar_samd/gen_sasd.crossbar_sasd_0/gen_crossbar.addr_arbiter_inst/m_valid_i_2> 
@@ -1050,35 +1044,37 @@ Top Level Output File Name         : system.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2490
+# BELS                             : 3042
 #      GND                         : 14
-#      INV                         : 34
-#      LUT1                        : 41
-#      LUT2                        : 148
-#      LUT3                        : 416
-#      LUT4                        : 270
-#      LUT5                        : 313
-#      LUT6                        : 681
+#      INV                         : 44
+#      LUT1                        : 144
+#      LUT2                        : 179
+#      LUT3                        : 440
+#      LUT4                        : 294
+#      LUT5                        : 318
+#      LUT6                        : 781
 #      LUT6_2                      : 96
 #      MULT_AND                    : 2
-#      MUXCY                       : 34
+#      MUXCY                       : 178
 #      MUXCY_L                     : 155
 #      MUXF7                       : 168
 #      VCC                         : 8
-#      XORCY                       : 110
-# FlipFlops/Latches                : 2061
-#      FD                          : 214
-#      FDC                         : 37
+#      XORCY                       : 221
+# FlipFlops/Latches                : 2190
+#      FD                          : 245
+#      FD_1                        : 2
+#      FDC                         : 54
 #      FDC_1                       : 5
-#      FDCE                        : 15
-#      FDE                         : 363
+#      FDCE                        : 47
+#      FDE                         : 384
 #      FDE_1                       : 8
-#      FDP                         : 5
-#      FDR                         : 666
-#      FDRE                        : 698
+#      FDP                         : 7
+#      FDR                         : 697
+#      FDRE                        : 689
 #      FDRE_1                      : 1
-#      FDS                         : 4
+#      FDS                         : 5
 #      FDSE                        : 45
+#      LD                          : 1
 # RAMS                             : 48
 #      RAM32M                      : 16
 #      RAMB16BWER                  : 32
@@ -1107,19 +1103,19 @@ Selected Device : 6slx45fgg676-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            2061  out of  54576     3%  
- Number of Slice LUTs:                 2185  out of  27288     8%  
-    Number used as Logic:              1999  out of  27288     7%  
+ Number of Slice Registers:            2190  out of  54576     4%  
+ Number of Slice LUTs:                 2482  out of  27288     9%  
+    Number used as Logic:              2296  out of  27288     8%  
     Number used as Memory:              186  out of   6408     2%  
        Number used as RAM:               64
        Number used as SRL:              122
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   3401
-   Number with an unused Flip Flop:    1340  out of   3401    39%  
-   Number with an unused LUT:          1216  out of   3401    35%  
-   Number of fully used LUT-FF pairs:   845  out of   3401    24%  
-   Number of unique control sets:       119
+ Number of LUT Flip Flop pairs used:   3792
+   Number with an unused Flip Flop:    1602  out of   3792    42%  
+   Number with an unused LUT:          1310  out of   3792    34%  
+   Number of fully used LUT-FF pairs:   880  out of   3792    23%  
+   Number of unique control sets:       133
 
 IO Utilization: 
  Number of IOs:                          21
@@ -1150,13 +1146,14 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+-------------------------------------------------------------------------------------------------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)                                                                                             | Load  |
------------------------------------+-------------------------------------------------------------------------------------------------------------------+-------+
-CLK_P                              | PLL_ADV:CLKOUT0                                                                                                   | 1982  |
-debug_module/debug_module/drck_i   | BUFG                                                                                                              | 209   |
-debug_module/Ext_JTAG_UPDATE       | NONE(microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.Use_Debug_Logic.Master_Core.Debug_Perf/command_reg_0)| 43    |
------------------------------------+-------------------------------------------------------------------------------------------------------------------+-------+
+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                                                    | Clock buffer(FF name)                                                                                             | Load  |
+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-------+
+CLK_P                                                           | PLL_ADV:CLKOUT0                                                                                                   | 2110  |
+uart_cntrl_0/uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst| NONE(uart_cntrl_0/uart_cntrl_0/USER_LOGIC_I/uart_controller_instance/uart_transmitter_instance/c_conv_31_LD)      | 1     |
+debug_module/debug_module/drck_i                                | BUFG                                                                                                              | 209   |
+debug_module/Ext_JTAG_UPDATE                                    | NONE(microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.Use_Debug_Logic.Master_Core.Debug_Perf/command_reg_0)| 43    |
+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
@@ -1179,7 +1176,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK_P'
   Clock period: 19.302ns (frequency: 51.808MHz)
-  Total number of paths / destination ports: 496381 / 6142
+  Total number of paths / destination ports: 504723 / 6387
 -------------------------------------------------------------------------
 Delay:               9.651ns (Levels of Logic = 7)
   Source:            microblaze_0/microblaze_0/MicroBlaze_Core_I/Performance.Decode_I/dbg_Stop_Instr_Fetch_delay (FF)
@@ -1265,7 +1262,7 @@ Delay:               5.787ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK_P'
-  Total number of paths / destination ports: 44 / 44
+  Total number of paths / destination ports: 45 / 45
 -------------------------------------------------------------------------
 Offset:              2.382ns (Levels of Logic = 3)
   Source:            RESET (PAD)
@@ -1342,7 +1339,7 @@ Offset:              8.502ns (Levels of Logic = 6)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK_P'
-  Total number of paths / destination ports: 40 / 18
+  Total number of paths / destination ports: 41 / 19
 -------------------------------------------------------------------------
 Offset:              5.415ns (Levels of Logic = 7)
   Source:            microblaze_0_d_bram_ctrl/microblaze_0_d_bram_ctrl/Sl_Rdy (FF)
@@ -1432,14 +1429,15 @@ Cross Clock Domains Report:
 --------------------------
 
 Clock to Setup on destination clock CLK_P
---------------------------------+---------+---------+---------+---------+
-                                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
---------------------------------+---------+---------+---------+---------+
-CLK_P                           |    9.651|         |         |         |
-debug_module/Ext_JTAG_UPDATE    |    4.371|    3.446|         |         |
-debug_module/debug_module/drck_i|    5.178|         |         |         |
---------------------------------+---------+---------+---------+---------+
+----------------------------------------------------------------+---------+---------+---------+---------+
+                                                                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------------------------------------------+---------+---------+---------+---------+
+CLK_P                                                           |    9.651|    4.393|    3.838|         |
+debug_module/Ext_JTAG_UPDATE                                    |    4.371|    3.446|         |         |
+debug_module/debug_module/drck_i                                |    5.178|         |         |         |
+uart_cntrl_0/uart_cntrl_0/AXI_LITE_IPIF_I/I_SLAVE_ATTACHMENT/rst|         |    6.004|         |         |
+----------------------------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock debug_module/Ext_JTAG_UPDATE
 --------------------------------+---------+---------+---------+---------+
@@ -1465,13 +1463,13 @@ debug_module/debug_module/drck_i|    2.860|    4.093|    3.740|         |
 
 
 Total REAL time to Xst completion: 19.00 secs
-Total CPU time to Xst completion: 19.00 secs
+Total CPU time to Xst completion: 18.43 secs
  
 --> 
 
-Total memory usage is 4537952 kilobytes
+Total memory usage is 4538008 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    6 (   0 filtered)
-Number of infos    :  869 (   0 filtered)
+Number of infos    :  863 (   0 filtered)
 

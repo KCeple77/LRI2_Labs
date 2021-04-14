@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Tue Apr 13 06:31:49 2021
+Wed Apr 14 06:37:22 2021
 
 
 # NOTE: This file is designed to be imported into a spreadsheet program
@@ -39,7 +39,7 @@ A17||IOBS|IO_L50N_0|UNUSED||0|||||||||
 A18||IOBS|IO_L62N_VREF_0|UNUSED||0|||||||||
 A19||IOBS|IO_L63N_SCP6_0|UNUSED||0|||||||||
 A20|uart_cntrl_0_TX_pin|IOB|IO_L64N_SCP4_0|OUTPUT|LVCMOS33|0|12|SLOW||||LOCATED|NO|NONE|
-A21||IOBS|IO_L65N_SCP2_0|UNUSED||0|||||||||
+A21|uart_cntrl_0_RX_pin|IOB|IO_L65N_SCP2_0|INPUT|LVCMOS33|0||||NONE||LOCATED|YES|NONE|
 A22||IOBS|IO_L66N_SCP0_0|UNUSED||0|||||||||
 A23||IOBS|IO_L1N_A24_VREF_1|UNUSED||1|||||||||
 A24|||TDO||||||||||||

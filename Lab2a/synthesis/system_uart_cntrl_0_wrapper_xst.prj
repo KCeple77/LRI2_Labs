@@ -119,10 +119,10 @@ vhdl proc_common_v3_00_a E:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcore
 vhdl axi_lite_ipif_v1_01_a E:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_lite_ipif_v1_01_a/hdl/vhdl/address_decoder.vhd
 vhdl axi_lite_ipif_v1_01_a E:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_lite_ipif_v1_01_a/hdl/vhdl/slave_attachment.vhd
 vhdl axi_lite_ipif_v1_01_a E:\Xilinx\14.7\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\axi_lite_ipif_v1_01_a/hdl/vhdl/axi_lite_ipif.vhd
-vhdl uart_cntrl_v1_00_a E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\pcores\uart_cntrl_v1_00_a/hdl/vhdl/user_logic.vhd
-vhdl uart_cntrl_v1_00_a E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\pcores\uart_cntrl_v1_00_a/hdl/vhdl/uart_cntrl.vhd
-vhdl uart_cntrl_v1_00_a E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\pcores\uart_cntrl_v1_00_a/hdl/vhdl/baud_rate_generator.vhd
-vhdl uart_cntrl_v1_00_a E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\pcores\uart_cntrl_v1_00_a/hdl/vhdl/uart_controller.vhd
-vhdl uart_cntrl_v1_00_a E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\pcores\uart_cntrl_v1_00_a/hdl/vhdl/uart_receiver.vhd
-vhdl uart_cntrl_v1_00_a E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\pcores\uart_cntrl_v1_00_a/hdl/vhdl/uart_transmitter.vhd
+vhdl uart_cntrl_v1_00_c E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\pcores\uart_cntrl_v1_00_c/hdl/vhdl/user_logic.vhd
+vhdl uart_cntrl_v1_00_c E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\pcores\uart_cntrl_v1_00_c/hdl/vhdl/uart_cntrl.vhd
+vhdl uart_cntrl_v1_00_c E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\pcores\uart_cntrl_v1_00_c/hdl/vhdl/baud_rate_generator.vhd
+vhdl uart_cntrl_v1_00_c E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\pcores\uart_cntrl_v1_00_c/hdl/vhdl/uart_controller.vhd
+vhdl uart_cntrl_v1_00_c E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\pcores\uart_cntrl_v1_00_c/hdl/vhdl/uart_receiver.vhd
+vhdl uart_cntrl_v1_00_c E:\FaksHub\2020_2021\2.Semester_2020_2021\LRI2\Labs\LRI2_Labs\Lab2a\pcores\uart_cntrl_v1_00_c/hdl/vhdl/uart_transmitter.vhd
 vhdl work ../hdl/system_uart_cntrl_0_wrapper.vhd

@@ -184,7 +184,7 @@ begin
 	begin
 		if Bus2IP_Clk'event and Bus2IP_Clk = '1' then
 			if Bus2IP_Resetn = '0' then
-			  slv_reg0 <= (others => '0');
+			  Bus2IP_Data <= (others => '0');
 			  
 			  rx_i <= '0';
 			  tx_i <= '0';
@@ -199,18 +199,18 @@ begin
 				w_start_i <= '0';
 				
 				if r_done_i = '1' then
-					slv_reg0(15 downto 8) <= r_data_i;
-					slv_reg0(2) <= '1';
+					Bus2IP_Data(15 downto 8) <= r_data_i;
+					Bus2IP_Data(2) <= '1';
 				end if;
 				
 				if w_done_i = '1' then
-					slv_reg0(1) <= '1';
+					Bus2IP_Data(1) <= '1';		-- SW wil lower this flag!
 				end if;
 				
 				if slv_reg0(0) = '1' then
 					w_data_i <= slv_reg0(23 downto 16);
 					w_start_i <= '1';
-					slv_reg0(0) <= '0';		--TODO: Maybe do this in SW!
+					Bus2IP_Data(0) <= '0';		--TODO: Maybe do this in SW!
 				end if;
 			end if;
 		end if;

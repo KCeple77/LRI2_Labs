@@ -124,12 +124,12 @@ E:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/h
 E:/Xilinx/14.7/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/axi_lite_ipif_v1_01_a/hdl/vhdl/axi_lite_ipif.vhd \
 pcores/led_axi_ip_v1_00_a/hdl/vhdl/user_logic.vhd \
 pcores/led_axi_ip_v1_00_a/hdl/vhdl/led_axi_ip.vhd \
-pcores/uart_cntrl_v1_00_a/hdl/vhdl/user_logic.vhd \
-pcores/uart_cntrl_v1_00_a/hdl/vhdl/uart_cntrl.vhd \
-pcores/uart_cntrl_v1_00_a/hdl/vhdl/baud_rate_generator.vhd \
-pcores/uart_cntrl_v1_00_a/hdl/vhdl/uart_controller.vhd \
-pcores/uart_cntrl_v1_00_a/hdl/vhdl/uart_receiver.vhd \
-pcores/uart_cntrl_v1_00_a/hdl/vhdl/uart_transmitter.vhd
+pcores/uart_cntrl_v1_00_c/hdl/vhdl/user_logic.vhd \
+pcores/uart_cntrl_v1_00_c/hdl/vhdl/uart_cntrl.vhd \
+pcores/uart_cntrl_v1_00_c/hdl/vhdl/baud_rate_generator.vhd \
+pcores/uart_cntrl_v1_00_c/hdl/vhdl/uart_controller.vhd \
+pcores/uart_cntrl_v1_00_c/hdl/vhdl/uart_receiver.vhd \
+pcores/uart_cntrl_v1_00_c/hdl/vhdl/uart_transmitter.vhd
 
 WRAPPER_NGC_FILES = implementation/system_proc_sys_reset_0_wrapper.ngc \
 implementation/system_microblaze_0_ilmb_wrapper.ngc \

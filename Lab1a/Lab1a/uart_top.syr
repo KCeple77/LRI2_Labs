@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.37 secs
+Total CPU time to Xst completion: 0.21 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.37 secs
+Total CPU time to Xst completion: 0.21 secs
  
 --> Reading design: uart_top.prj
 
@@ -610,8 +610,8 @@ uart_controller_instance/uart_transmitter_instance/reg_rst|    6.004|         | 
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 8.78 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.12 secs
  
 --> 
 

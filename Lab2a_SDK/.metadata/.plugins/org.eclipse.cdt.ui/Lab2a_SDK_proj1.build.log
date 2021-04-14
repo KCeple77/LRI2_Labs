@@ -1,38 +1,6 @@
-19:26:27 **** Auto Build of configuration Debug for project Lab2a_SDK_proj1 ****
+07:34:16 **** Incremental Build of configuration Debug for project Lab2a_SDK_proj1 ****
 make all 
-'Building file: ../src/helloworld.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -I../../my_bsp/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.d" -o "src/helloworld.o" "../src/helloworld.c"
-../src/helloworld.c: In function 'main':
-../src/helloworld.c:70:7: warning: unused variable 'readBuffer' [-Wunused-variable]
-../src/helloworld.c: In function 'main_former':
-../src/helloworld.c:133:5: warning: implicit declaration of function 'init_platform' [-Wimplicit-function-declaration]
-'Finished building: ../src/helloworld.c'
-' '
-'Building target: Lab2a_SDK_proj1.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../my_bsp/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Lab2a_SDK_proj1.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: Lab2a_SDK_proj1.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size Lab2a_SDK_proj1.elf  |tee "Lab2a_SDK_proj1.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-   4718	    288	   2088	   7094	   1bb6	Lab2a_SDK_proj1.elf
-'Finished building: Lab2a_SDK_proj1.elf.size'
-' '
-'Invoking: Xilinx ELF Check'
-elfcheck Lab2a_SDK_proj1.elf -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0  |tee "Lab2a_SDK_proj1.elf.elfcheck"
-elfcheck
-Xilinx EDK 14.7 Build EDK_P.20131013
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+make: Nothing to be done for `all'.
 
-Command Line: elfcheck -hw ../../Lab2a_hw_platform/system.xml -pe microblaze_0
-Lab2a_SDK_proj1.elf 
-
-ELF file	: Lab2a_SDK_proj1.elf
-elfcheck passed.
-'Finished building: Lab2a_SDK_proj1.elf.elfcheck'
-' '
-
-19:26:30 Build Finished (took 3s.42ms)
+07:34:17 Build Finished (took 721ms)
 
