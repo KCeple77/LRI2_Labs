@@ -15,6 +15,7 @@
 #include "sys/init.h"
 #include "xgpio.h"
 #include <pthread.h>
+#include <unistd.h>
 #include "xuartlite.h"
 #include "xparameters.h"
 #include <sys/timer.h> //for using sleep. need to set config_time to true
@@ -33,7 +34,7 @@ typedef unsigned char bool;
 #define TASK_THREADS_NONPERIODIC_OFFSET 3
 
 
-bool task_threads_activity[TASK_THREADS_NUM];
+unsigned char task_threads_activity;
 pthread_mutexattr_t mattr;
 pthread_mutex_t  mutex_task_threads_activity;
 pthread_t task_threads_pids[TASK_THREADS_NUM];
@@ -51,33 +52,54 @@ static struct sched_param spar;
 extern volatile int hrs, mins, secs, tot_secs;
 
 
+void task() {
+	xil_printf("Wörk wörk");
+}
 
 static void gpDIPIntHandler(void *arg) //Should be very short (in time). In a practical program, don't print etc.
 {
 	unsigned char val;
 //clear the interrupt flag. if this is not done, gpio will keep interrupting the microblaze.--
 	XGpio_InterruptClear(&gpDIP, 1);
+
 	val = XGpio_DiscreteRead(&gpDIP, 1);
-	xil_printf("Gpio Interrupt Test PASSED %d. \r\n", val);
 	XGpio_DiscreteWrite(&gpLED, 1, val);
 }
 
 static void gpPUSHIntHandler(void *arg) //Should be very short (in time). In a practical program, don't print etc.
 {
 	unsigned char val;
+	int my_id = 0;
 //clear the interrupt flag. if this is not done, gpio will keep interrupting the microblaze.--
 	XGpio_InterruptClear(&gpPUSH, 1);
+
 	val = XGpio_DiscreteRead(&gpPUSH, 1);
-	xil_printf("Gpio Interrupt Test PASSED %d. \r\n", val);
 	XGpio_DiscreteWrite(&gpLED, 1, val);
 }
 
-void* periodic_thread() {
+void* periodic_thread(void* arg) {
 	int i;
+	unsigned char tmp;
+	int my_id = (int)arg;
+	int my_period = pow(2,my_id+1);
+
+
 	while (1) {
 		// First check if I am active?
+		pthread_mutex_lock(&mutex_task_threads_activity);
+		tmp = task_threads_activity;
+		pthread_mutex_unlock(&mutex_task_threads_activity);
 
+		tmp >>= my_id;
+		tmp &= 0x01;
 
+		if(tmp == 1) {
+			// Active
+			task();
+			sleep(2);
+		} else {
+			sleep(50);
+		}
 
 	}
 }
@@ -86,8 +108,9 @@ void* thread_tut_func_1() {
 	int i;
 	while (1) {
 		xil_printf("crta---------------------------------------\r\n");
-		for (i = 0; i < 10000; i++);
-		sys_sleep(4000);
+//		for (i = 0; i < 10000; i++);
+//		sys_sleep(4000);
+		sleep(20);
 	}
 }
 
@@ -107,6 +130,14 @@ void start_clock()
 
 }
 
+void clear()
+{
+    int i = 0 ;
+    for(; i < 80; i++ ) {
+	outbyte('\r') ; outbyte('\n') ;
+    }
+}
+
 void shell_main(void* arg) {
 	print("SHELL: Starting clock...\r\n");
 	start_clock();
@@ -117,25 +148,27 @@ void shell_main(void* arg) {
 	int Status;
 	int ret, retval_tmp, i;
 
+	task_threads_activity = 0b10101010;
+
 	// Initialise mutex and semaphores
 	retval_tmp = pthread_mutexattr_init (&mattr);
 	if (retval_tmp != 0) {
-		xil_printf ("Error during pthread_mutexattr_init: %d.\r\n", retval);
-		goto err_done;
+		xil_printf ("Error during pthread_mutexattr_init: %d.\r\n", retval_tmp);
+		pthread_exit(NULL);
 	}
 
-	retval_tmp=pthread_mutex_init (&mutex, &mattr)
+	retval_tmp = pthread_mutex_init (&mutex_task_threads_activity, &mattr);
 	if (retval_tmp != 0) {
-		xil_printf ("Error during pthread_mutex_init: %d.\r\n", retval);
-		goto err_done;
+		xil_printf ("Error during pthread_mutex_init: %d.\r\n", retval_tmp);
+		pthread_exit(NULL);
 	}
 
-	for(i = TASK_THREADS_NONPERIODIC_OFFSET; i < TASK_THREADS_NONPERIODIC_OFFSET + TASK_THREADS_NONPERIODIC_NUM; i++) {
-		if( sem_init(&tthread_sems[i], 1, 1) < 0 ) {
-			print("SEM: Error while initializing semaphore 1.\r\n");
-			goto err;
-		}
-	}
+//	for(i = TASK_THREADS_NONPERIODIC_OFFSET; i < TASK_THREADS_NONPERIODIC_OFFSET + TASK_THREADS_NONPERIODIC_NUM; i++) {
+//		if( sem_init(&tthread_sems[i], 1, 1) < 0 ) {
+//			print("SEM: Error while initializing semaphore 1.\r\n");
+//			pthread_exit(NULL);
+//		}
+//	}
 
 	// Initialise LED
 	Status = XGpio_Initialize(&gpLED, XPAR_LED_GPIO_DEVICE_ID);
@@ -147,7 +180,7 @@ void shell_main(void* arg) {
 	Status = XGpio_Initialize(&gpDIP, XPAR_DIP_GPIO_DEVICE_ID);
 	Status = XGpio_Initialize(&gpPUSH, XPAR_PUSH_GPIO_DEVICE_ID);
 
-	// set DP & PUSH gpio direction to input.
+	// Set DP & PUSH gpio direction to input.
 	XGpio_SetDataDirection(&gpDIP, 1, 0x000000FF);
 	XGpio_SetDataDirection(&gpPUSH, 1, 0x000000FF);
 
@@ -175,26 +208,37 @@ void shell_main(void* arg) {
 	enable_interrupt(XPAR_AXI_INTC_0_PUSH_GPIO_IP2INTC_IRPT_INTR);
 	print("PUSH int enabled\r\n");
 
+	// Write starting state
 	val = XGpio_DiscreteRead(&gpDIP, 1);
 	XGpio_DiscreteWrite(&gpLED, 1, val);
 
-	//start thread 1
-	ret = pthread_create(&tid1, NULL, (void*) thread_tut_func_1, NULL );
-	if (ret != 0) {
-		xil_printf("-- ERROR (%d) launching thread_tut_func_1...\r\n", ret);
-	} else {
-		xil_printf("Thread 1 launched with ID %d \r\n", tid1);
+//	//start thread 1
+//	ret = pthread_create(&tid1, NULL, (void*) thread_tut_func_1, NULL );
+//	if (ret != 0) {
+//		xil_printf("-- ERROR (%d) launching thread_tut_func_1...\r\n", ret);
+//	} else {
+//		xil_printf("Thread 1 launched with ID %d \r\n", tid1);
+//	}
+
+	// Start periodic threads
+	for(i = TASK_THREADS_PERIODIC_OFFSET; i < TASK_THREADS_PERIODIC_NUM; i++) {
+		ret = pthread_create(&task_threads_pids[i], NULL, (void*)periodic_thread, (void*)i);
+		if (ret != 0) {
+			xil_printf("-- ERROR (%d) launching thread...\r\n", ret);
+		} else {
+			xil_printf("Thread launched with ID %d \r\n", task_threads_pids[i]);
+		}
 	}
 
-	return 0;
-}
-
-void clear()
-{
-    int i = 0 ;
-    for(; i < 80; i++ ) {
-	outbyte('\r') ; outbyte('\n') ;
-    }
+	// Start nonperiodic threads
+	for(i = TASK_THREADS_NONPERIODIC_OFFSET; i < TASK_THREADS_NONPERIODIC_OFFSET + TASK_THREADS_NONPERIODIC_NUM; i++) {
+		ret = pthread_create(&task_threads_pids[i], NULL, (void*)periodic_thread, (void*)i);
+		if (ret != 0) {
+			xil_printf("-- ERROR (%d) launching thread...\r\n", ret);
+		} else {
+			xil_printf("Thread launched with ID %d \r\n", task_threads_pids[i]);
+		}
+	}
 }
 
 int main ()

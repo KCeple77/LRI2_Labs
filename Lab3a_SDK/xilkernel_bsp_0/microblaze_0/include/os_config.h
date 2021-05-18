@@ -20,13 +20,11 @@
 
 #define CONFIG_HARDWARE_EXCEPTIONS 
 
-#define VERBOSE true
-
 #define CONFIG_KILL true
 
 #define CONFIG_PTHREAD_SUPPORT true
 
-#define MAX_PTHREADS 10
+#define MAX_PTHREADS 20
 
 #define PTHREAD_STACK_SIZE 1000
 
@@ -36,9 +34,9 @@
 
 #define CONFIG_PTHREAD_MUTEX true
 
-#define MAX_PTHREAD_MUTEX 10
+#define MAX_PTHREAD_MUTEX 20
 
-#define MAX_PTHREAD_MUTEX_WAITQ 10
+#define MAX_PTHREAD_MUTEX_WAITQ 20
 
 #define CONFIG_TIMER_PIT true
 

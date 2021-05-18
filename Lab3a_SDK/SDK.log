@@ -89,3 +89,7 @@
 19:28:01.854 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
 19:28:05.897 ERROR - Port COM6 is already in use. 
 19:33:12.329 ERROR - Port COM6 is already in use. 
+22:42:43.830 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+23:12:46.141 INFO  - Settings changed on project xilkernel_bsp_0. Triggering a rebuild... 
+23:12:47.660 INFO  - Refreshed build settings on project MB_Proj1 
+23:12:47.666 INFO  - Refreshed build settings on project xilkernel_demo 

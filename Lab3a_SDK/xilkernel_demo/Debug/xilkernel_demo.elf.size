@@ -1,2 +1,2 @@
    text	   data	    bss	    dec	    hex	filename
-  63981	    632	  21000	  85613	  14e6d	xilkernel_demo.elf
+  62989	    632	  21000	  84621	  14a8d	xilkernel_demo.elf
