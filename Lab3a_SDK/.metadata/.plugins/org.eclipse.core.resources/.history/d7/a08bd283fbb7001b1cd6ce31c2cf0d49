@@ -14,28 +14,17 @@
 #include "xmk.h"
 #include "sys/init.h"
 #include "xgpio.h"
-#include <pthread.h>
+#include "pthread.h"
 #include "xuartlite.h"
 #include "xparameters.h"
 #include <sys/timer.h> //for using sleep. need to set config_time to true
 #include <sys/intr.h> //xilkernel api for interrupts
-#include <sys/process.h>
 #include <stdio.h>
 #define XST_SUCCESS 0L
 #define XST_FAILURE 1L
 
 pthread_t tid1, tid2;
 XGpio gpDIP, gpPUSH, gpLED; //PB device instance.
-
-extern void* clock_main (void *);
-
-static pid_t spid;
-static pthread_t tid;
-static pthread_attr_t attr;
-static p_stat shell_ps;
-static struct sched_param spar;
-extern volatile int hrs, mins, secs, tot_secs;
-
 static void gpDIPIntHandler(void *arg) //Should be very short (in time). In a practical program, don't print etc.
 {
 	unsigned char val;
@@ -74,28 +63,7 @@ void* thread_tut_func_2() {
 	}
 }
 
-void start_clock()
-{
-    int ret;
-
-    pthread_attr_init(&attr);                                                          /* Need to launch a thread */
-    spar.sched_priority = 0;
-    pthread_attr_setschedparam(&attr,&spar);
-
-    ret = pthread_create(&tid, &attr, (void*)clock_main, NULL);
-
-    if (ret != 0) {
-        xil_printf ("-- ERROR (%d) launching clock thread. Clock services unavailable...\r\n", ret);
-    }
-
-}
-
 void shell_main(void* arg) {
-	print("SHELL: Starting clock...\r\n");
-	start_clock();
-	print("\r\n\r\n");
-	clear();
-
 	int Status;
 	int ret;
 
@@ -152,6 +120,8 @@ void shell_main(void* arg) {
 	} else {
 		xil_printf("Thread 2 launched with ID %d \r\n", tid2);
 	}
+
+	while(1);
 
 	return 0;
 }

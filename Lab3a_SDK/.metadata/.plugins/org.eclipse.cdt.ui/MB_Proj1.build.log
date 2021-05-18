@@ -1,6 +1,6 @@
-18:31:55 **** Auto Build of configuration Debug for project MB_Proj1 ****
+19:27:59 **** Incremental Build of configuration Debug for project MB_Proj1 ****
 make all 
 make: Nothing to be done for `all'.
 
-18:31:56 Build Finished (took 332ms)
+19:28:00 Build Finished (took 343ms)
 

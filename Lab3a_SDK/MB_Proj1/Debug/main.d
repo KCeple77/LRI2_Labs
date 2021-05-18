@@ -24,7 +24,10 @@ main.d: ../main.c ../../xilkernel_bsp_0/microblaze_0/include/xmk.h \
  ../../xilkernel_bsp_0/microblaze_0/include/xparameters.h \
  ../../xilkernel_bsp_0/microblaze_0/include/sys/timer.h \
  ../../xilkernel_bsp_0/microblaze_0/include/sys/intr.h \
- ../../xilkernel_bsp_0/microblaze_0/include/sys/queue.h
+ ../../xilkernel_bsp_0/microblaze_0/include/sys/queue.h \
+ ../../xilkernel_bsp_0/microblaze_0/include/sys/process.h \
+ ../../xilkernel_bsp_0/microblaze_0/include/sys/stats.h \
+ ../../xilkernel_bsp_0/microblaze_0/include/sys/kpthread.h
 
 ../../xilkernel_bsp_0/microblaze_0/include/xmk.h:
 
@@ -79,3 +82,9 @@ main.d: ../main.c ../../xilkernel_bsp_0/microblaze_0/include/xmk.h \
 ../../xilkernel_bsp_0/microblaze_0/include/sys/intr.h:
 
 ../../xilkernel_bsp_0/microblaze_0/include/sys/queue.h:
+
+../../xilkernel_bsp_0/microblaze_0/include/sys/process.h:
+
+../../xilkernel_bsp_0/microblaze_0/include/sys/stats.h:
+
+../../xilkernel_bsp_0/microblaze_0/include/sys/kpthread.h:

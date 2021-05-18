@@ -70,3 +70,21 @@
 17:48:18.032 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
 17:52:20.237 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
 17:52:37.379 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+18:21:38.358 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+19:11:40.627 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+19:22:31.799 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+19:22:33.698 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+19:22:35.276 ERROR - Unexpected error while launching program. java.lang.NullPointerException
+	at com.xilinx.sdk.targetmanager.internal.TM.terminateCurrentLaunch(Unknown Source)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(Unknown Source)
+
+19:22:35.741 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Command not supported in simulation or ISS flow.
+
+	at com.xilinx.sdk.targetmanager.internal.TM.setSafeMode(Unknown Source)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(Unknown Source)
+
+19:24:00.689 ERROR - Port COM6 is already in use. 
+19:27:31.474 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+19:27:35.322 ERROR - Port COM6 is already in use. 
+19:28:01.854 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+19:28:05.897 ERROR - Port COM6 is already in use. 

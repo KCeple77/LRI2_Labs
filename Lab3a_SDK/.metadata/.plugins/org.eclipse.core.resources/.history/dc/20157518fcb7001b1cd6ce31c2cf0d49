@@ -19,7 +19,7 @@
 #include "xparameters.h"
 #include <sys/timer.h> //for using sleep. need to set config_time to true
 #include <sys/intr.h> //xilkernel api for interrupts
-#include <sys/process.h>
+#include <sys/process.h> //xilkernel api for interrupts
 #include <stdio.h>
 #define XST_SUCCESS 0L
 #define XST_FAILURE 1L
@@ -152,6 +152,8 @@ void shell_main(void* arg) {
 	} else {
 		xil_printf("Thread 2 launched with ID %d \r\n", tid2);
 	}
+
+	while(1);
 
 	return 0;
 }

@@ -109,7 +109,7 @@ void idle_task (void)
 {
     unsigned int i ;
     while (1) {
-        //DBG_PRINT ("Idle Task \r\n");
+        DBG_PRINT ("Idle Task \r\n");
         for (i=0; i < 0x2fffff; i++)
             ;
     }

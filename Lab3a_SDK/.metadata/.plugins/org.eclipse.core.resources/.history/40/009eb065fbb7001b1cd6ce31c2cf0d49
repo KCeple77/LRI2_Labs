@@ -234,7 +234,7 @@ void clear()
 }
 
 
-int main()
+int main ()
 {
     xilkernel_main ();
 }
