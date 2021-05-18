@@ -93,3 +93,34 @@
 23:12:46.141 INFO  - Settings changed on project xilkernel_bsp_0. Triggering a rebuild... 
 23:12:47.660 INFO  - Refreshed build settings on project MB_Proj1 
 23:12:47.666 INFO  - Refreshed build settings on project xilkernel_demo 
+23:29:27.860 INFO  - Settings changed on project xilkernel_bsp_0. Triggering a rebuild... 
+23:29:29.025 INFO  - Refreshed build settings on project MB_Proj1 
+23:29:29.029 INFO  - Refreshed build settings on project xilkernel_demo 
+23:30:01.423 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+23:31:25.487 INFO  - Settings changed on project xilkernel_bsp_0. Triggering a rebuild... 
+23:31:26.698 INFO  - Refreshed build settings on project MB_Proj1 
+23:31:26.703 INFO  - Refreshed build settings on project xilkernel_demo 
+23:32:31.903 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+23:33:37.904 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+23:36:00.888 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+23:36:03.625 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Failed to download ELF file
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.downloadELF(Unknown Source)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(Unknown Source)
+
+23:37:10.660 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+23:37:27.505 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+23:37:47.562 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+23:37:57.908 ERROR - Port COM6 is already in use. 
+23:38:17.794 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  

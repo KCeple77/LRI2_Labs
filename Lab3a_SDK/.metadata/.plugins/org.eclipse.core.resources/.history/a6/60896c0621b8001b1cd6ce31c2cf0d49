@@ -230,6 +230,7 @@ void shell_main(void* arg) {
 		}
 	}
 
+<<<<<<< HEAD
 	// Start nonperiodic threads
 	for(i = TASK_THREADS_NONPERIODIC_OFFSET; i < TASK_THREADS_NONPERIODIC_OFFSET + TASK_THREADS_NONPERIODIC_NUM; i++) {
 		ret = pthread_create(&task_threads_pids[i], NULL, (void*)periodic_thread, (void*)i);
@@ -239,8 +240,76 @@ void shell_main(void* arg) {
 			xil_printf("Thread launched with ID %d \r\n", task_threads_pids[i]);
 		}
 	}
+=======
+/*
+	//start thread 2
+	ret = pthread_create(&tid2, NULL, (void*) thread_tut_func_2, NULL );
+	if (ret != 0) {
+		xil_printf("-- ERROR (%d) launching thread_tut_func_2...\r\n", ret);
+	} else {
+		xil_printf("Thread 2 launched with ID %d \r\n", tid2);
+	}
+
+	//start thread 3
+	ret = pthread_create(&tid3, NULL, (void*) thread_tut_func_3, NULL );
+	if (ret != 0) {
+		xil_printf("-- ERROR (%d) launching thread_tut_func_3...\r\n", ret);
+	} else {
+		xil_printf("Thread 3 launched with ID %d \r\n", tid3);
+	}
+
+	//start thread 4
+	ret = pthread_create(&tid4, NULL, (void*) thread_tut_func_4, NULL );
+	if (ret != 0) {
+		xil_printf("-- ERROR (%d) launching thread_tut_func_4...\r\n", ret);
+	} else {
+		xil_printf("Thread 4 launched with ID %d \r\n", tid4);
+	}
+
+	//start thread 5
+	ret = pthread_create(&tid5, NULL, (void*) thread_tut_func_5, NULL );
+	if (ret != 0) {
+		xil_printf("-- ERROR (%d) launching thread_tut_func_5...\r\n", ret);
+	} else {
+		xil_printf("Thread 5 launched with ID %d \r\n", tid5);
+	}
+
+	//start thread 6
+	ret = pthread_create(&tid6, NULL, (void*) thread_tut_func_6, NULL );
+	if (ret != 0) {
+		xil_printf("-- ERROR (%d) launching thread_tut_func_6...\r\n", ret);
+	} else {
+		xil_printf("Thread 6 launched with ID %d \r\n", tid6);
+	}
+
+	//start thread 7
+	ret = pthread_create(&tid7, NULL, (void*) thread_tut_func_7, NULL );
+	if (ret != 0) {
+		xil_printf("-- ERROR (%d) launching thread_tut_func_7...\r\n", ret);
+	} else {
+		xil_printf("Thread 7 launched with ID %d \r\n", tid7);
+	}
+
+	//start thread 8
+	ret = pthread_create(&tid8, NULL, (void*) thread_tut_func_8, NULL );
+	if (ret != 0) {
+		xil_printf("-- ERROR (%d) launching thread_tut_func_8...\r\n", ret);
+	} else {
+		xil_printf("Thread 8 launched with ID %d \r\n", tid8);
+	} 
+
+	*/
 
 	return 0;
+}
+
+void clear()
+{
+    int i = 0 ;
+    for(; i < 80; i++ ) {
+	outbyte('\r') ; outbyte('\n') ;
+    }
+>>>>>>> 50175ccaa5f3d6850a295ab722c2e7ab15da4678
 }
 
 int main ()
