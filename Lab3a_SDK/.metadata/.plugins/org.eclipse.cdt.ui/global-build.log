@@ -1,41 +1,110 @@
-08:49:37 **** Build of project xilkernel_bsp_0 ****
+10:36:54 **** Incremental Build of configuration Debug for project MB_Proj2 ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: MicroBlaze g++ compiler'
+mb-g++ -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+mb-g++: fatal error: '-c' is not a valid option to the preprocessor
+compilation terminated.
+make: *** [src/main.o] Error 1
+10:37:43 **** Build of configuration Debug for project MB_Proj3 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: MB_Proj3.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj3.elf"  ./src/main.o ./src/platform.o   -lxilkernel
+../../xilkernel_bsp_0/microblaze_0/lib\libxil.a(init.o):(.data.kb_pthread_table+0x0): undefined reference to `shell_main'
+collect2: ld returned 1 exit status
+make: *** [MB_Proj3.elf] Error 1
+10:38:27 **** Auto Build of configuration Debug for project MB_Proj3 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: MB_Proj3.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj3.elf"  ./src/main.o ./src/platform.o   -lxilkernel
+e:/xilinx/14.7/ise_ds/edk/gnu/microblaze/nt/bin/../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/lib/bs/m/le/crtinit.o: In function `_crtinit':
+/wrk/ptx/users/nagaraju/GCC_2013_03/newlib/libgloss/microblaze/crtinit.S:69: undefined reference to `main'
+collect2: ld returned 1 exit status
+make: *** [MB_Proj3.elf] Error 1
+10:38:34 **** Auto Build of configuration Debug for project MB_Proj3 ****
+make all 
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.c"
+'Finished building: ../src/main.c'
+' '
+'Building target: MB_Proj3.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj3.elf"  ./src/main.o ./src/platform.o   -lxilkernel
+../../xilkernel_bsp_0/microblaze_0/lib\libxil.a(init.o):(.data.kb_pthread_table+0x0): undefined reference to `shell_main'
+collect2: ld returned 1 exit status
+make: *** [MB_Proj3.elf] Error 1
+10:51:42 **** Incremental Build of configuration Debug for project MB_Proj3 ****
+make all 
+'Building target: MB_Proj3.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj3.elf"  ./src/main.o ./src/platform.o   -lxilkernel
+../../xilkernel_bsp_0/microblaze_0/lib\libxil.a(init.o):(.data.kb_pthread_table+0x0): undefined reference to `shell_main'
+collect2: ld returned 1 exit status
+make: *** [MB_Proj3.elf] Error 1
+10:51:44 **** Incremental Build of configuration Debug for project MB_Proj2 ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: MicroBlaze g++ compiler'
+mb-g++ -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+mb-g++: fatal error: '-c' is not a valid option to the preprocessor
+compilation terminated.
+make: *** [src/main.o] Error 1
+10:51:45 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../main.cpp'
+'Invoking: MicroBlaze g++ compiler'
+mb-g++ -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+mb-g++: fatal error: '-c' is not a valid option to the preprocessor
+compilation terminated.
+make: *** [main.o] Error 1
+10:51:46 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+11:03:23 **** Auto Build of project xilkernel_bsp_0 ****
 make -k all 
-libgen -hw ../Lab3a_hw_platform/system.xml\
-	       \
-	       -pe microblaze_0 \
-	       -log libgen.log \
-	       system.mss
-libgen
-Xilinx EDK 14.7 Build EDK_P.20131013
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
-
-Command Line: libgen -hw ../Lab3a_hw_platform/system.xml -pe microblaze_0 -log
-libgen.log system.mss 
-
-
-Staging source files.
-Running DRCs.
-Running generate.
-Running post_generate.
-Running include - 'make -s include "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
-"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
--mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
--ffunction-sections -fdata-sections"'.
-
-Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
-"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
--mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
--ffunction-sections -fdata-sections"'.
-"Compiling standalone";
-"Compiling common"
-mb-ar: creating ./libsyscall.a
-mb-ar: creating ./libxilkernel.a
-"Compiling xilkernel"
-"Compiling intc"
-"Compiling tmrctr"
-"Compiling uartlite"
-"Compiling gpio"
-"Compiling bram"
-"Compiling cpu"
-Running execs_generate.
 'Finished building libraries'
+11:04:19 **** Incremental Build of configuration Debug for project MB_Proj3 ****
+make all 
+'Building target: MB_Proj3.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj3.elf"  ./src/main.o ./src/platform.o   -lxilkernel
+../../xilkernel_bsp_0/microblaze_0/lib\libxil.a(init.o):(.data.kb_pthread_table+0x0): undefined reference to `shell_main'
+collect2: ld returned 1 exit status
+make: *** [MB_Proj3.elf] Error 1
+11:04:21 **** Incremental Build of configuration Debug for project MB_Proj2 ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: MicroBlaze g++ compiler'
+mb-g++ -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+mb-g++: fatal error: '-c' is not a valid option to the preprocessor
+compilation terminated.
+make: *** [src/main.o] Error 1
+11:04:23 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../main.cpp'
+'Invoking: MicroBlaze g++ compiler'
+mb-g++ -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+mb-g++: fatal error: '-c' is not a valid option to the preprocessor
+compilation terminated.
+make: *** [main.o] Error 1
+11:04:24 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.

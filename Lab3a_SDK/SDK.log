@@ -1,1 +1,44 @@
 08:40:23.925 INFO  - Processing command line option -hwspec E:\FaksHub\2020_2021\2.Semester_2020_2021\1_Ciklus\LRI2\Labs\LRI2_Labs\Lab3a\SDK\SDK_Export\hw\system.xml. 
+09:05:44.427 INFO  - Successfully generated E:\FaksHub\2020_2021\2.Semester_2020_2021\1_Ciklus\LRI2\Labs\LRI2_Labs\Lab3a_SDK\xilkernel_demo\src\lscript.ld. 
+10:13:52.727 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+10:14:51.131 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+10:15:34.925 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+10:35:21.643 INFO  - Successfully generated E:\FaksHub\2020_2021\2.Semester_2020_2021\1_Ciklus\LRI2\Labs\LRI2_Labs\Lab3a_SDK\MB_Proj1\MB_Proj1.ld. 
+10:35:21.644 INFO  - Applying linker script to all configurations of project MB_Proj1. 
+10:35:21.644 INFO  - Setting rebuild state to true for all configurations of project MB_Proj1. 
+10:51:48.613 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to connect to Xilinx hw_server. Check if the
+    hw_server is running and correct TCP port is used.
+ 
+10:52:10.572 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+10:52:37.915 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+10:53:13.602 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+10:54:17.493 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+10:54:23.391 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
