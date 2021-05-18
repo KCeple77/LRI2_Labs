@@ -49,3 +49,24 @@
     Cable target is not connected to the host
  
 11:03:22.478 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+15:54:07.802 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+15:54:23.567 ERROR - Checking FPGA configuration failed..Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+15:54:34.645 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+16:19:48.006 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:25:16.569 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:27:12.376 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+16:33:45.955 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+17:44:53.306 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+17:48:18.032 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+17:52:20.237 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+17:52:37.379 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
