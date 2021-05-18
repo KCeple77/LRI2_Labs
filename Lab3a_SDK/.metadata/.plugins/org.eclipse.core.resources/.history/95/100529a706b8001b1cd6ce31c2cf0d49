@@ -23,19 +23,10 @@
 #include <stdio.h>
 #define XST_SUCCESS 0L
 #define XST_FAILURE 1L
-#define true 1
-#define false 0
-typedef unsigned char bool;
-#define TASK_THREADS_NUM 8
-#define TASK_THREADS_PERIODIC_NUM 3
-#define TASK_THREADS_NONPERIODIC_NUM 5
-
-
-bool task_threads_activity[TASK_THREADS_NUM];
-pthread_t task_threads_pids[TASK_THREADS_NUM];
-XGpio gpDIP, gpPUSH, gpLED; //PB device instance.
 
 pthread_t tid1, tid2;
+XGpio gpDIP, gpPUSH, gpLED; //PB device instance.
+
 extern void* clock_main (void *);
 
 static pid_t spid;
@@ -44,8 +35,6 @@ static pthread_attr_t attr;
 static p_stat shell_ps;
 static struct sched_param spar;
 extern volatile int hrs, mins, secs, tot_secs;
-
-
 
 static void gpDIPIntHandler(void *arg) //Should be very short (in time). In a practical program, don't print etc.
 {
@@ -67,22 +56,21 @@ static void gpPUSHIntHandler(void *arg) //Should be very short (in time). In a p
 	XGpio_DiscreteWrite(&gpLED, 1, val);
 }
 
-void* periodic_thread() {
-	int i;
-	while (1) {
-		// First check if I am active?
-
-
-
-	}
-}
-
 void* thread_tut_func_1() {
 	int i;
 	while (1) {
 		xil_printf("crta---------------------------------------\r\n");
 		for (i = 0; i < 10000; i++);
 		sys_sleep(4000);
+	}
+}
+
+void* thread_tut_func_2() {
+	int i;
+	while (1) {
+		xil_printf("tocka........\r\n");
+		for (i = 0; i < 1000; i++);
+		sys_sleep(1000);
 	}
 }
 

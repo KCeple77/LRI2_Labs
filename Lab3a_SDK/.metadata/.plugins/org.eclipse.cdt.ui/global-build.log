@@ -109,3 +109,72 @@ make: Nothing to be done for `all'.
 19:33:54 **** Incremental Build of configuration Debug for project xilkernel_demo ****
 make all 
 make: Nothing to be done for `all'.
+20:27:08 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function 'shell_main':
+../main.c:111:2: warning: implicit declaration of function 'clear' [-Wimplicit-function-declaration]
+../main.c:174:2: warning: 'return' with a value, in function returning void [enabled by default]
+../main.c:114:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../main.c: At top level:
+../main.c:177:6: warning: conflicting types for 'clear' [enabled by default]
+../main.c:111:2: note: previous implicit declaration of 'clear' was here
+../main.c: In function 'clear':
+../main.c:181:2: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../main.c: At top level:
+../main.c:35:14: warning: 'spid' defined but not used [-Wunused-variable]
+../main.c:38:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../main.c: In function 'main':
+../main.c:189:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../main.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./main.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  31478	    488	  17392	  49358	   c0ce	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+20:31:09 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function 'periodic_thread':
+../main.c:71:6: warning: unused variable 'i' [-Wunused-variable]
+../main.c: In function 'shell_main':
+../main.c:109:2: warning: implicit declaration of function 'clear' [-Wimplicit-function-declaration]
+../main.c:165:44: error: 'thread_tut_func_2' undeclared (first use in this function)
+../main.c:165:44: note: each undeclared identifier is reported only once for each function it appears in
+../main.c:172:2: warning: 'return' with a value, in function returning void [enabled by default]
+../main.c:112:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../main.c: At top level:
+../main.c:175:6: warning: conflicting types for 'clear' [enabled by default]
+../main.c:109:2: note: previous implicit declaration of 'clear' was here
+../main.c: In function 'clear':
+../main.c:179:2: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../main.c: At top level:
+../main.c:41:14: warning: 'spid' defined but not used [-Wunused-variable]
+../main.c:44:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../main.c: In function 'main':
+../main.c:187:1: warning: control reaches end of non-void function [-Wreturn-type]
+make: *** [main.o] Error 1
