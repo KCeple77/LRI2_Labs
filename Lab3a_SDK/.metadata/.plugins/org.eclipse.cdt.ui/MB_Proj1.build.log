@@ -1,11 +1,6 @@
-11:04:23 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+17:52:35 **** Incremental Build of configuration Debug for project MB_Proj1 ****
 make all 
-'Building file: ../main.cpp'
-'Invoking: MicroBlaze g++ compiler'
-mb-g++ -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
-mb-g++: fatal error: '-c' is not a valid option to the preprocessor
-compilation terminated.
-make: *** [main.o] Error 1
+make: Nothing to be done for `all'.
 
-11:04:23 Build Finished (took 530ms)
+17:52:35 Build Finished (took 347ms)
 

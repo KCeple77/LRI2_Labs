@@ -45,6 +45,7 @@ static char * progs_loaded[PROGS_LOADED] = {
      "4: TICTAC : TicTacToe thread with dynamically assigned large stack",
      "5: MUTEX  : Mutex lock demo",
      "6: PRIO   : Priority queue demo",
+     "7: APPA   : Appendix A code demo"
 	 // "7: help   : Push Button Interrupt demo"
 };
 
@@ -57,6 +58,7 @@ extern void* clock_main (void *);
 extern void* standby_main (void *);
 extern void *mutex_main (void *);
 extern void *prio_main (void *);
+extern void *appa_main (void *);
 //extern void *push_main (void *);
 
 static prog_info_t proginfo [PROGS_LOADED] = { {llist_main, 0},
@@ -66,7 +68,8 @@ static prog_info_t proginfo [PROGS_LOADED] = { {llist_main, 0},
                                                {tictac_main, 0},
                                                {mutex_main, 0},
                                                {prio_main, 0},
-															 // {push_main, 0}
+															 // {push_main, 0},
+                                               {appa_main, 0}
 };
 
 #define TICTAC_STACK_SIZE 3000

@@ -1,0 +1,11 @@
+/*
+ * appa.c - Contains Appendix A Code Demo
+ *
+ *  Created on: May 18, 2021
+ *      Author: Kristijan Ceple
+ */
+
+void* appa_main(void *arg) {
+	xil_printf("Appa thread initialised!");
+	pthread_exit(0);
+}

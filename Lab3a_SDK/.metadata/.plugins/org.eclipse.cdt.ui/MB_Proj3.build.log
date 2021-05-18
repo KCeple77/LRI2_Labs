@@ -1,4 +1,4 @@
-11:04:19 **** Incremental Build of configuration Debug for project MB_Proj3 ****
+15:54:41 **** Incremental Build of configuration Debug for project MB_Proj3 ****
 make all 
 'Building target: MB_Proj3.elf'
 'Invoking: MicroBlaze gcc linker'
@@ -7,5 +7,5 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -ml
 collect2: ld returned 1 exit status
 make: *** [MB_Proj3.elf] Error 1
 
-11:04:20 Build Finished (took 1s.491ms)
+15:54:41 Build Finished (took 583ms)
 

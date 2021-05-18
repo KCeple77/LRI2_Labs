@@ -1,6 +1,6 @@
-11:03:23 **** Auto Build of project xilkernel_bsp_0 ****
+15:54:35 **** Auto Build of project xilkernel_bsp_0 ****
 make -k all 
 'Finished building libraries'
 
-11:03:25 Build Finished (took 2s.64ms)
+15:54:35 Build Finished (took 243ms)
 

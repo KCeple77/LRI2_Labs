@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../src/appa.c \
 ../src/clock.c \
 ../src/llist.c \
 ../src/mutexdemo.c \
@@ -19,6 +20,7 @@ LD_SRCS += \
 ../src/lscript.ld 
 
 OBJS += \
+./src/appa.o \
 ./src/clock.o \
 ./src/llist.o \
 ./src/mutexdemo.o \
@@ -31,6 +33,7 @@ OBJS += \
 ./src/timertest.o 
 
 C_DEPS += \
+./src/appa.d \
 ./src/clock.d \
 ./src/llist.d \
 ./src/mutexdemo.d \
