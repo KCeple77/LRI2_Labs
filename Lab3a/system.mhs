@@ -15,7 +15,7 @@
  PORT CLK_P = CLK, DIR = I, DIFFERENTIAL_POLARITY = P, SIGIS = CLK, CLK_FREQ = 50000000
  PORT CLK_N = CLK, DIR = I, DIFFERENTIAL_POLARITY = N, SIGIS = CLK, CLK_FREQ = 50000000
  PORT dip_gpio_GPIO_IO_pin = dip_gpio_GPIO_IO, DIR = IO, VEC = [7:0]
- PORT push_gpio_GPIO_IO_pin = push_gpio_GPIO_IO, DIR = IO, VEC = [7:0]
+ PORT push_gpio_GPIO_IO_pin = push_gpio_GPIO_IO, DIR = IO, VEC = [4:0]
  PORT led_gpio_GPIO_IO_pin = led_gpio_GPIO_IO, DIR = IO, VEC = [7:0]
  PORT axi_s6_ddrx_0_mcbx_dram_addr_pin = axi_s6_ddrx_0_mcbx_dram_addr, DIR = O, VEC = [13:0]
  PORT axi_s6_ddrx_0_mcbx_dram_ba_pin = axi_s6_ddrx_0_mcbx_dram_ba, DIR = O, VEC = [2:0]
@@ -190,7 +190,7 @@ BEGIN axi_gpio
  PARAMETER INSTANCE = push_gpio
  PARAMETER HW_VER = 1.01.b
  PARAMETER C_INTERRUPT_PRESENT = 1
- PARAMETER C_GPIO_WIDTH = 8
+ PARAMETER C_GPIO_WIDTH = 5
  PARAMETER C_ALL_INPUTS = 1
  PARAMETER C_BASEADDR = 0x40000000
  PARAMETER C_HIGHADDR = 0x4000ffff

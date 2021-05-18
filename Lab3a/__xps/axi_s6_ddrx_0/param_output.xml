@@ -66,6 +66,14 @@
         <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_ARB_TIME_SLOT_9"> 0b000000000000000000 </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
+        <spirit:name>C_AXI_NBURST_SUPPORT</spirit:name>
+        <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_AXI_NBURST_SUPPORT"> 1 </spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter>
+        <spirit:name>C_BEGIN_ADDRESS</spirit:name>
+        <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_BEGIN_ADDRESS"> 32&apos;h01000000:32&apos;h00000700 </spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter>
         <spirit:name>C_CALIB_SOFT_IP</spirit:name>
         <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_CALIB_SOFT_IP"> TRUE </spirit:value>
       </spirit:modelParameter>
@@ -156,6 +164,34 @@
       <spirit:modelParameter>
         <spirit:name>C_DQ9_TAP_DELAY_VAL</spirit:name>
         <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_DQ9_TAP_DELAY_VAL"> 0 </spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter>
+        <spirit:name>C_END_ADDRESS</spirit:name>
+        <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_END_ADDRESS"> 32&apos;h02ffffff:32&apos;h000008ff </spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter>
+        <spirit:name>C_ENFORCE_RD_WR</spirit:name>
+        <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_ENFORCE_RD_WR"> 0 </spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter>
+        <spirit:name>C_ENFORCE_RD_WR_CMD</spirit:name>
+        <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_ENFORCE_RD_WR_CMD"> 8&apos;h11 </spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter>
+        <spirit:name>C_ENFORCE_RD_WR_PATTERN</spirit:name>
+        <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_ENFORCE_RD_WR_PATTERN"> 3&apos;b000 </spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter>
+        <spirit:name>C_EN_UPSIZER</spirit:name>
+        <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_EN_UPSIZER"> 1) </spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter>
+        <spirit:name>C_EN_WRAP_TRANS</spirit:name>
+        <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_EN_WRAP_TRANS"> 0 </spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter>
+        <spirit:name>C_HW_TESTING</spirit:name>
+        <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_HW_TESTING"> FALSE </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_INCLK_PERIOD</spirit:name>
@@ -351,7 +387,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_TREFI</spirit:name>
-        <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_MEM_TREFI"> 7800000 </spirit:value>
+        <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_MEM_TREFI"> -789934592 </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_TRFC</spirit:name>
@@ -418,6 +454,14 @@
         <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_PORT_ENABLE"> 6&apos;b000001 </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
+        <spirit:name>C_PRBS_EADDR_MASK_POS</spirit:name>
+        <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_PRBS_EADDR_MASK_POS"> 32&apos;hfc000000:32&apos;hfffff000 </spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter>
+        <spirit:name>C_PRBS_SADDR_MASK_POS</spirit:name>
+        <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_PRBS_SADDR_MASK_POS"> 32&apos;h01000000:32&apos;h00000700 </spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter>
         <spirit:name>C_RST_ACT_LOW</spirit:name>
         <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_RST_ACT_LOW"> 0 </spirit:value>
       </spirit:modelParameter>
@@ -427,7 +471,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_S0_AXI_BASEADDR</spirit:name>
-        <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_S0_AXI_BASEADDR"> 0X00000000 </spirit:value>
+        <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_S0_AXI_BASEADDR"> 0xb0000000 </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_S0_AXI_DATA_WIDTH</spirit:name>
@@ -443,7 +487,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_S0_AXI_HIGHADDR</spirit:name>
-        <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_S0_AXI_HIGHADDR"> 0X0FFFFFFF </spirit:value>
+        <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="_component_.C_S0_AXI_HIGHADDR"> 0xbfffffff </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_S0_AXI_STRICT_COHERENCY</spirit:name>

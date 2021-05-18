@@ -77,15 +77,15 @@
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_INTERCONNECT_S0_AXI_AR_REGISTER</spirit:name>
-        <spirit:value spirit:format="integer" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_INTERCONNECT_S0_AXI_AR_REGISTER"> "0" </spirit:value>
+        <spirit:value spirit:format="integer" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_INTERCONNECT_S0_AXI_AR_REGISTER"> "8" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_INTERCONNECT_S0_AXI_AW_REGISTER</spirit:name>
-        <spirit:value spirit:format="integer" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_INTERCONNECT_S0_AXI_AW_REGISTER"> "0" </spirit:value>
+        <spirit:value spirit:format="integer" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_INTERCONNECT_S0_AXI_AW_REGISTER"> "8" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_INTERCONNECT_S0_AXI_B_REGISTER</spirit:name>
-        <spirit:value spirit:format="integer" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_INTERCONNECT_S0_AXI_B_REGISTER"> "0" </spirit:value>
+        <spirit:value spirit:format="integer" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_INTERCONNECT_S0_AXI_B_REGISTER"> "8" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_INTERCONNECT_S0_AXI_IS_ACLK_ASYNC</spirit:name>
@@ -93,15 +93,19 @@
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_INTERCONNECT_S0_AXI_MASTERS</spirit:name>
-        <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_INTERCONNECT_S0_AXI_MASTERS"> "none" </spirit:value>
+        <spirit:value spirit:format="string" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_INTERCONNECT_S0_AXI_MASTERS"> "microblaze_0.M_AXI_DC &amp; microblaze_0.M_AXI_IC" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_INTERCONNECT_S0_AXI_R_REGISTER</spirit:name>
-        <spirit:value spirit:format="integer" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_INTERCONNECT_S0_AXI_R_REGISTER"> "0" </spirit:value>
+        <spirit:value spirit:format="integer" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_INTERCONNECT_S0_AXI_R_REGISTER"> "8" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_INTERCONNECT_S0_AXI_READ_ACCEPTANCE</spirit:name>
         <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_INTERCONNECT_S0_AXI_READ_ACCEPTANCE"> "4" </spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter>
+        <spirit:name>C_INTERCONNECT_S0_AXI_READ_FIFO_DELAY</spirit:name>
+        <spirit:value spirit:format="integer" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_INTERCONNECT_S0_AXI_READ_FIFO_DELAY"> "0" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_INTERCONNECT_S0_AXI_READ_FIFO_DEPTH</spirit:name>
@@ -113,11 +117,15 @@
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_INTERCONNECT_S0_AXI_W_REGISTER</spirit:name>
-        <spirit:value spirit:format="integer" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_INTERCONNECT_S0_AXI_W_REGISTER"> "0" </spirit:value>
+        <spirit:value spirit:format="integer" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_INTERCONNECT_S0_AXI_W_REGISTER"> "8" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_INTERCONNECT_S0_AXI_WRITE_ACCEPTANCE</spirit:name>
         <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_INTERCONNECT_S0_AXI_WRITE_ACCEPTANCE"> "4" </spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter>
+        <spirit:name>C_INTERCONNECT_S0_AXI_WRITE_FIFO_DELAY</spirit:name>
+        <spirit:value spirit:format="integer" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_INTERCONNECT_S0_AXI_WRITE_FIFO_DELAY"> "0" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_INTERCONNECT_S0_AXI_WRITE_FIFO_DEPTH</spirit:name>
@@ -393,7 +401,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MCB_RZQ_LOC</spirit:name>
-        <spirit:value spirit:format="STRING" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_MCB_RZQ_LOC"> "" </spirit:value>
+        <spirit:value spirit:format="STRING" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_MCB_RZQ_LOC"> "AC7" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MCB_USE_EXTERNAL_BUFPLL</spirit:name>
@@ -401,7 +409,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MCB_ZIO_LOC</spirit:name>
-        <spirit:value spirit:format="STRING" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_MCB_ZIO_LOC"> "" </spirit:value>
+        <spirit:value spirit:format="STRING" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_MCB_ZIO_LOC"> "AE3" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_ADDR_ORDER</spirit:name>
@@ -409,7 +417,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_ADDR_WIDTH</spirit:name>
-        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_MEM_ADDR_WIDTH"> "13" </spirit:value>
+        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_MEM_ADDR_WIDTH"> "14" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_BANKADDR_WIDTH</spirit:name>
@@ -417,7 +425,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_BASEPARTNO</spirit:name>
-        <spirit:value spirit:format="STRING" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_MEM_BASEPARTNO"> "" </spirit:value>
+        <spirit:value spirit:format="STRING" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_MEM_BASEPARTNO"> "MT47H128M16XX-3" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_CAS_LATENCY</spirit:name>
@@ -425,11 +433,11 @@
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_DDR1_2_ADDR_CONTROL_SSTL_ODS</spirit:name>
-        <spirit:value spirit:format="STRING" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_MEM_DDR1_2_ADDR_CONTROL_SSTL_ODS"> "CLASS_II" </spirit:value>
+        <spirit:value spirit:format="STRING" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_MEM_DDR1_2_ADDR_CONTROL_SSTL_ODS"> "CLASS_I" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_DDR1_2_DATA_CONTROL_SSTL_ODS</spirit:name>
-        <spirit:value spirit:format="STRING" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_MEM_DDR1_2_DATA_CONTROL_SSTL_ODS"> "CLASS_II" </spirit:value>
+        <spirit:value spirit:format="STRING" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_MEM_DDR1_2_DATA_CONTROL_SSTL_ODS"> "CLASS_I" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_DDR1_2_ODS</spirit:name>
@@ -449,7 +457,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_DDR2_RTT</spirit:name>
-        <spirit:value spirit:format="STRING" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_MEM_DDR2_RTT"> "150OHMS" </spirit:value>
+        <spirit:value spirit:format="STRING" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_MEM_DDR2_RTT"> "50OHMS" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_DDR3_AUTO_SR</spirit:name>
@@ -485,43 +493,43 @@
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_PARTNO</spirit:name>
-        <spirit:value spirit:format="STRING" spirit:resolve="REQUIRE" spirit:id="axi_s6_ddrx_0.C_MEM_PARTNO"> "" </spirit:value>
+        <spirit:value spirit:format="STRING" spirit:resolve="REQUIRE" spirit:id="axi_s6_ddrx_0.C_MEM_PARTNO"> "CUSTOM" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_TRAS</spirit:name>
-        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_MEM_TRAS"> "-1" </spirit:value>
+        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_MEM_TRAS"> "40000" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_TRCD</spirit:name>
-        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_MEM_TRCD"> "-1" </spirit:value>
+        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_MEM_TRCD"> "15000" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_TREFI</spirit:name>
-        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_MEM_TREFI"> "-1" </spirit:value>
+        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_MEM_TREFI"> "7800000" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_TRFC</spirit:name>
-        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_MEM_TRFC"> "-1" </spirit:value>
+        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_MEM_TRFC"> "197500" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_TRP</spirit:name>
-        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_MEM_TRP"> "-1" </spirit:value>
+        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_MEM_TRP"> "15000" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_TRTP</spirit:name>
-        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_MEM_TRTP"> "-1" </spirit:value>
+        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_MEM_TRTP"> "7500" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_TWR</spirit:name>
-        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_MEM_TWR"> "-1" </spirit:value>
+        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_MEM_TWR"> "15000" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_TWTR</spirit:name>
-        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_MEM_TWTR"> "-1" </spirit:value>
+        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_MEM_TWTR"> "7500" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_TYPE</spirit:name>
-        <spirit:value spirit:format="STRING" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_MEM_TYPE"> "DDR3" </spirit:value>
+        <spirit:value spirit:format="STRING" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_MEM_TYPE"> "DDR2" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_MEM_TZQINIT_MAXCNT</spirit:name>
@@ -549,11 +557,11 @@
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_S0_AXI_AXI_VER</spirit:name>
-        <spirit:value spirit:format="" spirit:resolve="CONSTANT" spirit:id="axi_s6_ddrx_0.C_S0_AXI_AXI_VER"> "1.01.a" </spirit:value>
+        <spirit:value spirit:format="" spirit:resolve="CONSTANT" spirit:id="axi_s6_ddrx_0.C_S0_AXI_AXI_VER"> "1.06.a" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_S0_AXI_BASEADDR</spirit:name>
-        <spirit:value spirit:format="STD_LOGIC_VECTOR" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_S0_AXI_BASEADDR"> "0X00000000" </spirit:value>
+        <spirit:value spirit:format="STD_LOGIC_VECTOR" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_S0_AXI_BASEADDR"> "0xb0000000" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_S0_AXI_DATA_WIDTH</spirit:name>
@@ -569,11 +577,11 @@
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_S0_AXI_HIGHADDR</spirit:name>
-        <spirit:value spirit:format="STD_LOGIC_VECTOR" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_S0_AXI_HIGHADDR"> "0X0FFFFFFF" </spirit:value>
+        <spirit:value spirit:format="STD_LOGIC_VECTOR" spirit:resolve="OPTIONAL" spirit:id="axi_s6_ddrx_0.C_S0_AXI_HIGHADDR"> "0xbfffffff" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_S0_AXI_ID_WIDTH</spirit:name>
-        <spirit:value spirit:format="INTEGER" spirit:resolve="UPDATE" spirit:id="axi_s6_ddrx_0.C_S0_AXI_ID_WIDTH"> "4" </spirit:value>
+        <spirit:value spirit:format="INTEGER" spirit:resolve="UPDATE" spirit:id="axi_s6_ddrx_0.C_S0_AXI_ID_WIDTH"> "1" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_S0_AXI_PROTOCOL</spirit:name>
@@ -589,7 +597,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_S0_AXI_STRICT_COHERENCY</spirit:name>
-        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_S0_AXI_STRICT_COHERENCY"> "1" </spirit:value>
+        <spirit:value spirit:format="INTEGER" spirit:resolve="OPTIONAL_UPDATE" spirit:id="axi_s6_ddrx_0.C_S0_AXI_STRICT_COHERENCY"> "0" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_S0_AXI_SUPPORTS_NARROW_BURST</spirit:name>
@@ -937,7 +945,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>C_SYS_RST_PRESENT</spirit:name>
-        <spirit:value spirit:format="INTEGER" spirit:resolve="UPDATE" spirit:id="axi_s6_ddrx_0.C_SYS_RST_PRESENT"> "0" </spirit:value>
+        <spirit:value spirit:format="INTEGER" spirit:resolve="UPDATE" spirit:id="axi_s6_ddrx_0.C_SYS_RST_PRESENT"> "1" </spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter>
         <spirit:name>HW_VER</spirit:name>

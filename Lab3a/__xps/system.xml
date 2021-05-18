@@ -1,5 +1,5 @@
 
-<EDKSYSTEM EDKVERSION="14.7" EDWVERSION="1.2" TIMESTAMP="Mon May 17 08:10:46 2021">
+<EDKSYSTEM EDKVERSION="14.7" EDWVERSION="1.2" TIMESTAMP="Tue May 18 08:03:11 2021">
 
   <SYSTEMINFO ARCH="spartan6" DEVICE="xc6slx45" PACKAGE="fgg676" PART="xc6slx45fgg676-2" SOURCE="E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a/system.xmp" SPEEDGRADE="-2"/>
 
@@ -5557,12 +5557,12 @@
             <CONNECTION INSTANCE="External Ports" PORT="CLK_N"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="600000000" DIR="O" IS_INSTANTIATED="TRUE" MPD_INDEX="2" NAME="CLKOUT1" SIGIS="CLK" SIGNAME="clk_600_0000MHz180PLL0_nobuf">
+        <PORT CLKFREQUENCY="600000000" DIR="O" IS_INSTANTIATED="TRUE" MHS_INDEX="4" MPD_INDEX="2" NAME="CLKOUT1" SIGIS="CLK" SIGNAME="clk_600_0000MHz180PLL0_nobuf">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_s6_ddrx_0" PORT="sysclk_2x_180"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="O" IS_INSTANTIATED="TRUE" MPD_INDEX="3" NAME="CLKOUT2" SIGIS="CLK" SIGNAME="clk_100_0000MHzPLL0">
+        <PORT CLKFREQUENCY="100000000" DIR="O" IS_INSTANTIATED="TRUE" MHS_INDEX="5" MPD_INDEX="3" NAME="CLKOUT2" SIGIS="CLK" SIGNAME="clk_100_0000MHzPLL0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="proc_sys_reset_0" PORT="Slowest_sync_clk"/>
             <CONNECTION INSTANCE="microblaze_0_ilmb" PORT="LMB_CLK"/>
@@ -5583,12 +5583,12 @@
             <CONNECTION BUSINTERFACE="[S_AXI]" INSTANCE="axi_uartlite_0" PORT="S_AXI_ACLK"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="130000000" DIR="O" IS_INSTANTIATED="TRUE" MPD_INDEX="4" NAME="CLKOUT3" SIGIS="CLK" SIGNAME="clk_130_0000MHz">
+        <PORT CLKFREQUENCY="130000000" DIR="O" IS_INSTANTIATED="TRUE" MHS_INDEX="6" MPD_INDEX="4" NAME="CLKOUT3" SIGIS="CLK" SIGNAME="clk_130_0000MHz">
           <CONNECTIONS>
             <CONNECTION BUSINTERFACE="[S0_AXI]" INSTANCE="axi_s6_ddrx_0" PORT="s0_axi_aclk"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="130000000" DIR="O" IS_VALID="FALSE" MPD_INDEX="5" NAME="CLKOUT4" SIGIS="CLK" SIGNAME="__NOC__">
+        <PORT DIR="O" IS_VALID="FALSE" MPD_INDEX="5" NAME="CLKOUT4" SIGIS="CLK" SIGNAME="__NOC__">
           <CONNECTIONS/>
         </PORT>
         <PORT DIR="O" IS_VALID="FALSE" MPD_INDEX="6" NAME="CLKOUT5" SIGIS="CLK" SIGNAME="__NOC__">
@@ -6613,9 +6613,20 @@
         <PARAMETER ASSIGNMENT="CONSTANT" MPD_INDEX="16" NAME="C_S_AXI_PROTOCOL" TYPE="STRING" VALUE="AXI4LITE"/>
       </PARAMETERS>
       <PORTS>
-        <PORT BUS="S_AXI" CLKFREQUENCY="100000000" DEF_SIGNAME="__BUS__" DIR="I" IS_INSTANTIATED="TRUE" MPD_INDEX="0" NAME="S_AXI_ACLK" SIGIS="CLK" SIGNAME="clk_100_0000MHzPLL0">
+        <PORT BUS="S_AXI" CLKFREQUENCY="100000000" DEF_SIGNAME="__BUS__" DIR="I" IS_INSTANTIATED="TRUE" MHS_INDEX="0" MPD_INDEX="0" NAME="S_AXI_ACLK" SIGIS="CLK" SIGNAME="clk_100_0000MHzPLL0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="clock_generator_0" PORT="CLKOUT2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" ENDIAN="LITTLE" IOS="gpio_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="TRUE" LEFT="7" LSB="0" MHS_INDEX="1" MPD_INDEX="26" MSB="7" NAME="GPIO_IO" RIGHT="0" SIGNAME="dip_gpio_GPIO_IO" TRI_I="GPIO_IO_I" TRI_O="GPIO_IO_O" TRI_T="GPIO_IO_T" VECFORMULA="[(C_GPIO_WIDTH-1):0]">
+          <DESCRIPTION>GPIO1 Data IO</DESCRIPTION>
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="dip_gpio_GPIO_IO_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" IS_INSTANTIATED="TRUE" MHS_INDEX="2" MPD_INDEX="19" NAME="IP2INTC_Irpt" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="dip_gpio_IP2INTC_Irpt">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_0" PORT="Intr"/>
           </CONNECTIONS>
         </PORT>
         <PORT BUS="S_AXI" DEF_SIGNAME="axi4lite_0_M_ARESETN" DIR="I" MPD_INDEX="1" NAME="S_AXI_ARESETN" SIGIS="RST" SIGNAME="axi4lite_0_M_ARESETN">
@@ -6708,11 +6719,6 @@
             <CONNECTION INSTANCE="axi4lite_0" PORT="M_AXI_RREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" IS_INSTANTIATED="TRUE" MPD_INDEX="19" NAME="IP2INTC_Irpt" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="dip_gpio_IP2INTC_Irpt">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_0" PORT="Intr"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" ENDIAN="LITTLE" IOS="gpio_0" LEFT="7" LSB="0" MPD_INDEX="20" MSB="7" NAME="GPIO_IO_I" RIGHT="0" SIGNAME="__NOC__" VECFORMULA="[(C_GPIO_WIDTH-1):0]">
           <CONNECTIONS/>
         </PORT>
@@ -6730,12 +6736,6 @@
         </PORT>
         <PORT DIR="O" ENDIAN="LITTLE" IOS="gpio_0" IS_VALID="FALSE" LEFT="31" LSB="0" MPD_INDEX="25" MSB="31" NAME="GPIO2_IO_T" RIGHT="0" SIGNAME="__NOC__" VECFORMULA="[(C_GPIO2_WIDTH-1):0]">
           <CONNECTIONS/>
-        </PORT>
-        <PORT DIR="IO" ENDIAN="LITTLE" IOS="gpio_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="TRUE" LEFT="7" LSB="0" MPD_INDEX="26" MSB="7" NAME="GPIO_IO" RIGHT="0" SIGNAME="dip_gpio_GPIO_IO" TRI_I="GPIO_IO_I" TRI_O="GPIO_IO_O" TRI_T="GPIO_IO_T" VECFORMULA="[(C_GPIO_WIDTH-1):0]">
-          <DESCRIPTION>GPIO1 Data IO</DESCRIPTION>
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="dip_gpio_GPIO_IO_pin"/>
-          </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" ENDIAN="LITTLE" IOS="gpio_0" IS_THREE_STATE="TRUE" IS_VALID="FALSE" LEFT="31" LSB="0" MPD_INDEX="27" MSB="31" NAME="GPIO2_IO" RIGHT="0" SIGNAME="__NOC__" TRI_I="GPIO2_IO_I" TRI_O="GPIO2_IO_O" TRI_T="GPIO2_IO_T" VECFORMULA="[(C_GPIO2_WIDTH-1):0]">
           <DESCRIPTION>GPIO2 Data IO</DESCRIPTION>
@@ -6770,13 +6770,13 @@
       <IOINTERFACES>
         <IOINTERFACE MPD_INDEX="0" NAME="gpio_0" TYPE="XIL_AXI_GPIO_V1">
           <PORTMAPS>
+            <PORTMAP DIR="IO" PHYSICAL="GPIO_IO"/>
             <PORTMAP DIR="I" PHYSICAL="GPIO_IO_I"/>
             <PORTMAP DIR="O" PHYSICAL="GPIO_IO_O"/>
             <PORTMAP DIR="O" PHYSICAL="GPIO_IO_T"/>
             <PORTMAP DIR="I" PHYSICAL="GPIO2_IO_I"/>
             <PORTMAP DIR="O" PHYSICAL="GPIO2_IO_O"/>
             <PORTMAP DIR="O" PHYSICAL="GPIO2_IO_T"/>
-            <PORTMAP DIR="IO" PHYSICAL="GPIO_IO"/>
             <PORTMAP DIR="IO" PHYSICAL="GPIO2_IO"/>
           </PORTMAPS>
         </IOINTERFACE>
@@ -6806,7 +6806,7 @@
         <PARAMETER ADDRESS="HIGH" ADDR_TYPE="REGISTER" ASSIGNMENT="REQUIRE" CHANGEDBY="USER" IS_INSTANTIATED="TRUE" MHS_INDEX="6" MPD_INDEX="3" NAME="C_HIGHADDR" TYPE="std_logic_vector" VALUE="0x4000ffff"/>
         <PARAMETER ASSIGNMENT="CONSTANT" MPD_INDEX="4" NAME="C_S_AXI_ADDR_WIDTH" TYPE="INTEGER" VALUE="9"/>
         <PARAMETER ASSIGNMENT="CONSTANT" MPD_INDEX="5" NAME="C_S_AXI_DATA_WIDTH" TYPE="INTEGER" VALUE="32"/>
-        <PARAMETER ASSIGNMENT="OPTIONAL" CHANGEDBY="USER" IS_INSTANTIATED="TRUE" MHS_INDEX="3" MPD_INDEX="6" NAME="C_GPIO_WIDTH" TYPE="INTEGER" VALUE="8"/>
+        <PARAMETER ASSIGNMENT="OPTIONAL" CHANGEDBY="USER" IS_INSTANTIATED="TRUE" MHS_INDEX="3" MPD_INDEX="6" NAME="C_GPIO_WIDTH" TYPE="INTEGER" VALUE="5"/>
         <PARAMETER ASSIGNMENT="OPTIONAL" MPD_INDEX="7" NAME="C_GPIO2_WIDTH" TYPE="INTEGER" VALUE="32"/>
         <PARAMETER ASSIGNMENT="OPTIONAL" CHANGEDBY="USER" IS_INSTANTIATED="TRUE" MHS_INDEX="4" MPD_INDEX="8" NAME="C_ALL_INPUTS" TYPE="INTEGER" VALUE="1"/>
         <PARAMETER ASSIGNMENT="OPTIONAL" MPD_INDEX="9" NAME="C_ALL_INPUTS_2" TYPE="INTEGER" VALUE="0"/>
@@ -6819,9 +6819,20 @@
         <PARAMETER ASSIGNMENT="CONSTANT" MPD_INDEX="16" NAME="C_S_AXI_PROTOCOL" TYPE="STRING" VALUE="AXI4LITE"/>
       </PARAMETERS>
       <PORTS>
-        <PORT BUS="S_AXI" CLKFREQUENCY="100000000" DEF_SIGNAME="__BUS__" DIR="I" IS_INSTANTIATED="TRUE" MPD_INDEX="0" NAME="S_AXI_ACLK" SIGIS="CLK" SIGNAME="clk_100_0000MHzPLL0">
+        <PORT BUS="S_AXI" CLKFREQUENCY="100000000" DEF_SIGNAME="__BUS__" DIR="I" IS_INSTANTIATED="TRUE" MHS_INDEX="0" MPD_INDEX="0" NAME="S_AXI_ACLK" SIGIS="CLK" SIGNAME="clk_100_0000MHzPLL0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="clock_generator_0" PORT="CLKOUT2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" ENDIAN="LITTLE" IOS="gpio_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="TRUE" LEFT="4" LSB="0" MHS_INDEX="1" MPD_INDEX="26" MSB="4" NAME="GPIO_IO" RIGHT="0" SIGNAME="push_gpio_GPIO_IO" TRI_I="GPIO_IO_I" TRI_O="GPIO_IO_O" TRI_T="GPIO_IO_T" VECFORMULA="[(C_GPIO_WIDTH-1):0]">
+          <DESCRIPTION>GPIO1 Data IO</DESCRIPTION>
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="push_gpio_GPIO_IO_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" IS_INSTANTIATED="TRUE" MHS_INDEX="2" MPD_INDEX="19" NAME="IP2INTC_Irpt" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="push_gpio_IP2INTC_Irpt">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_0" PORT="Intr"/>
           </CONNECTIONS>
         </PORT>
         <PORT BUS="S_AXI" DEF_SIGNAME="axi4lite_0_M_ARESETN" DIR="I" MPD_INDEX="1" NAME="S_AXI_ARESETN" SIGIS="RST" SIGNAME="axi4lite_0_M_ARESETN">
@@ -6914,18 +6925,13 @@
             <CONNECTION INSTANCE="axi4lite_0" PORT="M_AXI_RREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" IS_INSTANTIATED="TRUE" MPD_INDEX="19" NAME="IP2INTC_Irpt" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="push_gpio_IP2INTC_Irpt">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_0" PORT="Intr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" ENDIAN="LITTLE" IOS="gpio_0" LEFT="7" LSB="0" MPD_INDEX="20" MSB="7" NAME="GPIO_IO_I" RIGHT="0" SIGNAME="__NOC__" VECFORMULA="[(C_GPIO_WIDTH-1):0]">
+        <PORT DIR="I" ENDIAN="LITTLE" IOS="gpio_0" LEFT="4" LSB="0" MPD_INDEX="20" MSB="4" NAME="GPIO_IO_I" RIGHT="0" SIGNAME="__NOC__" VECFORMULA="[(C_GPIO_WIDTH-1):0]">
           <CONNECTIONS/>
         </PORT>
-        <PORT DIR="O" ENDIAN="LITTLE" IOS="gpio_0" LEFT="7" LSB="0" MPD_INDEX="21" MSB="7" NAME="GPIO_IO_O" RIGHT="0" SIGNAME="__NOC__" VECFORMULA="[(C_GPIO_WIDTH-1):0]">
+        <PORT DIR="O" ENDIAN="LITTLE" IOS="gpio_0" LEFT="4" LSB="0" MPD_INDEX="21" MSB="4" NAME="GPIO_IO_O" RIGHT="0" SIGNAME="__NOC__" VECFORMULA="[(C_GPIO_WIDTH-1):0]">
           <CONNECTIONS/>
         </PORT>
-        <PORT DIR="O" ENDIAN="LITTLE" IOS="gpio_0" LEFT="7" LSB="0" MPD_INDEX="22" MSB="7" NAME="GPIO_IO_T" RIGHT="0" SIGNAME="__NOC__" VECFORMULA="[(C_GPIO_WIDTH-1):0]">
+        <PORT DIR="O" ENDIAN="LITTLE" IOS="gpio_0" LEFT="4" LSB="0" MPD_INDEX="22" MSB="4" NAME="GPIO_IO_T" RIGHT="0" SIGNAME="__NOC__" VECFORMULA="[(C_GPIO_WIDTH-1):0]">
           <CONNECTIONS/>
         </PORT>
         <PORT DIR="I" ENDIAN="LITTLE" IOS="gpio_0" IS_VALID="FALSE" LEFT="31" LSB="0" MPD_INDEX="23" MSB="31" NAME="GPIO2_IO_I" RIGHT="0" SIGNAME="__NOC__" VECFORMULA="[(C_GPIO2_WIDTH-1):0]">
@@ -6936,12 +6942,6 @@
         </PORT>
         <PORT DIR="O" ENDIAN="LITTLE" IOS="gpio_0" IS_VALID="FALSE" LEFT="31" LSB="0" MPD_INDEX="25" MSB="31" NAME="GPIO2_IO_T" RIGHT="0" SIGNAME="__NOC__" VECFORMULA="[(C_GPIO2_WIDTH-1):0]">
           <CONNECTIONS/>
-        </PORT>
-        <PORT DIR="IO" ENDIAN="LITTLE" IOS="gpio_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="TRUE" LEFT="7" LSB="0" MPD_INDEX="26" MSB="7" NAME="GPIO_IO" RIGHT="0" SIGNAME="push_gpio_GPIO_IO" TRI_I="GPIO_IO_I" TRI_O="GPIO_IO_O" TRI_T="GPIO_IO_T" VECFORMULA="[(C_GPIO_WIDTH-1):0]">
-          <DESCRIPTION>GPIO1 Data IO</DESCRIPTION>
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="push_gpio_GPIO_IO_pin"/>
-          </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" ENDIAN="LITTLE" IOS="gpio_0" IS_THREE_STATE="TRUE" IS_VALID="FALSE" LEFT="31" LSB="0" MPD_INDEX="27" MSB="31" NAME="GPIO2_IO" RIGHT="0" SIGNAME="__NOC__" TRI_I="GPIO2_IO_I" TRI_O="GPIO2_IO_O" TRI_T="GPIO2_IO_T" VECFORMULA="[(C_GPIO2_WIDTH-1):0]">
           <DESCRIPTION>GPIO2 Data IO</DESCRIPTION>
@@ -6976,13 +6976,13 @@
       <IOINTERFACES>
         <IOINTERFACE MPD_INDEX="0" NAME="gpio_0" TYPE="XIL_AXI_GPIO_V1">
           <PORTMAPS>
+            <PORTMAP DIR="IO" PHYSICAL="GPIO_IO"/>
             <PORTMAP DIR="I" PHYSICAL="GPIO_IO_I"/>
             <PORTMAP DIR="O" PHYSICAL="GPIO_IO_O"/>
             <PORTMAP DIR="O" PHYSICAL="GPIO_IO_T"/>
             <PORTMAP DIR="I" PHYSICAL="GPIO2_IO_I"/>
             <PORTMAP DIR="O" PHYSICAL="GPIO2_IO_O"/>
             <PORTMAP DIR="O" PHYSICAL="GPIO2_IO_T"/>
-            <PORTMAP DIR="IO" PHYSICAL="GPIO_IO"/>
             <PORTMAP DIR="IO" PHYSICAL="GPIO2_IO"/>
           </PORTMAPS>
         </IOINTERFACE>
@@ -7087,12 +7087,12 @@
         <PARAMETER ASSIGNMENT="OPTIONAL" MPD_INDEX="78" NAME="C_MAX_DEBUG_THREADS" TYPE="INTEGER" VALUE="1"/>
       </PARAMETERS>
       <PORTS>
-        <PORT BUS="S_AXI_CTRL" CLKFREQUENCY="100000000" DEF_SIGNAME="__BUS__" DIR="I" IS_INSTANTIATED="TRUE" MPD_INDEX="0" NAME="INTERCONNECT_ACLK" SIGIS="CLK" SIGNAME="clk_100_0000MHzPLL0">
+        <PORT BUS="S_AXI_CTRL" CLKFREQUENCY="100000000" DEF_SIGNAME="__BUS__" DIR="I" IS_INSTANTIATED="TRUE" MHS_INDEX="0" MPD_INDEX="0" NAME="INTERCONNECT_ACLK" SIGIS="CLK" SIGNAME="clk_100_0000MHzPLL0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="clock_generator_0" PORT="CLKOUT2"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" IS_INSTANTIATED="TRUE" MPD_INDEX="1" NAME="INTERCONNECT_ARESETN" SIGIS="RST" SIGNAME="proc_sys_reset_0_Interconnect_aresetn">
+        <PORT DIR="I" IS_INSTANTIATED="TRUE" MHS_INDEX="1" MPD_INDEX="1" NAME="INTERCONNECT_ARESETN" SIGIS="RST" SIGNAME="proc_sys_reset_0_Interconnect_aresetn">
           <CONNECTIONS>
             <CONNECTION INSTANCE="proc_sys_reset_0" PORT="Interconnect_aresetn"/>
           </CONNECTIONS>
@@ -7923,7 +7923,7 @@
         <PARAMETER ASSIGNMENT="OPTIONAL" MPD_INDEX="7" NAME="C_GPIO2_WIDTH" TYPE="INTEGER" VALUE="32"/>
         <PARAMETER ASSIGNMENT="OPTIONAL" CHANGEDBY="USER" IS_INSTANTIATED="TRUE" MHS_INDEX="4" MPD_INDEX="8" NAME="C_ALL_INPUTS" TYPE="INTEGER" VALUE="1"/>
         <PARAMETER ASSIGNMENT="OPTIONAL" MPD_INDEX="9" NAME="C_ALL_INPUTS_2" TYPE="INTEGER" VALUE="0"/>
-        <PARAMETER ASSIGNMENT="OPTIONAL" CHANGEDBY="USER" IS_INSTANTIATED="TRUE" MHS_INDEX="2" MPD_INDEX="10" NAME="C_INTERRUPT_PRESENT" TYPE="INTEGER" VALUE="0"/>
+        <PARAMETER ASSIGNMENT="OPTIONAL" IS_INSTANTIATED="TRUE" MHS_INDEX="2" MPD_INDEX="10" NAME="C_INTERRUPT_PRESENT" TYPE="INTEGER" VALUE="0"/>
         <PARAMETER ASSIGNMENT="OPTIONAL" MPD_INDEX="11" NAME="C_DOUT_DEFAULT" TYPE="std_logic_vector" VALUE="0x00000000"/>
         <PARAMETER ASSIGNMENT="OPTIONAL" MPD_INDEX="12" NAME="C_TRI_DEFAULT" TYPE="std_logic_vector" VALUE="0xffffffff"/>
         <PARAMETER ASSIGNMENT="OPTIONAL" MPD_INDEX="13" NAME="C_IS_DUAL" TYPE="INTEGER" VALUE="0"/>
@@ -7932,9 +7932,15 @@
         <PARAMETER ASSIGNMENT="CONSTANT" MPD_INDEX="16" NAME="C_S_AXI_PROTOCOL" TYPE="STRING" VALUE="AXI4LITE"/>
       </PARAMETERS>
       <PORTS>
-        <PORT BUS="S_AXI" CLKFREQUENCY="100000000" DEF_SIGNAME="__BUS__" DIR="I" IS_INSTANTIATED="TRUE" MPD_INDEX="0" NAME="S_AXI_ACLK" SIGIS="CLK" SIGNAME="clk_100_0000MHzPLL0">
+        <PORT BUS="S_AXI" CLKFREQUENCY="100000000" DEF_SIGNAME="__BUS__" DIR="I" IS_INSTANTIATED="TRUE" MHS_INDEX="0" MPD_INDEX="0" NAME="S_AXI_ACLK" SIGIS="CLK" SIGNAME="clk_100_0000MHzPLL0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="clock_generator_0" PORT="CLKOUT2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" ENDIAN="LITTLE" IOS="gpio_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="TRUE" LEFT="7" LSB="0" MHS_INDEX="1" MPD_INDEX="26" MSB="7" NAME="GPIO_IO" RIGHT="0" SIGNAME="led_gpio_GPIO_IO" TRI_I="GPIO_IO_I" TRI_O="GPIO_IO_O" TRI_T="GPIO_IO_T" VECFORMULA="[(C_GPIO_WIDTH-1):0]">
+          <DESCRIPTION>GPIO1 Data IO</DESCRIPTION>
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="led_gpio_GPIO_IO_pin"/>
           </CONNECTIONS>
         </PORT>
         <PORT BUS="S_AXI" DEF_SIGNAME="axi4lite_0_M_ARESETN" DIR="I" MPD_INDEX="1" NAME="S_AXI_ARESETN" SIGIS="RST" SIGNAME="axi4lite_0_M_ARESETN">
@@ -8048,12 +8054,6 @@
         <PORT DIR="O" ENDIAN="LITTLE" IOS="gpio_0" IS_VALID="FALSE" LEFT="31" LSB="0" MPD_INDEX="25" MSB="31" NAME="GPIO2_IO_T" RIGHT="0" SIGNAME="__NOC__" VECFORMULA="[(C_GPIO2_WIDTH-1):0]">
           <CONNECTIONS/>
         </PORT>
-        <PORT DIR="IO" ENDIAN="LITTLE" IOS="gpio_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="TRUE" LEFT="7" LSB="0" MPD_INDEX="26" MSB="7" NAME="GPIO_IO" RIGHT="0" SIGNAME="led_gpio_GPIO_IO" TRI_I="GPIO_IO_I" TRI_O="GPIO_IO_O" TRI_T="GPIO_IO_T" VECFORMULA="[(C_GPIO_WIDTH-1):0]">
-          <DESCRIPTION>GPIO1 Data IO</DESCRIPTION>
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="led_gpio_GPIO_IO_pin"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="IO" ENDIAN="LITTLE" IOS="gpio_0" IS_THREE_STATE="TRUE" IS_VALID="FALSE" LEFT="31" LSB="0" MPD_INDEX="27" MSB="31" NAME="GPIO2_IO" RIGHT="0" SIGNAME="__NOC__" TRI_I="GPIO2_IO_I" TRI_O="GPIO2_IO_O" TRI_T="GPIO2_IO_T" VECFORMULA="[(C_GPIO2_WIDTH-1):0]">
           <DESCRIPTION>GPIO2 Data IO</DESCRIPTION>
           <CONNECTIONS/>
@@ -8087,13 +8087,13 @@
       <IOINTERFACES>
         <IOINTERFACE MPD_INDEX="0" NAME="gpio_0" TYPE="XIL_AXI_GPIO_V1">
           <PORTMAPS>
+            <PORTMAP DIR="IO" PHYSICAL="GPIO_IO"/>
             <PORTMAP DIR="I" PHYSICAL="GPIO_IO_I"/>
             <PORTMAP DIR="O" PHYSICAL="GPIO_IO_O"/>
             <PORTMAP DIR="O" PHYSICAL="GPIO_IO_T"/>
             <PORTMAP DIR="I" PHYSICAL="GPIO2_IO_I"/>
             <PORTMAP DIR="O" PHYSICAL="GPIO2_IO_O"/>
             <PORTMAP DIR="O" PHYSICAL="GPIO2_IO_T"/>
-            <PORTMAP DIR="IO" PHYSICAL="GPIO_IO"/>
             <PORTMAP DIR="IO" PHYSICAL="GPIO2_IO"/>
           </PORTMAPS>
         </IOINTERFACE>
@@ -8134,6 +8134,11 @@
             <CONNECTION INSTANCE="clock_generator_0" PORT="CLKOUT2"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" IS_INSTANTIATED="TRUE" MHS_INDEX="1" MPD_INDEX="5" NAME="Interrupt" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="axi_timer_0_Interrupt">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_0" PORT="Intr"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" MPD_INDEX="0" NAME="CaptureTrig0" SIGNAME="__NOC__">
           <DESCRIPTION>Capture Trig 0</DESCRIPTION>
           <CONNECTIONS/>
@@ -8153,11 +8158,6 @@
         <PORT DIR="O" MPD_INDEX="4" NAME="PWM0" SIGNAME="__NOC__">
           <DESCRIPTION>Pulse Width Modulation 0</DESCRIPTION>
           <CONNECTIONS/>
-        </PORT>
-        <PORT DIR="O" IS_INSTANTIATED="TRUE" MPD_INDEX="5" NAME="Interrupt" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="axi_timer_0_Interrupt">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_0" PORT="Intr"/>
-          </CONNECTIONS>
         </PORT>
         <PORT DIR="I" MPD_INDEX="6" NAME="Freeze" SIGNAME="__NOC__">
           <CONNECTIONS/>
@@ -8317,6 +8317,11 @@
             <CONNECTION INSTANCE="clock_generator_0" PORT="CLKOUT2"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" IS_INSTANTIATED="TRUE" MHS_INDEX="1" MPD_INDEX="5" NAME="Interrupt" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="axi_timer_1_Interrupt">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_intc_0" PORT="Intr"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" MPD_INDEX="0" NAME="CaptureTrig0" SIGNAME="__NOC__">
           <DESCRIPTION>Capture Trig 0</DESCRIPTION>
           <CONNECTIONS/>
@@ -8336,11 +8341,6 @@
         <PORT DIR="O" MPD_INDEX="4" NAME="PWM0" SIGNAME="__NOC__">
           <DESCRIPTION>Pulse Width Modulation 0</DESCRIPTION>
           <CONNECTIONS/>
-        </PORT>
-        <PORT DIR="O" IS_INSTANTIATED="TRUE" MPD_INDEX="5" NAME="Interrupt" SENSITIVITY="LEVEL_HIGH" SIGIS="INTERRUPT" SIGNAME="axi_timer_1_Interrupt">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_intc_0" PORT="Intr"/>
-          </CONNECTIONS>
         </PORT>
         <PORT DIR="I" MPD_INDEX="6" NAME="Freeze" SIGNAME="__NOC__">
           <CONNECTIONS/>
@@ -8512,6 +8512,18 @@
             <CONNECTION INSTANCE="clock_generator_0" PORT="CLKOUT2"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" ENDIAN="LITTLE" IS_INSTANTIATED="TRUE" LEFT="3" LSB="0" MHS_INDEX="1" MPD_INDEX="19" MSB="3" NAME="Intr" RIGHT="0" SENSITIVITY="EDGE_RISING" SIGIS="INTERRUPT" SIGNAME="axi_timer_0_Interrupt &amp; axi_timer_1_Interrupt &amp; push_gpio_IP2INTC_Irpt &amp; dip_gpio_IP2INTC_Irpt" VECFORMULA="[(C_NUM_INTR_INPUTS-1):0]">
+          <SIGNALS>
+            <SIGNAL NAME="axi_timer_0_Interrupt"/>
+            <SIGNAL NAME="axi_timer_1_Interrupt"/>
+            <SIGNAL NAME="push_gpio_IP2INTC_Irpt"/>
+            <SIGNAL NAME="dip_gpio_IP2INTC_Irpt"/>
+          </SIGNALS>
+          <DESCRIPTION>Interrupt Inputs</DESCRIPTION>
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_timer_0_Interrupt &amp; axi_timer_1_Interrupt &amp; push_gpio_IP2INTC_Irpt &amp; dip_gpio_IP2INTC_Irpt"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT BUS="S_AXI" DEF_SIGNAME="axi4lite_0_M_ARESETN" DIR="I" MPD_INDEX="1" NAME="S_AXI_ARESETN" SIGIS="RST" SIGNAME="axi4lite_0_M_ARESETN">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi4lite_0" PORT="M_AXI_ARESET_OUT_N"/>
@@ -8600,12 +8612,6 @@
         <PORT BUS="S_AXI" DEF_SIGNAME="axi4lite_0_M_RREADY" DIR="I" MPD_INDEX="18" NAME="S_AXI_RREADY" SIGNAME="axi4lite_0_M_RREADY">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi4lite_0" PORT="M_AXI_RREADY"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" ENDIAN="LITTLE" IS_INSTANTIATED="TRUE" LEFT="3" LSB="0" MPD_INDEX="19" MSB="3" NAME="Intr" RIGHT="0" SENSITIVITY="EDGE_RISING" SIGIS="INTERRUPT" SIGNAME="axi_timer_0_Interrupt &amp; axi_timer_1_Interrupt &amp; push_gpio_IP2INTC_Irpt &amp; dip_gpio_IP2INTC_Irpt" VECFORMULA="[(C_NUM_INTR_INPUTS-1):0]">
-          <DESCRIPTION>Interrupt Inputs</DESCRIPTION>
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_timer_0_Interrupt &amp; axi_timer_1_Interrupt &amp; push_gpio_IP2INTC_Irpt &amp; dip_gpio_IP2INTC_Irpt"/>
           </CONNECTIONS>
         </PORT>
         <PORT BUS="INTERRUPT" DEF_SIGNAME="axi_intc_0_INTERRUPT_Interrupt" DIR="O" MPD_INDEX="20" NAME="Irq" SENSITIVITY="EDGE_RISING" SIGIS="INTERRUPT" SIGNAME="axi_intc_0_INTERRUPT_Interrupt">
@@ -8858,14 +8864,124 @@
         <PARAMETER IS_INSTANTIATED="TRUE" MHS_INDEX="25" NAME="C_INTERCONNECT_S0_AXI_MASTERS" VALUE="microblaze_0.M_AXI_DC &amp; microblaze_0.M_AXI_IC"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="600000000" DIR="I" IS_INSTANTIATED="TRUE" MPD_INDEX="0" NAME="sysclk_2x" SIGIS="CLK" SIGNAME="clk_600_0000MHzPLL0_nobuf">
+        <PORT DIR="I" IS_INSTANTIATED="TRUE" MHS_INDEX="0" MPD_INDEX="10" NAME="sys_rst" SIGIS="RST" SIGNAME="proc_sys_reset_0_BUS_STRUCT_RESET">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="proc_sys_reset_0" PORT="Bus_Struct_Reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" IS_INSTANTIATED="TRUE" MHS_INDEX="1" MPD_INDEX="4" NAME="pll_lock" SIGNAME="proc_sys_reset_0_Dcm_locked">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clock_generator_0" PORT="LOCKED"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" ENDIAN="LITTLE" IOS="memory_0" IS_INSTANTIATED="TRUE" LEFT="13" LSB="0" MHS_INDEX="2" MPD_INDEX="11" MSB="13" NAME="mcbx_dram_addr" RIGHT="0" SIGNAME="axi_s6_ddrx_0_mcbx_dram_addr" VECFORMULA="[C_MEM_ADDR_WIDTH-1:0]">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_addr_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" ENDIAN="LITTLE" IOS="memory_0" IS_INSTANTIATED="TRUE" LEFT="2" LSB="0" MHS_INDEX="3" MPD_INDEX="12" MSB="2" NAME="mcbx_dram_ba" RIGHT="0" SIGNAME="axi_s6_ddrx_0_mcbx_dram_ba" VECFORMULA="[C_MEM_BANKADDR_WIDTH-1:0]">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_ba_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" IOS="memory_0" IS_INSTANTIATED="TRUE" MHS_INDEX="4" MPD_INDEX="13" NAME="mcbx_dram_ras_n" SIGNAME="axi_s6_ddrx_0_mcbx_dram_ras_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_ras_n_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" IOS="memory_0" IS_INSTANTIATED="TRUE" MHS_INDEX="5" MPD_INDEX="14" NAME="mcbx_dram_cas_n" SIGNAME="axi_s6_ddrx_0_mcbx_dram_cas_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_cas_n_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" IOS="memory_0" IS_INSTANTIATED="TRUE" MHS_INDEX="6" MPD_INDEX="15" NAME="mcbx_dram_we_n" SIGNAME="axi_s6_ddrx_0_mcbx_dram_we_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_we_n_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" IOS="memory_0" IS_INSTANTIATED="TRUE" MHS_INDEX="7" MPD_INDEX="16" NAME="mcbx_dram_cke" SIGNAME="axi_s6_ddrx_0_mcbx_dram_cke">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_cke_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" IOS="memory_0" IS_INSTANTIATED="TRUE" MHS_INDEX="8" MPD_INDEX="17" NAME="mcbx_dram_clk" SIGIS="CLK" SIGNAME="axi_s6_ddrx_0_mcbx_dram_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_clk_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" IOS="memory_0" IS_INSTANTIATED="TRUE" MHS_INDEX="9" MPD_INDEX="18" NAME="mcbx_dram_clk_n" SIGIS="CLK" SIGNAME="axi_s6_ddrx_0_mcbx_dram_clk_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_clk_n_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" ENDIAN="LITTLE" IOS="memory_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="FALSE" LEFT="15" LSB="0" MHS_INDEX="10" MPD_INDEX="19" MSB="15" NAME="mcbx_dram_dq" RIGHT="0" SIGNAME="axi_s6_ddrx_0_mcbx_dram_dq" VECFORMULA="[C_NUM_DQ_PINS-1:0]">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_dq"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" IOS="memory_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="FALSE" MHS_INDEX="11" MPD_INDEX="20" NAME="mcbx_dram_dqs" SIGNAME="axi_s6_ddrx_0_mcbx_dram_dqs">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_dqs"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" IOS="memory_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="FALSE" MHS_INDEX="12" MPD_INDEX="21" NAME="mcbx_dram_dqs_n" SIGNAME="axi_s6_ddrx_0_mcbx_dram_dqs_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_dqs_n"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" IOS="memory_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="FALSE" MHS_INDEX="13" MPD_INDEX="22" NAME="mcbx_dram_udqs" SIGNAME="axi_s6_ddrx_0_mcbx_dram_udqs">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_udqs"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" IOS="memory_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="FALSE" MHS_INDEX="14" MPD_INDEX="23" NAME="mcbx_dram_udqs_n" SIGNAME="axi_s6_ddrx_0_mcbx_dram_udqs_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_udqs_n"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" IOS="memory_0" IS_INSTANTIATED="TRUE" MHS_INDEX="15" MPD_INDEX="24" NAME="mcbx_dram_udm" SIGNAME="axi_s6_ddrx_0_mcbx_dram_udm">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_udm_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" IOS="memory_0" IS_INSTANTIATED="TRUE" MHS_INDEX="16" MPD_INDEX="25" NAME="mcbx_dram_ldm" SIGNAME="axi_s6_ddrx_0_mcbx_dram_ldm">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_ldm_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" IOS="memory_0" IS_INSTANTIATED="TRUE" MHS_INDEX="17" MPD_INDEX="26" NAME="mcbx_dram_odt" SIGNAME="axi_s6_ddrx_0_mcbx_dram_odt">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_odt_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" IOS="memory_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="FALSE" MHS_INDEX="18" MPD_INDEX="28" NAME="rzq" SIGNAME="axi_s6_ddrx_0_rzq">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_rzq"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" IOS="memory_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="FALSE" MHS_INDEX="19" MPD_INDEX="29" NAME="zio" SIGNAME="axi_s6_ddrx_0_zio">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_zio"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="600000000" DIR="I" IS_INSTANTIATED="TRUE" MHS_INDEX="20" MPD_INDEX="0" NAME="sysclk_2x" SIGIS="CLK" SIGNAME="clk_600_0000MHzPLL0_nobuf">
           <CONNECTIONS>
             <CONNECTION INSTANCE="clock_generator_0" PORT="CLKOUT0"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="600000000" DIR="I" IS_INSTANTIATED="TRUE" MPD_INDEX="1" NAME="sysclk_2x_180" SIGIS="CLK" SIGNAME="clk_600_0000MHz180PLL0_nobuf">
+        <PORT CLKFREQUENCY="600000000" DIR="I" IS_INSTANTIATED="TRUE" MHS_INDEX="21" MPD_INDEX="1" NAME="sysclk_2x_180" SIGIS="CLK" SIGNAME="clk_600_0000MHz180PLL0_nobuf">
           <CONNECTIONS>
             <CONNECTION INSTANCE="clock_generator_0" PORT="CLKOUT1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" IS_INSTANTIATED="TRUE" MHS_INDEX="22" MPD_INDEX="30" NAME="ui_clk" SIGIS="CLK" SIGNAME="clk_100_0000MHzPLL0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clock_generator_0" PORT="CLKOUT2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT BUS="S0_AXI" CLKFREQUENCY="130000000" DEF_SIGNAME="__BUS__" DIR="I" IS_INSTANTIATED="TRUE" MHS_INDEX="23" MPD_INDEX="32" NAME="s0_axi_aclk" SIGIS="CLK" SIGNAME="clk_130_0000MHz">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="clock_generator_0" PORT="CLKOUT3"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" IS_VALID="FALSE" MPD_INDEX="2" NAME="pll_ce_0" SIGNAME="__NOC__">
@@ -8873,11 +8989,6 @@
         </PORT>
         <PORT DIR="I" IS_VALID="FALSE" MPD_INDEX="3" NAME="pll_ce_90" SIGNAME="__NOC__">
           <CONNECTIONS/>
-        </PORT>
-        <PORT DIR="I" IS_INSTANTIATED="TRUE" MPD_INDEX="4" NAME="pll_lock" SIGNAME="proc_sys_reset_0_Dcm_locked">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="clock_generator_0" PORT="LOCKED"/>
-          </CONNECTIONS>
         </PORT>
         <PORT DIR="O" MPD_INDEX="5" NAME="pll_lock_bufpll_o" SIGNAME="__NOC__">
           <CONNECTIONS/>
@@ -8894,116 +9005,11 @@
         <PORT DIR="O" MPD_INDEX="9" NAME="pll_ce_90_bufpll_o" SIGNAME="__NOC__">
           <CONNECTIONS/>
         </PORT>
-        <PORT DIR="I" IS_INSTANTIATED="TRUE" MPD_INDEX="10" NAME="sys_rst" SIGIS="RST" SIGNAME="proc_sys_reset_0_BUS_STRUCT_RESET">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="proc_sys_reset_0" PORT="Bus_Struct_Reset"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" ENDIAN="LITTLE" IOS="memory_0" IS_INSTANTIATED="TRUE" LEFT="13" LSB="0" MPD_INDEX="11" MSB="13" NAME="mcbx_dram_addr" RIGHT="0" SIGNAME="axi_s6_ddrx_0_mcbx_dram_addr" VECFORMULA="[C_MEM_ADDR_WIDTH-1:0]">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_addr_pin"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" ENDIAN="LITTLE" IOS="memory_0" IS_INSTANTIATED="TRUE" LEFT="2" LSB="0" MPD_INDEX="12" MSB="2" NAME="mcbx_dram_ba" RIGHT="0" SIGNAME="axi_s6_ddrx_0_mcbx_dram_ba" VECFORMULA="[C_MEM_BANKADDR_WIDTH-1:0]">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_ba_pin"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" IOS="memory_0" IS_INSTANTIATED="TRUE" MPD_INDEX="13" NAME="mcbx_dram_ras_n" SIGNAME="axi_s6_ddrx_0_mcbx_dram_ras_n">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_ras_n_pin"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" IOS="memory_0" IS_INSTANTIATED="TRUE" MPD_INDEX="14" NAME="mcbx_dram_cas_n" SIGNAME="axi_s6_ddrx_0_mcbx_dram_cas_n">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_cas_n_pin"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" IOS="memory_0" IS_INSTANTIATED="TRUE" MPD_INDEX="15" NAME="mcbx_dram_we_n" SIGNAME="axi_s6_ddrx_0_mcbx_dram_we_n">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_we_n_pin"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" IOS="memory_0" IS_INSTANTIATED="TRUE" MPD_INDEX="16" NAME="mcbx_dram_cke" SIGNAME="axi_s6_ddrx_0_mcbx_dram_cke">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_cke_pin"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" IOS="memory_0" IS_INSTANTIATED="TRUE" MPD_INDEX="17" NAME="mcbx_dram_clk" SIGIS="CLK" SIGNAME="axi_s6_ddrx_0_mcbx_dram_clk">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_clk_pin"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" IOS="memory_0" IS_INSTANTIATED="TRUE" MPD_INDEX="18" NAME="mcbx_dram_clk_n" SIGIS="CLK" SIGNAME="axi_s6_ddrx_0_mcbx_dram_clk_n">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_clk_n_pin"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="IO" ENDIAN="LITTLE" IOS="memory_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="FALSE" LEFT="15" LSB="0" MPD_INDEX="19" MSB="15" NAME="mcbx_dram_dq" RIGHT="0" SIGNAME="axi_s6_ddrx_0_mcbx_dram_dq" VECFORMULA="[C_NUM_DQ_PINS-1:0]">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_dq"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="IO" IOS="memory_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="FALSE" MPD_INDEX="20" NAME="mcbx_dram_dqs" SIGNAME="axi_s6_ddrx_0_mcbx_dram_dqs">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_dqs"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="IO" IOS="memory_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="FALSE" MPD_INDEX="21" NAME="mcbx_dram_dqs_n" SIGNAME="axi_s6_ddrx_0_mcbx_dram_dqs_n">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_dqs_n"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="IO" IOS="memory_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="FALSE" MPD_INDEX="22" NAME="mcbx_dram_udqs" SIGNAME="axi_s6_ddrx_0_mcbx_dram_udqs">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_udqs"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="IO" IOS="memory_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="FALSE" MPD_INDEX="23" NAME="mcbx_dram_udqs_n" SIGNAME="axi_s6_ddrx_0_mcbx_dram_udqs_n">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_udqs_n"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" IOS="memory_0" IS_INSTANTIATED="TRUE" MPD_INDEX="24" NAME="mcbx_dram_udm" SIGNAME="axi_s6_ddrx_0_mcbx_dram_udm">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_udm_pin"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" IOS="memory_0" IS_INSTANTIATED="TRUE" MPD_INDEX="25" NAME="mcbx_dram_ldm" SIGNAME="axi_s6_ddrx_0_mcbx_dram_ldm">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_ldm_pin"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" IOS="memory_0" IS_INSTANTIATED="TRUE" MPD_INDEX="26" NAME="mcbx_dram_odt" SIGNAME="axi_s6_ddrx_0_mcbx_dram_odt">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_mcbx_dram_odt_pin"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" IOS="memory_0" IS_VALID="FALSE" MPD_INDEX="27" NAME="mcbx_dram_ddr3_rst" SIGNAME="__NOC__">
           <CONNECTIONS/>
         </PORT>
-        <PORT DIR="IO" IOS="memory_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="FALSE" MPD_INDEX="28" NAME="rzq" SIGNAME="axi_s6_ddrx_0_rzq">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_rzq"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="IO" IOS="memory_0" IS_INSTANTIATED="TRUE" IS_THREE_STATE="FALSE" MPD_INDEX="29" NAME="zio" SIGNAME="axi_s6_ddrx_0_zio">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_s6_ddrx_0_zio"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="I" IS_INSTANTIATED="TRUE" MPD_INDEX="30" NAME="ui_clk" SIGIS="CLK" SIGNAME="clk_100_0000MHzPLL0">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="clock_generator_0" PORT="CLKOUT2"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="O" MPD_INDEX="31" NAME="uo_done_cal" SIGNAME="__NOC__">
           <CONNECTIONS/>
-        </PORT>
-        <PORT BUS="S0_AXI" CLKFREQUENCY="130000000" DEF_SIGNAME="__BUS__" DIR="I" IS_INSTANTIATED="TRUE" MPD_INDEX="32" NAME="s0_axi_aclk" SIGIS="CLK" SIGNAME="clk_130_0000MHz">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="clock_generator_0" PORT="CLKOUT3"/>
-          </CONNECTIONS>
         </PORT>
         <PORT BUS="S0_AXI" DEF_SIGNAME="axi_interconnect_0_M_aresetn" DIR="I" MPD_INDEX="33" NAME="s0_axi_aresetn" SIGIS="RST" SIGNAME="axi_interconnect_0_M_aresetn">
           <CONNECTIONS>
@@ -9674,9 +9680,9 @@
             <PORTMAP DIR="O" PHYSICAL="mcbx_dram_udm"/>
             <PORTMAP DIR="O" PHYSICAL="mcbx_dram_ldm"/>
             <PORTMAP DIR="O" PHYSICAL="mcbx_dram_odt"/>
-            <PORTMAP DIR="O" PHYSICAL="mcbx_dram_ddr3_rst"/>
             <PORTMAP DIR="IO" PHYSICAL="rzq"/>
             <PORTMAP DIR="IO" PHYSICAL="zio"/>
+            <PORTMAP DIR="O" PHYSICAL="mcbx_dram_ddr3_rst"/>
           </PORTMAPS>
         </IOINTERFACE>
       </IOINTERFACES>
@@ -9738,6 +9744,18 @@
         <PORT BUS="S_AXI" CLKFREQUENCY="100000000" DEF_SIGNAME="__BUS__" DIR="I" IS_INSTANTIATED="TRUE" MHS_INDEX="0" MPD_INDEX="0" NAME="S_AXI_ACLK" SIGIS="CLK" SIGNAME="clk_100_0000MHzPLL0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="clock_generator_0" PORT="CLKOUT2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" IOS="uart_0" IS_INSTANTIATED="TRUE" MHS_INDEX="1" MPD_INDEX="20" NAME="RX" SIGNAME="axi_uartlite_0_RX">
+          <DESCRIPTION>Serial Data In</DESCRIPTION>
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_uartlite_0_RX_pin"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" IOS="uart_0" IS_INSTANTIATED="TRUE" MHS_INDEX="2" MPD_INDEX="21" NAME="TX" SIGNAME="axi_uartlite_0_TX">
+          <DESCRIPTION>Serial Data Out</DESCRIPTION>
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External Ports" PORT="axi_uartlite_0_TX_pin"/>
           </CONNECTIONS>
         </PORT>
         <PORT BUS="S_AXI" DEF_SIGNAME="axi4lite_0_M_ARESETN" DIR="I" MPD_INDEX="1" NAME="S_AXI_ARESETN" SIGIS="RST" SIGNAME="axi4lite_0_M_ARESETN">
@@ -9833,18 +9851,6 @@
             <CONNECTION INSTANCE="axi4lite_0" PORT="M_AXI_RREADY"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" IOS="uart_0" IS_INSTANTIATED="TRUE" MPD_INDEX="20" NAME="RX" SIGNAME="axi_uartlite_0_RX">
-          <DESCRIPTION>Serial Data In</DESCRIPTION>
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_uartlite_0_RX_pin"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" IOS="uart_0" IS_INSTANTIATED="TRUE" MPD_INDEX="21" NAME="TX" SIGNAME="axi_uartlite_0_TX">
-          <DESCRIPTION>Serial Data Out</DESCRIPTION>
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="External Ports" PORT="axi_uartlite_0_TX_pin"/>
-          </CONNECTIONS>
-        </PORT>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="axi4lite_0" BUSSTD="AXI" BUSSTD_PSF="AXI" IS_INSTANTIATED="TRUE" MHS_INDEX="0" MPD_INDEX="0" NAME="S_AXI" PROTOCOL="AXI4LITE" TYPE="SLAVE">
@@ -9912,7 +9918,7 @@
         <CONNECTION BUSINTERFACE="[gpio_0]" INSTANCE="dip_gpio" PORT="GPIO_IO"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="IO" ENDIAN="LITTLE" LEFT="7" LSB="0" MHS_INDEX="4" MSB="7" NAME="push_gpio_GPIO_IO_pin" RIGHT="0" SIGNAME="push_gpio_GPIO_IO">
+    <PORT DIR="IO" ENDIAN="LITTLE" LEFT="4" LSB="0" MHS_INDEX="4" MSB="4" NAME="push_gpio_GPIO_IO_pin" RIGHT="0" SIGNAME="push_gpio_GPIO_IO">
       <CONNECTIONS>
         <CONNECTION BUSINTERFACE="[gpio_0]" INSTANCE="push_gpio" PORT="GPIO_IO"/>
       </CONNECTIONS>
