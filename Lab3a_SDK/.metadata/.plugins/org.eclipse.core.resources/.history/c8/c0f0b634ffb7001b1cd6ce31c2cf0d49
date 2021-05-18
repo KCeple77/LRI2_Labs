@@ -97,6 +97,10 @@ void shell_main(void* arg) {
 	clear();
 
 	unsigned char val;
+
+	val = XGpio_DiscreteRead(&gpDIP, 1);
+	XGpio_DiscreteWrite(&gpLED, 1, val);
+
 	int Status;
 	int ret;
 
@@ -137,9 +141,6 @@ void shell_main(void* arg) {
 	//enable the interrupt in xilkernel
 	enable_interrupt(XPAR_AXI_INTC_0_PUSH_GPIO_IP2INTC_IRPT_INTR);
 	print("PUSH int enabled\r\n");
-
-	val = XGpio_DiscreteRead(&gpDIP, 1);
-	XGpio_DiscreteWrite(&gpLED, 1, val);
 
 	//start thread 1
 	ret = pthread_create(&tid1, NULL, (void*) thread_tut_func_1, NULL );
