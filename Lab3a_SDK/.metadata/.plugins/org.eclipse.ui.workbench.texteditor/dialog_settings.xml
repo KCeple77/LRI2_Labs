@@ -13,15 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="idle task" key="selection"/>
+		<item value="start_clock" key="selection"/>
 		<list key="findhistory">
-			<item value="Idle Task"/>
-			<item value="start_standby"/>
-			<item value="Idle Tas"/>
-			<item value="Idle"/>
-			<item value="thread_func_2"/>
-			<item value="thread_func_1"/>
-			<item value="proginfo"/>
+			<item value="start_clock"/>
+			<item value="XGpio_DiscreteWrite"/>
+			<item value="clear("/>
+			<item value="pthread_mutexattr_init"/>
+			<item value="tasks_num_mutex"/>
+			<item value="mutex_init"/>
+			<item value="done"/>
+			<item value="task_threads_activity"/>
 		</list>
 		<list key="replacehistory">
 			<item value="thread_tut_func_2"/>

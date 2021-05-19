@@ -149,3 +149,110 @@
 07:30:50.961 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
 08:08:45.285 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
 08:28:29.098 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+09:07:42.220 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+09:09:30.830 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+09:12:10.458 INFO  - System reset is completed. 
+09:15:51.746 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+09:21:52.732 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+09:21:54.404 INFO  - System reset is completed. 
+09:22:02.706 ERROR - Port COM6 is already in use. 
+09:22:24.497 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+09:24:21.768 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+09:24:40.147 INFO  - System reset is completed. 
+09:30:16.940 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+09:33:34.188 INFO  - Settings changed on project xilkernel_bsp_0. Triggering a rebuild... 
+09:33:35.582 INFO  - Refreshed build settings on project MB_Proj1 
+09:33:35.588 INFO  - Refreshed build settings on project xilkernel_demo 
+09:35:44.933 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+09:39:31.859 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+09:40:50.413 INFO  - System reset is completed. 
+09:44:50.047 INFO  - System reset is completed. 
+09:46:03.134 INFO  - FPGA Cable Disconnected. All active launches will be terminated. 
+09:46:03.135 WARN  - Terminating existing sessions on processor microblaze_0 
+09:46:14.377 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+09:47:48.664 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+09:48:26.834 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+09:48:28.694 INFO  - System reset is completed. 
+10:04:41.489 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+10:06:11.622 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+10:07:04.668 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+10:08:17.088 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+10:09:00.565 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+10:10:16.487 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+10:10:20.201 INFO  - System reset is completed. 
+10:11:27.860 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+10:11:29.569 INFO  - System reset is completed. 
+10:14:52.002 INFO  - Successfully generated E:\FaksHub\2020_2021\2.Semester_2020_2021\1_Ciklus\LRI2\Labs\LRI2_Labs\Lab3a_SDK\MB_Proj1\src\lscript.ld. 
+10:16:09.382 WARN  - Terminating existing sessions on processor microblaze_0 
+10:16:23.006 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+10:16:53.159 INFO  - System reset is completed. 
+10:18:35.924 INFO  - Settings changed on project xilkernel_bsp_0. Triggering a rebuild... 
+10:18:37.084 INFO  - Refreshed build settings on project MB_Proj1 
+10:18:37.089 INFO  - Refreshed build settings on project xilkernel_demo 
+10:19:22.841 WARN  - Terminating existing sessions on processor microblaze_0 
+10:19:33.436 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+Failed to Scan JTAG Chain
+    Internal Error - Cable target accessed before open
+ 
+10:19:45.162 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to connect to Xilinx hw_server. Check if the
+    hw_server is running and correct TCP port is used.
+ 
+10:19:48.699 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+10:21:15.997 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+10:21:40.189 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+10:22:20.933 INFO  - System reset is completed. 
+10:26:14.722 INFO  - System reset is completed. 
+10:30:05.322 INFO  - Settings changed on project xilkernel_bsp_0. Triggering a rebuild... 
+10:30:06.517 INFO  - Refreshed build settings on project MB_Proj1 
+10:30:06.522 INFO  - Refreshed build settings on project xilkernel_demo 
+10:31:50.643 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+10:33:01.497 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+10:35:28.652 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+10:37:52.759 INFO  - Settings changed on project xilkernel_bsp_0. Triggering a rebuild... 
+10:37:53.906 INFO  - Refreshed build settings on project MB_Proj1 
+10:37:53.910 INFO  - Refreshed build settings on project xilkernel_demo 
+10:38:29.384 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+10:39:45.601 INFO  - System reset is completed. 
+10:41:34.937 INFO  - System reset is completed. 
+10:43:20.296 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+10:43:42.869 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+10:46:29.195 INFO  - Settings changed on project xilkernel_bsp_0. Triggering a rebuild... 
+10:46:30.293 INFO  - Refreshed build settings on project MB_Proj1 
+10:46:30.298 INFO  - Refreshed build settings on project xilkernel_demo 
+10:50:39.491 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+10:52:11.128 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+10:55:41.649 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+10:55:53.192 ERROR - Unexpected error while launching program. java.lang.RuntimeException: Failed to download ELF file
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.downloadELF(Unknown Source)
+	at com.xilinx.sdk.debug.core.internal.AppRunner.run(Unknown Source)
+
+10:56:06.270 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+10:56:10.723 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+10:56:38.771 ERROR - FPGA Configuration failed.Connection to Board Failed
+
+
+    Failed to Open JTAG Cable
+    Cable target is not connected to the host
+ 
+10:57:05.110 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+10:59:01.099 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+11:00:09.071 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+11:01:46.075 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+11:03:01.506 INFO  - FPGA Cable Disconnected. All active launches will be terminated. 
+11:03:01.507 WARN  - Terminating existing sessions on processor microblaze_0 
+11:03:51.424 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+11:04:59.831 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+11:05:08.684 ERROR - Port COM6 is already in use. 
+11:05:24.059 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+11:05:55.742 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 

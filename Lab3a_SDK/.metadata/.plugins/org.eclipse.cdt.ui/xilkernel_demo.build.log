@@ -1,6 +1,6 @@
-08:28:37 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+11:06:03 **** Incremental Build of configuration Debug for project xilkernel_demo ****
 make all 
 make: Nothing to be done for `all'.
 
-08:28:37 Build Finished (took 433ms)
+11:06:03 Build Finished (took 475ms)
 

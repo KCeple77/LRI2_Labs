@@ -133,6 +133,10 @@ static void gpDIPIntHandler(void *arg) //Should be very short (in time). In a pr
 	XGpio_InterruptClear(&gpDIP, 1);			//clear the interrupt flag. if this is not done, gpio will keep interrupting the microblaze.--
 
 	val = XGpio_DiscreteRead(&gpDIP, 1);
+//	sprintf(str_buffer, "DIP Interrupt: %x", val);
+//	cout(str_buffer);
+
+
 //	XGpio_DiscreteWrite(&gpLED, 1, val);
 	pthread_mutex_lock(&mutex_task_threads_activity);
 	task_threads_activity = val;
@@ -144,31 +148,39 @@ static void gpPUSHIntHandler(void *arg) //Should be very short (in time). In a p
 	unsigned char val, tmp;
 	int i;
 
+//	sprintf(str_buffer, "Push Button Interrupt: %x", val);
+//	cout(str_buffer);
 	XGpio_InterruptClear(&gpPUSH, 1);			//clear the interrupt flag. if this is not done, gpio will keep interrupting the microblaze.--
 
 	val = XGpio_DiscreteRead(&gpPUSH, 1);
 
+//	if(val == 0x1f) {
+//		cout("Push Button Interrupt value = 0x1f - skipping Interrupt!");
+//		return;
+//	}
+
 	// Update thread tasks
-	pthread_mutex_lock(&tasks_num_mutex);
+//	pthread_mutex_lock(&tasks_num_mutex);
 	for(i = 0; i < TASK_THREADS_NONPERIODIC_NUM; i++) {
 		tmp = val>>i;
 		tmp &= 0x01;
 
 		if(tmp == 0) {
-			tthread_tasks_num[i]++;
+//			tthread_tasks_num[i]++;
 			sem_post(&tthread_sems[i]);
 		}
 	}
-	pthread_mutex_unlock(&tasks_num_mutex);
+//	pthread_mutex_unlock(&tasks_num_mutex);
 
-	for(i = 0; i < TASK_THREADS_NONPERIODIC_NUM; i++) {
-			tmp = val>>i;
-			tmp &= 0x01;
-
-			if(tmp == 0) {
-				sem_post(&tthread_sems[i]);
-			}
-		}
+//	for(i = 0; i < TASK_THREADS_NONPERIODIC_NUM; i++) {
+//		tmp = val>>i;
+//		tmp &= 0x01;
+//
+//		if(tmp == 0) {
+//			sem_post(&tthread_sems[i]);
+//		}
+//	}
+//	cout("PUSH Button Interrupt handled!");
 }
 /*
  * ###########################################			INTERRUPT HANDLERS				##################################################
@@ -179,7 +191,7 @@ static void gpPUSHIntHandler(void *arg) //Should be very short (in time). In a p
  * ###########################################			THREAD-RELATED				##################################################
  */
 void task(int thread_index) {
-	sprintf(str_buffer, "Thread Index: %d wörking!", thread_index);
+	sprintf(str_buffer, "Thread Index: %d working!", thread_index);
 	cout(str_buffer);
 
 	thread_led_indicator(thread_index, true);
@@ -192,6 +204,8 @@ void task(int thread_index) {
 }
 
 void* periodic_thread(void* arg) {
+	sleep(1000);
+
 	int time_tracker_ms, current_time_ms, former_time_ms;
 	unsigned char tmp;
 	int my_index = (int)arg;
@@ -231,6 +245,8 @@ void* periodic_thread(void* arg) {
 }
 
 void* non_periodic_thread(void* arg) {
+	sleep(1000);
+
 	int retval;
 	int my_index = (int)arg;
 	unsigned char tmp;
@@ -255,13 +271,12 @@ void* non_periodic_thread(void* arg) {
 				// No tasks
 				sleep(SLEEP_AMOUNT);
 			} else if(retval == 0){
+				task(my_index);
 				sleep(WORK_AMOUNT);
 
-				task(my_index);
-
-				pthread_mutex_lock(&tasks_num_mutex);
-				tthread_tasks_num[my_index - TASK_THREADS_NONPERIODIC_OFFSET]--;
-				pthread_mutex_unlock(&tasks_num_mutex);
+//				pthread_mutex_lock(&tasks_num_mutex);
+//				tthread_tasks_num[my_index - TASK_THREADS_NONPERIODIC_OFFSET]--;
+//				pthread_mutex_unlock(&tasks_num_mutex);
 			} else {
 				sprintf(str_buffer, "Sem_post ERROR!");
 				cout(str_buffer);
@@ -271,7 +286,6 @@ void* non_periodic_thread(void* arg) {
 			// Frozen
 			sleep(SLEEP_AMOUNT);
 		}
-
 	}
 }
 /*
@@ -287,16 +301,16 @@ void shell_main(void* arg) {
 	start_clock();
 	sprintf(str_buffer, "\r\n");
 	cout(str_buffer);
-	clear();
+	//clear();
 
 	unsigned char val;
 	int Status;
 	int ret, retval_tmp, i;
 
-	// Set my priority as highest - 0!
-	spar.sched_priority = 0;
-	spid = get_currentPID();
-	pthread_setschedparam(spid, NULL, &spar);
+//	// Set my priority as highest - 0! Probably automatically set in pthread_table
+//	spar.sched_priority = 0;
+//	spid = get_currentPID();
+//	pthread_setschedparam(spid, NULL, &spar);
 
 	// Initialise mutex and semaphores
 	retval_tmp = pthread_mutexattr_init (&mattr);
@@ -327,30 +341,36 @@ void shell_main(void* arg) {
 		pthread_exit(NULL);
 	}
 
-	retval_tmp = pthread_mutex_init (&tasks_num_mutex, &mattr);
-		if (retval_tmp != 0) {
-			sprintf(str_buffer, "Error during pthread_mutex_init: %d.", retval_tmp);
-			cout(str_buffer);
-			pthread_exit(NULL);
-		}
+//	retval_tmp = pthread_mutex_init (&tasks_num_mutex, &mattr);
+//	if (retval_tmp != 0) {
+//		sprintf(str_buffer, "Error during pthread_mutex_init: %d.", retval_tmp);
+//		cout(str_buffer);
+//		pthread_exit(NULL);
+//	}
 
 	for(i = 0; i < TASK_THREADS_NONPERIODIC_NUM; i++) {
 		tthread_tasks_num[i] = 0;
 		if( sem_init(&tthread_sems[i], 1, 0) < 0 ) {
-			print("SEM: Error while initializing semaphore 1.\r\n");
+			sprintf(str_buffer, "SEM: Error while initializing semaphore!");
+			cout(str_buffer);
 			pthread_exit(NULL);
 		}
 	}
 
 	// Initialise LED
+	sprintf(str_buffer, "Initializing LED");
+	cout(str_buffer);
 	Status = XGpio_Initialize(&gpLED, XPAR_LED_GPIO_DEVICE_ID);
 	XGpio_SetDataDirection(&gpLED, 1, 0x00000000);
 	XGpio_DiscreteWrite(&gpLED, 1, 0x00);
-	sprintf(str_buffer, "Initializing DIP");
-	cout(str_buffer);
 
 	// Initialise the DIP instance & PUSH
+	sprintf(str_buffer, "Initializing DIP");
+	cout(str_buffer);
 	Status = XGpio_Initialize(&gpDIP, XPAR_DIP_GPIO_DEVICE_ID);
+
+	sprintf(str_buffer, "Initializing PUSH");
+	cout(str_buffer);
 	Status = XGpio_Initialize(&gpPUSH, XPAR_PUSH_GPIO_DEVICE_ID);
 
 	// Set DP & PUSH gpio direction to input.
@@ -370,11 +390,11 @@ void shell_main(void* arg) {
 	enable_interrupt(XPAR_AXI_INTC_0_DIP_GPIO_IP2INTC_IRPT_INTR);
 	sprintf(str_buffer, "DIP int enabled");
 	cout(str_buffer);
+
 	sprintf(str_buffer, "Enabling PUSH interrupts");
 	cout(str_buffer);
 	//global enable
 	XGpio_InterruptGlobalEnable(&gpPUSH);
-
 	// interrupt enable. both global enable and this function should be called to enable gpio interrupts.
 	XGpio_InterruptEnable(&gpPUSH, 1);
 	//register the handler with xilkernel
@@ -402,7 +422,7 @@ void shell_main(void* arg) {
 
 	// Start periodic threads
 	for(i = TASK_THREADS_PERIODIC_OFFSET; i < TASK_THREADS_PERIODIC_NUM; i++) {
-		tmp_pthread_attr.schedparam.sched_priority = i;
+		tmp_pthread_attr.schedparam.sched_priority = i+1;
 		ret = pthread_create(&task_threads_pids[i], &tmp_pthread_attr, (void*)periodic_thread, (void*)i);
 		if (ret != 0) {
 			sprintf(str_buffer, "-- ERROR (%d) launching thread...", ret);
