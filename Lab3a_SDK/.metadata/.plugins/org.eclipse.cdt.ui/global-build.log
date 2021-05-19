@@ -8155,3 +8155,107 @@ make: Nothing to be done for `all'.
 11:17:22 **** Incremental Build of configuration Debug for project xilkernel_demo ****
 make all 
 make: Nothing to be done for `all'.
+11:18:46 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'clear':
+../lab3.c:86:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:213:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:213:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'shell_main':
+../lab3.c:308:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:54:14: warning: 'spid' defined but not used [-Wunused-variable]
+../lab3.c:57:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:454:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../lab3.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./lab3.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  87776	   1656	  32304	 121736	  1db88	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+11:18:51 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+11:18:52 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+11:19:39 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'clear':
+../lab3.c:86:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:213:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:213:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'shell_main':
+../lab3.c:308:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:54:14: warning: 'spid' defined but not used [-Wunused-variable]
+../lab3.c:57:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:454:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../lab3.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./lab3.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  87776	   1656	  32304	 121736	  1db88	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+11:19:43 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+11:19:44 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+11:20:32 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+11:20:33 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.

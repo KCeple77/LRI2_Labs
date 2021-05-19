@@ -259,7 +259,7 @@ void* non_periodic_thread(void* arg) {
 		// First check if I am active?
 		sem_wait(&mutex_task_threads_activity);
 		tmp = task_threads_activity;
-		sem_post(&mutex_task_threads_activity);
+		sem_wait(&mutex_task_threads_activity);
 
 		tmp >>= my_index;
 		tmp &= 0x01;
