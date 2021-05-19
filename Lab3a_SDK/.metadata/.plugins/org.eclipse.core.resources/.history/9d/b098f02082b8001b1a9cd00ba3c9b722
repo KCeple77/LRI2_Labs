@@ -42,10 +42,9 @@ typedef unsigned char bool;
 unsigned char task_threads_activity;
 int tthread_tasks_num[TASK_THREADS_NONPERIODIC_NUM];
 sem_t tthread_sems[TASK_THREADS_NONPERIODIC_NUM];
-sem_t mutex_task_threads_activity;
 
 pthread_mutexattr_t mattr;
-pthread_mutex_t stdout_mutex, leds_mutex, tasks_num_mutex;
+pthread_mutex_t  mutex_task_threads_activity, stdout_mutex, leds_mutex, tasks_num_mutex;
 pthread_t task_threads_pids[TASK_THREADS_NUM];
 XGpio gpDIP, gpPUSH, gpLED; //PB device instance.
 
@@ -139,9 +138,9 @@ static void gpDIPIntHandler(void *arg) //Should be very short (in time). In a pr
 
 
 //	XGpio_DiscreteWrite(&gpLED, 1, val);
-	sem_wait(&mutex_task_threads_activity);
+	pthread_mutex_lock(&mutex_task_threads_activity);
 	task_threads_activity = val;
-	sem_post(&mutex_task_threads_activity);
+	pthread_mutex_unlock(&mutex_task_threads_activity);
 }
 
 static void gpPUSHIntHandler(void *arg) //Should be very short (in time). In a practical program, don't print etc.
@@ -218,9 +217,9 @@ void* periodic_thread(void* arg) {
 	time_tracker_ms = my_period_ms;
 	while (1) {
 		// First check if I am active?
-		sem_wait(&mutex_task_threads_activity);
+		pthread_mutex_lock(&mutex_task_threads_activity);
 		tmp = task_threads_activity;
-		sem_post(&mutex_task_threads_activity);
+		pthread_mutex_unlock(&mutex_task_threads_activity);
 
 		tmp >>= my_index;
 		tmp &= 0x01;
@@ -257,9 +256,9 @@ void* non_periodic_thread(void* arg) {
 
 	while (1) {
 		// First check if I am active?
-		sem_wait(&mutex_task_threads_activity);
+		pthread_mutex_lock(&mutex_task_threads_activity);
 		tmp = task_threads_activity;
-		sem_wait(&mutex_task_threads_activity);
+		pthread_mutex_unlock(&mutex_task_threads_activity);
 
 		tmp >>= my_index;
 		tmp &= 0x01;
@@ -321,8 +320,9 @@ void shell_main(void* arg) {
 		pthread_exit(NULL);
 	}
 
-	if( sem_init(&mutex_task_threads_activity, 1, 1) < 0 ) {
-		sprintf(str_buffer, "SEM: Error while initializing semaphore!");
+	retval_tmp = pthread_mutex_init (&mutex_task_threads_activity, &mattr);
+	if (retval_tmp != 0) {
+		sprintf(str_buffer, "Error during pthread_mutex_init: %d.", retval_tmp);
 		cout(str_buffer);
 		pthread_exit(NULL);
 	}

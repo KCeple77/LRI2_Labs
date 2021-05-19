@@ -256,3 +256,7 @@ Failed to Scan JTAG Chain
 11:05:08.684 ERROR - Port COM6 is already in use. 
 11:05:24.059 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
 11:05:55.742 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+11:11:58.844 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+11:12:02.262 ERROR - Port COM6 is already in use. 
+11:12:28.637 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
+11:13:18.000 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 

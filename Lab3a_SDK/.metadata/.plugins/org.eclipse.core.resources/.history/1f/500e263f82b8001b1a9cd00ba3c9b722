@@ -139,9 +139,9 @@ static void gpDIPIntHandler(void *arg) //Should be very short (in time). In a pr
 
 
 //	XGpio_DiscreteWrite(&gpLED, 1, val);
-	sem_wait(&mutex_task_threads_activity);
+	pthread_mutex_lock(&mutex_task_threads_activity);
 	task_threads_activity = val;
-	sem_post(&mutex_task_threads_activity);
+	pthread_mutex_unlock(&mutex_task_threads_activity);
 }
 
 static void gpPUSHIntHandler(void *arg) //Should be very short (in time). In a practical program, don't print etc.
@@ -218,9 +218,9 @@ void* periodic_thread(void* arg) {
 	time_tracker_ms = my_period_ms;
 	while (1) {
 		// First check if I am active?
-		sem_wait(&mutex_task_threads_activity);
+		pthread_mutex_lock(&mutex_task_threads_activity);
 		tmp = task_threads_activity;
-		sem_post(&mutex_task_threads_activity);
+		pthread_mutex_unlock(&mutex_task_threads_activity);
 
 		tmp >>= my_index;
 		tmp &= 0x01;
@@ -257,9 +257,9 @@ void* non_periodic_thread(void* arg) {
 
 	while (1) {
 		// First check if I am active?
-		sem_wait(&mutex_task_threads_activity);
+		pthread_mutex_lock(&mutex_task_threads_activity);
 		tmp = task_threads_activity;
-		sem_wait(&mutex_task_threads_activity);
+		pthread_mutex_unlock(&mutex_task_threads_activity);
 
 		tmp >>= my_index;
 		tmp &= 0x01;
