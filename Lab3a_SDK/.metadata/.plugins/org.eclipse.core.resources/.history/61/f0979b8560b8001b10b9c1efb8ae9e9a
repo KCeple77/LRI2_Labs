@@ -142,7 +142,7 @@ static void gpDIPIntHandler(void *arg) //Should be very short (in time). In a pr
 static void gpPUSHIntHandler(void *arg) //Should be very short (in time). In a practical program, don't print etc.
 {
 	unsigned char val, tmp;
-	int i;
+	int my_id = 0, i;
 
 	XGpio_InterruptClear(&gpPUSH, 1);			//clear the interrupt flag. if this is not done, gpio will keep interrupting the microblaze.--
 
@@ -152,11 +152,11 @@ static void gpPUSHIntHandler(void *arg) //Should be very short (in time). In a p
 	pthread_mutex_lock(&tasks_num_mutex);
 	for(i = 0; i < TASK_THREADS_NONPERIODIC_NUM; i++) {
 		tmp = val>>i;
-		tmp &= 0x01;
+		tmp &= 1;
 
-		if(tmp == 0) {
+		if(tmp == 1) {
 			tthread_tasks_num[i]++;
-			sem_post(&tthread_sems[i]);
+			sem_post(tthread_sems[i]);
 		}
 	}
 	pthread_mutex_unlock(&tasks_num_mutex);
@@ -245,18 +245,12 @@ void* non_periodic_thread(void* arg) {
 			if(retval == -1 && errno == EAGAIN){
 				// No tasks
 				sleep(SLEEP_AMOUNT);
-			} else if(retval == 0){
-				sleep(WORK_AMOUNT);
-
+			} else {
 				task(my_index);
 
 				pthread_mutex_lock(&tasks_num_mutex);
 				tthread_tasks_num[my_index - TASK_THREADS_NONPERIODIC_OFFSET]--;
 				pthread_mutex_unlock(&tasks_num_mutex);
-			} else {
-				sprintf(str_buffer, "Sem_post ERROR!");
-				cout(str_buffer);
-				pthread_exit(NULL);
 			}
 		} else {
 			// Frozen

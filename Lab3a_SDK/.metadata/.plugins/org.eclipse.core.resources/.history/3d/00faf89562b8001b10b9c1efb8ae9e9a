@@ -154,7 +154,7 @@ static void gpPUSHIntHandler(void *arg) //Should be very short (in time). In a p
 		tmp = val>>i;
 		tmp &= 0x01;
 
-		if(tmp == 0) {
+		if(tmp == 1) {
 			tthread_tasks_num[i]++;
 			sem_post(&tthread_sems[i]);
 		}
@@ -246,8 +246,6 @@ void* non_periodic_thread(void* arg) {
 				// No tasks
 				sleep(SLEEP_AMOUNT);
 			} else if(retval == 0){
-				sleep(WORK_AMOUNT);
-
 				task(my_index);
 
 				pthread_mutex_lock(&tasks_num_mutex);

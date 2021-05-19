@@ -147,6 +147,7 @@ static void gpPUSHIntHandler(void *arg) //Should be very short (in time). In a p
 	XGpio_InterruptClear(&gpPUSH, 1);			//clear the interrupt flag. if this is not done, gpio will keep interrupting the microblaze.--
 
 	val = XGpio_DiscreteRead(&gpPUSH, 1);
+	sprintf();
 
 	// Update thread tasks
 	pthread_mutex_lock(&tasks_num_mutex);
@@ -246,8 +247,6 @@ void* non_periodic_thread(void* arg) {
 				// No tasks
 				sleep(SLEEP_AMOUNT);
 			} else if(retval == 0){
-				sleep(WORK_AMOUNT);
-
 				task(my_index);
 
 				pthread_mutex_lock(&tasks_num_mutex);

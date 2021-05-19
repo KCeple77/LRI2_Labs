@@ -143,3 +143,7 @@
 06:12:58.535 INFO  - Refreshed build settings on project MB_Proj1 
 06:12:58.539 INFO  - Refreshed build settings on project xilkernel_demo 
 06:14:39.935 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+07:13:17.710 INFO  - System reset is completed. 
+07:22:35.458 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+07:22:42.994 INFO  - System reset is completed. 
+07:30:50.961 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 

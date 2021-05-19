@@ -6081,3 +6081,263 @@ java.lang.NullPointerException
 	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:45.223
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:45.324
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:45.328
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:45.331
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:45.335
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:45.338
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:46.179
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:46.183
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:46.187
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:46.190
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:46.195
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:46.198
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:46.201
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:46.731
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:46.735
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:49.237
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:49.248
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:50.458
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:50.534
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:50.538
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:50.542
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:50.546
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:52.208
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:52.212
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:52.216
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:52.220
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:52.223
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:52.492
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:21:55.382
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:22:02.407
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:22:02.587
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:22:02.662
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:22:02.789
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:22:03.811
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:22:04.821
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:22:05.852
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:22:06.776
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:22:07.664
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:22:07.966
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:22:08.283
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:22:08.309
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.closeConsoleOutputStream(ConsoleOutputSniffer.java:160)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.close(ConsoleOutputSniffer.java:68)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.close(ProcessClosure.java:97)
+	at org.eclipse.cdt.internal.core.ProcessClosure.isAlive(ProcessClosure.java:192)
+	at org.eclipse.cdt.core.CommandLauncher.waitAndRead(CommandLauncher.java:252)
+	at org.eclipse.cdt.internal.core.BuildRunnerHelper.build(BuildRunnerHelper.java:248)
+	at org.eclipse.cdt.make.core.MakeBuilder.invokeMake(MakeBuilder.java:219)
+	at org.eclipse.cdt.make.core.MakeBuilder.build(MakeBuilder.java:108)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:726)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:22:36.520
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:22:36.673
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+
+!ENTRY org.eclipse.cdt.core 4 0 2021-05-19 07:22:36.723
+!MESSAGE Error
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer.closeConsoleOutputStream(ConsoleOutputSniffer.java:160)
+	at org.eclipse.cdt.internal.core.ConsoleOutputSniffer$ConsoleOutputStream.close(ConsoleOutputSniffer.java:68)
+	at org.eclipse.cdt.internal.core.ProcessClosure$ReaderThread.close(ProcessClosure.java:97)
+	at org.eclipse.cdt.internal.core.ProcessClosure.isAlive(ProcessClosure.java:192)
+	at org.eclipse.cdt.core.CommandLauncher.waitAndRead(CommandLauncher.java:252)
+	at org.eclipse.cdt.internal.core.BuildRunnerHelper.build(BuildRunnerHelper.java:248)
+	at org.eclipse.cdt.make.core.MakeBuilder.invokeMake(MakeBuilder.java:219)
+	at org.eclipse.cdt.make.core.MakeBuilder.build(MakeBuilder.java:108)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:726)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)

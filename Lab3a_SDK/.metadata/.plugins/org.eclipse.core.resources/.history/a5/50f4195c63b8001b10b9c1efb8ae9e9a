@@ -246,7 +246,7 @@ void* non_periodic_thread(void* arg) {
 				// No tasks
 				sleep(SLEEP_AMOUNT);
 			} else if(retval == 0){
-				sleep(WORK_AMOUNT);
+				sleep(SLEE);
 
 				task(my_index);
 
