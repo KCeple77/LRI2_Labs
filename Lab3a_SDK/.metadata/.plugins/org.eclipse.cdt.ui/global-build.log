@@ -544,3 +544,927 @@ make: Nothing to be done for `all'.
 23:39:06 **** Incremental Build of configuration Debug for project xilkernel_demo ****
 make all 
 make: Nothing to be done for `all'.
+03:42:04 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function 'gpPUSHIntHandler':
+../main.c:72:6: warning: unused variable 'my_id' [-Wunused-variable]
+../main.c: In function 'periodic_thread':
+../main.c:84:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../main.c:84:18: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../main.c:81:6: warning: unused variable 'i' [-Wunused-variable]
+../main.c: In function 'non_periodic_thread':
+../main.c:112:18: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../main.c:112:6: warning: unused variable 'my_period' [-Wunused-variable]
+../main.c:109:6: warning: unused variable 'i' [-Wunused-variable]
+../main.c: In function 'thread_tut_func_1':
+../main.c:136:6: warning: unused variable 'i' [-Wunused-variable]
+../main.c: In function 'clear':
+../main.c:165:2: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../main.c: In function 'shell_main':
+../main.c:271:2: warning: 'return' with a value, in function returning void [enabled by default]
+../main.c:176:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../main.c: At top level:
+../main.c:47:14: warning: 'spid' defined but not used [-Wunused-variable]
+../main.c:50:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../main.c: In function 'main':
+../main.c:278:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../main.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./main.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  46632	    492	  30476	  77600	  12f20	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+03:42:37 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function 'gpPUSHIntHandler':
+../main.c:72:6: warning: unused variable 'my_id' [-Wunused-variable]
+../main.c: In function 'periodic_thread':
+../main.c:84:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../main.c:84:18: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../main.c:81:6: warning: unused variable 'i' [-Wunused-variable]
+../main.c: In function 'non_periodic_thread':
+../main.c:113:59: error: 'my_period' undeclared (first use in this function)
+../main.c:113:59: note: each undeclared identifier is reported only once for each function it appears in
+../main.c:109:6: warning: unused variable 'i' [-Wunused-variable]
+../main.c: In function 'thread_tut_func_1':
+../main.c:136:6: warning: unused variable 'i' [-Wunused-variable]
+../main.c: In function 'clear':
+../main.c:165:2: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../main.c: In function 'shell_main':
+../main.c:271:2: warning: 'return' with a value, in function returning void [enabled by default]
+../main.c:176:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../main.c: At top level:
+../main.c:47:14: warning: 'spid' defined but not used [-Wunused-variable]
+../main.c:50:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../main.c: In function 'main':
+../main.c:278:1: warning: control reaches end of non-void function [-Wreturn-type]
+make: *** [main.o] Error 1
+03:42:43 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function 'gpPUSHIntHandler':
+../main.c:72:6: warning: unused variable 'my_id' [-Wunused-variable]
+../main.c: In function 'periodic_thread':
+../main.c:84:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../main.c:84:18: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../main.c:81:6: warning: unused variable 'i' [-Wunused-variable]
+../main.c: In function 'non_periodic_thread':
+../main.c:109:6: warning: unused variable 'i' [-Wunused-variable]
+../main.c: In function 'thread_tut_func_1':
+../main.c:136:6: warning: unused variable 'i' [-Wunused-variable]
+../main.c: In function 'clear':
+../main.c:165:2: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../main.c: In function 'shell_main':
+../main.c:271:2: warning: 'return' with a value, in function returning void [enabled by default]
+../main.c:176:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../main.c: At top level:
+../main.c:47:14: warning: 'spid' defined but not used [-Wunused-variable]
+../main.c:50:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../main.c: In function 'main':
+../main.c:278:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../main.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./main.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  46668	    492	  30480	  77640	  12f48	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+03:45:04 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function 'gpPUSHIntHandler':
+../main.c:72:6: warning: unused variable 'my_id' [-Wunused-variable]
+../main.c: In function 'periodic_thread':
+../main.c:84:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../main.c:84:18: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../main.c:81:6: warning: unused variable 'i' [-Wunused-variable]
+../main.c: In function 'non_periodic_thread':
+../main.c:109:6: warning: unused variable 'i' [-Wunused-variable]
+../main.c: In function 'thread_tut_func_1':
+../main.c:136:6: warning: unused variable 'i' [-Wunused-variable]
+../main.c: In function 'clear':
+../main.c:165:2: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../main.c: In function 'shell_main':
+../main.c:271:2: warning: 'return' with a value, in function returning void [enabled by default]
+../main.c:176:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../main.c: At top level:
+../main.c:47:14: warning: 'spid' defined but not used [-Wunused-variable]
+../main.c:50:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../main.c: In function 'main':
+../main.c:278:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../main.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./main.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  46924	    492	  30480	  77896	  13048	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+03:45:08 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+03:45:09 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+03:47:19 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function 'gpPUSHIntHandler':
+../main.c:72:6: warning: unused variable 'my_id' [-Wunused-variable]
+../main.c: In function 'periodic_thread':
+../main.c:84:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../main.c:84:18: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../main.c:81:6: warning: unused variable 'i' [-Wunused-variable]
+../main.c: In function 'non_periodic_thread':
+../main.c:109:6: warning: unused variable 'i' [-Wunused-variable]
+../main.c: In function 'thread_tut_func_1':
+../main.c:136:6: warning: unused variable 'i' [-Wunused-variable]
+../main.c: In function 'clear':
+../main.c:165:2: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../main.c: In function 'shell_main':
+../main.c:271:2: warning: 'return' with a value, in function returning void [enabled by default]
+../main.c:176:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../main.c: At top level:
+../main.c:47:14: warning: 'spid' defined but not used [-Wunused-variable]
+../main.c:50:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../main.c: In function 'main':
+../main.c:278:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../main.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./main.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  46924	    492	  30480	  77896	  13048	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+03:47:26 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+03:47:27 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+04:04:39 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function 'gpPUSHIntHandler':
+../main.c:72:6: warning: unused variable 'my_id' [-Wunused-variable]
+../main.c: In function 'periodic_thread':
+../main.c:84:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../main.c:84:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../main.c: In function 'non_periodic_thread':
+../main.c:137:4: error: too few arguments to function 'sleep'
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/sys/unistd.h:174:10: note: declared here
+../main.c:119:20: warning: unused variable 'current_time' [-Wunused-variable]
+../main.c:119:6: warning: unused variable 'time_tracker' [-Wunused-variable]
+../main.c: In function 'thread_tut_func_1':
+../main.c:146:6: warning: unused variable 'i' [-Wunused-variable]
+../main.c: In function 'clear':
+../main.c:175:2: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../main.c: In function 'shell_main':
+../main.c:281:2: warning: 'return' with a value, in function returning void [enabled by default]
+../main.c:186:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../main.c: At top level:
+../main.c:47:14: warning: 'spid' defined but not used [-Wunused-variable]
+../main.c:50:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../main.c: In function 'main':
+../main.c:288:1: warning: control reaches end of non-void function [-Wreturn-type]
+make: *** [main.o] Error 1
+04:18:35 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function 'gpPUSHIntHandler':
+../main.c:75:6: warning: unused variable 'my_id' [-Wunused-variable]
+../main.c: In function 'periodic_thread':
+../main.c:87:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../main.c:87:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../main.c: In function 'non_periodic_thread':
+../main.c:139:4: error: too few arguments to function 'task'
+../main.c:56:6: note: declared here
+../main.c:140:4: error: too few arguments to function 'sleep'
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/sys/unistd.h:174:10: note: declared here
+../main.c:122:20: warning: unused variable 'current_time' [-Wunused-variable]
+../main.c:122:6: warning: unused variable 'time_tracker' [-Wunused-variable]
+../main.c: In function 'thread_tut_func_1':
+../main.c:149:6: warning: unused variable 'i' [-Wunused-variable]
+../main.c: In function 'clear':
+../main.c:178:2: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../main.c: In function 'shell_main':
+../main.c:284:2: warning: 'return' with a value, in function returning void [enabled by default]
+../main.c:189:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../main.c: At top level:
+../main.c:48:14: warning: 'spid' defined but not used [-Wunused-variable]
+../main.c:51:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../main.c: In function 'main':
+../main.c:291:1: warning: control reaches end of non-void function [-Wreturn-type]
+make: *** [main.o] Error 1
+04:19:05 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function 'gpPUSHIntHandler':
+../main.c:75:6: warning: unused variable 'my_id' [-Wunused-variable]
+../main.c: In function 'periodic_thread':
+../main.c:87:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../main.c:87:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../main.c: In function 'non_periodic_thread':
+../main.c:122:20: warning: unused variable 'current_time' [-Wunused-variable]
+../main.c:122:6: warning: unused variable 'time_tracker' [-Wunused-variable]
+../main.c: In function 'thread_tut_func_1':
+../main.c:149:6: warning: unused variable 'i' [-Wunused-variable]
+../main.c: In function 'clear':
+../main.c:178:2: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../main.c: In function 'shell_main':
+../main.c:284:2: warning: 'return' with a value, in function returning void [enabled by default]
+../main.c:189:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../main.c: At top level:
+../main.c:48:14: warning: 'spid' defined but not used [-Wunused-variable]
+../main.c:51:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../main.c: In function 'main':
+../main.c:291:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../main.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./main.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  47152	    492	  30476	  78120	  13128	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+04:19:22 **** Auto Build of project xilkernel_bsp_0 ****
+make -k all 
+'Finished building libraries'
+04:20:03 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+04:20:04 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+04:26:48 **** Clean-only build of project xilkernel_bsp_0 ****
+make -k clean 
+rm -rf microblaze_0
+04:26:50 **** Build of project xilkernel_bsp_0 ****
+make -k all 
+libgen -hw ../Lab3a_hw_platform/system.xml\
+	       \
+	       -pe microblaze_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../Lab3a_hw_platform/system.xml -pe microblaze_0 -log
+libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+
+Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+"Compiling standalone";
+"Compiling common"
+mb-ar: creating ./libsyscall.a
+mb-ar: creating ./libxilkernel.a
+"Compiling xilkernel"
+"Compiling intc"
+"Compiling tmrctr"
+"Compiling uartlite"
+"Compiling gpio"
+"Compiling bram"
+"Compiling cpu"
+Running execs_generate.
+'Finished building libraries'
+04:27:15 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+04:27:15 **** Auto Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+04:36:14 **** Clean-only build of configuration Debug for project MB_Proj1 ****
+make clean 
+rm -rf  ./clock.o ./main.o  ./clock.d ./main.d  MB_Proj1.elf.size  MB_Proj1.elf.elfcheck  MB_Proj1.elf
+' '
+04:36:14 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../clock.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"clock.d" -MT"clock.d" -o "clock.o" "../clock.c"
+../clock.c: In function 'clock_main':
+../clock.c:93:9: warning: unused variable 'a' [-Wunused-variable]
+'Finished building: ../clock.c'
+' '
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:75:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:87:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:87:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'non_periodic_thread':
+../lab3.c:122:20: warning: unused variable 'current_time' [-Wunused-variable]
+../lab3.c:122:6: warning: unused variable 'time_tracker' [-Wunused-variable]
+../lab3.c: In function 'thread_tut_func_1':
+../lab3.c:149:6: warning: unused variable 'i' [-Wunused-variable]
+../lab3.c: In function 'clear':
+../lab3.c:178:2: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'shell_main':
+../lab3.c:284:2: warning: 'return' with a value, in function returning void [enabled by default]
+../lab3.c:189:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:48:14: warning: 'spid' defined but not used [-Wunused-variable]
+../lab3.c:51:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:291:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../lab3.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./lab3.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  47156	    492	  30520	  78168	  13158	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+04:42:30 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:75:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:87:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:87:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'non_periodic_thread':
+../lab3.c:122:20: warning: unused variable 'current_time' [-Wunused-variable]
+../lab3.c:122:6: warning: unused variable 'time_tracker' [-Wunused-variable]
+../lab3.c: In function 'clear':
+../lab3.c:168:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'shell_main':
+../lab3.c:187:2: warning: passing argument 2 of 'pthread_setschedparam' makes integer from pointer without a cast [enabled by default]
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/pthread.h:153:5: note: expected 'int' but argument is of type 'void *'
+../lab3.c:260:21: error: 'tmp' undeclared (first use in this function)
+../lab3.c:260:21: note: each undeclared identifier is reported only once for each function it appears in
+../lab3.c:284:2: warning: 'return' with a value, in function returning void [enabled by default]
+../lab3.c:179:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:51:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:291:1: warning: control reaches end of non-void function [-Wreturn-type]
+make: *** [lab3.o] Error 1
+04:42:40 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:75:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:87:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:87:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'non_periodic_thread':
+../lab3.c:122:20: warning: unused variable 'current_time' [-Wunused-variable]
+../lab3.c:122:6: warning: unused variable 'time_tracker' [-Wunused-variable]
+../lab3.c: In function 'clear':
+../lab3.c:168:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'shell_main':
+../lab3.c:187:2: warning: passing argument 2 of 'pthread_setschedparam' makes integer from pointer without a cast [enabled by default]
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/pthread.h:153:5: note: expected 'int' but argument is of type 'void *'
+../lab3.c:284:2: warning: 'return' with a value, in function returning void [enabled by default]
+../lab3.c:179:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:51:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:291:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../lab3.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./lab3.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  47308	    492	  30528	  78328	  131f8	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+04:42:46 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+04:42:46 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+04:47:31 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:75:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:87:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:87:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'non_periodic_thread':
+../lab3.c:122:20: warning: unused variable 'current_time' [-Wunused-variable]
+../lab3.c:122:6: warning: unused variable 'time_tracker' [-Wunused-variable]
+../lab3.c: In function 'clear':
+../lab3.c:168:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'shell_main':
+../lab3.c:187:2: warning: passing argument 2 of 'pthread_setschedparam' makes integer from pointer without a cast [enabled by default]
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/pthread.h:153:5: note: expected 'int' but argument is of type 'void *'
+../lab3.c:284:2: warning: 'return' with a value, in function returning void [enabled by default]
+../lab3.c:179:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:51:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:291:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../lab3.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./lab3.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  47312	    492	  30524	  78328	  131f8	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+04:47:35 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+04:47:36 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+04:54:57 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:85:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:97:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:97:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'non_periodic_thread':
+../lab3.c:132:20: warning: unused variable 'current_time' [-Wunused-variable]
+../lab3.c:132:6: warning: unused variable 'time_tracker' [-Wunused-variable]
+../lab3.c: In function 'clear':
+../lab3.c:178:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'shell_main':
+../lab3.c:197:2: warning: passing argument 2 of 'pthread_setschedparam' makes integer from pointer without a cast [enabled by default]
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/pthread.h:153:5: note: expected 'int' but argument is of type 'void *'
+../lab3.c:300:2: warning: 'return' with a value, in function returning void [enabled by default]
+../lab3.c:189:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:51:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:307:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../lab3.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./lab3.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  47396	    492	  30528	  78416	  13250	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+05:06:44 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'cout':
+../lab3.c:62:13: error: 'msg' undeclared (first use in this function)
+../lab3.c:62:13: note: each undeclared identifier is reported only once for each function it appears in
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:88:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:100:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:100:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'non_periodic_thread':
+../lab3.c:135:20: warning: unused variable 'current_time' [-Wunused-variable]
+../lab3.c:135:6: warning: unused variable 'time_tracker' [-Wunused-variable]
+../lab3.c: In function 'clear':
+../lab3.c:181:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'shell_main':
+../lab3.c:200:2: warning: passing argument 2 of 'pthread_setschedparam' makes integer from pointer without a cast [enabled by default]
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/pthread.h:153:5: note: expected 'int' but argument is of type 'void *'
+../lab3.c:303:2: warning: 'return' with a value, in function returning void [enabled by default]
+../lab3.c:192:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:51:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:310:1: warning: control reaches end of non-void function [-Wreturn-type]
+make: *** [lab3.o] Error 1
+05:06:51 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:88:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:100:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:100:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'non_periodic_thread':
+../lab3.c:135:20: warning: unused variable 'current_time' [-Wunused-variable]
+../lab3.c:135:6: warning: unused variable 'time_tracker' [-Wunused-variable]
+../lab3.c: In function 'clear':
+../lab3.c:181:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'shell_main':
+../lab3.c:200:2: warning: passing argument 2 of 'pthread_setschedparam' makes integer from pointer without a cast [enabled by default]
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/pthread.h:153:5: note: expected 'int' but argument is of type 'void *'
+../lab3.c:303:2: warning: 'return' with a value, in function returning void [enabled by default]
+../lab3.c:192:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:51:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:310:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../lab3.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./lab3.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  85640	   1656	  31608	 118904	  1d078	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+05:11:12 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:88:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:100:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:100:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'non_periodic_thread':
+../lab3.c:136:20: warning: unused variable 'current_time' [-Wunused-variable]
+../lab3.c:136:6: warning: unused variable 'time_tracker' [-Wunused-variable]
+../lab3.c: In function 'clear':
+../lab3.c:184:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'shell_main':
+../lab3.c:203:2: warning: passing argument 2 of 'pthread_setschedparam' makes integer from pointer without a cast [enabled by default]
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/pthread.h:153:5: note: expected 'int' but argument is of type 'void *'
+../lab3.c:306:2: warning: 'return' with a value, in function returning void [enabled by default]
+../lab3.c:195:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:51:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:313:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../lab3.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./lab3.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  85752	   1656	  31608	 119016	  1d0e8	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+05:11:20 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:88:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:100:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:100:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'non_periodic_thread':
+../lab3.c:140:2: error: too many arguments to function 'print'
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/stdio.h:233:9: note: declared here
+../lab3.c:136:20: warning: unused variable 'current_time' [-Wunused-variable]
+../lab3.c:136:6: warning: unused variable 'time_tracker' [-Wunused-variable]
+../lab3.c: In function 'clear':
+../lab3.c:184:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'shell_main':
+../lab3.c:203:2: warning: passing argument 2 of 'pthread_setschedparam' makes integer from pointer without a cast [enabled by default]
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/pthread.h:153:5: note: expected 'int' but argument is of type 'void *'
+../lab3.c:306:2: warning: 'return' with a value, in function returning void [enabled by default]
+../lab3.c:195:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:51:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:313:1: warning: control reaches end of non-void function [-Wreturn-type]
+make: *** [lab3.o] Error 1
+05:16:09 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:88:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:100:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:100:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'non_periodic_thread':
+../lab3.c:136:20: warning: unused variable 'current_time' [-Wunused-variable]
+../lab3.c:136:6: warning: unused variable 'time_tracker' [-Wunused-variable]
+../lab3.c: In function 'clear':
+../lab3.c:184:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'shell_main':
+../lab3.c:205:2: warning: passing argument 2 of 'pthread_setschedparam' makes integer from pointer without a cast [enabled by default]
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/pthread.h:153:5: note: expected 'int' but argument is of type 'void *'
+../lab3.c:197:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:51:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:325:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../lab3.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./lab3.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  86528	   1656	  31608	 119792	  1d3f0	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+05:16:54 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'clear':
+../lab3.c:73:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:100:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:112:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:112:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'non_periodic_thread':
+../lab3.c:148:20: warning: unused variable 'current_time' [-Wunused-variable]
+../lab3.c:148:6: warning: unused variable 'time_tracker' [-Wunused-variable]
+../lab3.c: In function 'shell_main':
+../lab3.c:209:2: warning: passing argument 2 of 'pthread_setschedparam' makes integer from pointer without a cast [enabled by default]
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/pthread.h:153:5: note: expected 'int' but argument is of type 'void *'
+../lab3.c:201:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:51:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:329:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../lab3.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./lab3.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  86568	   1656	  31608	 119832	  1d418	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+05:17:02 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+05:17:03 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.

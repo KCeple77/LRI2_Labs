@@ -5,15 +5,15 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../clock.c \
-../main.c 
+../lab3.c 
 
 OBJS += \
 ./clock.o \
-./main.o 
+./lab3.o 
 
 C_DEPS += \
 ./clock.d \
-./main.d 
+./lab3.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

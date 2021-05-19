@@ -1,4 +1,4 @@
-main.d: ../main.c ../../xilkernel_bsp_0/microblaze_0/include/xmk.h \
+lab3.d: ../lab3.c ../../xilkernel_bsp_0/microblaze_0/include/xmk.h \
  ../../xilkernel_bsp_0/microblaze_0/include/sys/init.h \
  ../../xilkernel_bsp_0/microblaze_0/include/config/config_cparam.h \
  ../../xilkernel_bsp_0/microblaze_0/include/os_config.h \
