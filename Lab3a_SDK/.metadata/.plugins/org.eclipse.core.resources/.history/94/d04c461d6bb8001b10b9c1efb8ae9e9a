@@ -160,15 +160,6 @@ static void gpPUSHIntHandler(void *arg) //Should be very short (in time). In a p
 		}
 	}
 	pthread_mutex_unlock(&tasks_num_mutex);
-
-	for(i = 0; i < TASK_THREADS_NONPERIODIC_NUM; i++) {
-			tmp = val>>i;
-			tmp &= 0x01;
-
-			if(tmp == 0) {
-				sem_post(&tthread_sems[i]);
-			}
-		}
 }
 /*
  * ###########################################			INTERRUPT HANDLERS				##################################################
