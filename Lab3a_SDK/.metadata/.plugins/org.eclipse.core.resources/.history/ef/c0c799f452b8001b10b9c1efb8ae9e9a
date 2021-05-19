@@ -90,12 +90,11 @@ void thread_led_indicator(int thread_index, bool turn_on) {
 }
 
 void task(int thread_index) {
-	sprintf(str_buffer, "Thread Index: %d wörking!", thread_index);
+	sprintf(str_buffer, "Thread ID: %d wörking!", thread_index);
 	cout(str_buffer);
 
-	thread_led_indicator(thread_index, true);
+
 	sleep(WORK_AMOUNT);
-	thread_led_indicator(thread_index, false);
 
 
 	sprintf(str_buffer, "Thread ID: %d done!", thread_index);
@@ -130,7 +129,7 @@ void* periodic_thread(void* arg) {
 	int time_tracker_ms, current_time_ms, former_time_ms;
 	unsigned char tmp;
 	int my_index = (int)arg;
-	int my_period_ms = 1000*pow(2,my_index+1);
+	int my_period_ms = 1000*pow(2,my_id+1);
 
 	sprintf(str_buffer, "Periodic thread Index: %d(period %d ms) reporting!", my_index, my_period_ms);
 	cout(str_buffer);
@@ -222,6 +221,8 @@ void shell_main(void* arg) {
 	int Status;
 	int ret, retval_tmp, i;
 
+	task_threads_activity = 0b10101010;
+
 	// Set my priority as highest - 0!
 	spar.sched_priority = 0;
 	spid = get_currentPID();
@@ -306,9 +307,9 @@ void shell_main(void* arg) {
 	sprintf(str_buffer, "PUSH int enabled");
 	cout(str_buffer);
 
-	// Write starting state
-	val = XGpio_DiscreteRead(&gpDIP, 1);
-	task_threads_activity = val;
+//	// Write starting state
+//	val = XGpio_DiscreteRead(&gpDIP, 1);
+//	XGpio_DiscreteWrite(&gpLED, 1, val);
 
 //	//start thread 1 -- Left Over for reference!
 //	ret = pthread_create(&tid1, NULL, (void*) thread_tut_func_1, NULL );

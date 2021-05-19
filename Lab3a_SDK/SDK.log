@@ -125,3 +125,10 @@
 23:37:57.908 ERROR - Port COM6 is already in use. 
 23:38:17.794 ERROR - Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near  
 23:38:59.554 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+04:19:21.661 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+04:26:48.775 INFO  - Settings changed on project xilkernel_bsp_0. Triggering a rebuild... 
+04:26:50.137 INFO  - Refreshed build settings on project MB_Proj1 
+04:26:50.150 INFO  - Refreshed build settings on project xilkernel_demo 
+05:33:42.728 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
+05:34:31.346 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+05:37:51.839 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 

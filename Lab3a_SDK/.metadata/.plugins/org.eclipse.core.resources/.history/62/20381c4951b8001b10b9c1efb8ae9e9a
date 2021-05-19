@@ -37,11 +37,12 @@ typedef unsigned char bool;
 
 unsigned char task_threads_activity;
 pthread_mutexattr_t mattr;
-pthread_mutex_t  mutex_task_threads_activity, stdout_mutex, leds_mutex;
+pthread_mutex_t  mutex_task_threads_activity, stdout_mutex;
 pthread_t task_threads_pids[TASK_THREADS_NUM];
 sem_t tthread_sems[TASK_THREADS_NONPERIODIC_NUM];
 XGpio gpDIP, gpPUSH, gpLED; //PB device instance.
 
+pthread_t tid1, tid2, tid3, tid4, tid5, tid6, tid7, tid8;
 extern void* clock_main (void *);
 
 static pid_t spid;
@@ -75,30 +76,11 @@ void clear()
 
 }
 
-void thread_led_indicator(int thread_index, bool turn_on) {
-	unsigned char val;
-
-	pthread_mutex_lock(&leds_mutex);
-	val = XGpio_DiscreteRead(&gpLED, 1);
-	val |= 1<<thread_index;
-	if(!turn_on) {
-		val ^= 1<<thread_index;
-	}
-	XGpio_DiscreteWrite(&gpLED, 1, val);
-	pthread_mutex_unlock(&leds_mutex);
-
-}
-
-void task(int thread_index) {
-	sprintf(str_buffer, "Thread Index: %d wörking!", thread_index);
+void task(int thread_id) {
+	sprintf(str_buffer, "Thread ID: %d wörking!", thread_id);
 	cout(str_buffer);
-
-	thread_led_indicator(thread_index, true);
 	sleep(WORK_AMOUNT);
-	thread_led_indicator(thread_index, false);
-
-
-	sprintf(str_buffer, "Thread ID: %d done!", thread_index);
+	sprintf(str_buffer, "Thread ID: %d done!", thread_id);
 	cout(str_buffer);
 }
 
@@ -109,10 +91,7 @@ static void gpDIPIntHandler(void *arg) //Should be very short (in time). In a pr
 	XGpio_InterruptClear(&gpDIP, 1);
 
 	val = XGpio_DiscreteRead(&gpDIP, 1);
-//	XGpio_DiscreteWrite(&gpLED, 1, val);
-	pthread_mutex_lock(&mutex_task_threads_activity);
-	task_threads_activity = val;
-	pthread_mutex_unlock(&mutex_task_threads_activity);
+	XGpio_DiscreteWrite(&gpLED, 1, val);
 }
 
 static void gpPUSHIntHandler(void *arg) //Should be very short (in time). In a practical program, don't print etc.
@@ -129,10 +108,10 @@ static void gpPUSHIntHandler(void *arg) //Should be very short (in time). In a p
 void* periodic_thread(void* arg) {
 	int time_tracker_ms, current_time_ms, former_time_ms;
 	unsigned char tmp;
-	int my_index = (int)arg;
-	int my_period_ms = 1000*pow(2,my_index+1);
+	int my_id = (int)arg;
+	int my_period_ms = 1000*pow(2,my_id+1);
 
-	sprintf(str_buffer, "Periodic thread Index: %d(period %d ms) reporting!", my_index, my_period_ms);
+	sprintf(str_buffer, "Periodic thread ID: %d(period %d ms) reporting!", my_id, my_period_ms);
 	cout(str_buffer);
 
 	time_tracker_ms = my_period_ms;
@@ -142,7 +121,7 @@ void* periodic_thread(void* arg) {
 		tmp = task_threads_activity;
 		pthread_mutex_unlock(&mutex_task_threads_activity);
 
-		tmp >>= my_index;
+		tmp >>= my_id;
 		tmp &= 0x01;
 
 		former_time_ms = current_time_ms;
@@ -151,7 +130,7 @@ void* periodic_thread(void* arg) {
 		if(tmp == 1) {
 			// Active
 			if(current_time_ms > time_tracker_ms) {
-				task(my_index);
+				task(my_id);
 				time_tracker_ms += my_period_ms;
 			} else {
 				sleep(SLEEP_AMOUNT);
@@ -168,9 +147,9 @@ void* periodic_thread(void* arg) {
 void* non_periodic_thread(void* arg) {
 	int time_tracker, current_time;
 	unsigned char tmp;
-	int my_index = (int)arg;
+	int my_id = (int)arg;
 
-	sprintf(str_buffer, "Non-Periodic thread ID: %d reporting!", my_index);
+	sprintf(str_buffer, "Non-Periodic thread ID: %d reporting!", my_id);
 	cout(str_buffer);
 
 	while (1) {
@@ -179,12 +158,12 @@ void* non_periodic_thread(void* arg) {
 		tmp = task_threads_activity;
 		pthread_mutex_unlock(&mutex_task_threads_activity);
 
-		tmp >>= my_index;
+		tmp >>= my_id;
 		tmp &= 0x01;
 
 		if(tmp == 1) {
 			// Active
-			task(my_index);
+			task(my_id);
 			sleep(5000);
 		} else {
 			sleep(50);
@@ -222,6 +201,8 @@ void shell_main(void* arg) {
 	int Status;
 	int ret, retval_tmp, i;
 
+	task_threads_activity = 0b10101010;
+
 	// Set my priority as highest - 0!
 	spar.sched_priority = 0;
 	spid = get_currentPID();
@@ -243,18 +224,11 @@ void shell_main(void* arg) {
 	}
 
 	retval_tmp = pthread_mutex_init (&stdout_mutex, &mattr);
-	if (retval_tmp != 0) {
-		sprintf(str_buffer, "Error during pthread_mutex_init: %d.", retval_tmp);
-		cout(str_buffer);
-		pthread_exit(NULL);
-	}
-
-	retval_tmp = pthread_mutex_init (&leds_mutex, &mattr);
-	if (retval_tmp != 0) {
-		sprintf(str_buffer, "Error during pthread_mutex_init: %d.", retval_tmp);
-		cout(str_buffer);
-		pthread_exit(NULL);
-	}
+		if (retval_tmp != 0) {
+			sprintf(str_buffer, "Error during pthread_mutex_init: %d.", retval_tmp);
+			cout(str_buffer);
+			pthread_exit(NULL);
+		}
 
 //	for(i = TASK_THREADS_NONPERIODIC_OFFSET; i < TASK_THREADS_NONPERIODIC_OFFSET + TASK_THREADS_NONPERIODIC_NUM; i++) {
 //		if( sem_init(&tthread_sems[i], 1, 1) < 0 ) {
@@ -308,7 +282,7 @@ void shell_main(void* arg) {
 
 	// Write starting state
 	val = XGpio_DiscreteRead(&gpDIP, 1);
-	task_threads_activity = val;
+	XGpio_DiscreteWrite(&gpLED, 1, val);
 
 //	//start thread 1 -- Left Over for reference!
 //	ret = pthread_create(&tid1, NULL, (void*) thread_tut_func_1, NULL );

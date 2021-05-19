@@ -309,6 +309,7 @@ void shell_main(void* arg) {
 	// Write starting state
 	val = XGpio_DiscreteRead(&gpDIP, 1);
 	task_threads_activity = val;
+	XGpio_DiscreteWrite(&gpLED, 1, task_threads_activity);
 
 //	//start thread 1 -- Left Over for reference!
 //	ret = pthread_create(&tid1, NULL, (void*) thread_tut_func_1, NULL );
