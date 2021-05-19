@@ -132,3 +132,14 @@
 05:33:42.728 INFO  - FPGA configured successfully with bitstream "E:/FaksHub/2020_2021/2.Semester_2020_2021/1_Ciklus/LRI2/Labs/LRI2_Labs/Lab3a_SDK/Lab3a_hw_platform/download.bit" 
 05:34:31.346 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
 05:37:51.839 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+06:05:55.661 INFO  - Settings changed on project xilkernel_bsp_0. Triggering a rebuild... 
+06:05:56.862 INFO  - Refreshed build settings on project MB_Proj1 
+06:05:56.866 INFO  - Refreshed build settings on project xilkernel_demo 
+06:12:01.294 INFO  - Settings changed on project xilkernel_bsp_0. Triggering a rebuild... 
+06:12:02.443 INFO  - Refreshed build settings on project MB_Proj1 
+06:12:02.447 INFO  - Refreshed build settings on project xilkernel_demo 
+06:12:31.320 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 
+06:12:57.278 INFO  - Settings changed on project xilkernel_bsp_0. Triggering a rebuild... 
+06:12:58.535 INFO  - Refreshed build settings on project MB_Proj1 
+06:12:58.539 INFO  - Refreshed build settings on project xilkernel_demo 
+06:14:39.935 INFO  - microblaze_0 Processor is in use. Please stop existing Run or Debug sessions before launching. 

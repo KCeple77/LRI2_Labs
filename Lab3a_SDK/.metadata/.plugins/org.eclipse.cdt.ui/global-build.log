@@ -1806,3 +1806,1346 @@ make: Nothing to be done for `all'.
 05:38:25 **** Incremental Build of configuration Debug for project xilkernel_demo ****
 make all 
 make: Nothing to be done for `all'.
+06:05:55 **** Clean-only build of project xilkernel_bsp_0 ****
+make -k clean 
+rm -rf microblaze_0
+06:05:56 **** Build of project xilkernel_bsp_0 ****
+make -k all 
+libgen -hw ../Lab3a_hw_platform/system.xml\
+	       \
+	       -pe microblaze_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../Lab3a_hw_platform/system.xml -pe microblaze_0 -log
+libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+
+Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+"Compiling standalone";
+"Compiling common"
+mb-ar: creating ./libsyscall.a
+mb-ar: creating ./libxilkernel.a
+"Compiling xilkernel"
+"Compiling intc"
+"Compiling tmrctr"
+"Compiling uartlite"
+"Compiling gpio"
+"Compiling bram"
+"Compiling cpu"
+Running execs_generate.
+'Finished building libraries'
+06:06:20 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+06:06:21 **** Auto Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+06:09:42 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'clear':
+../lab3.c:74:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:123:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:135:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:135:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'non_periodic_thread':
+../lab3.c:171:20: warning: unused variable 'current_time' [-Wunused-variable]
+../lab3.c:171:6: warning: unused variable 'time_tracker' [-Wunused-variable]
+../lab3.c: In function 'shell_main':
+../lab3.c:232:2: warning: passing argument 2 of 'pthread_setschedparam' makes integer from pointer without a cast [enabled by default]
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/pthread.h:153:5: note: expected 'int' but argument is of type 'void *'
+../lab3.c:226:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:52:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:360:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../lab3.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./lab3.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  87140	   1656	  31636	 120432	  1d670	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+06:09:48 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+06:09:49 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+06:09:53 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+06:09:54 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+06:10:10 **** Clean-only build of configuration Debug for project MB_Proj1 ****
+make clean 
+rm -rf  ./clock.o ./lab3.o  ./clock.d ./lab3.d  MB_Proj1.elf.size  MB_Proj1.elf.elfcheck  MB_Proj1.elf
+' '
+06:10:10 **** Clean-only build of configuration Debug for project xilkernel_demo ****
+make clean 
+rm -rf  ./src/appa.o ./src/clock.o ./src/llist.o ./src/mutexdemo.o ./src/prio.o ./src/prodcon.o ./src/sem.o ./src/shell.o ./src/standby.o ./src/tictac.o ./src/timertest.o  ./src/appa.d ./src/clock.d ./src/llist.d ./src/mutexdemo.d ./src/prio.d ./src/prodcon.d ./src/sem.d ./src/shell.d ./src/standby.d ./src/tictac.d ./src/timertest.d  xilkernel_demo.elf.size  xilkernel_demo.elf.elfcheck  xilkernel_demo.elf
+' '
+06:10:11 **** Clean-only build of project xilkernel_bsp_0 ****
+make -k clean 
+rm -rf microblaze_0
+06:10:12 **** Build of project xilkernel_bsp_0 ****
+make -k all 
+libgen -hw ../Lab3a_hw_platform/system.xml\
+	       \
+	       -pe microblaze_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../Lab3a_hw_platform/system.xml -pe microblaze_0 -log
+libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+
+Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+"Compiling standalone";
+"Compiling common"
+mb-ar: creating ./libsyscall.a
+mb-ar: creating ./libxilkernel.a
+"Compiling xilkernel"
+"Compiling intc"
+"Compiling tmrctr"
+"Compiling uartlite"
+"Compiling gpio"
+"Compiling bram"
+"Compiling cpu"
+Running execs_generate.
+'Finished building libraries'
+06:10:35 **** Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../clock.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"clock.d" -MT"clock.d" -o "clock.o" "../clock.c"
+../clock.c: In function 'clock_main':
+../clock.c:93:9: warning: unused variable 'a' [-Wunused-variable]
+'Finished building: ../clock.c'
+' '
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'clear':
+../lab3.c:74:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:123:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:135:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:135:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'non_periodic_thread':
+../lab3.c:171:20: warning: unused variable 'current_time' [-Wunused-variable]
+../lab3.c:171:6: warning: unused variable 'time_tracker' [-Wunused-variable]
+../lab3.c: In function 'shell_main':
+../lab3.c:232:2: warning: passing argument 2 of 'pthread_setschedparam' makes integer from pointer without a cast [enabled by default]
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/pthread.h:153:5: note: expected 'int' but argument is of type 'void *'
+../lab3.c:226:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:52:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:360:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../lab3.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./lab3.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  87140	   1656	  31636	 120432	  1d670	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+06:10:38 **** Build of configuration Debug for project xilkernel_demo ****
+make all 
+'Building file: ../src/appa.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/appa.d" -MT"src/appa.d" -o "src/appa.o" "../src/appa.c"
+../src/appa.c: In function 'appa':
+../src/appa.c:58:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../src/appa.c: In function 'appa_main':
+../src/appa.c:114:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/appa.c'
+' '
+'Building file: ../src/clock.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/clock.d" -MT"src/clock.d" -o "src/clock.o" "../src/clock.c"
+../src/clock.c: In function 'clock_main':
+../src/clock.c:93:9: warning: unused variable 'a' [-Wunused-variable]
+'Finished building: ../src/clock.c'
+' '
+'Building file: ../src/llist.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/llist.d" -MT"src/llist.d" -o "src/llist.o" "../src/llist.c"
+../src/llist.c:33:1: warning: 'packed' attribute ignored [-Wattributes]
+../src/llist.c: In function 'llist_main':
+../src/llist.c:89:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/llist.c'
+' '
+'Building file: ../src/mutexdemo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/mutexdemo.d" -MT"src/mutexdemo.d" -o "src/mutexdemo.o" "../src/mutexdemo.c"
+../src/mutexdemo.c: In function 'main_thread':
+../src/mutexdemo.c:176:2: warning: label 'done' defined but not used [-Wunused-label]
+../src/mutexdemo.c: In function 'mutex_main':
+../src/mutexdemo.c:212:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/mutexdemo.c: In function 'main_thread':
+../src/mutexdemo.c:190:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/mutexdemo.c: In function 'bad_thread':
+../src/mutexdemo.c:91:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/mutexdemo.c: In function 'm_thread_func':
+../src/mutexdemo.c:74:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/mutexdemo.c'
+' '
+'Building file: ../src/prio.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/prio.d" -MT"src/prio.d" -o "src/prio.o" "../src/prio.c"
+../src/prio.c: In function 'low_prio_thread_func':
+../src/prio.c:77:9: warning: unused variable 'id' [-Wunused-variable]
+../src/prio.c: In function 'puppet_thread_func':
+../src/prio.c:112:9: warning: implicit declaration of function 'kill' [-Wimplicit-function-declaration]
+../src/prio.c: In function 'delay':
+../src/prio.c:126:5: warning: implicit declaration of function 'xget_clock_ticks' [-Wimplicit-function-declaration]
+../src/prio.c: In function 'prio_main':
+../src/prio.c:138:5: warning: implicit declaration of function 'get_currentPID' [-Wimplicit-function-declaration]
+../src/prio.c:134:9: warning: unused variable 'dummy' [-Wunused-variable]
+../src/prio.c: At top level:
+../src/prio.c:53:14: warning: 'retptr' defined but not used [-Wunused-variable]
+../src/prio.c: In function 'prio_main':
+../src/prio.c:248:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/prio.c: In function 'puppet_thread_func':
+../src/prio.c:122:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/prio.c: In function 'low_prio_thread_func':
+../src/prio.c:96:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/prio.c: In function 'thread_func':
+../src/prio.c:73:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/prio.c'
+' '
+'Building file: ../src/prodcon.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/prodcon.d" -MT"src/prodcon.d" -o "src/prodcon.o" "../src/prodcon.c"
+../src/prodcon.c: In function 'consumer':
+../src/prodcon.c:66:7: warning: implicit declaration of function 'pthread_exit' [-Wimplicit-function-declaration]
+../src/prodcon.c:77:5: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../src/prodcon.c:56:7: warning: variable 'k' set but not used [-Wunused-but-set-variable]
+../src/prodcon.c:53:8: warning: unused variable 'p' [-Wunused-variable]
+../src/prodcon.c: In function 'prodcon_main':
+../src/prodcon.c:158:5: warning: implicit declaration of function 'pthread_attr_init' [-Wimplicit-function-declaration]
+../src/prodcon.c:164:5: warning: implicit declaration of function 'pthread_attr_setdetachstate' [-Wimplicit-function-declaration]
+../src/prodcon.c:167:5: warning: implicit declaration of function 'pthread_create' [-Wimplicit-function-declaration]
+../src/prodcon.c:189:5: warning: implicit declaration of function 'pthread_join' [-Wimplicit-function-declaration]
+../src/prodcon.c:152:9: warning: unused variable 'eno' [-Wunused-variable]
+../src/prodcon.c:267:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/prodcon.c: In function 'producer':
+../src/prodcon.c:145:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/prodcon.c: In function 'consumer':
+../src/prodcon.c:108:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/prodcon.c'
+' '
+'Building file: ../src/sem.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/sem.d" -MT"src/sem.d" -o "src/sem.o" "../src/sem.c"
+../src/sem.c: In function 'sem_main':
+../src/sem.c:214:2: warning: label 'done' defined but not used [-Wunused-label]
+../src/sem.c:114:9: warning: unused variable 'dummy' [-Wunused-variable]
+../src/sem.c: At top level:
+../src/sem.c:36:27: warning: 'spar' defined but not used [-Wunused-variable]
+../src/sem.c: In function 'sem_main':
+../src/sem.c:217:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/sem.c: In function 'thread_func2':
+../src/sem.c:110:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/sem.c: In function 'thread_func1':
+../src/sem.c:74:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/sem.c'
+' '
+'Building file: ../src/shell.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/shell.d" -MT"src/shell.d" -o "src/shell.o" "../src/shell.c"
+../src/shell.c: In function 'shell_main':
+../src/shell.c:140:3: warning: implicit declaration of function 'inbyte' [-Wimplicit-function-declaration]
+../src/shell.c:155:4: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../src/shell.c:209:4: warning: implicit declaration of function 'clock_set_time' [-Wimplicit-function-declaration]
+../src/shell.c:128:6: warning: unused variable 'delay' [-Wunused-variable]
+../src/shell.c: At top level:
+../src/shell.c:79:14: warning: 'spid' defined but not used [-Wunused-variable]
+../src/shell.c:82:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../src/shell.c:84:13: warning: 'push_stack' defined but not used [-Wunused-variable]
+../src/shell.c: In function 'main':
+../src/shell.c:240:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/shell.c'
+' '
+'Building file: ../src/standby.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/standby.d" -MT"src/standby.d" -o "src/standby.o" "../src/standby.c"
+../src/standby.c: In function 'standby_main':
+../src/standby.c:27:5: warning: implicit declaration of function 'sleep' [-Wimplicit-function-declaration]
+../src/standby.c:28:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/standby.c'
+' '
+'Building file: ../src/tictac.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/tictac.d" -MT"src/tictac.d" -o "src/tictac.o" "../src/tictac.c"
+../src/tictac.c: In function 'put_status':
+../src/tictac.c:62:5: warning: implicit declaration of function 'print' [-Wimplicit-function-declaration]
+../src/tictac.c: In function 'tt_display':
+../src/tictac.c:75:13: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../src/tictac.c:69:10: warning: unused variable 'p' [-Wunused-variable]
+../src/tictac.c: In function 'humanmove':
+../src/tictac.c:302:2: warning: implicit declaration of function 'inbyte' [-Wimplicit-function-declaration]
+../src/tictac.c: In function 'gamemain':
+../src/tictac.c:353:3: warning: 'return' with no value, in function returning non-void [-Wreturn-type]
+../src/tictac.c:339:10: warning: variable 'HUMAN' set but not used [-Wunused-but-set-variable]
+../src/tictac.c:338:9: warning: unused variable 'choice' [-Wunused-variable]
+../src/tictac.c: At top level:
+../src/tictac.c:48:14: warning: 'helpmsg' defined but not used [-Wunused-variable]
+../src/tictac.c:49:14: warning: 'usemsg' defined but not used [-Wunused-variable]
+../src/tictac.c: In function 'tictac_main':
+../src/tictac.c:397:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/tictac.c'
+' '
+'Building file: ../src/timertest.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/timertest.d" -MT"src/timertest.d" -o "src/timertest.o" "../src/timertest.c"
+../src/timertest.c: In function 'timertest_main':
+../src/timertest.c:139:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/timertest.c: In function 'thread_func_2':
+../src/timertest.c:75:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/timertest.c: In function 'thread_func_1':
+../src/timertest.c:62:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/timertest.c: In function 'thread_func_0':
+../src/timertest.c:49:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/timertest.c'
+' '
+'Building target: xilkernel_demo.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "xilkernel_demo.elf"  ./src/appa.o ./src/clock.o ./src/llist.o ./src/mutexdemo.o ./src/prio.o ./src/prodcon.o ./src/sem.o ./src/shell.o ./src/standby.o ./src/tictac.o ./src/timertest.o   -lxilkernel
+'Finished building target: xilkernel_demo.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size xilkernel_demo.elf  |tee "xilkernel_demo.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62985	    632	  34071	  97688	  17d98	xilkernel_demo.elf
+'Finished building: xilkernel_demo.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck xilkernel_demo.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "xilkernel_demo.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+xilkernel_demo.elf 
+
+ELF file	: xilkernel_demo.elf
+elfcheck passed.
+'Finished building: xilkernel_demo.elf.elfcheck'
+' '
+06:10:54 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+06:10:55 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+06:12:01 **** Clean-only build of project xilkernel_bsp_0 ****
+make -k clean 
+rm -rf microblaze_0
+06:12:02 **** Build of project xilkernel_bsp_0 ****
+make -k all 
+libgen -hw ../Lab3a_hw_platform/system.xml\
+	       \
+	       -pe microblaze_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../Lab3a_hw_platform/system.xml -pe microblaze_0 -log
+libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+
+Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+"Compiling standalone";
+"Compiling common"
+mb-ar: creating ./libsyscall.a
+mb-ar: creating ./libxilkernel.a
+"Compiling xilkernel"
+"Compiling intc"
+"Compiling tmrctr"
+"Compiling uartlite"
+"Compiling gpio"
+"Compiling bram"
+"Compiling cpu"
+Running execs_generate.
+'Finished building libraries'
+06:12:26 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+06:12:26 **** Auto Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+06:12:29 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+06:12:30 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+06:12:57 **** Clean-only build of project xilkernel_bsp_0 ****
+make -k clean 
+rm -rf microblaze_0
+06:12:58 **** Build of project xilkernel_bsp_0 ****
+make -k all 
+libgen -hw ../Lab3a_hw_platform/system.xml\
+	       \
+	       -pe microblaze_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../Lab3a_hw_platform/system.xml -pe microblaze_0 -log
+libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+
+Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+"Compiling standalone";
+"Compiling common"
+mb-ar: creating ./libsyscall.a
+mb-ar: creating ./libxilkernel.a
+"Compiling xilkernel"
+"Compiling intc"
+"Compiling tmrctr"
+"Compiling uartlite"
+"Compiling gpio"
+"Compiling bram"
+"Compiling cpu"
+Running execs_generate.
+'Finished building libraries'
+06:13:22 **** Clean-only build of configuration Debug for project MB_Proj1 ****
+make clean 
+rm -rf  ./clock.o ./lab3.o  ./clock.d ./lab3.d  MB_Proj1.elf.size  MB_Proj1.elf.elfcheck  MB_Proj1.elf
+' '
+06:13:22 **** Clean-only build of configuration Debug for project xilkernel_demo ****
+make clean 
+rm -rf  ./src/appa.o ./src/clock.o ./src/llist.o ./src/mutexdemo.o ./src/prio.o ./src/prodcon.o ./src/sem.o ./src/shell.o ./src/standby.o ./src/tictac.o ./src/timertest.o  ./src/appa.d ./src/clock.d ./src/llist.d ./src/mutexdemo.d ./src/prio.d ./src/prodcon.d ./src/sem.d ./src/shell.d ./src/standby.d ./src/tictac.d ./src/timertest.d  xilkernel_demo.elf.size  xilkernel_demo.elf.elfcheck  xilkernel_demo.elf
+' '
+06:13:23 **** Clean-only build of project xilkernel_bsp_0 ****
+make -k clean 
+rm -rf microblaze_0
+06:13:24 **** Build of project xilkernel_bsp_0 ****
+make -k all 
+libgen -hw ../Lab3a_hw_platform/system.xml\
+	       \
+	       -pe microblaze_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../Lab3a_hw_platform/system.xml -pe microblaze_0 -log
+libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+
+Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+"Compiling standalone";
+"Compiling common"
+mb-ar: creating ./libsyscall.a
+mb-ar: creating ./libxilkernel.a
+"Compiling xilkernel"
+"Compiling intc"
+"Compiling tmrctr"
+"Compiling uartlite"
+"Compiling gpio"
+"Compiling bram"
+"Compiling cpu"
+Running execs_generate.
+'Finished building libraries'
+06:13:47 **** Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../clock.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"clock.d" -MT"clock.d" -o "clock.o" "../clock.c"
+../clock.c: In function 'clock_main':
+../clock.c:93:9: warning: unused variable 'a' [-Wunused-variable]
+'Finished building: ../clock.c'
+' '
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'clear':
+../lab3.c:74:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:123:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:135:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:135:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'non_periodic_thread':
+../lab3.c:171:20: warning: unused variable 'current_time' [-Wunused-variable]
+../lab3.c:171:6: warning: unused variable 'time_tracker' [-Wunused-variable]
+../lab3.c: In function 'shell_main':
+../lab3.c:232:2: warning: passing argument 2 of 'pthread_setschedparam' makes integer from pointer without a cast [enabled by default]
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/pthread.h:153:5: note: expected 'int' but argument is of type 'void *'
+../lab3.c:226:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:52:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:360:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../lab3.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./lab3.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  87132	   1656	  31780	 120568	  1d6f8	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+06:13:51 **** Build of configuration Debug for project xilkernel_demo ****
+make all 
+'Building file: ../src/appa.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/appa.d" -MT"src/appa.d" -o "src/appa.o" "../src/appa.c"
+../src/appa.c: In function 'appa':
+../src/appa.c:58:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../src/appa.c: In function 'appa_main':
+../src/appa.c:114:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/appa.c'
+' '
+'Building file: ../src/clock.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/clock.d" -MT"src/clock.d" -o "src/clock.o" "../src/clock.c"
+../src/clock.c: In function 'clock_main':
+../src/clock.c:93:9: warning: unused variable 'a' [-Wunused-variable]
+'Finished building: ../src/clock.c'
+' '
+'Building file: ../src/llist.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/llist.d" -MT"src/llist.d" -o "src/llist.o" "../src/llist.c"
+../src/llist.c:33:1: warning: 'packed' attribute ignored [-Wattributes]
+../src/llist.c: In function 'llist_main':
+../src/llist.c:89:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/llist.c'
+' '
+'Building file: ../src/mutexdemo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/mutexdemo.d" -MT"src/mutexdemo.d" -o "src/mutexdemo.o" "../src/mutexdemo.c"
+../src/mutexdemo.c: In function 'main_thread':
+../src/mutexdemo.c:176:2: warning: label 'done' defined but not used [-Wunused-label]
+../src/mutexdemo.c: In function 'mutex_main':
+../src/mutexdemo.c:212:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/mutexdemo.c: In function 'main_thread':
+../src/mutexdemo.c:190:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/mutexdemo.c: In function 'bad_thread':
+../src/mutexdemo.c:91:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/mutexdemo.c: In function 'm_thread_func':
+../src/mutexdemo.c:74:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/mutexdemo.c'
+' '
+'Building file: ../src/prio.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/prio.d" -MT"src/prio.d" -o "src/prio.o" "../src/prio.c"
+../src/prio.c: In function 'low_prio_thread_func':
+../src/prio.c:77:9: warning: unused variable 'id' [-Wunused-variable]
+../src/prio.c: In function 'puppet_thread_func':
+../src/prio.c:112:9: warning: implicit declaration of function 'kill' [-Wimplicit-function-declaration]
+../src/prio.c: In function 'delay':
+../src/prio.c:126:5: warning: implicit declaration of function 'xget_clock_ticks' [-Wimplicit-function-declaration]
+../src/prio.c: In function 'prio_main':
+../src/prio.c:138:5: warning: implicit declaration of function 'get_currentPID' [-Wimplicit-function-declaration]
+../src/prio.c:134:9: warning: unused variable 'dummy' [-Wunused-variable]
+../src/prio.c: At top level:
+../src/prio.c:53:14: warning: 'retptr' defined but not used [-Wunused-variable]
+../src/prio.c: In function 'prio_main':
+../src/prio.c:248:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/prio.c: In function 'puppet_thread_func':
+../src/prio.c:122:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/prio.c: In function 'low_prio_thread_func':
+../src/prio.c:96:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/prio.c: In function 'thread_func':
+../src/prio.c:73:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/prio.c'
+' '
+'Building file: ../src/prodcon.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/prodcon.d" -MT"src/prodcon.d" -o "src/prodcon.o" "../src/prodcon.c"
+../src/prodcon.c: In function 'consumer':
+../src/prodcon.c:66:7: warning: implicit declaration of function 'pthread_exit' [-Wimplicit-function-declaration]
+../src/prodcon.c:77:5: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../src/prodcon.c:56:7: warning: variable 'k' set but not used [-Wunused-but-set-variable]
+../src/prodcon.c:53:8: warning: unused variable 'p' [-Wunused-variable]
+../src/prodcon.c: In function 'prodcon_main':
+../src/prodcon.c:158:5: warning: implicit declaration of function 'pthread_attr_init' [-Wimplicit-function-declaration]
+../src/prodcon.c:164:5: warning: implicit declaration of function 'pthread_attr_setdetachstate' [-Wimplicit-function-declaration]
+../src/prodcon.c:167:5: warning: implicit declaration of function 'pthread_create' [-Wimplicit-function-declaration]
+../src/prodcon.c:189:5: warning: implicit declaration of function 'pthread_join' [-Wimplicit-function-declaration]
+../src/prodcon.c:152:9: warning: unused variable 'eno' [-Wunused-variable]
+../src/prodcon.c:267:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/prodcon.c: In function 'producer':
+../src/prodcon.c:145:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/prodcon.c: In function 'consumer':
+../src/prodcon.c:108:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/prodcon.c'
+' '
+'Building file: ../src/sem.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/sem.d" -MT"src/sem.d" -o "src/sem.o" "../src/sem.c"
+../src/sem.c: In function 'sem_main':
+../src/sem.c:214:2: warning: label 'done' defined but not used [-Wunused-label]
+../src/sem.c:114:9: warning: unused variable 'dummy' [-Wunused-variable]
+../src/sem.c: At top level:
+../src/sem.c:36:27: warning: 'spar' defined but not used [-Wunused-variable]
+../src/sem.c: In function 'sem_main':
+../src/sem.c:217:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/sem.c: In function 'thread_func2':
+../src/sem.c:110:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/sem.c: In function 'thread_func1':
+../src/sem.c:74:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/sem.c'
+' '
+'Building file: ../src/shell.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/shell.d" -MT"src/shell.d" -o "src/shell.o" "../src/shell.c"
+../src/shell.c: In function 'shell_main':
+../src/shell.c:140:3: warning: implicit declaration of function 'inbyte' [-Wimplicit-function-declaration]
+../src/shell.c:155:4: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../src/shell.c:209:4: warning: implicit declaration of function 'clock_set_time' [-Wimplicit-function-declaration]
+../src/shell.c:128:6: warning: unused variable 'delay' [-Wunused-variable]
+../src/shell.c: At top level:
+../src/shell.c:79:14: warning: 'spid' defined but not used [-Wunused-variable]
+../src/shell.c:82:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../src/shell.c:84:13: warning: 'push_stack' defined but not used [-Wunused-variable]
+../src/shell.c: In function 'main':
+../src/shell.c:240:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/shell.c'
+' '
+'Building file: ../src/standby.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/standby.d" -MT"src/standby.d" -o "src/standby.o" "../src/standby.c"
+../src/standby.c: In function 'standby_main':
+../src/standby.c:27:5: warning: implicit declaration of function 'sleep' [-Wimplicit-function-declaration]
+../src/standby.c:28:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/standby.c'
+' '
+'Building file: ../src/tictac.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/tictac.d" -MT"src/tictac.d" -o "src/tictac.o" "../src/tictac.c"
+../src/tictac.c: In function 'put_status':
+../src/tictac.c:62:5: warning: implicit declaration of function 'print' [-Wimplicit-function-declaration]
+../src/tictac.c: In function 'tt_display':
+../src/tictac.c:75:13: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../src/tictac.c:69:10: warning: unused variable 'p' [-Wunused-variable]
+../src/tictac.c: In function 'humanmove':
+../src/tictac.c:302:2: warning: implicit declaration of function 'inbyte' [-Wimplicit-function-declaration]
+../src/tictac.c: In function 'gamemain':
+../src/tictac.c:353:3: warning: 'return' with no value, in function returning non-void [-Wreturn-type]
+../src/tictac.c:339:10: warning: variable 'HUMAN' set but not used [-Wunused-but-set-variable]
+../src/tictac.c:338:9: warning: unused variable 'choice' [-Wunused-variable]
+../src/tictac.c: At top level:
+../src/tictac.c:48:14: warning: 'helpmsg' defined but not used [-Wunused-variable]
+../src/tictac.c:49:14: warning: 'usemsg' defined but not used [-Wunused-variable]
+../src/tictac.c: In function 'tictac_main':
+../src/tictac.c:397:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/tictac.c'
+' '
+'Building file: ../src/timertest.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/timertest.d" -MT"src/timertest.d" -o "src/timertest.o" "../src/timertest.c"
+../src/timertest.c: In function 'timertest_main':
+../src/timertest.c:139:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/timertest.c: In function 'thread_func_2':
+../src/timertest.c:75:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/timertest.c: In function 'thread_func_1':
+../src/timertest.c:62:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/timertest.c: In function 'thread_func_0':
+../src/timertest.c:49:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/timertest.c'
+' '
+'Building target: xilkernel_demo.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "xilkernel_demo.elf"  ./src/appa.o ./src/clock.o ./src/llist.o ./src/mutexdemo.o ./src/prio.o ./src/prodcon.o ./src/sem.o ./src/shell.o ./src/standby.o ./src/tictac.o ./src/timertest.o   -lxilkernel
+'Finished building target: xilkernel_demo.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size xilkernel_demo.elf  |tee "xilkernel_demo.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62977	    632	  34223	  97832	  17e28	xilkernel_demo.elf
+'Finished building: xilkernel_demo.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck xilkernel_demo.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "xilkernel_demo.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+xilkernel_demo.elf 
+
+ELF file	: xilkernel_demo.elf
+elfcheck passed.
+'Finished building: xilkernel_demo.elf.elfcheck'
+' '
+06:14:35 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+06:14:36 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+06:14:38 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+06:14:39 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+06:34:31 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'clear':
+../lab3.c:84:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:144:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c:143:16: warning: variable 'val' set but not used [-Wunused-but-set-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:177:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:177:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'non_periodic_thread':
+../lab3.c:222:3: error: 'tmp' undeclared (first use in this function)
+../lab3.c:222:3: note: each undeclared identifier is reported only once for each function it appears in
+../lab3.c:232:23: error: 'errno' undeclared (first use in this function)
+../lab3.c:232:32: error: 'EAGAIN' undeclared (first use in this function)
+../lab3.c: In function 'shell_main':
+../lab3.c:267:2: warning: passing argument 2 of 'pthread_setschedparam' makes integer from pointer without a cast [enabled by default]
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/pthread.h:153:5: note: expected 'int' but argument is of type 'void *'
+../lab3.c:261:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:55:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:402:1: warning: control reaches end of non-void function [-Wreturn-type]
+make: *** [lab3.o] Error 1
+06:35:31 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'clear':
+../lab3.c:85:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:145:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c:144:16: warning: variable 'val' set but not used [-Wunused-but-set-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:178:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:178:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'shell_main':
+../lab3.c:269:2: warning: passing argument 2 of 'pthread_setschedparam' makes integer from pointer without a cast [enabled by default]
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/pthread.h:153:5: note: expected 'int' but argument is of type 'void *'
+../lab3.c:263:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:56:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:404:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../lab3.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./lab3.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  87340	   1656	  31788	 120784	  1d7d0	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+06:38:13 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'clear':
+../lab3.c:85:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:145:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c:144:16: warning: variable 'val' set but not used [-Wunused-but-set-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:178:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:178:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'shell_main':
+../lab3.c:273:2: warning: passing argument 2 of 'pthread_setschedparam' makes integer from pointer without a cast [enabled by default]
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/pthread.h:153:5: note: expected 'int' but argument is of type 'void *'
+../lab3.c:267:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:56:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:408:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../lab3.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./lab3.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  87424	   1656	  31784	 120864	  1d820	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+06:44:13 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'clear':
+../lab3.c:85:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:145:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:188:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:188:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'shell_main':
+../lab3.c:283:2: warning: passing argument 2 of 'pthread_setschedparam' makes integer from pointer without a cast [enabled by default]
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/pthread.h:153:5: note: expected 'int' but argument is of type 'void *'
+../lab3.c:277:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:56:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:418:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../lab3.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./lab3.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  87584	   1656	  31784	 121024	  1d8c0	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+06:44:19 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+06:44:20 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+06:48:39 **** Auto Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'clear':
+../lab3.c:85:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:159:4: warning: passing argument 1 of 'sem_post' makes pointer from integer without a cast [enabled by default]
+../../xilkernel_bsp_0/microblaze_0/include/semaphore.h:75:8: note: expected 'sem_t *' but argument is of type 'sem_t'
+../lab3.c:145:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:189:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:189:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'shell_main':
+../lab3.c:284:2: warning: passing argument 2 of 'pthread_setschedparam' makes integer from pointer without a cast [enabled by default]
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/pthread.h:153:5: note: expected 'int' but argument is of type 'void *'
+../lab3.c:278:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:56:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:419:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../lab3.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./lab3.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  87620	   1656	  31788	 121064	  1d8e8	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+06:48:54 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+06:48:55 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+06:50:11 **** Clean-only build of configuration Debug for project MB_Proj1 ****
+make clean 
+rm -rf  ./clock.o ./lab3.o  ./clock.d ./lab3.d  MB_Proj1.elf.size  MB_Proj1.elf.elfcheck  MB_Proj1.elf
+' '
+06:50:11 **** Clean-only build of configuration Debug for project xilkernel_demo ****
+make clean 
+rm -rf  ./src/appa.o ./src/clock.o ./src/llist.o ./src/mutexdemo.o ./src/prio.o ./src/prodcon.o ./src/sem.o ./src/shell.o ./src/standby.o ./src/tictac.o ./src/timertest.o  ./src/appa.d ./src/clock.d ./src/llist.d ./src/mutexdemo.d ./src/prio.d ./src/prodcon.d ./src/sem.d ./src/shell.d ./src/standby.d ./src/tictac.d ./src/timertest.d  xilkernel_demo.elf.size  xilkernel_demo.elf.elfcheck  xilkernel_demo.elf
+' '
+06:50:12 **** Clean-only build of project xilkernel_bsp_0 ****
+make -k clean 
+rm -rf microblaze_0
+06:50:13 **** Build of project xilkernel_bsp_0 ****
+make -k all 
+libgen -hw ../Lab3a_hw_platform/system.xml\
+	       \
+	       -pe microblaze_0 \
+	       -log libgen.log \
+	       system.mss
+libgen
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: libgen -hw ../Lab3a_hw_platform/system.xml -pe microblaze_0 -log
+libgen.log system.mss 
+
+
+Staging source files.
+Running DRCs.
+Running generate.
+Running post_generate.
+Running include - 'make -s include "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+
+Running libs - 'make -s libs "COMPILER=mb-gcc" "ARCHIVER=mb-ar"
+"COMPILER_FLAGS=-mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift
+-mxl-pattern-compare -mcpu=v8.50.c  -O2 -c" "EXTRA_COMPILER_FLAGS=-g
+-ffunction-sections -fdata-sections"'.
+"Compiling standalone";
+"Compiling common"
+mb-ar: creating ./libsyscall.a
+mb-ar: creating ./libxilkernel.a
+"Compiling xilkernel"
+"Compiling intc"
+"Compiling tmrctr"
+"Compiling uartlite"
+"Compiling gpio"
+"Compiling bram"
+"Compiling cpu"
+Running execs_generate.
+'Finished building libraries'
+06:50:37 **** Build of configuration Debug for project MB_Proj1 ****
+make all 
+'Building file: ../clock.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"clock.d" -MT"clock.d" -o "clock.o" "../clock.c"
+../clock.c: In function 'clock_main':
+../clock.c:93:9: warning: unused variable 'a' [-Wunused-variable]
+'Finished building: ../clock.c'
+' '
+'Building file: ../lab3.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"lab3.d" -MT"lab3.d" -o "lab3.o" "../lab3.c"
+../lab3.c: In function 'clear':
+../lab3.c:85:6: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../lab3.c: In function 'gpPUSHIntHandler':
+../lab3.c:159:4: warning: passing argument 1 of 'sem_post' makes pointer from integer without a cast [enabled by default]
+../../xilkernel_bsp_0/microblaze_0/include/semaphore.h:75:8: note: expected 'sem_t *' but argument is of type 'sem_t'
+../lab3.c:145:6: warning: unused variable 'my_id' [-Wunused-variable]
+../lab3.c: In function 'periodic_thread':
+../lab3.c:189:2: warning: implicit declaration of function 'pow' [-Wimplicit-function-declaration]
+../lab3.c:189:26: warning: incompatible implicit declaration of built-in function 'pow' [enabled by default]
+../lab3.c: In function 'shell_main':
+../lab3.c:284:2: warning: passing argument 2 of 'pthread_setschedparam' makes integer from pointer without a cast [enabled by default]
+e:\xilinx\14.7\ise_ds\edk\gnu\microblaze\nt\bin\../lib/gcc/microblaze-xilinx-elf/4.6.4/../../../../microblaze-xilinx-elf/include/pthread.h:153:5: note: expected 'int' but argument is of type 'void *'
+../lab3.c:278:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../lab3.c: At top level:
+../lab3.c:56:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../lab3.c: In function 'main':
+../lab3.c:419:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../lab3.c'
+' '
+'Building target: MB_Proj1.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "MB_Proj1.elf"  ./clock.o ./lab3.o   -lxilkernel
+'Finished building target: MB_Proj1.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size MB_Proj1.elf  |tee "MB_Proj1.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  87620	   1656	  31788	 121064	  1d8e8	MB_Proj1.elf
+'Finished building: MB_Proj1.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck MB_Proj1.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "MB_Proj1.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+MB_Proj1.elf 
+
+ELF file	: MB_Proj1.elf
+elfcheck passed.
+'Finished building: MB_Proj1.elf.elfcheck'
+' '
+06:50:41 **** Build of configuration Debug for project xilkernel_demo ****
+make all 
+'Building file: ../src/appa.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/appa.d" -MT"src/appa.d" -o "src/appa.o" "../src/appa.c"
+../src/appa.c: In function 'appa':
+../src/appa.c:58:6: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+../src/appa.c: In function 'appa_main':
+../src/appa.c:114:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/appa.c'
+' '
+'Building file: ../src/clock.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/clock.d" -MT"src/clock.d" -o "src/clock.o" "../src/clock.c"
+../src/clock.c: In function 'clock_main':
+../src/clock.c:93:9: warning: unused variable 'a' [-Wunused-variable]
+'Finished building: ../src/clock.c'
+' '
+'Building file: ../src/llist.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/llist.d" -MT"src/llist.d" -o "src/llist.o" "../src/llist.c"
+../src/llist.c:33:1: warning: 'packed' attribute ignored [-Wattributes]
+../src/llist.c: In function 'llist_main':
+../src/llist.c:89:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/llist.c'
+' '
+'Building file: ../src/mutexdemo.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/mutexdemo.d" -MT"src/mutexdemo.d" -o "src/mutexdemo.o" "../src/mutexdemo.c"
+../src/mutexdemo.c: In function 'main_thread':
+../src/mutexdemo.c:176:2: warning: label 'done' defined but not used [-Wunused-label]
+../src/mutexdemo.c: In function 'mutex_main':
+../src/mutexdemo.c:212:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/mutexdemo.c: In function 'main_thread':
+../src/mutexdemo.c:190:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/mutexdemo.c: In function 'bad_thread':
+../src/mutexdemo.c:91:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/mutexdemo.c: In function 'm_thread_func':
+../src/mutexdemo.c:74:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/mutexdemo.c'
+' '
+'Building file: ../src/prio.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/prio.d" -MT"src/prio.d" -o "src/prio.o" "../src/prio.c"
+../src/prio.c: In function 'low_prio_thread_func':
+../src/prio.c:77:9: warning: unused variable 'id' [-Wunused-variable]
+../src/prio.c: In function 'puppet_thread_func':
+../src/prio.c:112:9: warning: implicit declaration of function 'kill' [-Wimplicit-function-declaration]
+../src/prio.c: In function 'delay':
+../src/prio.c:126:5: warning: implicit declaration of function 'xget_clock_ticks' [-Wimplicit-function-declaration]
+../src/prio.c: In function 'prio_main':
+../src/prio.c:138:5: warning: implicit declaration of function 'get_currentPID' [-Wimplicit-function-declaration]
+../src/prio.c:134:9: warning: unused variable 'dummy' [-Wunused-variable]
+../src/prio.c: At top level:
+../src/prio.c:53:14: warning: 'retptr' defined but not used [-Wunused-variable]
+../src/prio.c: In function 'prio_main':
+../src/prio.c:248:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/prio.c: In function 'puppet_thread_func':
+../src/prio.c:122:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/prio.c: In function 'low_prio_thread_func':
+../src/prio.c:96:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/prio.c: In function 'thread_func':
+../src/prio.c:73:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/prio.c'
+' '
+'Building file: ../src/prodcon.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/prodcon.d" -MT"src/prodcon.d" -o "src/prodcon.o" "../src/prodcon.c"
+../src/prodcon.c: In function 'consumer':
+../src/prodcon.c:66:7: warning: implicit declaration of function 'pthread_exit' [-Wimplicit-function-declaration]
+../src/prodcon.c:77:5: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../src/prodcon.c:56:7: warning: variable 'k' set but not used [-Wunused-but-set-variable]
+../src/prodcon.c:53:8: warning: unused variable 'p' [-Wunused-variable]
+../src/prodcon.c: In function 'prodcon_main':
+../src/prodcon.c:158:5: warning: implicit declaration of function 'pthread_attr_init' [-Wimplicit-function-declaration]
+../src/prodcon.c:164:5: warning: implicit declaration of function 'pthread_attr_setdetachstate' [-Wimplicit-function-declaration]
+../src/prodcon.c:167:5: warning: implicit declaration of function 'pthread_create' [-Wimplicit-function-declaration]
+../src/prodcon.c:189:5: warning: implicit declaration of function 'pthread_join' [-Wimplicit-function-declaration]
+../src/prodcon.c:152:9: warning: unused variable 'eno' [-Wunused-variable]
+../src/prodcon.c:267:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/prodcon.c: In function 'producer':
+../src/prodcon.c:145:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/prodcon.c: In function 'consumer':
+../src/prodcon.c:108:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/prodcon.c'
+' '
+'Building file: ../src/sem.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/sem.d" -MT"src/sem.d" -o "src/sem.o" "../src/sem.c"
+../src/sem.c: In function 'sem_main':
+../src/sem.c:214:2: warning: label 'done' defined but not used [-Wunused-label]
+../src/sem.c:114:9: warning: unused variable 'dummy' [-Wunused-variable]
+../src/sem.c: At top level:
+../src/sem.c:36:27: warning: 'spar' defined but not used [-Wunused-variable]
+../src/sem.c: In function 'sem_main':
+../src/sem.c:217:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/sem.c: In function 'thread_func2':
+../src/sem.c:110:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/sem.c: In function 'thread_func1':
+../src/sem.c:74:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/sem.c'
+' '
+'Building file: ../src/shell.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/shell.d" -MT"src/shell.d" -o "src/shell.o" "../src/shell.c"
+../src/shell.c: In function 'shell_main':
+../src/shell.c:140:3: warning: implicit declaration of function 'inbyte' [-Wimplicit-function-declaration]
+../src/shell.c:155:4: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../src/shell.c:209:4: warning: implicit declaration of function 'clock_set_time' [-Wimplicit-function-declaration]
+../src/shell.c:128:6: warning: unused variable 'delay' [-Wunused-variable]
+../src/shell.c: At top level:
+../src/shell.c:79:14: warning: 'spid' defined but not used [-Wunused-variable]
+../src/shell.c:82:15: warning: 'shell_ps' defined but not used [-Wunused-variable]
+../src/shell.c:84:13: warning: 'push_stack' defined but not used [-Wunused-variable]
+../src/shell.c: In function 'main':
+../src/shell.c:240:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/shell.c'
+' '
+'Building file: ../src/standby.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/standby.d" -MT"src/standby.d" -o "src/standby.o" "../src/standby.c"
+../src/standby.c: In function 'standby_main':
+../src/standby.c:27:5: warning: implicit declaration of function 'sleep' [-Wimplicit-function-declaration]
+../src/standby.c:28:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/standby.c'
+' '
+'Building file: ../src/tictac.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/tictac.d" -MT"src/tictac.d" -o "src/tictac.o" "../src/tictac.c"
+../src/tictac.c: In function 'put_status':
+../src/tictac.c:62:5: warning: implicit declaration of function 'print' [-Wimplicit-function-declaration]
+../src/tictac.c: In function 'tt_display':
+../src/tictac.c:75:13: warning: implicit declaration of function 'outbyte' [-Wimplicit-function-declaration]
+../src/tictac.c:69:10: warning: unused variable 'p' [-Wunused-variable]
+../src/tictac.c: In function 'humanmove':
+../src/tictac.c:302:2: warning: implicit declaration of function 'inbyte' [-Wimplicit-function-declaration]
+../src/tictac.c: In function 'gamemain':
+../src/tictac.c:353:3: warning: 'return' with no value, in function returning non-void [-Wreturn-type]
+../src/tictac.c:339:10: warning: variable 'HUMAN' set but not used [-Wunused-but-set-variable]
+../src/tictac.c:338:9: warning: unused variable 'choice' [-Wunused-variable]
+../src/tictac.c: At top level:
+../src/tictac.c:48:14: warning: 'helpmsg' defined but not used [-Wunused-variable]
+../src/tictac.c:49:14: warning: 'usemsg' defined but not used [-Wunused-variable]
+../src/tictac.c: In function 'tictac_main':
+../src/tictac.c:397:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/tictac.c'
+' '
+'Building file: ../src/timertest.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -D __XMK__ -I../../xilkernel_bsp_0/microblaze_0/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/timertest.d" -MT"src/timertest.d" -o "src/timertest.o" "../src/timertest.c"
+../src/timertest.c: In function 'timertest_main':
+../src/timertest.c:139:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/timertest.c: In function 'thread_func_2':
+../src/timertest.c:75:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/timertest.c: In function 'thread_func_1':
+../src/timertest.c:62:1: warning: control reaches end of non-void function [-Wreturn-type]
+../src/timertest.c: In function 'thread_func_0':
+../src/timertest.c:49:1: warning: control reaches end of non-void function [-Wreturn-type]
+'Finished building: ../src/timertest.c'
+' '
+'Building target: xilkernel_demo.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L../../xilkernel_bsp_0/microblaze_0/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.50.c -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "xilkernel_demo.elf"  ./src/appa.o ./src/clock.o ./src/llist.o ./src/mutexdemo.o ./src/prio.o ./src/prodcon.o ./src/sem.o ./src/shell.o ./src/standby.o ./src/tictac.o ./src/timertest.o   -lxilkernel
+'Finished building target: xilkernel_demo.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size xilkernel_demo.elf  |tee "xilkernel_demo.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  62977	    632	  34223	  97832	  17e28	xilkernel_demo.elf
+'Finished building: xilkernel_demo.elf.size'
+' '
+'Invoking: Xilinx ELF Check'
+elfcheck xilkernel_demo.elf -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0  |tee "xilkernel_demo.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.7 Build EDK_P.20131013
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../Lab3a_hw_platform/system.xml -pe microblaze_0
+xilkernel_demo.elf 
+
+ELF file	: xilkernel_demo.elf
+elfcheck passed.
+'Finished building: xilkernel_demo.elf.elfcheck'
+' '
+06:50:54 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+06:50:55 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.
+06:51:12 **** Incremental Build of configuration Debug for project MB_Proj1 ****
+make all 
+make: Nothing to be done for `all'.
+06:51:13 **** Incremental Build of configuration Debug for project xilkernel_demo ****
+make all 
+make: Nothing to be done for `all'.

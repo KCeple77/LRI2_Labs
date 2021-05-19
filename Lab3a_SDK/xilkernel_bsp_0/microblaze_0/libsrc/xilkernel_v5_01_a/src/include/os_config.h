@@ -68,7 +68,7 @@
 
 #define CONFIG_SEMA true
 
-#define MAX_SEM 4
+#define MAX_SEM 10
 
 #define MAX_SEM_WAITQ 10
 

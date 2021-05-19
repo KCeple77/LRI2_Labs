@@ -141,25 +141,14 @@ static void gpDIPIntHandler(void *arg) //Should be very short (in time). In a pr
 
 static void gpPUSHIntHandler(void *arg) //Should be very short (in time). In a practical program, don't print etc.
 {
-	unsigned char val, tmp;
-	int my_id = 0, i;
+	unsigned char val;
+	int my_id = 0;
 
 	XGpio_InterruptClear(&gpPUSH, 1);			//clear the interrupt flag. if this is not done, gpio will keep interrupting the microblaze.--
 
 	val = XGpio_DiscreteRead(&gpPUSH, 1);
 
 	// Update thread tasks
-	pthread_mutex_lock(&tasks_num_mutex);
-	for(i = 0; i < TASK_THREADS_NONPERIODIC_NUM; i++) {
-		tmp = val>>i;
-		tmp &= 1;
-
-		if(tmp == 1) {
-			tthread_tasks_num[i]++;
-			sem_post(tthread_sems[i]);
-		}
-	}
-	pthread_mutex_unlock(&tasks_num_mutex);
 }
 /*
  * ###########################################			INTERRUPT HANDLERS				##################################################
@@ -247,10 +236,6 @@ void* non_periodic_thread(void* arg) {
 				sleep(SLEEP_AMOUNT);
 			} else {
 				task(my_index);
-
-				pthread_mutex_lock(&tasks_num_mutex);
-				tthread_tasks_num[my_index - TASK_THREADS_NONPERIODIC_OFFSET]--;
-				pthread_mutex_unlock(&tasks_num_mutex);
 			}
 		} else {
 			// Frozen
@@ -397,7 +382,7 @@ void shell_main(void* arg) {
 		cout(str_buffer);
 	}
 
-	// Start non-periodic threads
+	// Start nonperiodic threads
 	for(i = TASK_THREADS_NONPERIODIC_OFFSET; i < TASK_THREADS_NONPERIODIC_OFFSET + TASK_THREADS_NONPERIODIC_NUM; i++) {
 		tmp_pthread_attr.schedparam.sched_priority = i;
 		ret = pthread_create(&task_threads_pids[i], &tmp_pthread_attr, (void*)non_periodic_thread, (void*)i);

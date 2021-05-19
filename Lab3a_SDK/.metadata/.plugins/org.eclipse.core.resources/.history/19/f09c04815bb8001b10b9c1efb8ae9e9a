@@ -22,7 +22,6 @@
 #include <sys/intr.h> //xilkernel api for interrupts
 #include <sys/process.h>
 #include <stdio.h>
-#include <errno.h>
 #define XST_SUCCESS 0L
 #define XST_FAILURE 1L
 #define true 1
@@ -36,15 +35,12 @@ typedef unsigned char bool;
 #define SLEEP_AMOUNT 50
 #define WORK_AMOUNT 500
 
-/*
- * ###########################################			CONSTANTS AND GLOBAL VARIABLES				##################################################
- */
 unsigned char task_threads_activity;
 int tthread_tasks_num[TASK_THREADS_NONPERIODIC_NUM];
 sem_t tthread_sems[TASK_THREADS_NONPERIODIC_NUM];
 
 pthread_mutexattr_t mattr;
-pthread_mutex_t  mutex_task_threads_activity, stdout_mutex, leds_mutex, tasks_num_mutex;
+pthread_mutex_t  mutex_task_threads_activity, stdout_mutex, leds_mutex;
 pthread_t task_threads_pids[TASK_THREADS_NUM];
 XGpio gpDIP, gpPUSH, gpLED; //PB device instance.
 
@@ -58,14 +54,7 @@ static struct sched_param spar;
 extern volatile int hrs, mins, secs, tot_secs;
 
 char str_buffer[1024];
-/*
- * ###########################################			CONSTANTS AND GLOBAL VARIABLES				##################################################
- */
 
-
-/*
- * ###########################################			UTILITY				##################################################
- */
 /**
  * Adds \r\n to the message and prints it in a thread-safe manner!
  */
@@ -102,35 +91,24 @@ void thread_led_indicator(int thread_index, bool turn_on) {
 
 }
 
-void start_clock()
-{
-    int ret;
+void task(int thread_index) {
+	sprintf(str_buffer, "Thread Index: %d wörking!", thread_index);
+	cout(str_buffer);
 
-    pthread_attr_init(&attr);                                                          /* Need to launch a thread */
-    spar.sched_priority = 0;
-    pthread_attr_setschedparam(&attr,&spar);
+	thread_led_indicator(thread_index, true);
+	sleep(WORK_AMOUNT);
+	thread_led_indicator(thread_index, false);
 
-    ret = pthread_create(&tid, &attr, (void*)clock_main, NULL);
 
-    if (ret != 0) {
-    	sprintf(str_buffer, "-- ERROR (%d) launching clock thread. Clock services unavailable...", ret);
-    	cout(str_buffer);
-    }
-
+	sprintf(str_buffer, "Thread ID: %d done!", thread_index);
+	cout(str_buffer);
 }
-/*
- * ###########################################			UTILITY				##################################################
- */
 
-
-/*
- * ###########################################			INTERRUPT HANDLERS				##################################################
- */
 static void gpDIPIntHandler(void *arg) //Should be very short (in time). In a practical program, don't print etc.
 {
 	unsigned char val;
-
-	XGpio_InterruptClear(&gpDIP, 1);			//clear the interrupt flag. if this is not done, gpio will keep interrupting the microblaze.--
+//clear the interrupt flag. if this is not done, gpio will keep interrupting the microblaze.--
+	XGpio_InterruptClear(&gpDIP, 1);
 
 	val = XGpio_DiscreteRead(&gpDIP, 1);
 //	XGpio_DiscreteWrite(&gpLED, 1, val);
@@ -141,45 +119,13 @@ static void gpDIPIntHandler(void *arg) //Should be very short (in time). In a pr
 
 static void gpPUSHIntHandler(void *arg) //Should be very short (in time). In a practical program, don't print etc.
 {
-	unsigned char val, tmp;
-	int my_id = 0, i;
-
-	XGpio_InterruptClear(&gpPUSH, 1);			//clear the interrupt flag. if this is not done, gpio will keep interrupting the microblaze.--
+	unsigned char val;
+	int my_id = 0;
+//clear the interrupt flag. if this is not done, gpio will keep interrupting the microblaze.--
+	XGpio_InterruptClear(&gpPUSH, 1);
 
 	val = XGpio_DiscreteRead(&gpPUSH, 1);
-
-	// Update thread tasks
-	pthread_mutex_lock(&tasks_num_mutex);
-	for(i = 0; i < TASK_THREADS_NONPERIODIC_NUM; i++) {
-		tmp = val>>i;
-		tmp &= 1;
-
-		if(tmp == 1) {
-			tthread_tasks_num[i]++;
-			sem_post(tthread_sems[i]);
-		}
-	}
-	pthread_mutex_unlock(&tasks_num_mutex);
-}
-/*
- * ###########################################			INTERRUPT HANDLERS				##################################################
- */
-
-
-/*
- * ###########################################			THREAD-RELATED				##################################################
- */
-void task(int thread_index) {
-	sprintf(str_buffer, "Thread Index: %d wörking!", thread_index);
-	cout(str_buffer);
-
-	thread_led_indicator(thread_index, true);
-	sleep(WORK_AMOUNT);
-	thread_led_indicator(thread_index, false);
-
-
-	sprintf(str_buffer, "Thread Index: %d done!", thread_index);
-	cout(str_buffer);
+	XGpio_DiscreteWrite(&gpLED, 1, val);
 }
 
 void* periodic_thread(void* arg) {
@@ -222,9 +168,9 @@ void* periodic_thread(void* arg) {
 }
 
 void* non_periodic_thread(void* arg) {
-	int retval;
-	int my_index = (int)arg;
+	int time_tracker, current_time;
 	unsigned char tmp;
+	int my_index = (int)arg;
 
 	sprintf(str_buffer, "Non-Periodic thread ID: %d reporting!", my_index);
 	cout(str_buffer);
@@ -241,17 +187,8 @@ void* non_periodic_thread(void* arg) {
 		if(tmp == 1) {
 			// Active
 			// Check if any jobs at semaphore
-			retval = sem_trywait(&tthread_sems[my_index-TASK_THREADS_NONPERIODIC_OFFSET]);
-			if(retval == -1 && errno == EAGAIN){
-				// No tasks
-				sleep(SLEEP_AMOUNT);
-			} else {
-				task(my_index);
-
-				pthread_mutex_lock(&tasks_num_mutex);
-				tthread_tasks_num[my_index - TASK_THREADS_NONPERIODIC_OFFSET]--;
-				pthread_mutex_unlock(&tasks_num_mutex);
-			}
+			task(my_index);
+			sleep(5000);
 		} else {
 			// Frozen
 			sleep(SLEEP_AMOUNT);
@@ -259,13 +196,24 @@ void* non_periodic_thread(void* arg) {
 
 	}
 }
-/*
- * ###########################################			THREAD-RELATED				##################################################
- */
 
-/*
- * ###########################################			MAIN				##################################################
- */
+void start_clock()
+{
+    int ret;
+
+    pthread_attr_init(&attr);                                                          /* Need to launch a thread */
+    spar.sched_priority = 0;
+    pthread_attr_setschedparam(&attr,&spar);
+
+    ret = pthread_create(&tid, &attr, (void*)clock_main, NULL);
+
+    if (ret != 0) {
+    	sprintf(str_buffer, "-- ERROR (%d) launching clock thread. Clock services unavailable...", ret);
+    	cout(str_buffer);
+    }
+
+}
+
 void shell_main(void* arg) {
 	sprintf(str_buffer, "SHELL: Starting clock...");
 	cout(str_buffer);
@@ -311,13 +259,6 @@ void shell_main(void* arg) {
 		cout(str_buffer);
 		pthread_exit(NULL);
 	}
-
-	retval_tmp = pthread_mutex_init (&tasks_num_mutex, &mattr);
-		if (retval_tmp != 0) {
-			sprintf(str_buffer, "Error during pthread_mutex_init: %d.", retval_tmp);
-			cout(str_buffer);
-			pthread_exit(NULL);
-		}
 
 	for(i = 0; i < TASK_THREADS_NONPERIODIC_NUM; i++) {
 		tthread_tasks_num[i] = 0;
@@ -397,7 +338,7 @@ void shell_main(void* arg) {
 		cout(str_buffer);
 	}
 
-	// Start non-periodic threads
+	// Start nonperiodic threads
 	for(i = TASK_THREADS_NONPERIODIC_OFFSET; i < TASK_THREADS_NONPERIODIC_OFFSET + TASK_THREADS_NONPERIODIC_NUM; i++) {
 		tmp_pthread_attr.schedparam.sched_priority = i;
 		ret = pthread_create(&task_threads_pids[i], &tmp_pthread_attr, (void*)non_periodic_thread, (void*)i);
@@ -418,9 +359,6 @@ int main ()
     xilkernel_main ();
 }
 
-/*
- * ###########################################			REFERENCES AND LEFT-OVERS				##################################################
- */
 //int main_example() {
 //	print("-- Entering main() --\r\n");
 ////Initialize Xilkernel
